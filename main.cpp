@@ -6,7 +6,7 @@ int main() {
     std::string data;
     std::getline(std::cin, data);
 
-    // Parse form data
+    // Parse form dataa
     std::string username;
     std::string password;
 
