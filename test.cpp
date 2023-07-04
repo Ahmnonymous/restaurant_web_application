@@ -9,7 +9,7 @@ int main()
     MYSQL* conn;
 
     conn = mysql_init(0);
-    conn = mysql_real_connect(conn, "localhost:3306", "root", "", "db_rwa", 0, NULL, 0);
+    conn = mysql_real_connect(conn, "localhost", "root", "", "db_rwa", 0, NULL, 0);
 
     if (conn)
     {
