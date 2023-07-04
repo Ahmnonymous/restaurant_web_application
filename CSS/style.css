@@ -1,0 +1,295 @@
+*
+{
+    margin: 0%;
+    padding: 0%;
+    font-family: poppins;
+}
+
+
+section{
+  padding:2rem 7%;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    background-color: rgb(255, 203, 4);
+
+  }
+  
+  .delivery-icon,
+  .logo,
+  .icons {
+    display: flex;
+    align-items: center;
+
+  }
+  
+  .delivery-icon i,
+  .icons div {
+    margin-right: 30px;
+    font-size: 20px;
+  }
+  
+  .icons div:last-child {
+    margin-right: 0;
+  }
+
+
+  /* Home Section */
+  
+.home{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background:url(../images/home-img.jpeg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home .content{
+  max-width: 60rem;
+}
+
+.home .content h3{
+  font-size: 6rem;
+  text-transform: uppercase;
+  color:#fff;
+}
+
+.home .content p{
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 1.8;
+  padding:1rem 0;
+  color:#eee;
+}
+
+
+/* End of Home */
+
+  .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container,
+.verification-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+}
+
+h3,p {
+  text-align: left;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+input {
+  padding: 8px;
+  margin-bottom: 13px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type=submit] {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  border-radius: 10px;
+  background-color: rgb(209, 53, 53);
+  cursor: pointer;
+  
+}
+
+button[type=submit]:hover {
+  background-color: rgb(255, 203, 4);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  border: none;
+  width: 31px;
+  border-radius: 10px;
+  color:white;
+  background-color: grey;
+  cursor: pointer;
+}
+ 
+.hr-container {
+  display: flex;
+  align-items: center;
+}
+
+.left-hr {
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid #000;
+  margin-right: 10px;
+}
+
+.or-text {
+  font-weight: bold;
+  color: #999;
+}
+
+.right-hr {
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid #000;
+  margin-left: 10px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 900;
+}
+a:hover
+{
+  text-decoration: none;
+  color:  rgb(255, 203, 4);
+}
+
+
+/* Sign up Form */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background-color: rgb(255, 203, 4);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+
+
+
+/* Eye Button */
+.toggle-visibility {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin-left: 5px;
+}
+
+.toggle-visibility i {
+  font-size: 30px;
+  margin-top: -15px;
+  color: #888;
+}
+
+.toggle-visibility i:hover {
+  color: #333;
+}
+
+.verification-code-container {
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* Payment File Css */
+.payment-method {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 5px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,9 @@
+g++ -o main.exe main.cpp
+g++ -o main.cgi main.cpp
+g++ -o test.cgi test.cpp -I"C:\Program Files\MySQL\MySQL Server 5.6\include" -L"C:\Program Files\MySQL\MySQL Server 5.6\lib" -lmysql
+g++ -o test.exe test.cpp -I"C:\Program Files\MySQL\MySQL Server 5.6\include" -L"C:\Program Files\MySQL\MySQL Server 5.6\lib" -lmysql
+
+
+git add .
+git commit -m "updates"
+git push -u origin main

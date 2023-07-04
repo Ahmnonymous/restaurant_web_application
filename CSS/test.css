@@ -1,0 +1,31 @@
+.phone-container {
+    display: flex;
+    align-items: center;
+    width: 300px;
+  }
+  
+  .intl-tel-input {
+    position: relative;
+    width: 100%;
+  }
+  
+  .intl-tel-input input {
+    width: 100%;
+    padding-left: 45px;
+  }
+  
+  .iti-flag {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 20px;
+    background-image: url("https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100%;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  
