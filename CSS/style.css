@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 body{
-  background-color: lightgray;
+  background-color: #f8f9fa;
 }
 
 :root{
@@ -30,6 +30,11 @@ body{
 }
 
 
+/* Hr line */
+.Line
+{
+  border: 0.5px solid rgb(255, 203, 4);
+}
 
 section{
   padding:2rem 7%;
@@ -49,15 +54,19 @@ header {
     align-items: center;
 
   }
-  
+  .delivery-icon .fa-map-marker-alt
+  {
+  margin-left: 40px;
+  font-size: 25px;
+  }
   .delivery-icon i,
   .icons div {
-    margin-right: 30px;
+    margin-right: 50px;
     font-size: 20px;
   }
   
   .icons div:last-child {
-    margin-right: 20px;
+    margin-right: 50px;
   }
 
 
@@ -66,7 +75,6 @@ header {
 .dashboard{
   height: 100%;
   width: 100%;
-  padding-left: 10px;
 
 }
 .dashboard-banner
@@ -101,14 +109,6 @@ header {
   color: lightgrey;
 }
 
-
-.dashboard-title
-{
-  margin-top: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  padding: 0 1rem;
-}
 .dashboard-menu
 {
   display: flex;
@@ -123,8 +123,11 @@ header {
   text-decoration: none;
   text-align: center;
   border-radius: 20px;
+  display: block;
+  margin: auto -20px;
+  margin-left: 70px;
   font-weight: 500;
-  min-width: 120px;
+  min-width: 150px;
   padding: 0.5rem 0;
   font-size: 0.9rem;
   color: black;
@@ -148,27 +151,25 @@ header {
 {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 15px;
+  gap: 10px;
 
 }
 .dashboard-card
 {
-  background-color: lightgray;
-  box-shadow: rgb(0,0,0,0.16) 0px 1px 4px;
+  background-color:rgb(255, 255, 255);
   border-radius: 15px;
   position: relative;
   cursor: pointer;
 }
 
 .dashboard-card:hover{
-  box-shadow: rgb(0, 0, 0,0.35) 0px 5px 15px;
   border: 2px solid var(--maincolor);
 }
 
 .card-image
 {
   width: 100%;
-  height: 260px;
+  height: 150px;
   padding: 10px;
   object-fit: cover;
   border-radius: 15px;
@@ -183,6 +184,7 @@ header {
   font-weight: bold;
   font-size: 20px;
   text-align: center;
+  margin-top: -5px;
 }
 
 .card-detail>p{
@@ -198,7 +200,7 @@ header {
   margin: auto;
   font-weight: 600;
    color: rgb(154, 28, 28);
-   margin-top: 10px;
+   margin-top: -5px;
    margin-bottom: 10px;
 
 }
@@ -206,7 +208,7 @@ header {
 {
   color: darkgrey;
   font-size: 0.8rem;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 
@@ -214,10 +216,10 @@ header {
 .btn.add-to-cart-btn {
   display:block;
   margin: auto;
-  padding: 10px 10px;
+  padding: 8px 8px;
   background-color: red;
   text-decoration: none;
-  width: 200px;
+  width: 120px;
   border-radius: 10px;
   color: white;
   font-weight: 700;
@@ -543,6 +545,7 @@ button[type="submit"] {
 .services h1 span{
   margin-left: 15px;
   background: linear-gradient(to left, #b4ce1f , #d8eb30);
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;    
 }
 
@@ -587,6 +590,7 @@ footer {
   max-width: 1000px;
   border: 2px solid rgb(243, 243, 243);
   border-radius: 20px;
+  margin-bottom: 20px;
 }
 
 .footer_main {
