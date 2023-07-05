@@ -15,6 +15,21 @@ body{
 }
 
 
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background: linear-gradient(to top, #d2db58 , #d8d803);
+}
+
+
 
 section{
   padding:2rem 7%;
@@ -27,6 +42,26 @@ header {
     padding: 10px;
 
   }
+
+  header .shopping{
+    position: relative;
+    text-align: right;
+}
+header .shopping img{
+    width: 40px;
+}
+header .shopping span{
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    left: 80%;
+    padding: 3px 10px;
+}
   
   .delivery-icon,
   .logo,
@@ -43,7 +78,7 @@ header {
   }
   
   .icons div:last-child {
-    margin-right: 0;
+    margin-right: 20px;
   }
 
 
@@ -58,7 +93,7 @@ header {
 .dashboard-banner
 {
   width: 100%;
-  height: 450px;
+  height: 460px;
   position: relative;
   margin-top: 1rem;
   border-radius: 30px;
@@ -102,7 +137,7 @@ header {
 
 }
 
-.dashboard-menu>a{
+.dashboard-menu>button{
   text-decoration: none;
   text-align: center;
   border-radius: 20px;
@@ -114,7 +149,7 @@ header {
 }
 
 
-.dashboard-menu >a:hover{
+.dashboard-menu >button:hover{
   background-color: red;
   color: lightgray;
 }
@@ -133,7 +168,7 @@ header {
 }
 .dashboard-card
 {
-  background-color: lightgray;
+  background-color: var(--maincolor);
   box-shadow: rgb(0,0,0,0.16) 0px 1px 4px;
   border-radius: 15px;
   position: relative;
@@ -157,9 +192,12 @@ header {
 {
   padding: 10px;
 }
-
+.card-detail>h4{
+  font-weight: 600;
+}
 .card-detail>h4>span{
   float: right;
+  font-weight: 400;
 }
 .card-time
 {
@@ -169,11 +207,42 @@ header {
 }
 
 
+/* Add to Card button */
+.btn.add-to-cart-btn {
+  display: inline-block;
+  padding: 10px 40px;
+  background-color: red;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-left: 100px;
+  color: white;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.btn.add-to-cart-btn:hover {
+  background-color: rgb(255, 255, 16);
+  color: black;
+  font-weight: 800;
+}
+
+.btn.add-to-cart-btn:focus {
+  outline: none;
+}
+
+.btn.add-to-cart-btn:active {
+  background-color: #f3f85e;
+}
+
+
 
 
 
 /* End of Home */
 
+
+
+/* Overlay  */
   .overlay {
   position: fixed;
   top: 0;
@@ -228,6 +297,7 @@ button[type=submit]:hover {
   color: var(--maincolor);
 }
 
+/* Cancel button on Overlays */
 .close-button {
   position: absolute;
   top: 10px;
@@ -241,6 +311,7 @@ button[type=submit]:hover {
   cursor: pointer;
 }
  
+/* Hr lines on login overlay */
 .hr-container {
   display: flex;
   align-items: center;
@@ -269,7 +340,6 @@ a {
   color: black;
   text-align: center;
   margin-top: 15px;
-  font-weight: 900;
 }
 a:hover
 {
@@ -395,5 +465,177 @@ button[type="submit"] {
   background-color: #007bff;
   color: #fff;
   border: none;
+  cursor: pointer;
+}
+
+
+/*Services*/
+
+.services{
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 80px 0 10px 0;
+}
+
+.services h1{
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+.services h1 span{
+  margin-left: 15px;
+  background: linear-gradient(to left, #b4ce1f , #d8eb30);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;    
+}
+
+.services .services_cards{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 50px;
+}
+
+.services .services_box i{
+  font-size: 60px;
+  color: orange;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.services .services_box h3{
+  margin-bottom: 12px;
+  font-size: 19px;
+  text-align: center;
+}
+
+.services .services_box p{
+  text-align: center;
+  color: #919191;
+  margin-bottom: 60px;
+}
+
+
+/*Footer*/
+
+footer{
+  width: 100%;
+}
+
+footer .footer_main{
+  width: 100%;
+  background: #bbb957;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+footer .footer_main .tag{
+  margin: 10px 0;
+}
+
+footer .footer_main .tag .center{
+  text-align: center;
+}
+
+footer .footer_main .tag h1{
+  font-size: 25px;
+  margin: 25px 0;
+  color: #1c0080;
+}
+
+footer .footer_main .tag a{
+  display: block;
+  color: black;
+  text-decoration: none;
+  margin: 9px 0;
+}
+
+footer .footer_main .tag a i{
+  padding: 0 10px;
+  transition: 0.3;
+}
+
+footer .footer_main .tag a i:hover{
+  color: #dbe829;
+}
+
+footer .footer_main .tag .social_link{
+  display: flex;
+}
+
+footer .footer_main .tag .social_link a{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 0 20px 10px rgba(0,0,0,0.05);
+  position: relative;
+  margin: 0 5px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+footer .footer_main .tag .social_link a .fa-brands{
+  font-size: 20px;
+  line-height: 30px;
+  z-index: 10;
+  position: relative;
+  transition: 0.5s;
+  color: white;
+}
+
+footer .footer_main .tag .social_link a:hover i{
+  color: black;
+}
+
+footer .footer_main .tag .social_link a::after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -70px;
+  background: linear-gradient(-45deg, #f8f829 , #f5f517);
+  position: absolute;
+  z-index: -8;
+  transition: 0.5s;
+}
+
+footer .footer_main .tag .social_link a:hover::after{
+  left: 0;
+}
+
+footer .footer_main .tag .search_bar{
+  width: 230px;
+  height: 30px;
+  background: rgb(202, 202, 202);
+  border-radius: 25px;
+}
+
+footer .footer_main .tag .search_bar input{
+  width: 200px;
+  padding: 2px 0;
+  position: relative;
+  top: 17%;
+  left: 6%;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 13px;
+}
+
+footer .footer_main .tag .search_bar button{
+  padding: 7px 15px;
+  background: linear-gradient(to right, #b4ce1f , #c4c418);
+  border: none;
+  margin-top: 15px;
+  border-radius: 25px;
+  color: white;
   cursor: pointer;
 }
