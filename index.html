@@ -33,8 +33,10 @@
         <i class="fas fa-user"></i>
       </div>
 
-      <div class="cart-icon">
-        <i id="cart-icon" class="fas fa-shopping-cart"></i>
+      <div class="cart-container">
+        <div class="cart-icon" onclick="toggleCart()">
+          <i id="cart-icon" class="fas fa-shopping-cart"></i>
+        </div>
       </div>
 
     </div>
@@ -42,11 +44,7 @@
 
 
 
-  <!-- Cart -->
-  <div class="side-cart">
-    <h3>Cart</h3>
-    <div id="cart-items"></div>
-  </div>
+  
 
   <!-- Home Section -->
 
@@ -84,9 +82,9 @@
                     <p>Freshly Maded Burger with the Yummiest</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
+                    <span class="price">  560.00</span>
 
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
@@ -99,9 +97,9 @@
                     <p>You would like to eat this</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
+                    <span class="price">  560.00</span>
 
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
 
                   </div>
                 </div>
@@ -115,8 +113,8 @@
                     <p>You would like to eat this</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <span class="price">  560.00</span>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
 
                   </div>
                 </div>
@@ -130,8 +128,8 @@
                     <p>You would like to eat this</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <span class="price">  560.00</span>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
 
 
                   </div>
@@ -146,8 +144,8 @@
                     <p>You would like to eat this</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <span class="price">  560.00</span>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
 
 
                   </div>
@@ -164,9 +162,9 @@
                     <p>You would like to eat this</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
+                    <span class="price">  560.00</span>
 
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
@@ -180,8 +178,8 @@
                     <p>You would like to eat this</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <span class="price">  560.00</span>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
@@ -194,9 +192,9 @@
                     <p>You would like to eat this</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
+                    <span class="price">  560.00</span>
 
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
@@ -209,8 +207,8 @@
                     <p>You would like to eat this</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <span class="price">  560.00</span>
+                    <a href="#" class="btn add-to-cart-btn " onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
@@ -225,8 +223,8 @@
                     <p>You would like to eat this</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <span class="price">560.00</span>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
@@ -239,8 +237,8 @@
                     <p>You would like to eat this</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <span class="price">   560.00</span>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
@@ -253,9 +251,9 @@
                     <p>You would like to eat this</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
+                    <span class="price">   560.00</span>
 
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
@@ -270,8 +268,8 @@
                     <p>You would like to eat this</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <span class="price">   560.00</span>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
@@ -284,8 +282,8 @@
                     <p>You would like to eat this</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <span class="price">560.00</span>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
@@ -298,8 +296,8 @@
                     <p>You would like to eat this</p>
                     <p class="card-item"><span class="fas fa-clock"></span>15-30</p>
                     <hr>
-                    <span class="price">Rs. 560.00</span>
-                    <a href="#" class="btn add-to-cart-btn">Add To Cart</a>
+                    <span class="price" >560.00</span>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
@@ -307,6 +305,25 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+
+  <!-- Cart Code -->
+  <div class="side-cart" id="sideCart">
+    <h4>Your Cart</h4>
+    <span onclick="clearCart()">Clear Cart</span>
+
+    <div class="cart-items">
+      <!-- Cart items will be dynamically added here -->
+    </div>
+
+    <div class="cart-footer">
+      
+      <span>Subtotal: <span id="subtotal">0.00</span></span>
+      <span>Delivery Fee: <span id="deliveryFee">0.00</span></span>
+      <span>Total Price: <span id="totalPrice">0.00</span></span>
+      <a href="payment.html"> <button class="btn checkout-btn">Checkout</button></a>
     </div>
   </div>
 
@@ -415,8 +432,7 @@
     <p class="copyright">&copy; 2023 Powered By <span>Blink Co.</span></p>
   </footer>
 
-
-  <script src="./js/script.js"></script>
+<script src="./js/app.js"></script>
 </body>
 
 </html>

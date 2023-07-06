@@ -16,7 +16,7 @@ body{
 
 
 ::-webkit-scrollbar{
-  width: 10px;
+  width: 1px;
 }
 
 ::-webkit-scrollbar-track{
@@ -243,50 +243,96 @@ header {
 
 
 
-/* Cart */
 
-.side-cart {
-  position: fixed;
-  top: 0;
-  right: -400px;
-  width: 400px;
-  height: 100%;
-  background-color: white;
-  padding: 20px;
-  transition: right 0.3s ease-in-out;
+/* Cart Code */
+
+
+.cart-container {
+  position: relative;
 }
 
-.side-cart.active {
-  right: 0;
-}
-
-.cart-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.cart-item img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  margin-right: 10px;
-}
-
-.cart-item .item-info {
-  flex-grow: 1;
-}
-
-.remove-btn {
-  border: none;
-  background-color: transparent;
-  color: red;
+.cart-icon {
   cursor: pointer;
 }
 
-.remove-btn:hover {
-  text-decoration: underline;
+.side-cart {
+  position: fixed;
+  bottom: 0;
+  right: -400px;
+  width: 400px;
+  overflow-y: scroll;
+  max-height: calc(100% - 10px);
+  background-color: white;
+  transition: right 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
 }
+
+.cart-items {
+  flex: 1;
+  max-height: calc(100% - 80px); /* Adjusted to leave space for the footer */
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.cart-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding: 10px;
+  border: 1px solid lightgrey;
+  background-color: #f8f8f8;
+}
+
+#totalPrice {
+  font-weight: bold;
+}
+
+.checkout-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.side-cart > h4 {
+  font-weight: 600;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.side-cart > span {
+  margin-top: -27px;
+  margin-right: 10px;
+  margin-left: auto;
+  color: rgb(255, 203, 4);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.side-cart .dashboard-card {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.side-cart .dashboard-card:hover {
+  border: 1px solid lightgrey;
+}
+
+/* End of Cart Code */
 
 
 
@@ -354,6 +400,7 @@ button[type=submit]:hover {
 
 
 /* Cancel button on Overlays */
+
 .close-button {
   position: absolute;
   top: 10px;
@@ -371,6 +418,7 @@ button[type=submit]:hover {
 
 
 /* Hr lines on login overlay */
+
 .hr-container {
   display: flex;
   align-items: center;
@@ -408,14 +456,9 @@ a:hover
 
 
 /* Sign up Form */
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
-}
-
+/* 
 .container {
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
@@ -423,9 +466,11 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+
+.container>h2 {
   text-align: center;
-  margin-bottom: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
 }
 
 form {
@@ -453,9 +498,27 @@ button[type="submit"] {
   color: var(--maincolor);
   color: #fff;
   border: none;
+  margin-top: 20px;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+}
+
+#paypal-fields,
+#card-fields {
+  display: none;
+}
+.radio-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.radio-label {
+  margin-top: -7px;
+  margin-right: 90px;
+  font-size: large;
+  font-weight: 500;
 }
 
 button[type="submit"]:hover {
@@ -468,6 +531,48 @@ button[type="submit"]:hover {
     padding: 10px;
   }
 }
+
+/* Address Page CSS */
+
+
+.addresses
+{
+  
+  border-top: 1px solid lightgrey;
+  margin-left: 20px;
+  width: fit-content;
+  border-bottom: 1px solid lightgrey;
+}
+.addresses>h2{
+  font-weight: bold;
+}
+.addresses>ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.address-item {
+  display: flex;
+  margin-bottom: 10px;
+  counter-increment: address-counter;
+  font-size: 20px;
+}
+
+.address-item::before {
+  content: counter(address-counter);
+  margin-right: 10px;
+}
+
+.address-item div {
+  float: left;
+  margin-left: 20px;
+}
+.delete-btn {
+  color: red;
+  cursor: pointer;
+}
+ */
 
 
 

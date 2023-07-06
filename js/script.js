@@ -156,8 +156,6 @@ document.getElementById("card-option").addEventListener("change", function() {
 
 
 // Cart
-// Get the cart icon element and initialize the item count
-// Get the cart icon element and initialize the item count
 const addToCartButton = document.querySelectorAll('.add-to-cart-btn');
   const sideCart = document.querySelector('.side-cart');
   const cartItems = document.getElementById('cart-items');
@@ -183,3 +181,109 @@ const addToCartButton = document.querySelectorAll('.add-to-cart-btn');
     const cartItemCountElement = document.querySelector('.cart-icon');
     cartItemCountElement.textContent = cartItemCount;
   }
+
+
+
+  // Cart Showing Code
+
+  function toggleCart() {
+    var cart = document.getElementById("sideCart");
+    if (cart.style.right === "-400px") {
+      // Show the side cart
+      cart.style.right = "0";
+    } else {
+      // Hide the side cart
+      cart.style.right = "-400px";
+    }
+  }
+
+
+
+
+
+
+// Cart functionality
+  let totalPrice = 0;
+
+  function addToCart(event) {
+    event.preventDefault();
+    var item = event.target.closest('.dashboard-card');
+    var clonedItem = item.cloneNode(true);
+  
+    // Adjust the item image size
+    var itemImage = clonedItem.querySelector('.card-image');
+    itemImage.style.maxWidth = '100px'; // Set the desired maximum width
+    itemImage.style.height = 'auto'; // Maintain the aspect ratio
+  
+    var originalImage = item.querySelector('.card-image');
+    var clonedImage = clonedItem.querySelector('.card-image');
+    clonedImage.src = originalImage.src;
+    var button = clonedItem.querySelector('.add-to-cart-btn');
+    button.parentNode.removeChild(button);
+  
+    var content = clonedItem.querySelector('.card-detail');
+    content.style.marginTop = '15px'; // Set the desired top margin
+  
+    var cart = document.getElementById("sideCart");
+    cart.insertBefore(clonedItem, cart.lastElementChild.previousSibling);
+  
+    // Update total price
+  var itemPrice = parseFloat(event.target.previousElementSibling.textContent);
+  
+  var totalPriceElement = document.getElementById('totalPrice');
+  var totalPrice = parseFloat(totalPriceElement.textContent);
+  
+  totalPrice += itemPrice;
+  
+  totalPriceElement.textContent = totalPrice.toFixed(2);
+
+    toggleCart();
+  }
+
+
+
+// To hide cart when clikc outside the cart
+  document.addEventListener("click", function (event) {
+    var cart = document.getElementById("sideCart");
+    if (!cart.contains(event.target)) {
+      cart.style.display = "none";
+    }
+  });
+
+
+
+  // To clear the Cart data
+  function clearCart() {
+    var cart = document.getElementById("sideCart");
+    var cartItems = cart.getElementsByClassName('dashboard-card');
+  
+    // Remove each item from the cart
+    while (cartItems.length > 0) {
+      cartItems[0].remove();
+    }
+    
+    // Reset total price
+    var totalPriceElement = document.getElementById('totalPrice');
+    totalPriceElement.innerText = '0.00';
+  }
+  
+  
+
+
+
+
+  const paypalFields = document.getElementById('paypal-fields');
+  const cardFields = document.getElementById('card-fields');
+
+  document.getElementById('payment-form').addEventListener('change', function() {
+    if (document.getElementById('paypal-option').checked) {
+      paypalFields.style.display = 'block';
+      cardFields.style.display = 'none';
+    } else if (document.getElementById('card-option').checked) {
+      cardFields.style.display = 'block';
+      paypalFields.style.display = 'none';
+    }
+  });
+  
+  
+  

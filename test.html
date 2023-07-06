@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
- <link rel="stylesheet" href="./css/style.css">
+  <title>Payment Method</title>
+  <style>
+    .payment-fields {
+      display: none;
+    }
+  </style>
 </head>
 <body>
+  <h1>Payment Method</h1>
 
-  
+  <form id="payment-form">
+    <label>
+      <input type="radio" name="payment" value="paypal" checked> PayPal
+    </label>
+    <label>
+      <input type="radio" name="payment" value="credit_card"> Credit Card
+    </label>
 
+    <div id="paypal-fields" class="payment-fields">
+      <!-- PayPal fields here -->
+      <label for="paypal-email">PayPal Email:</label>
+      <input type="email" id="paypal-email" name="paypal-email" required>
+    </div>
 
+    <div id="credit-card-fields" class="payment-fields">
+      <!-- Credit Card fields here -->
+      <label for="card-number">Card Number:</label>
+      <input type="text" id="card-number" name="card-number" required>
+      <br>
+      <label for="expiration">Expiration Date:</label>
+      <input type="text" id="expiration" name="expiration" required>
+    </div>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    const paypalFields = document.getElementById('paypal-fields');
+    const creditCardFields = document.getElementById('credit-card-fields');
+
+    document.getElementById('payment-form').addEventListener('change', function() {
+      if (document.querySelector('input[name="payment"]:checked').value === 'paypal') {
+        paypalFields.style.display = 'block';
+        creditCardFields.style.display = 'none';
+      } else if (document.querySelector('input[name="payment"]:checked').value === 'credit_card') {
+        creditCardFields.style.display = 'block';
+        paypalFields.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
