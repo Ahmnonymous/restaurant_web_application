@@ -489,6 +489,10 @@ input[type="password"] {
   border-radius: 5px;
   font-size: 16px;
 }
+label{
+  font-size: large;
+  margin-top: 5px;
+}
 
 button[type="submit"] {
   padding: 10px;
