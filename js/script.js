@@ -1,41 +1,101 @@
+const menuButtons = document.querySelectorAll('.menu-btn');
+const burgersHeading = document.getElementById('B'); // Get the "Burgers" heading element
+const pizzaHeading = document.getElementById('p'); // Get the "Burgers" heading element
+const dessertHeading = document.getElementById('d'); // Get the "Burgers" heading element
+const beverageHeading = document.getElementById('b'); // Get the "Burgers" heading element
 
-  const menuButtons = document.querySelectorAll('.menu-btn');
-
-  // Add click event listener to each menu button
-  menuButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Get the category from the data-category attribute
-      const category = button.getAttribute('data-category');
-
-      // Hide all food items
-      const foodItems = document.querySelectorAll('.food-item');
-      foodItems.forEach(item => {
-        item.style.display = 'none';
-      });
-
-      // Show food items of the selected category
-      if (category === 'all') {
-        // Show all food items
-        foodItems.forEach(item => {
-          item.style.display = 'block';
-        });
-      } else {
-        // Show food items of the selected category
-        const selectedFoodItems = document.querySelectorAll(`.${category}`);
-        selectedFoodItems.forEach(item => {
-          item.style.display = 'block';
-        });
-      }
-
-      // Remove the 'active' class from all buttons
-      menuButtons.forEach(btn => {
-        btn.classList.remove('active');
-      });
-
-      // Add the 'active' class to the clicked button
-      button.classList.add('active');
+// Add click event listener to each menu button
+menuButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Get the category from the data-category attribute
+    const category = button.getAttribute('data-category');
+    
+    // Hide all food items
+    const foodItems = document.querySelectorAll('.food-item');
+    foodItems.forEach(item => {
+      item.style.display = 'none';
     });
+
+    // Show food items of the selected category
+    if (category === 'all') {
+      // Show all food items
+      
+    } else {
+      // Show food items of the selected category
+      const selectedFoodItems = document.querySelectorAll(`.${category}`);
+      selectedFoodItems.forEach(item => {
+        item.style.display = 'block';
+      });
+    }
+
+    // Remove the 'active' class from all buttons
+    menuButtons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    // Add the 'active' class to the clicked button
+    button.classList.add('active');
+    
+    // Hide the "Burgers" heading and horizontal line if the selected category is "Pizza"
+    if (category === 'pizza') {
+      pizzaHeading.style.display='block';
+      pizzaHeading.previousElementSibling.style.display='block';
+      burgersHeading.style.display = 'none'; // Hide the heading
+      beverageHeading.style.display = 'none'; // Hide the heading
+      dessertHeading.style.display = 'none'; // Hide the heading
+      burgersHeading.previousElementSibling.style.display='none'; // Get the next sibling element (the <hr>)
+      dessertHeading.previousElementSibling.style.display='none'; // Get the next sibling element (the <hr>)
+      beverageHeading.previousElementSibling.style.display='none'; // Get the next sibling element (the <hr>)
+    }
+    else if(category==='desserts')
+    {
+      dessertHeading.style.display='block';
+      dessertHeading.previousElementSibling.style.display='block';
+      pizzaHeading.style.display='none';
+      burgersHeading.style.display = 'none'; // Hide the heading
+      beverageHeading.style.display = 'none'; // Hide the heading
+      burgersHeading.previousElementSibling.style.display='none'; // Get the next sibling element (the <hr>)
+      pizzaHeading.previousElementSibling.style.display='none'; // Get the next sibling element (the <hr>)
+      beverageHeading.previousElementSibling.style.display='none'; // Get the next sibling element (the <hr>)
+    }
+    else if(category==='beverages')
+    {
+      beverageHeading.style.display='block';
+      beverageHeading.previousElementSibling.style.display='block';
+      pizzaHeading.style.display='none';
+      dessertHeading.style.display='none';
+      burgersHeading.style.display = 'none'; // Hide the heading
+      burgersHeading.previousElementSibling.style.display='none'; // Get the next sibling element (the <hr>)
+      pizzaHeading.previousElementSibling.style.display='none'; // Get the next sibling element (the <hr>)
+      dessertHeading.previousElementSibling.style.display='none'; // Get the next sibling element (the <hr>)
+    }
+    
+    else if(category==='burgers'){
+      burgersHeading.style.display='block';
+      burgersHeading.previousElementSibling.style.display='block';
+      pizzaHeading.style.display='none';
+      dessertHeading.style.display='none';
+      beverageHeading.style.display='none';
+      beverageHeading.previousElementSibling.style.display='none'; // Get the next sibling element (the <hr>)
+      pizzaHeading.previousElementSibling.style.display='none'; // Get the next sibling element (the <hr>)
+      dessertHeading.previousElementSibling.style.display='none'; // Get the next sibling element (the <hr>)
+    }
+    else{
+      foodItems.forEach(item => {
+        item.style.display = 'block';
+      });
+      burgersHeading.style.display='block';
+      burgersHeading.previousElementSibling.style.display='block';
+      beverageHeading.style.display='block';
+      beverageHeading.previousElementSibling.style.display='block';
+      dessertHeading.style.display='block';
+      dessertHeading.previousElementSibling.style.display='block';
+      pizzaHeading.style.display='block';
+      pizzaHeading.previousElementSibling.style.display='block';
+    }
   });
+});
+
 
 
   // Get the cart icon element and initialize the item count
