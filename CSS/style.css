@@ -64,7 +64,9 @@ header {
     margin-right: 50px;
     font-size: 20px;
   }
-  
+  .icons:hover{
+    cursor: pointer;
+  }
   .icons div:last-child {
     margin-right: 50px;
   }
@@ -156,10 +158,11 @@ header {
 }
 .dashboard-card
 {
-  background-color:rgb(255, 255, 255);
+  background-color:rgb(241, 241, 241);
   border-radius: 15px;
   position: relative;
   cursor: pointer;
+  border: 1px solid lightgrey;
 }
 
 .dashboard-card:hover{
@@ -189,8 +192,8 @@ header {
 
 .card-detail>p{
   text-align: center;
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 15px;
   color: #000;
 }
 .card-detail .price
@@ -211,8 +214,13 @@ header {
   padding-top: 5px;
 }
 
+/* Card items Ended */
 
-/* Add to Card button */
+
+
+
+/* Add to Card button on Card Items*/
+
 .btn.add-to-cart-btn {
   display:block;
   margin: auto;
@@ -239,13 +247,14 @@ header {
 .btn.add-to-cart-btn:active {
   background-color: #f3f85e;
 }
+/* End */
 
 
 
 
 
-/* Cart Code */
 
+/*Side Cart Code */
 
 .cart-container {
   position: relative;
@@ -261,7 +270,7 @@ header {
   right: -400px;
   width: 400px;
   overflow-y: scroll;
-  max-height: calc(100% - 10px);
+  height: 100%;
   background-color: white;
   transition: right 0.3s ease-in-out;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -272,9 +281,8 @@ header {
 
 .cart-items {
   flex: 1;
-  max-height: calc(100% - 80px); /* Adjusted to leave space for the footer */
+  max-height: calc(10% - 40px); /* Adjusted to leave space for the footer */
   overflow-y: auto;
-  padding: 10px;
 }
 
 .cart-footer {
@@ -287,24 +295,34 @@ header {
   border: 1px solid lightgrey;
   background-color: #f8f8f8;
 }
+.cart-footer>span
+{
+  font-size: 20px;
+}
 
 #totalPrice {
   font-weight: bold;
 }
 
-.checkout-btn {
-  background-color: #4caf50;
-  color: white;
-  border: none;
+.cart-footer a .checkout-btn {
+  background-color:rgb(255, 203, 4);
+  color: black;
   padding: 10px 20px;
   text-align: center;
+  border: none;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
+  font-weight: bold;
   margin-top: 10px;
 }
+.cart-footer a .checkout-btn:hover{
+  background-color: rgb(147, 137, 0);
+  color: white;
+}
+
 
 .side-cart > h4 {
   font-weight: 600;
@@ -313,9 +331,10 @@ header {
 }
 
 .side-cart > span {
-  margin-top: -27px;
+  margin-top: -px;
   margin-right: 10px;
   margin-left: auto;
+  font-size: 18px;
   color: rgb(255, 203, 4);
   text-decoration: underline;
   cursor: pointer;
@@ -324,13 +343,18 @@ header {
 .side-cart .dashboard-card {
   display: flex;
   align-items: center;
-  margin-top: 15px;
-  gap: 10px;
+  margin-top: 3px;
 }
 
 .side-cart .dashboard-card:hover {
   border: 1px solid lightgrey;
 }
+
+.delete-from-cart-btn
+{
+  margin-left: 190px;
+}
+
 
 /* End of Cart Code */
 
@@ -364,7 +388,7 @@ header {
   position: relative;
 }
 
-h3,p {
+.overlay h3,p {
   text-align: left;
 }
 
@@ -374,28 +398,6 @@ form {
 }
 
 
-input {
-  padding: 8px;
-  margin-bottom: 13px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-button[type=submit] {
-  padding: 10px 20px;
-  color: #fff;
-  border: none;
-  font-weight: 600;
-  border-radius: 10px;
-  background-color: rgb(209, 53, 53);
-  cursor: pointer;
-  
-}
-
-button[type=submit]:hover {
-  color: #000;
-  background-color:rgb(255, 203, 4) !important;
-}
 
 
 
@@ -456,7 +458,7 @@ a:hover
 
 
 /* Sign up Form */
-/* 
+
 .container {
   max-width: 500px;
   margin: 0 auto;
@@ -471,11 +473,6 @@ a:hover
   text-align: center;
   font-weight: 600;
   margin-bottom: 40px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
 }
 
 .form-group {
@@ -495,14 +492,22 @@ input[type="password"] {
 
 button[type="submit"] {
   padding: 10px;
-  color: var(--maincolor);
+  background-color: #007bff;
   color: #fff;
   border: none;
+  font-weight: 600;
   margin-top: 20px;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
 }
+
+
+button[type=submit]:hover {
+  color: #000;
+  background-color:rgb(255, 203, 4) !important;
+}
+
 
 #paypal-fields,
 #card-fields {
@@ -535,13 +540,14 @@ button[type="submit"]:hover {
 /* Address Page CSS */
 
 
-.addresses
+ .addresses
 {
   
   border-top: 1px solid lightgrey;
   margin-left: 20px;
   width: fit-content;
   border-bottom: 1px solid lightgrey;
+  margin-top: 20px;
 }
 .addresses>h2{
   font-weight: bold;
@@ -572,7 +578,7 @@ button[type="submit"]:hover {
   color: red;
   cursor: pointer;
 }
- */
+
 
 
 
@@ -609,28 +615,13 @@ button[type="submit"]:hover {
   margin-top: 20px;
 }
 
-.form-group {
-  margin-bottom: 10px;
-}
-
 label {
   display: block;
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 5px;
-}
 
-button[type="submit"] {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
+
 
 
 /*Services*/
@@ -650,7 +641,7 @@ button[type="submit"] {
 .services h1 span{
   margin-left: 15px;
   background: linear-gradient(to left, #b4ce1f , #d8eb30);
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;    
 }
 
@@ -684,7 +675,10 @@ button[type="submit"] {
 }
 
 
+
 /* Footer */
+
+
 footer {
   background-color: rgb(255, 255, 255) ;
    color: black;
@@ -767,6 +761,9 @@ footer {
   margin: 20px 20px;
   border: 1.5px solid black;
 }
+
+
+
 
 /* CSS */
 

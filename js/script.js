@@ -153,37 +153,6 @@ document.getElementById("card-option").addEventListener("change", function() {
 
 
 
-
-
-// Cart
-const addToCartButton = document.querySelectorAll('.add-to-cart-btn');
-  const sideCart = document.querySelector('.side-cart');
-  const cartItems = document.getElementById('cart-items');
-  let cartItemCount = 0;
-
-  addToCartButton.forEach((button) => {
-    button.addEventListener('click', (event) => {
-      event.preventDefault();
-      const item = button.parentNode;
-      addToCart(item);
-    });
-  });
-
-  function addToCart(item) {
-    const cartItem = item.cloneNode(true);
-    cartItems.appendChild(cartItem);
-    cartItemCount++;
-    updateCartItemCount();
-    sideCart.classList.add('active');
-  }
-
-  function updateCartItemCount() {
-    const cartItemCountElement = document.querySelector('.cart-icon');
-    cartItemCountElement.textContent = cartItemCount;
-  }
-
-
-
   // Cart Showing Code
 
   function toggleCart() {
@@ -201,19 +170,15 @@ const addToCartButton = document.querySelectorAll('.add-to-cart-btn');
 
 
 
-
-// Cart functionality
-  let totalPrice = 0;
-
   function addToCart(event) {
     event.preventDefault();
     var item = event.target.closest('.dashboard-card');
     var clonedItem = item.cloneNode(true);
+    var itemId = clonedItem.getAttribute('data-item-id');
   
-    // Adjust the item image size
     var itemImage = clonedItem.querySelector('.card-image');
     itemImage.style.maxWidth = '100px'; // Set the desired maximum width
-    itemImage.style.height = 'auto'; // Maintain the aspect ratio
+    itemImage.style.height = '100px'; // Maintain the aspect ratio
   
     var originalImage = item.querySelector('.card-image');
     var clonedImage = clonedItem.querySelector('.card-image');
@@ -222,68 +187,97 @@ const addToCartButton = document.querySelectorAll('.add-to-cart-btn');
     button.parentNode.removeChild(button);
   
     var content = clonedItem.querySelector('.card-detail');
-    content.style.marginTop = '15px'; // Set the desired top margin
+    content.style.marginTop = '3px'; // Set the desired top margin
+  
+    var deleteButton = document.createElement('a');
+    deleteButton.href = '#';
+    deleteButton.className = 'btn delete-from-cart-btn';
+    deleteButton.textContent = 'Delete';
+    deleteButton.style.color = 'red';
+    deleteButton.style.fontSize = '20px';
+  
+    deleteButton.onclick = removeItemFromCart;
+  
+    clonedItem.querySelector('.card-detail').appendChild(deleteButton);
   
     var cart = document.getElementById("sideCart");
-    cart.insertBefore(clonedItem, cart.lastElementChild.previousSibling);
+    var cartItems = cart.getElementsByClassName('cart-item');
+  
+    var existingItem = Array.from(cartItems).find(function (item) {
+      var cartItemId = item.getAttribute('data-item-id');
+      return cartItemId === itemId;
+    });
+  
+    if (!existingItem) {
+      // Item doesn't exist in the cart, add it
+      var cartItem = document.createElement('div');
+      cartItem.className = 'cart-item';
+      cartItem.setAttribute('data-item-id', itemId);
+  
+      cartItem.appendChild(clonedItem);
+  
+      cart.insertBefore(cartItem, cart.lastElementChild.previousSibling);
+    }
   
     // Update total price
-  var itemPrice = parseFloat(event.target.previousElementSibling.textContent);
+    var itemPrice = parseFloat(event.target.previousElementSibling.textContent);
   
-  var totalPriceElement = document.getElementById('totalPrice');
-  var totalPrice = parseFloat(totalPriceElement.textContent);
+    var totalPriceElement = document.getElementById('totalPrice');
+    var totalPrice = parseFloat(totalPriceElement.textContent);
   
-  totalPrice += itemPrice;
+    totalPrice += itemPrice;
   
-  totalPriceElement.textContent = totalPrice.toFixed(2);
-
+    totalPriceElement.textContent = totalPrice.toFixed(2);
+  
     toggleCart();
   }
-
-
-
-// To hide cart when clikc outside the cart
-  document.addEventListener("click", function (event) {
-    var cart = document.getElementById("sideCart");
-    if (!cart.contains(event.target)) {
-      cart.style.display = "none";
-    }
-  });
-
-
-
-  // To clear the Cart data
-  function clearCart() {
-    var cart = document.getElementById("sideCart");
-    var cartItems = cart.getElementsByClassName('dashboard-card');
   
-    // Remove each item from the cart
-    while (cartItems.length > 0) {
-      cartItems[0].remove();
-    }
-    
-    // Reset total price
+  
+  function removeItemFromCart(event) {
+    event.preventDefault();
+    var item = event.target.closest('.cart-item');
+    var itemPrice = parseFloat(item.querySelector('.price').textContent);
+  
+    item.remove();
+  
     var totalPriceElement = document.getElementById('totalPrice');
-    totalPriceElement.innerText = '0.00';
+    var totalPrice = parseFloat(totalPriceElement.textContent);
+  
+    totalPrice -= itemPrice;
+  
+    totalPriceElement.textContent = totalPrice.toFixed(2);
   }
   
-  
 
 
 
 
-  const paypalFields = document.getElementById('paypal-fields');
-  const cardFields = document.getElementById('card-fields');
 
-  document.getElementById('payment-form').addEventListener('change', function() {
-    if (document.getElementById('paypal-option').checked) {
-      paypalFields.style.display = 'block';
-      cardFields.style.display = 'none';
-    } else if (document.getElementById('card-option').checked) {
-      cardFields.style.display = 'block';
-      paypalFields.style.display = 'none';
-    }
-  });
-  
-  
+
+
+
+
+// To hide cart when click outside the cart
+document.addEventListener("click", function (event) {
+  var cart = document.getElementById("sideCart");
+  if (!cart.contains(event.target)) {
+    cart.style.display = "none";
+  }
+});
+
+// To clear the Cart data
+function clearCart() {
+  var cart = document.getElementById("sideCart");
+  var cartItems = cart.getElementsByClassName('dashboard-card');
+
+  // Remove each item from the cart
+  while (cartItems.length > 0) {
+    cartItems[0].remove();
+  }
+
+  // Reset total price
+  var totalPriceElement = document.getElementById('totalPrice');
+  totalPriceElement.innerText = '0.00';
+}
+
   
