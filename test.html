@@ -1,36 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Retrieve Data</title>
-  <script>
-    function retrieveData() {
-      var id = document.getElementById("id").value;
-      var xhr = new XMLHttpRequest();
-      
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            document.getElementById("result").innerHTML = xhr.responseText;
-          } else {
-            document.getElementById("result").innerHTML = "Error: " + xhr.status;
-          }
-        }
-      };
-      
-      xhr.open("GET", "test.cgi?id=" + encodeURIComponent(id), true);
-      xhr.send();
-    }
-  </script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+ <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <h1>Data Retrieval</h1>
+
   
-  <form onsubmit="event.preventDefault(); retrieveData();">
-    <label for="id">Record ID:</label>
-    <input type="text" id="id" name="id">
-    <button type="submit">Retrieve</button>
-  </form>
-  
-  <div id="result"></div>
+
+
 </body>
 </html>

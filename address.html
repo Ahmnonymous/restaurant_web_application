@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/css/flag-icon.min.css">
+  <link rel="stylesheet" type="text/css"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Address Manager</title>
+
+<body>
+  
+   Header Sectoin
+  <header>
+    <div class="delivery-icon">
+      <i class="fas fa-map-marker-alt"></i>
+    </div>
+    <div class="logo">
+      <h1>Food Delivery Service </h1>
+    </div>
+    <div class="icons">
+      <div class="search-icon">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="login-icon">
+        <i class="fas fa-user"></i>
+      </div>
+
+      <div class="cart-container">
+        <div class="cart-icon" onclick="toggleCart()">
+          <i id="cart-icon" class="fas fa-shopping-cart"></i>
+        </div>
+      </div>
+
+    </div>
+  </header>
+  <div class="container mt-3">
+    <h2>Address Manager</h2>
+    <form id="address-form">
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required>
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state" required>
+      <label for="zip">ZIP:</label>
+      <input type="text" id="zip" name="zip" required>
+      <button type="submit">Add Address</button>
+    </form>
+
+  </div>
+  <div class="addresses">
+    <h2>Addresses</h2>
+    <ul id="address-list"></ul>
+  </div>
+
+  
+  <!-- Footer -->
+  <footer class="mt-4">
+    <div class="footer_main">
+      <div class="tag">
+        <h1>Contact</h1>
+        <a href="#"><i class="fa-solid fa-house"></i>123/Colombo/Sri Lanka</a>
+        <a href="#"><i class="fa-solid fa-phone"></i> <span>+94 12 345 6789</span></a>
+        <a href="#"><i class="fa-solid fa-envelope"></i>contact@gmail.com</a>
+      </div>
+
+      <div class="tag">
+        <h1>Our Timing</h1>
+        <a href="#" class="center">Monday - Sunday <span>11:00 AM - 03:00 AM</span> </a>
+      </div>
+
+      <div class="tag follow_us">
+        <h1>Follow Us</h1>
+        <div class="social_link">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="line">
+    <p class="copyright">&copy; 2023 Powered By <span>Blink Co.</span></p>
+  </footer>
+  
+  
+
+  <script src="./js/script.js"></script>
+
+  <script>
+     document.addEventListener('DOMContentLoaded', function() {
+    const addressForm = document.getElementById('address-form');
+    const addressList = document.getElementById('address-list');
+
+    addressForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const address = document.getElementById('address').value;
+        const city = document.getElementById('city').value;
+        const state = document.getElementById('state').value;
+        const zip = document.getElementById('zip').value;
+
+        addAddressToList(address, city, state, zip);
+
+        // Reset the form fields
+        addressForm.reset();
+    });
+
+    addressList.addEventListener('click', function(event) {
+        if (event.target.classList.contains('delete-btn')) {
+            const listItem = event.target.closest('.address-item');
+            listItem.remove();
+        }
+    });
+
+
+    function addAddressToList(address, city, state, zip) {
+    const listItem = document.createElement('li');
+    listItem.className = 'address-item';
+
+    listItem.innerHTML = `
+    <div><strong>Address :</strong> ${address}</div>
+    <div><strong>City :</strong> ${city}
+       <strong>State :</strong> ${state}
+      <strong>Zip Code :</strong> ${zip}</div>
+    <div class="delete-btn">Delete</div>
+`;
+
+
+    addressList.insertBefore(listItem, addressList.firstChild);
+
+    // Update the numbering
+    updateAddressNumbering();
+}
+
+function updateAddressNumbering() {
+    const addressItems = document.querySelectorAll('.address-item');
+    addressItems.forEach((item, index) => {
+        item.querySelector('span').innerText = `: ${index + 1} `;
+    });
+}
+
+});
+  </script>
+
+
+<script src="./js/script.js"></script>
+</body>
+</html> 

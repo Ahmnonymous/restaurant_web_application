@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rating Screen</title>
+  <style>
+    /* Add your custom styles here */
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .rating-form label {
+      display: inline-block;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    .rating-form input[type="radio"] {
+      display: none;
+    }
+    .rating-form label:before {
+      content: "\2605";
+      color: #ffc107;
+      font-size: 24px;
+    }
+    .rating-form input[type="radio"]:checked ~ label:before {
+      color: #ffc107;
+    }
+    .rating-form textarea {
+      width: 100%;
+      height: 100px;
+      resize: vertical;
+    }
+    .rating-form button {
+      margin-top: 20px;
+      background-color: #ffc107;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .rating-form button:hover {
+      background-color: #ffca2c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Rating Screen</h2>
+    <form class="rating-form">
+      <div class="form-group">
+        <label for="rating">Rate your overall experience:</label>
+        <input type="radio" id="star5" name="rating" value="5">
+        <label for="star5"></label>
+        <input type="radio" id="star4" name="rating" value="4">
+        <label for="star4"></label>
+        <input type="radio" id="star3" name="rating" value="3">
+        <label for="star3"></label>
+        <input type="radio" id="star2" name="rating" value="2">
+        <label for="star2"></label>
+        <input type="radio" id="star1" name="rating" value="1">
+        <label for="star1"></label>
+      </div>
+      <div class="form-group">
+        <label for="delivery">Rate the delivery speed:</label>
+        <input type="radio" id="delivery-fast" name="delivery" value="fast">
+        <label for="delivery-fast">Fast</label>
+        <input type="radio" id="delivery-average" name="delivery" value="average">
+        <label for="delivery-average">Average</label>
+        <input type="radio" id="delivery-slow" name="delivery" value="slow">
+        <label for="delivery-slow">Slow</label>
+      </div>
+      <div class="form-group">
+        <label for="accuracy">Rate the order accuracy:</label>
+        <input type="radio" id="accuracy-accurate" name="accuracy" value="accurate">
+        <label for="accuracy-accurate">Accurate</label>
+        <input type="radio" id="accuracy-somewhat" name="accuracy" value="somewhat">
+        <label for="accuracy-somewhat">Somewhat accurate</label>
+        <input type="radio" id="accuracy-inaccurate" name="accuracy" value="inaccurate">
+        <label for="accuracy-inaccurate">Inaccurate</label>
+      </div>
+      <div class="form-group">
+        <label for="comments">Additional Comments:</label>
+        <textarea id="comments" name="comments" placeholder="Enter your comments"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
