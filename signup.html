@@ -7,11 +7,8 @@
   <link rel="stylesheet" type="text/css" href="./css/style.css"></head>
 <body>
   <header>
-    <div class="delivery-icon">
-      <i class="fas fa-truck"></i>
-    </div>
     <div class="logo">
-      <h1>Ali's </h1>
+      <h1>Food Delivery Service </h1>
     </div>
     <div class="icons">
       <div class="search-icon">
@@ -20,11 +17,19 @@
       <div class="login-icon">
         <i class="fas fa-user"></i>
       </div>
-      <div class="cart-icon">
-        <i class="fas fa-shopping-cart"></i>
+
+      <div class="cart-container">
+        <div class="cart-icon" onclick="toggleCart()">
+          <i id="cart-icon" class="fas fa-shopping-cart"></i>
+        </div>
       </div>
+
     </div>
   </header>
+
+
+
+
   <div class="container mt-4">
     <h2>Create an Account</h2>
     <form>

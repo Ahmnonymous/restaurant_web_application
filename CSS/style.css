@@ -54,6 +54,11 @@ header {
     align-items: center;
 
   }
+  .logo
+  {
+    margin-right: auto;
+    margin-left: 30px;
+  }
   .delivery-icon .fa-map-marker-alt
   {
   margin-left: 40px;
@@ -148,6 +153,8 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(250px,1.5fr));
   gap: 2px;
+  margin-left: 120px;
+  margin-right: 120px;
 
 }
 .dashboard-card
@@ -182,7 +189,7 @@ header {
   font-weight: bold;
   font-size: 20px;
   text-align: center;
-  margin-top: -5px;
+  margin-top: 10px;
 }
 
 .card-detail>p{
@@ -304,9 +311,18 @@ header {
 #totalPrice {
   font-weight: bold;
 }
+.cart-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  padding: 10px;
+}
 
 .cart-footer a .checkout-btn {
-  background-color:rgb(255, 203, 4);
+  background-color: rgb(255, 203, 4);
   color: black;
   padding: 10px 20px;
   text-align: center;
@@ -319,10 +335,12 @@ header {
   font-weight: bold;
   margin-top: 10px;
 }
-.cart-footer a .checkout-btn:hover{
+
+.cart-footer a .checkout-btn:hover {
   background-color: rgb(147, 137, 0);
   color: white;
 }
+
 
 
 .side-cart > h4 {
@@ -330,16 +348,16 @@ header {
   margin-top: 10px;
   margin-left: 10px;
 }
-
 .side-cart > span {
-  margin-top: -px;
-  margin-right: 10px;
-  margin-left: auto;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   font-size: 18px;
   color: rgb(255, 203, 4);
   text-decoration: underline;
   cursor: pointer;
 }
+
 
 .side-cart .dashboard-card {
   display: flex;
@@ -353,7 +371,7 @@ header {
 
 .delete-from-cart-btn
 {
-  margin-left: 190px;
+  margin-left: 10px;
 }
 
 
@@ -646,7 +664,7 @@ label {
 .services h1 span{
   margin-left: 15px;
   background: linear-gradient(to left, #b4ce1f , #d8eb30);
-  /* -webkit-background-clip: text; */
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;    
 }
 

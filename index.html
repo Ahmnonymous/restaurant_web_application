@@ -19,9 +19,6 @@
 
   <!-- Header Sectoin -->
   <header>
-    <div class="delivery-icon">
-      <i class="fas fa-map-marker-alt"></i>
-    </div>
     <div class="logo">
       <h1>Food Delivery Service </h1>
     </div>
@@ -60,10 +57,10 @@
           <hr class="Line">
           <div class="dashboard-menu">
             <button class="menu-btn active" data-category="all">All</button>
-            <button class="menu-btn" data-category="pizza">Pizza</button>
-            <button class="menu-btn" data-category="burgers">Burgers</button>
-            <button class="menu-btn" data-category="desserts">Desserts</button>
-            <button class="menu-btn" data-category="beverages">Beverages</button>
+            <button class="menu-btn" data-category="pizza"  onclick="scrollToCategory('p')">Pizza</button>
+            <button class="menu-btn" data-category="burgers"  onclick="scrollToCategory('B')">Burgers</button>
+            <button class="menu-btn" data-category="desserts"  onclick="scrollToCategory('d')">Desserts</button>
+            <button class="menu-btn" data-category="beverages"  onclick="scrollToCategory('b')"> Beverages</button>
           </div>
           <hr class="Line">                        
           <h2 id="B">Burgers</h2>
@@ -405,6 +402,27 @@
 
 
   <script src="./js/script.js"></script>
+
+<script>
+ document.addEventListener("click", function(event) {
+  var cart = document.getElementById("sideCart");
+  var cartIcon = document.getElementById("cart-icon");
+
+  if (!cart.contains(event.target) && event.target !== cartIcon && !cart.contains(event.target.closest(".cart-container"))) {
+    cart.style.display = "none";
+  }
+});
+
+var cartIcon = document.getElementById("cart-icon");
+cartIcon.addEventListener("click", function() {
+  var cart = document.getElementById("sideCart");
+  cart.style.display = "block";
+});
+
+
+
+</script>
+
 
 </body>
 
