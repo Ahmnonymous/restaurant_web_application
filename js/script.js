@@ -1,27 +1,3 @@
-  // Get the cart icon element and initialize the item count
-  const carticon = document.getElementById('cart-icon');
-  let itemcount = 0;
-
-  // Get all the "Add to Cart" buttons
-  const addToCartButtons = document.querySelectorAll('.card-detail .btn');
-
-  // Add event listener to each "Add to Cart" button
-  addToCartButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Increment the item count
-      itemcount++;
-
-      // Update the cart icon text with the new item count
-      carticon.innerText = itemcount;
-    });
-  });
-
-
-
-
-
-
-
   // Open the login overlay when the user icon is clicked
 var userIcon = document.querySelector('.login-icon');
 var loginOverlay = document.querySelector('#login-overlay');
@@ -29,7 +5,6 @@ var loginOverlay = document.querySelector('#login-overlay');
 userIcon.addEventListener('click', function() {
   loginOverlay.style.display = 'flex';
 });
-
 
 // For closing Overlays
 function closeOverlay() {
@@ -64,11 +39,8 @@ function verifyCode(event) {
   } else {
     alert('Invalid Verification Code. Please try again.');
   }
-
-
-
-
 }
+
 
 var loginForm = document.getElementById('login-form');
 var verificationForm = document.getElementById('verification-form');
@@ -96,51 +68,30 @@ function toggleVerificationCodeVisibility() {
 
 
 
-// Example JavaScript code for toggling the PayPal and Card fields
-var paypalFields = document.getElementById("paypal-fields");
-var cardFields = document.getElementById("card-fields");
-
-document.getElementById("paypal-option").addEventListener("change", function() {
-  paypalFields.style.display = "block";
-  cardFields.style.display = "none";
-});
-
-document.getElementById("card-option").addEventListener("change", function() {
-  paypalFields.style.display = "none";
-  cardFields.style.display = "block";
-});
-
-
-
-
   // Cart Showing Code
-
   function toggleCart() {
     var cart = document.getElementById("sideCart");
-    if (cart.style.right === "-400px") {
+    if (cart.style.right === "-300px") {
       // Show the side cart
       cart.style.right = "0";
     } else {
       // Hide the side cart
-      cart.style.right = "-400px";
+      cart.style.right = "-300px";
     }
   }
-
-
-
-
+  
 
   function addToCart(event) {
     event.preventDefault();
     var item = event.target.closest('.dashboard-card');
     var clonedItem = item.cloneNode(true);
     var itemId = clonedItem.getAttribute('data-item-id');
-  
+    clonedItem.style.width = '100%';
     var itemImage = clonedItem.querySelector('.card-image');
-    itemImage.style.maxWidth = '100px'; // Set the desired maximum width
-    itemImage.style.height = '100px'; // Maintain the aspect ratio
-    itemImage.style.marginLeft="15px";
-    itemImage.style.marginTop="-80px";
+    itemImage.style.maxWidth = '140px';
+    itemImage.style.height = '140px';
+    itemImage.style.marginLeft = '15px';
+    itemImage.style.marginTop = '-80px';
   
     var originalImage = item.querySelector('.card-image');
     var clonedImage = clonedItem.querySelector('.card-image');
@@ -149,7 +100,7 @@ document.getElementById("card-option").addEventListener("change", function() {
     button.parentNode.removeChild(button);
   
     var content = clonedItem.querySelector('.card-detail');
-    content.style.marginTop = '3px'; // Set the desired top margin
+    content.style.marginTop = '3px';
   
     var deleteButton = document.createElement('a');
     deleteButton.href = '#';
@@ -162,7 +113,7 @@ document.getElementById("card-option").addEventListener("change", function() {
   
     clonedItem.querySelector('.card-detail').appendChild(deleteButton);
   
-    var cart = document.getElementById("sideCart");
+    var cart = document.getElementById('sideCart');
     var cartItems = cart.getElementsByClassName('cart-item');
   
     var existingItem = Array.from(cartItems).find(function (item) {
@@ -179,6 +130,12 @@ document.getElementById("card-option").addEventListener("change", function() {
       cartItem.appendChild(clonedItem);
   
       cart.insertBefore(cartItem, cart.lastElementChild.previousSibling);
+  
+      // Hide the hint text
+      var hintElement = cart.querySelector('.hint-text');
+      if (hintElement) {
+        hintElement.style.display = 'none';
+      }
     }
   
     // Update total price
@@ -191,23 +148,36 @@ document.getElementById("card-option").addEventListener("change", function() {
   
     totalPriceElement.textContent = totalPrice.toFixed(2);
   
+    // Update item count
+    var itemCount =+ cartItems.length ;
+    var cartIcon = document.querySelector('.cart-icon');
+    cartIcon.setAttribute('data-count', itemCount);
     toggleCart();
   }
   
-  
+
+  // Remove item form the care
   function removeItemFromCart(event) {
     event.preventDefault();
     var item = event.target.closest('.cart-item');
     var itemPrice = parseFloat(item.querySelector('.price').textContent);
-  
+    
     item.remove();
-  
+    
     var totalPriceElement = document.getElementById('totalPrice');
     var totalPrice = parseFloat(totalPriceElement.textContent);
-  
+    
     totalPrice -= itemPrice;
-  
+    
     totalPriceElement.textContent = totalPrice.toFixed(2);
+    
+    // Update item count
+    var cartItems = document.getElementById('sideCart').getElementsByClassName('cart-item');
+    var itemCount = cartItems.length;
+    var cartIcon = document.querySelector('.cart-icon');
+    cartIcon.setAttribute('data-count', itemCount);
+    
+    toggleCart();
   }
   
 
@@ -253,11 +223,28 @@ document.getElementById('driversignupForm').addEventListener('submit', function(
 
 
 
-//   For Scrolling
-function scrollToCategory(category) {
-  const categoryDiv = document.getElementById(category);
-  categoryDiv.scrollIntoView({ behavior: 'smooth' });
+
+function scrollToCategory(category, button) {
+  // Remove the active class from all buttons
+  const buttons = document.getElementsByClassName("menu-btn");
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove("active");
+  }
+
+  // Add the active class to the clicked button
+  button.classList.add("active");
+
+  // Scroll to the selected category or top
+  if (category === "all") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    const targetElement = document.getElementById(category);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
 }
+
 
 
 

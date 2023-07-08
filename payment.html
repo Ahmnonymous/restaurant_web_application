@@ -13,6 +13,7 @@
   <title>Payment Method</title>
 </head>
 <body>
+
   
   <!-- Header Sectoin -->
   <header>
@@ -20,21 +21,21 @@
       <h1>Food Delivery Service </h1>
     </div>
     <div class="icons">
-      <div class="search-icon">
+      <div class="search-icon" title="Search Here">
         <i class="fas fa-search"></i>
       </div>
-      <div class="login-icon">
+      <div class="login-icon" title="Login/SignUp">
         <i class="fas fa-user"></i>
       </div>
 
-      <div class="cart-container">
-        <div class="cart-icon" onclick="toggleCart()">
+      <div class="cart-container" title="Cart">
+        <div class="cart-icon" onclick="toggleCart()" data-count="0">
           <i id="cart-icon" class="fas fa-shopping-cart"></i>
         </div>
       </div>
-
     </div>
   </header>
+
 
 
   <div class="container mt-4">
@@ -44,11 +45,12 @@
         <div class="radio-group">
           <input type="radio" id="paypal-option" name="payment-option" value="paypal">
           <label for="paypal-option" class="radio-label"><i class="fa-brands fa-paypal fa-2xl" style="color: #567cbd;"></i>PayPal</label>
-          <input type="radio" id="card-option" name="payment-option" value="card">
-          <label for="card-option" class="radio-label">&#128179;Credit/Debit Card</label>
 
           <input type="radio" id="card-option" name="payment-option" value="card">
           <label for="card-option" class="radio-label">&#128179;Credit/Debit Card</label>
+
+          <input type="radio" id="cash-option" name="payment-option" value="cash" checked>
+          <label for="cash-option" class="radio-label">Cash on Delivery</label>
         </div>
       </div>
       <div class="form-group" id="paypal-fields">
@@ -113,6 +115,10 @@
         cardFields.style.display = 'none';
       } else if (document.getElementById('card-option').checked) {
         cardFields.style.display = 'block';
+        paypalFields.style.display = 'none';
+      }
+      else if (document.getElementById('cash-option').checked) {
+        cardFields.style.display = 'none';
         paypalFields.style.display = 'none';
       }
     });

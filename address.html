@@ -15,27 +15,26 @@
 
 <body>
   
-   <!-- Header Sectoin -->
-   <header>
-    <div class="logo">
-      <h1>Food Delivery Service </h1>
+<!-- Header Sectoin -->
+<header>
+  <div class="logo">
+    <h1>Food Delivery Service </h1>
+  </div>
+  <div class="icons">
+    <div class="search-icon" title="Search Here">
+      <i class="fas fa-search"></i>
     </div>
-    <div class="icons">
-      <div class="search-icon">
-        <i class="fas fa-search"></i>
-      </div>
-      <div class="login-icon">
-        <i class="fas fa-user"></i>
-      </div>
-
-      <div class="cart-container">
-        <div class="cart-icon" onclick="toggleCart()">
-          <i id="cart-icon" class="fas fa-shopping-cart"></i>
-        </div>
-      </div>
-
+    <div class="login-icon" title="Login/SignUp">
+      <i class="fas fa-user"></i>
     </div>
-  </header>
+
+    <div class="cart-container" title="Cart">
+      <div class="cart-icon" onclick="toggleCart()" data-count="0">
+        <i id="cart-icon" class="fas fa-shopping-cart"></i>
+      </div>
+    </div>
+  </div>
+</header>
 
 
   <div class="container mt-3">

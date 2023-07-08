@@ -31,11 +31,10 @@
       </div>
 
       <div class="cart-container" title="Cart">
-        <div class="cart-icon" onclick="toggleCart()">
+        <div class="cart-icon" onclick="toggleCart()" data-count="0">
           <i id="cart-icon" class="fas fa-shopping-cart"></i>
         </div>
       </div>
-
     </div>
   </header>
 
@@ -48,7 +47,7 @@
       <div class="col-12">
         <div class="dashboard">
 
-<!-- Slider Code -->
+          <!-- Slider Code -->
           <div class="carousel">
             <div class="carousel-inner">
               <img src="./images/Home.jpg" alt="Image 3">
@@ -58,146 +57,171 @@
               <img src="./images/burger.jpg" alt="Image 5">
             </div>
           </div>
-          
+
 
 
           <!-- Menus -->
           <hr class="Line">
           <div class="dashboard-menu">
-            <button class="menu-btn active" data-category="all">All</button>
-            <button class="menu-btn" data-category="pizza"  onclick="scrollToCategory('p')">Pizza</button>
-            <button class="menu-btn" data-category="burgers"  onclick="scrollToCategory('B')">Burgers</button>
-            <button class="menu-btn" data-category="desserts"  onclick="scrollToCategory('d')">Desserts</button>
-            <button class="menu-btn" data-category="beverages"  onclick="scrollToCategory('b')"> Beverages</button>
+            <button class="menu-btn" data-category="all">All</button>
+            <button class="menu-btn" data-category="pizza" onclick="scrollToCategory('p',this)">Pizza</button>
+            <button class="menu-btn" data-category="burgers" onclick="scrollToCategory('B',this)">Burgers</button>
+            <button class="menu-btn" data-category="desserts" onclick="scrollToCategory('d',this)">Desserts</button>
+            <button class="menu-btn" data-category="beverages" onclick="scrollToCategory('b',this)"> Beverages</button>
           </div>
-          <hr class="Line">                        
+          <hr class="Line">
           <h2 id="B">Burgers</h2>
           <div class="dashboard-content">
             <div class="row">
               <!-- Burgers -->
 
-              <div class="col-lg-3 col-md-6 food-item burgers">
+              <div class="col-lg-2 col-md-6 food-item burgers">
                 <div class="dashboard-card" data-id="1">
                   <img src="./images/burger1.jpg" alt="" class="card-image">
                   <div class="card-detail">
                     <h4>Beef Burger</h4>
-                    <p>Freshly Made Burger with the Yummiest</p>
+                    <p>Freshly Made Burger</p>
                     <hr>
-                    <span class="price">  560.00</span>
+                    <span class="price"> 560.00</span>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-lg-2 col-md-6 food-item burgers">
+                <div class="dashboard-card" data-id="1">
+                  <img src="./images/burger1.jpg" alt="" class="card-image">
+                  <div class="card-detail">
+                    <h4>Beef Burger</h4>
+                    <p>Freshly Made Burger</p>
+                    <hr>
+                    <span class="price"> 560.00</span>
                     <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
               <!-- ... other burger items ... -->
-              <div class="col-lg-3 col-md-6 food-item burgers"  >
+              <div class="col-lg-2 col-md-6 food-item burgers">
                 <div class="dashboard-card" data-id="3">
                   <img src="./images/burger1.jpg" alt="" class="card-image">
                   <div class="card-detail">
                     <h4>Zinger Burger </h4>
-                    <p>You would like to eat this</p>
+                    <p>You would like to eat</p>
                     <hr>
-                    <span class="price">  560.00</span>
+                    <span class="price"> 560.00</span>
                     <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6 food-item burgers"  >
+              <div class="col-lg-2 col-md-6 food-item burgers">
                 <div class="dashboard-card" data-id="4">
                   <img src="./images/burger1.jpg" alt="" class="card-image">
                   <div class="card-detail">
                     <h4>Cheese Burger </h4>
-                    <p>You would like to eat this</p>
+                    <p>You would like to eat</p>
                     <hr>
-                    <span class="price">  560.00</span>
+                    <span class="price"> 560.00</span>
                     <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6 food-item burgers"  >
+              <div class="col-lg-2 col-md-6 food-item burgers">
                 <div class="dashboard-card" data-id="5">
                   <img src="./images/burger1.jpg" alt="" class="card-image">
                   <div class="card-detail">
                     <h4>Loaded Burger </h4>
-                    <p>You would like to eat this</p>
+                    <p>You would like to eat</p>
                     <hr>
-                    <span class="price">  560.00</span>
+                    <span class="price"> 560.00</span>
                     <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-  
-        <!-- Pizza Category -->
+
+          <!-- Pizza Category -->
           <hr class="Line">
           <h2 id="p">Pizza</h2>
           <div class="dashboard-content">
             <div class="row">
 
-              <div class="col-lg-3 col-md-6 food-item pizza"  >
+              <div class="col-lg-2 col-md-6 food-item pizza">
                 <div class="dashboard-card" data-id="6">
                   <img src="./images/pizza.jpg" alt="" class="card-image">
                   <div class="card-detail">
                     <h4>Delicious Pizza</h4>
-                    <p>You would like to eat this</p>
+                    <p>You would like to eat</p>
                     <hr>
-                    <span class="price">  560.00</span>
+                    <span class="price"> 560.00</span>
 
                     <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6  food-item pizza"  >
+              <div class="col-lg-2 col-md-6  food-item pizza">
                 <div class="dashboard-card" data-id="7">
                   <img src="./images/pizza.jpg" alt="" class="card-image">
                   <div class="card-detail">
                     <h4>Delicious Pizza</h4>
-                    <p>You would like to eat this</p>
+                    <p>You would like to eat</p>
                     <hr>
-                    <span class="price">  560.00</span>
+                    <span class="price"> 560.00</span>
                     <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6 food-item pizza"  >
+              <div class="col-lg-2 col-md-6  food-item pizza">
+                <div class="dashboard-card" data-id="7">
+                  <img src="./images/pizza.jpg" alt="" class="card-image">
+                  <div class="card-detail">
+                    <h4>Delicious Pizza</h4>
+                    <p>You would like to eat</p>
+                    <hr>
+                    <span class="price"> 560.00</span>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-6 food-item pizza">
                 <div class="dashboard-card" data-id="8">
                   <img src="./images/pizza.jpg" alt="" class="card-image">
                   <div class="card-detail">
                     <h4>Delicious Pizza</h4>
-                    <p>You would like to eat this</p>
+                    <p>You would like to eat</p>
                     <hr>
-                    <span class="price">  560.00</span>
+                    <span class="price"> 560.00</span>
                     <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
 
-              <div class="col-lg-3 col-md-6 food-item pizza"  >
+              <div class="col-lg-2 col-md-6 food-item pizza">
                 <div class="dashboard-card" data-id="9">
                   <img src="./images/pizza.jpg" alt="" class="card-image">
                   <div class="card-detail">
                     <h4>Delicious Pizza </h4>
-                    <p>You would like to eat this</p>
+                    <p>You would like to eat</p>
                     <hr>
-                    <span class="price">  560.00</span>
+                    <span class="price"> 560.00</span>
                     <a href="#" class="btn add-to-cart-btn " onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-  
-        <!-- Desserts Category -->
+
+          <!-- Desserts Category -->
           <hr class="Line">
           <h2 id="d">Desserts</h2>
           <div class="dashboard-content">
             <div class="row">
-              <div class="col-lg-3 col-md-6 food-item desserts"  >
+              <div class="col-lg-2 col-md-6 food-item desserts">
                 <div class="dashboard-card" data-id="10">
                   <img src="./images/desert1.jpg" alt="" class="card-image">
                   <div class="card-detail">
                     <h4>Healthy Dessert</h4>
-                    <p>You would like to eat this</p>
+                    <p>You would like to eat</p>
                     <hr>
                     <span class="price">560.00</span>
                     <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
@@ -205,70 +229,95 @@
                 </div>
               </div>
 
-              <div class="col-lg-3 col-md-6 food-item desserts">
+              <div class="col-lg-2 col-md-6 food-item desserts">
                 <div class="dashboard-card" data-id="11">
                   <img src="./images/desert1.jpg" alt="" class="card-image">
                   <div class="card-detail">
                     <h4>Healthy Dessert</h4>
-                    <p>You would like to eat this</p>
+                    <p>You would like to eat</p>
                     <hr>
-                    <span class="price">   560.00</span>
+                    <span class="price"> 560.00</span>
                     <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6 food-item desserts">
-                <div class="dashboard-card" data-id="12">
+              <div class="col-lg-2 col-md-6 food-item desserts">
+                <div class="dashboard-card" data-id="11">
                   <img src="./images/desert1.jpg" alt="" class="card-image">
                   <div class="card-detail">
-                    <h4>Healthy Dessert </h4>
-                    <p>You would like to eat this</p>
+                    <h4>Healthy Dessert</h4>
+                    <p>You would like to eat</p>
                     <hr>
-                    <span class="price">   560.00</span>
-                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
-                  </div>
-                </div>
-              </div>  
-            </div>
-          </div>  
-        <!-- Beverages Category -->
-          <hr class="Line">
-          <h2 id="b">Beverages</h2>
-          <div class="dashboard-content">
-            <div class="row">
-              <div class="col-lg-3 col-md-6 food-item beverages">
-                <div class="dashboard-card" data-id="13">
-                  <img src="./images/beverage1.jpg" alt="" class="card-image">
-                  <div class="card-detail">
-                    <h4>Healthy Juice</h4>
-                    <p>You would like to eat this</p>
-                    <hr>
-                    <span class="price">   560.00</span>
+                    <span class="price"> 560.00</span>
                     <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
 
-              <div class="col-lg-3 col-md-6 food-item beverages">
+              <div class="col-lg-2 col-md-6 food-item desserts">
+                <div class="dashboard-card" data-id="12">
+                  <img src="./images/desert1.jpg" alt="" class="card-image">
+                  <div class="card-detail">
+                    <h4>Healthy Dessert </h4>
+                    <p>You would like to eat</p>
+                    <hr>
+                    <span class="price"> 560.00</span>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Beverages Category -->
+          <hr class="Line">
+          <h2 id="b">Beverages</h2>
+          <div class="dashboard-content">
+            <div class="row">
+              <div class="col-lg-2 col-md-6 food-item beverages">
+                <div class="dashboard-card" data-id="13">
+                  <img src="./images/beverage1.jpg" alt="" class="card-image">
+                  <div class="card-detail">
+                    <h4>Healthy Juice</h4>
+                    <p>You would like to eat</p>
+                    <hr>
+                    <span class="price"> 560.00</span>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-md-6 food-item beverages">
                 <div class="dashboard-card" data-id="14">
                   <img src="./images/beverage1.jpg" alt="" class="card-image">
                   <div class="card-detail">
                     <h4>Healthy Juice</h4>
-                    <p>You would like to eat this</p>
+                    <p>You would like to eat</p>
                     <hr>
                     <span class="price">560.00</span>
                     <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6 food-item beverages">
+              <div class="col-lg-2 col-md-6 food-item beverages">
                 <div class="dashboard-card" data-id="15">
                   <img src="./images/beverage1.jpg" alt="" class="card-image">
                   <div class="card-detail">
                     <h4>Healthy Juice </h4>
-                    <p>You would like to eat this</p>
+                    <p>You would like to eat</p>
                     <hr>
-                    <span class="price" >560.00</span>
+                    <span class="price">560.00</span>
+                    <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-6 food-item beverages">
+                <div class="dashboard-card" data-id="15">
+                  <img src="./images/beverage1.jpg" alt="" class="card-image">
+                  <div class="card-detail">
+                    <h4>Healthy Juice </h4>
+                    <p>You would like to eat</p>
+                    <hr>
+                    <span class="price">560.00</span>
                     <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
                   </div>
                 </div>
@@ -279,91 +328,97 @@
       </div>
     </div>
   </div>
-  
 
 
 
 
 
-  <!-- Cart Code -->
-  <div class="side-cart" id="sideCart">
-    <h4>Your Cart</h4>
-    <span onclick="clearCart()">Clear Cart</span>
-  
-    <div class="cart-items">
-      <!-- Cart items will be dynamically added here -->
-    </div>
-  
-    <div class="cart-footer">
-      <span>Subtotal: <span id="subtotal">0.00</span></span>
-      <span>Delivery Fee: <span id="deliveryFee">0.00</span></span>
-      <span>Total Price: <span id="totalPrice">0.00</span></span>
-      <a href="payment.html"><button class="btn checkout-btn">Checkout</button></a>
-    </div>
+
+<!-- Cart Code -->
+<div class="side-cart" id="sideCart">
+  <h4>Your Cart</h4>
+  <span onclick="clearCart()">Clear Cart</span>
+
+  <div class="cart-items">
+    <div class="hint-text">Your cart is empty <br>
+      Add an item and start making your order
+      
+    </div> <!-- Hint text -->
+    <!-- Cart items will be dynamically added here -->
   </div>
-  
 
-
-<!-- Questions -->
-<div class="questions mt-5">
-  <h2>Finest Taste Ever</h2>
-  <div class="section mt-4">
-
-
-
-    <div class="question" onclick="toggleAnswer('answer1')" id="qanswer1">Craving for Something Cheesy and Magical <span> &#x25BC;</span></div>
-
-
-    <div class="answer" id="answer1">
-      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
-        A deal that is light on the pocket yet packed with flavors that are all set to tantalize your taste buds 
-      </p>
-      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
-        We offer a variety of fast food items in our menu, including your favorite 
-        <strong>pizza and zinger burger</strong>
-        bursting with flavors.
-      </p>
-      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
-        Even if at midnight you crave for something super delicious, dine-in isn't possible while you search for 
-        <strong>pizza delivery near me</strong>
-        , just look up for Cheezious and we'll help fill your tummy with food that is finger-licking good.
-      </p>
-    </div>
-
-
-    <div class="question" onclick="toggleAnswer('answer2')" id="qanswer2">So what makes us different from the rest. <span> &#x25BC;</span>   </div>
-
-
-    <div class="answer" id="answer2">
-      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
-        The TASTE, of course! And our deals too!
-      </p>
-      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
-        Are you up for looking for the best and affordable 
-       <strong>zinger burger deals</strong>
-       in the twin cities? We bet you won't find deals better than ours.
-      </p>
-
-      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
-        We are sure, once you try our food, you'll come back for more!
-      </p>
-     </div>
-
-    <div class="question" onclick="toggleAnswer('answer3')" id="qanswer3">Who are we? <span> &#x25BC;</span></div>
-    <div class="answer" id="answer3">
-     
-      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
-        We are a new set up in the twin cities, bringing exciting flavor for you to enjoy.
-      </p>
-
-      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
-        Yes, we know you can find burgers and pizzas everywhere but not as good as ours!        
-      </p>
-
-
-    </div>
+  <div class="cart-footer">
+    <span>Subtotal: <span id="subtotal">0.00</span></span>
+    <span>Delivery Fee: <span id="deliveryFee">0.00</span></span>
+    <span>Total Price: <span id="totalPrice">0.00</span></span>
+    <a href="payment.html"><button class="btn checkout-btn">Checkout</button></a>
   </div>
 </div>
+
+
+
+  <!-- Questions -->
+  <div class="questions mt-5">
+    <h2>Finest Taste Ever</h2>
+    <div class="section mt-4">
+
+
+
+      <div class="question" onclick="toggleAnswer('answer1')" id="qanswer1">Craving for Something Cheesy and Magical
+        <span> &#x25BC;</span></div>
+
+
+      <div class="answer" id="answer1">
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          A deal that is light on the pocket yet packed with flavors that are all set to tantalize your taste buds
+        </p>
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          We offer a variety of fast food items in our menu, including your favorite
+          <strong>pizza and zinger burger</strong>
+          bursting with flavors.
+        </p>
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          Even if at midnight you crave for something super delicious, dine-in isn't possible while you search for
+          <strong>pizza delivery near me</strong>
+          , just look up for Cheezious and we'll help fill your tummy with food that is finger-licking good.
+        </p>
+      </div>
+
+
+      <div class="question" onclick="toggleAnswer('answer2')" id="qanswer2">So what makes us different from the rest.
+        <span> &#x25BC;</span> </div>
+
+
+      <div class="answer" id="answer2">
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          The TASTE, of course! And our deals too!
+        </p>
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          Are you up for looking for the best and affordable
+          <strong>zinger burger deals</strong>
+          in the twin cities? We bet you won't find deals better than ours.
+        </p>
+
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          We are sure, once you try our food, you'll come back for more!
+        </p>
+      </div>
+
+      <div class="question" onclick="toggleAnswer('answer3')" id="qanswer3">Who are we? <span> &#x25BC;</span></div>
+      <div class="answer" id="answer3">
+
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          We are a new set up in the twin cities, bringing exciting flavor for you to enjoy.
+        </p>
+
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          Yes, we know you can find burgers and pizzas everywhere but not as good as ours!
+        </p>
+
+
+      </div>
+    </div>
+  </div>
 
 
 
@@ -417,33 +472,6 @@
 
 
 
-
-
-  <!--Services-->
-
-  <div class="services" id="Servises">
-    <h1>our<span>services</span></h1>
-
-    <div class="services_cards">
-      <div class="services_box">
-        <i class="fa-solid fa-truck-fast"></i>
-        <h3>Fast Delivery</h3>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        </p>
-      </div>
-
-      <div class="services_box">
-        <i class="fa-solid fa-headset"></i>
-        <h3>24 x 7 Support</h3>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        </p>
-      </div>
-    </div>
-
-  </div>
-
   <!-- Footer -->
   <footer>
     <div class="footer_main">
@@ -475,25 +503,25 @@
 
   <script src="./js/script.js"></script>
 
-<script>
- document.addEventListener("click", function(event) {
-  var cart = document.getElementById("sideCart");
-  var cartIcon = document.getElementById("cart-icon");
+  <script>
+    document.addEventListener("click", function (event) {
+      var cart = document.getElementById("sideCart");
+      var cartIcon = document.getElementById("cart-icon");
 
-  if (!cart.contains(event.target) && event.target !== cartIcon && !cart.contains(event.target.closest(".cart-container"))) {
-    cart.style.display = "none";
-  }
-});
+      if (!cart.contains(event.target) && event.target !== cartIcon && !cart.contains(event.target.closest(".cart-container"))) {
+        cart.style.display = "none";
+      }
+    });
 
-var cartIcon = document.getElementById("cart-icon");
-cartIcon.addEventListener("click", function() {
-  var cart = document.getElementById("sideCart");
-  cart.style.display = "block";
-});
+    var cartIcon = document.getElementById("cart-icon");
+    cartIcon.addEventListener("click", function () {
+      var cart = document.getElementById("sideCart");
+      cart.style.display = "block";
+    });
 
 
 
-</script>
+  </script>
 
 
 </body>
