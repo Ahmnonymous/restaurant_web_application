@@ -77,6 +77,57 @@ header {
   }
 
 
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 550px; /* Adjust the height as needed */
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    width: 500%; /* 5 images x 100% width each */
+    animation: carousel-animation 30s infinite; /* Adjust the animation duration as needed */
+  }
+  
+  .carousel-inner img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+  }
+  
+  @keyframes carousel-animation {
+    0% { margin-left: 0; }
+    20% { margin-left: -100%; }
+    40% { margin-left: -200%; }
+    60% { margin-left: -300%; }
+    80% { margin-left: -400%; }
+    100% { margin-left: 0; }
+  }
+  
+  
+
+
+
+
+
+
+  /* Questions Answers */
+  
+
+
+
+
+  
+
+
+
+
+
+
+
   /* Home Section */
   
 .dashboard{
@@ -84,6 +135,7 @@ header {
   width: 100%;
 
 }
+
 .dashboard-banner {
   width: 100%;
   height: 460px;
@@ -378,6 +430,54 @@ header {
 /* End of Cart Code */
 
 
+
+
+/* Question Answer Section */
+
+.questions{
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(255, 203, 4);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+
+}
+.questions>h2{
+  text-align: center;
+  font-weight: 600;
+  font-size: 40px;
+}
+.section{
+    max-width: 1000px;
+    min-width: 100px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.question {
+  background-color:rgba(0, 0, 0, 0.6);
+  color: white;
+  font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px 0px;
+  
+  padding: 10px;
+  cursor: pointer;
+}
+.question>span{
+  float: right;
+}
+
+.answer {
+  background-color: black;
+  color: white;
+  display: none;
+  padding: 10px;
+}
+
+.arrow-down {
+  float: left;
+}
 
 
 

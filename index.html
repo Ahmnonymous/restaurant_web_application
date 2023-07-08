@@ -23,14 +23,14 @@
       <h1>Food Delivery Service </h1>
     </div>
     <div class="icons">
-      <div class="search-icon">
+      <div class="search-icon" title="Search Here">
         <i class="fas fa-search"></i>
       </div>
-      <div class="login-icon">
+      <div class="login-icon" title="Login/SignUp">
         <i class="fas fa-user"></i>
       </div>
 
-      <div class="cart-container">
+      <div class="cart-container" title="Cart">
         <div class="cart-icon" onclick="toggleCart()">
           <i id="cart-icon" class="fas fa-shopping-cart"></i>
         </div>
@@ -47,12 +47,20 @@
     <div class="row">
       <div class="col-12">
         <div class="dashboard">
-            <div class="dashboard-banner">
-              <img src="./images/Home.jpg" alt="">
-              <div class="banner-promo">
-                <h1><span>50% OFF</span><br>Tasty Food<br>On Your Hand</h1>
-              </div>
+
+<!-- Slider Code -->
+          <div class="carousel">
+            <div class="carousel-inner">
+              <img src="./images/Home.jpg" alt="Image 3">
+              <img src="./images/beverage-min.jpg" alt="Image 1">
+              <img src="./images/dessert.jpg" alt="Image 2">
+              <img src="./images/pizza2.jpg" alt="Image 4">
+              <img src="./images/burger.jpg" alt="Image 5">
             </div>
+          </div>
+          
+
+
           <!-- Menus -->
           <hr class="Line">
           <div class="dashboard-menu">
@@ -294,6 +302,70 @@
     </div>
   </div>
   
+
+
+<!-- Questions -->
+<div class="questions mt-5">
+  <h2>Finest Taste Ever</h2>
+  <div class="section mt-4">
+
+
+
+    <div class="question" onclick="toggleAnswer('answer1')" id="qanswer1">Craving for Something Cheesy and Magical <span> &#x25BC;</span></div>
+
+
+    <div class="answer" id="answer1">
+      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+        A deal that is light on the pocket yet packed with flavors that are all set to tantalize your taste buds 
+      </p>
+      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+        We offer a variety of fast food items in our menu, including your favorite 
+        <strong>pizza and zinger burger</strong>
+        bursting with flavors.
+      </p>
+      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+        Even if at midnight you crave for something super delicious, dine-in isn't possible while you search for 
+        <strong>pizza delivery near me</strong>
+        , just look up for Cheezious and we'll help fill your tummy with food that is finger-licking good.
+      </p>
+    </div>
+
+
+    <div class="question" onclick="toggleAnswer('answer2')" id="qanswer2">So what makes us different from the rest. <span> &#x25BC;</span>   </div>
+
+
+    <div class="answer" id="answer2">
+      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+        The TASTE, of course! And our deals too!
+      </p>
+      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+        Are you up for looking for the best and affordable 
+       <strong>zinger burger deals</strong>
+       in the twin cities? We bet you won't find deals better than ours.
+      </p>
+
+      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+        We are sure, once you try our food, you'll come back for more!
+      </p>
+     </div>
+
+    <div class="question" onclick="toggleAnswer('answer3')" id="qanswer3">Who are we? <span> &#x25BC;</span></div>
+    <div class="answer" id="answer3">
+     
+      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+        We are a new set up in the twin cities, bringing exciting flavor for you to enjoy.
+      </p>
+
+      <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+        Yes, we know you can find burgers and pizzas everywhere but not as good as ours!        
+      </p>
+
+
+    </div>
+  </div>
+</div>
+
+
 
 
 

@@ -211,15 +211,6 @@ document.getElementById("card-option").addEventListener("change", function() {
   }
   
 
-
-
-
-
-
-
-
-
-
 // To clear the Cart data
 function clearCart() {
   var cart = document.getElementById("sideCart");
@@ -266,4 +257,24 @@ document.getElementById('driversignupForm').addEventListener('submit', function(
 function scrollToCategory(category) {
   const categoryDiv = document.getElementById(category);
   categoryDiv.scrollIntoView({ behavior: 'smooth' });
+}
+
+
+
+
+
+
+
+
+// Question Answer Sections..
+function toggleAnswer(id) {
+  var answer = document.getElementById(id);
+  var question = document.getElementById("q" + id);
+  if (answer.style.display === "none") {
+      answer.style.display = "block";
+      question.innerHTML = question.innerHTML.replace("〈", "&#x25B2;");
+    } else {
+      answer.style.display = "none";
+      question.innerHTML = question.innerHTML.replace("&#x25B2;", "〈");
+    }
 }
