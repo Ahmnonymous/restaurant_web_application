@@ -337,7 +337,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center; /* Added to vertically center the hint text */
-  align-items: center; /* Added to horizontally center the hint text */
+  align-items: center; /* Added to horizontally center the hint tsext */
 }
 
 .cart-items {
