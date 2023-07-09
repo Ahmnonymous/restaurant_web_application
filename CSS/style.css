@@ -149,7 +149,6 @@ header {
 }
 .dashboard-menu {
   display: flex;
-  flex-wrap: wrap;
   position: sticky;
   top: 0;
   padding: 0.3rem 1rem;
@@ -165,18 +164,16 @@ header {
   text-align: center;
   border-radius: 20px;
   display: block;
-  margin: 0 10px;
-  margin-bottom: 10px;
+  margin: 0 40px; /* Adjust the margin value to reduce the space between buttons */
   font-weight: 500;
-  min-width: 90px;
+  min-width: 150px; /* Decrease the minimum width of the buttons */
   padding: 0.5rem 0;
   font-size: 0.9rem;
   color: black;
   border: none;
   background-color: rgb(229, 229, 229);
-  flex: 0 0 calc(12.5% - 20px); /* Distribute 8 buttons in a single line */
+  margin-bottom: 20px;
 }
-
 .dashboard-menu > button.active {
   background-color: rgb(255, 203, 4);
   color: #000;
@@ -194,17 +191,21 @@ header {
 .dashboard-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin-left: 150px;
+  margin-left: 30px;
   margin-right: 100px;
   grid-gap: 20px; /* Add the desired space between cards */
 }
 .dashboard-content .row .col-lg-2 {
-  flex: 0 0 calc(20% - 20px);
+  flex: 0 0 calc(50% - 20px);
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 @media (max-width: 768px) {
   .dashboard-content .row .col-lg-2 {
     flex: 0 0 calc(50% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
