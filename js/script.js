@@ -85,14 +85,14 @@ function toggleVerificationCodeVisibility() {
     event.preventDefault();
     var item = event.target.closest('.dashboard-card');
     var clonedItem = item.cloneNode(true);
-    var itemId = clonedItem.getAttribute('data-item-id');
-    clonedItem.style.width = '100%';
-    clonedItem.style.marginTop="50px";
+    var itemId = clonedItem.getAttribute('data-id');
+    clonedItem.style.width = '90%';
+    clonedItem.style.height = '29%';
     var itemImage = clonedItem.querySelector('.card-image');
-    itemImage.style.maxWidth = '140px';
-    itemImage.style.height = '140px';
-    itemImage.style.marginLeft = '15px';
-    itemImage.style.marginTop = '-80px';
+    itemImage.style.maxWidth = '110px';
+    itemImage.style.height = '110px';
+    itemImage.style.marginLeft = '2px';
+    itemImage.style.marginTop = '-70px';
   
     var originalImage = item.querySelector('.card-image');
     var clonedImage = clonedItem.querySelector('.card-image');
@@ -109,6 +109,8 @@ function toggleVerificationCodeVisibility() {
     deleteButton.textContent = 'Delete';
     deleteButton.style.color = 'red';
     deleteButton.style.fontSize = '20px';
+    deleteButton.style.marginTop = '-10px';
+
   
     deleteButton.onclick = removeItemFromCart;
   
@@ -118,7 +120,7 @@ function toggleVerificationCodeVisibility() {
     var cartItems = cart.getElementsByClassName('cart-item');
   
     var existingItem = Array.from(cartItems).find(function (item) {
-      var cartItemId = item.getAttribute('data-item-id');
+      var cartItemId = item.getAttribute('data-id');
       return cartItemId === itemId;
     });
   
@@ -126,7 +128,7 @@ function toggleVerificationCodeVisibility() {
       // Item doesn't exist in the cart, add it
       var cartItem = document.createElement('div');
       cartItem.className = 'cart-item';
-      cartItem.setAttribute('data-item-id', itemId);
+      cartItem.setAttribute('data-id', itemId);
   
       cartItem.appendChild(clonedItem);
   
