@@ -23,9 +23,15 @@
       <h1>Food Delivery Service </h1>
     </div>
     <div class="icons">
-      <div class="search-icon" title="Search Here">
-        <i class="fas fa-search"></i>
+
+
+      <div class="search-container">
+        <input id="search-input" type="text" placeholder="Search" onkeydown="handleSearch(event)">
+        <button id="search-button" onclick="searchWithinPage()"><i class="fas fa-search"></i></button>
       </div>
+        
+
+
       <div class="login-icon" title="Login/SignUp">
         <i class="fas fa-user"></i>
       </div>
@@ -51,7 +57,7 @@
           <div class="carousel mt-4">
             <div class="carousel-inner">
               <img src="./images/Home.jpg" alt="Image 3">
-              <img src="./images/beverage-min.jpg" alt="Image 1">
+              <img src="./images/beverage.jpg" alt="Image 1">
               <img src="./images/dessert.jpg" alt="Image 2">
               <img src="./images/pizza2.jpg" alt="Image 4">
               <img src="./images/burger.jpg" alt="Image 5">
@@ -545,6 +551,55 @@
       cart.style.display = "block";
     });
 
+
+
+
+
+
+    // Search Code
+    function handleSearch(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // Prevent form submission
+      searchWithinPage();
+    }
+  }
+
+  function searchWithinPage() {
+    var searchQuery = document.getElementById("search-input").value.toLowerCase();
+    var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, span, a, button, div");
+
+    // Remove previous highlighting
+    removeHighlighting();
+
+    for (var i = 0; i < elementsToSearch.length; i++) {
+      var element = elementsToSearch[i];
+      var text = element.innerHTML.toLowerCase();
+      var index = text.indexOf(searchQuery);
+
+      if (index !== -1) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+        
+        highlightWord(element, index, searchQuery);
+        document.getElementById("search-input").value = ""; // Clear the search field
+        return; // Stop searching after the first occurrence is found
+      }
+    }
+  }
+
+  function highlightWord(element, index, searchQuery) {
+    var start = index;
+    var end = index + searchQuery.length;
+    var highlightedText = element.innerHTML.slice(0, start) + "<span class='highlighted'>" + element.innerHTML.slice(start, end) + "</span>" + element.innerHTML.slice(end);
+    element.innerHTML = highlightedText;
+  }
+
+  function removeHighlighting() {
+    var highlightedElements = document.getElementsByClassName("highlighted");
+    while (highlightedElements.length > 0) {
+      var parentElement = highlightedElements[0].parentNode;
+      parentElement.replaceChild(document.createTextNode(highlightedElements[0].textContent), highlightedElements[0]);
+    }
+  }
 
 
   </script>

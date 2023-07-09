@@ -87,6 +87,7 @@ function toggleVerificationCodeVisibility() {
     var clonedItem = item.cloneNode(true);
     var itemId = clonedItem.getAttribute('data-item-id');
     clonedItem.style.width = '100%';
+    clonedItem.style.marginTop="50px";
     var itemImage = clonedItem.querySelector('.card-image');
     itemImage.style.maxWidth = '140px';
     itemImage.style.height = '140px';
@@ -265,3 +266,7 @@ function toggleAnswer(id) {
       question.innerHTML = question.innerHTML.replace("&#x25B2;", "〈");
     }
 }
+
+
+
+

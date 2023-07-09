@@ -1,10 +1,11 @@
 * {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
   font-family: Poppins, Tahoma;
   outline: none;
   box-sizing: border-box;
 }
+
 body {
   background-color: #f8f9fa;
 }
@@ -13,27 +14,14 @@ body {
   --maincolor: rgb(255, 203, 4);
 }
 
-::-webkit-scrollbar {
-  width: 3px;
-}
-::-webkit-scrollbar-track {
-  border-radius: 5px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: rgb(255, 203, 4);
-}
-
-/* Hr line */
 .Line {
-  border: 0.5px solid rgb(255, 203, 4);
+  border: 0.5px solid var(--maincolor);
 }
 
 section {
   padding: 2rem 7%;
 }
+
 header {
   display: flex;
   justify-content: space-between;
@@ -64,6 +52,41 @@ header {
   margin-right: 50px;
 }
 
+
+
+/* Search Field */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  padding: 7px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  margin-right: -32px;
+  background-color: rgb(251, 220, 97);
+  flex-grow: 1;
+
+}
+
+#search-button {
+  background-color: rgb(255, 203, 4);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.highlighted {
+  background-color: rgb(235, 195, 35);
+  font-weight: bold;
+}
+
+
 /* Slider on home page */
 .carousel {
   position: relative;
@@ -79,42 +102,26 @@ header {
 .carousel-inner {
   display: flex;
   width: 500%; /* 5 images x 100% width each */
- 
   animation: carousel-animation 30s infinite; /* Adjust the animation duration as needed */
 }
 
 .carousel-inner img {
   width: 100%;
   height: 550px;
-  
   object-fit: cover;
   object-position: center;
   border-radius: 10px;
 }
 
 @keyframes carousel-animation {
-  0% {
-    margin-left: 0;
-  }
-  20% {
-    margin-left: -100%;
-  }
-  40% {
-    margin-left: -200%;
-  }
-  60% {
-    margin-left: -300%;
-  }
-  80% {
-    margin-left: -400%;
-  }
-  100% {
-    margin-left: 0;
-  }
+  0%, 100% { margin-left: 0; }
+  20% { margin-left: -100%; }
+  40% { margin-left: -200%; }
+  60% { margin-left: -300%; }
+  80% { margin-left: -400%; }
 }
 
 /* Home Section */
-
 .dashboard {
   height: 100%;
   width: 100%;
@@ -147,6 +154,7 @@ header {
 .banner-promo > h1 > span {
   color: lightgrey;
 }
+
 .dashboard-menu {
   display: flex;
   position: sticky;
@@ -174,17 +182,15 @@ header {
   background-color: rgb(229, 229, 229);
   margin-bottom: 20px;
 }
-.dashboard-menu > button.active {
-  background-color: rgb(255, 203, 4);
-  color: #000;
-}
 
-
+.dashboard-menu > button.active,
 .dashboard-menu > button:hover {
   font-weight: bold;
   background-color: rgb(255, 203, 4);
   color: #000;
 }
+
+
 
 
 /* Card Items */
@@ -275,8 +281,7 @@ header {
 
 /* Card items Ended */
 
-/* Add to Card button on Card Items*/
-
+/* Add to Cart Button */
 .btn.add-to-cart-btn {
   display: block;
   margin: auto;
@@ -291,7 +296,7 @@ header {
 }
 
 .btn.add-to-cart-btn:hover {
-  background-color: rgb(255, 203, 4);
+  background-color: var(--maincolor);
   color: black;
   font-weight: 800;
 }
@@ -303,10 +308,8 @@ header {
 .btn.add-to-cart-btn:active {
   background-color: #f3f85e;
 }
-/* End */
 
-/*Side Cart Code */
-
+/* Side Cart Code */
 .cart-container {
   position: relative;
 }
@@ -348,7 +351,7 @@ header {
 .side-cart {
   position: fixed;
   bottom: 0;
-  right: 0px;
+  right: 0;
   width: 350px;
   overflow-y: scroll;
   height: 100%;
@@ -358,13 +361,13 @@ header {
   z-index: 999;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Added to vertically center the hint text */
-  align-items: center; /* Added to horizontally center the hint tsext */
+  justify-content: center;
+  align-items: center;
 }
 
 .cart-items {
   flex: 1;
-  max-height: calc(100% - 50px); /* Adjusted to leave space for the footer */
+  max-height: calc(100% - 50px);
   overflow-y: auto;
 }
 
@@ -392,8 +395,6 @@ header {
   padding: 10px;
 }
 
-/* Rest of the CSS remains unchanged */
-
 .cart-footer > span {
   font-size: 20px;
 }
@@ -402,8 +403,8 @@ header {
   font-weight: bold;
 }
 
-.cart-footer a .checkout-btn {
-  background-color: rgb(255, 203, 4);
+.cart-footer a.checkout-btn {
+  background-color: var(--maincolor);
   color: black;
   padding: 10px 20px;
   text-align: center;
@@ -417,7 +418,7 @@ header {
   margin-top: 10px;
 }
 
-.cart-footer a .checkout-btn:hover {
+.cart-footer a.checkout-btn:hover {
   background-color: rgb(147, 137, 0);
   color: white;
 }
@@ -426,17 +427,18 @@ header {
   position: absolute;
   font-weight: 600;
   top: 10px;
-  left:-7px;
+  left: -7px;
   margin-left: 30px;
   justify-content: center;
 }
+
 .side-cart > span {
   position: absolute;
   top: 10px;
   right: 10px;
   justify-content: center;
   font-size: 18px;
-  color: rgb(255, 203, 4);
+  color: var(--maincolor);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -455,6 +457,7 @@ header {
 .delete-from-cart-btn {
   margin-left: 10px;
 }
+
 @media only screen and (min-width: 768px) {
   .side-cart {
     width: 300px;
@@ -477,23 +480,24 @@ header {
   }
 }
 
-/* End of Cart Code */
+
 
 /* Question Answer Section */
-
 .questions {
   max-width: 1150px;
   margin: 0 auto;
   padding: 20px;
-  background-color: rgb(255, 203, 4);
+  background-color: var(--maincolor);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .questions > h2 {
   text-align: center;
   font-weight: 600;
   font-size: 40px;
 }
+
 .section {
   max-width: 1000px;
   min-width: 100px;
@@ -501,15 +505,16 @@ header {
   margin: auto;
   margin-bottom: 20px;
 }
+
 .question {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   font-weight: 600;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px 0px;
-
   padding: 10px;
   cursor: pointer;
 }
+
 .question > span {
   float: right;
 }
@@ -525,13 +530,12 @@ header {
   float: left;
 }
 
-/* Overlay  */
+/* Overlay */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   display: none;
@@ -558,8 +562,6 @@ form {
   flex-direction: column;
 }
 
-/* Cancel button on Overlays */
-
 .close-button {
   position: absolute;
   top: 10px;
@@ -573,18 +575,17 @@ form {
   cursor: pointer;
 }
 
-/* Hr lines on login overlay */
-
 .hr-container {
   display: flex;
   align-items: center;
 }
 
-.left-hr {
+.left-hr,
+.right-hr {
   flex-grow: 1;
   border: none;
   border-top: 1px solid #000;
-  margin-right: 10px;
+  margin: 0 10px;
 }
 
 .or-text {
@@ -592,18 +593,13 @@ form {
   color: #999;
 }
 
-.right-hr {
-  flex-grow: 1;
-  border: none;
-  border-top: 1px solid #000;
-  margin-left: 10px;
-}
 a {
   text-decoration: none;
   color: black;
   text-align: center;
   margin-top: 15px;
 }
+
 a:hover {
   text-decoration: none;
   color: var(--maincolor);
@@ -640,6 +636,7 @@ input[type="password"] {
   border-radius: 5px;
   font-size: 16px;
 }
+
 label {
   font-size: large;
   margin-top: 5px;
@@ -659,13 +656,14 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   color: #000;
-  background-color: rgb(255, 203, 4) !important;
+  background-color: var(--maincolor) !important;
 }
 
 #paypal-fields,
 #card-fields {
   display: none;
 }
+
 .radio-group {
   display: flex;
   align-items: center;
@@ -678,10 +676,6 @@ button[type="submit"]:hover {
   font-weight: 500;
 }
 
-button[type="submit"]:hover {
-  background-color: #45a049;
-}
-
 @media screen and (max-width: 480px) {
   .container {
     max-width: 100%;
@@ -689,18 +683,20 @@ button[type="submit"]:hover {
   }
 }
 
-/* Address Page CSS */
 
+/* Address Page CSS */
+/* Address Page CSS */
 .addresses {
-  border-top: 1px solid lightgrey;
   margin-left: 20px;
   width: fit-content;
-  border-bottom: 1px solid lightgrey;
+  border: 1px solid lightgrey;
   margin-top: 20px;
 }
+
 .addresses > h2 {
   font-weight: bold;
 }
+
 .addresses > ul {
   list-style: none;
   padding: 0;
@@ -720,9 +716,9 @@ button[type="submit"]:hover {
 }
 
 .address-item div {
-  float: left;
   margin-left: 20px;
 }
+
 .delete-btn {
   color: red;
   cursor: pointer;
@@ -765,14 +761,12 @@ label {
 }
 
 /* Footer */
-
 footer {
   background-color: rgb(255, 255, 255);
   color: black;
   padding: 40px 0;
   display: block;
   margin: auto;
-  min-width: 400px;
   max-width: 1000px;
   border: 2px solid rgb(243, 243, 243);
   border-radius: 20px;
@@ -785,16 +779,8 @@ footer {
   margin: 0 auto;
 }
 
-.contact {
-  flex-basis: 25%;
-  margin-bottom: 40px;
-}
-
-.timing {
-  flex-basis: 25%;
-  margin-bottom: 40px;
-}
-
+.contact,
+.timing,
 .follow_us {
   flex-basis: 25%;
   margin-bottom: 40px;
@@ -817,6 +803,7 @@ footer {
 .tag a i {
   margin-right: 5px;
 }
+
 .tag a .fa-house {
   margin-left: 19px;
 }
@@ -835,12 +822,14 @@ footer {
   font-size: 20px;
   margin-right: 50px;
 }
+
 .social_link a:hover {
   color: white;
 }
+
 .line {
   border-radius: 3px;
-  margin: 20px 20px;
+  margin: 20px;
   border: 1.5px solid black;
 }
 
