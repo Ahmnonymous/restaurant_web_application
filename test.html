@@ -1,71 +1,249 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    .questions {
-      margin-top: 5px;
-    }
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/css/flag-icon.min.css">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    .section {
-      margin-bottom: 10px;
-    }
-
-    .question {
-      cursor: pointer;
-      margin-bottom: 5px;
-    }
-
-    .arrow-down {
-      display: inline-block;
-      transform: rotateX(0deg);
-      transition: transform 0.3s ease;
-    }
-
-    .arrow-up {
-      transform: rotateX(180deg);
-    }
-
-    .answer {
-      display: none;
-    }
-
-    .show-answer .answer {
-      display: block;
-    }
-  </style>
+  <title>Restaurant Website</title>
 </head>
 <body>
-  <div class="questions mt-5">
-    <div class="section">
-      <div class="question" onclick="toggleAnswer('qanswer1')" id="qanswer1">
-        What is the capital of France?
-        <span class="arrow-down"></span>
-      </div>
-      <div class="answer" id="answer1">A: The capital of France is Paris.</div>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <h1>Food Delivery Service</h1>
     </div>
-    <div class="section">
-      <div class="question" onclick="toggleAnswer('qanswer2')" id="qanswer2">
-        Who wrote the novel "Pride and Prejudice"?
-        <span class="arrow-down"></span>
+    <div class="icons">
+      <div class="search-icon" title="Search Here">
+        <i class="fas fa-search"></i>
       </div>
-      <div class="answer" id="answer2">A: "Pride and Prejudice" was written by Jane Austen.</div>
+      <div class="login-icon" title="Login/SignUp">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="cart-container" title="Cart">
+        <div class="cart-icon" onclick="toggleCart()" data-count="0">
+          <i id="cart-icon" class="fas fa-shopping-cart"></i>
+        </div>
+      </div>
     </div>
-    <div class="section">
-      <div class="question" onclick="toggleAnswer('qanswer3')" id="qanswer3">
-        What is the tallest mountain in the world?
-        <span class="arrow-down"></span>
+  </header>
+
+  <!-- Home Section -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="dashboard">
+          <!-- Slider Code -->
+          <div class="carousel">
+            <div class="carousel-inner">
+              <img src="./images/Home.jpg" alt="Image 3">
+              <img src="./images/beverage-min.jpg" alt="Image 1">
+              <img src="./images/dessert.jpg" alt="Image 2">
+              <img src="./images/pizza2.jpg" alt="Image 4">
+              <img src="./images/burger.jpg" alt="Image 5">
+            </div>
+          </div>
+
+          <!-- Menus -->
+          <div class="dashboard-menu"></div>
+
+          
+          <h2 id="B" class="mx-5"></h2>
+          <hr class="Line">
+          <div class="dashboard-content">
+            <div class="row">
+              <!-- Insert the dynamically generated item cards here -->
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="answer" id="answer3">A: Mount Everest is the tallest mountain in the world.</div>
     </div>
   </div>
 
+  <!-- Cart Code -->
+  <div class="side-cart" id="sideCart" style="right: -350px;">
+    <h4>Your Cart</h4>
+    <span onclick="clearCart()">Clear Cart</span>
+    <div class="cart-items">
+      <div class="hint-text">Your cart is empty <br>Add an item and start making your order</div>
+      <!-- Cart items will be dynamically added here -->
+    </div>
+    <div class="cart-footer">
+      <span>Subtotal: <span id="subtotal">0.00</span></span>
+      <span>Delivery Fee: <span id="deliveryFee">0.00</span></span>
+      <span>Total Price: <span id="totalPrice">0.00</span></span>
+      <a href="payment.html"><button class="btn checkout-btn">Checkout</button></a>
+    </div>
+  </div>
+
+  <!-- Questions -->
+  <div class="questions mt-5">
+    <h2>Finest Taste Ever</h2>
+    <div class="section mt-4">
+      <div class="question" onclick="toggleAnswer('answer1')" id="qanswer1">Craving for Something Cheesy and Magical<span> &#x25BC;</span></div>
+      <div class="answer" id="answer1">
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          A deal that is light on the pocket yet packed with flavors that are all set to tantalize your taste buds
+        </p>
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          We offer a variety of fast food items in our menu, including your favorite
+          <strong>pizza and zinger burger</strong>
+          bursting with flavors.
+        </p>
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          Even if at midnight you crave for something super delicious, dine-in isn't possible while you search for
+          <strong>pizza delivery near me</strong>
+          , just look up for Cheezious and we'll help fill your tummy with food that is finger-licking good.
+        </p>
+      </div>
+
+      <div class="question" onclick="toggleAnswer('answer2')" id="qanswer2">So what makes us different from the rest<span> &#x25BC;</span></div>
+      <div class="answer" id="answer2">
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          The TASTE, of course! And our deals too!
+        </p>
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          Are you up for looking for the best and affordable
+          <strong>zinger burger deals</strong>
+          in the twin cities? We bet you won't find deals better than ours.
+        </p>
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          We are sure, once you try our food, you'll come back for more!
+        </p>
+      </div>
+
+      <div class="question" onclick="toggleAnswer('answer3')" id="qanswer3">Who are we?<span> &#x25BC;</span></div>
+      <div class="answer" id="answer3">
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          We are a new set up in the twin cities, bringing exciting flavor for you to enjoy.
+        </p>
+        <p style="line-height: 1.6; color:rgb(255, 255, 255); font-size: 14px;">
+          Yes, we know you can find burgers and pizzas everywhere but not as good as ours!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Overlay -->
+  <div id="login-overlay" class="overlay">
+    <div class="login-container">
+      <button class="close-button" onclick="closeOverlay()">X</button>
+
+      <h3>Enter your mobile number</h3>
+
+      <p>Please confirm your country code and enter your mobile number</p>
+      <form id="login-form">
+        <input type="phone" id="phone" name="phone" required>
+        <p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+        <button type="submit" class="login" onclick="showVerificationOverlay()">Login</button>
+      </form>
+
+      <div class="hr-container">
+        <hr class="left-hr">
+        <span class="or-text">OR</span>
+        <hr class="right-hr">
+      </div>
+      <!-- signup form link -->
+      <a href="signup.html">Don't have an account? Sign Up</a>
+
+    </div>
+  </div>
+
+  <!-- Verification Overlay -->
+  <div id="verification-overlay" class="overlay">
+    <div class="verification-container">
+      <button class="close-button" onclick="closeOverlay()">X</button>
+      <h3>Verify SMS Code</h3>
+      <p>Please enter the verification code sent to your mobile number.</p>
+      <form id="verification-form">
+        <div class="verification-code-container">
+          <input type="text" id="verification-code" name="verification-code" required>
+          <button type="button" class="toggle-visibility" onclick="toggleVerificationCodeVisibility()">
+            <i id="toggle-icon" class="fas fa-eye-slash"></i>
+          </button>
+        </div>
+        <button type="submit" class="verify">Verify</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-4">
+    <div class="footer_main">
+      <div class="tag">
+        <h1>Contact</h1>
+        <a href="#"><i class="fa-solid fa-house"></i>123/Colombo/Sri Lanka</a>
+        <a href="#"><i class="fa-solid fa-phone"></i> <span>+94 12 345 6789</span></a>
+        <a href="#"><i class="fa-solid fa-envelope"></i>contact@gmail.com</a>
+      </div>
+
+      <div class="tag">
+        <h1>Our Timing</h1>
+        <a href="#" class="center">Monday - Sunday <span>11:00 AM - 03:00 AM</span> </a>
+      </div>
+
+      <div class="tag follow_us">
+        <h1>Follow Us</h1>
+        <div class="social_link">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="line">
+    <p class="copyright">&copy; 2023 Powered By <span>Blink Co.</span></p>
+  </footer>
+
+  <script src="./js/script.js"></script>
+
   <script>
-    function toggleAnswer(questionId) {
-      var questionElement = document.getElementById(questionId);
-      var answerElement = document.getElementById(questionId.replace('q', 'answer'));
-      questionElement.classList.toggle("show-answer");
-      questionElement.getElementsByClassName('arrow-down')[0].classList.toggle("arrow-up");
-    }
+    document.addEventListener("click", function (event) {
+      var cart = document.getElementById("sideCart");
+      var cartIcon = document.getElementById("cart-icon");
+
+      if (!cart.contains(event.target) && event.target !== cartIcon && !cart.contains(event.target.closest(".cart-container"))) {
+        cart.style.display = "none";
+      }
+    });
+
+    var cartIcon = document.getElementById("cart-icon");
+    cartIcon.addEventListener("click", function () {
+      var cart = document.getElementById("sideCart");
+      cart.style.display = "block";
+    });
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Load the dynamic category menu using AJAX
+      $.ajax({
+        url: "menu.cgi",
+        method: "GET",
+        dataType: "html",
+        success: function(data) {
+          $(".dashboard-menu").html(data);
+        },
+        error: function() {
+          $(".dashboard-menu").html("<p>Error loading categories.</p>");
+        }
+      });
+
+      // Load the dynamic item cards using AJAX
+      $.ajax({
+        url: "item.cgi",
+        method: "GET",
+        dataType: "html",
+        success: function(data) {
+          $(".dashboard-content .row").html(data);
+        },
+        error: function() {
+          $(".dashboard-content .row").html("<p>Error loading items.</p>");
+        }
+      });
+    });
   </script>
 </body>
 </html>
