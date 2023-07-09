@@ -71,12 +71,12 @@ function toggleVerificationCodeVisibility() {
   // Cart Showing Code
   function toggleCart() {
     var cart = document.getElementById("sideCart");
-    if (cart.style.right === "-300px") {
+    if (cart.style.right === "-350px") {
       // Show the side cart
       cart.style.right = "0";
     } else {
       // Hide the side cart
-      cart.style.right = "-300px";
+      cart.style.right = "-350px";
     }
   }
   

@@ -148,7 +148,7 @@ header {
   padding: 0.3rem 1rem;
   overflow-x: auto;
   z-index: 100; /* Set a higher z-index value to ensure the buttons appear above other elements */
-  background-color: white; /* Optional: Set a background color for the sticky menu */
+  background-color: #f8f9fa; /* Optional: Set a background color for the sticky menu */
 }
 
 .dashboard-menu > button {
@@ -180,23 +180,24 @@ header {
 
 
 /* Card Items */
-
 .dashboard-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1.5fr));
-  gap: 2px;
-  margin-left: 200px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-left: 150px;
   margin-right: 100px;
+  grid-gap: 20px; /* Add the desired space between cards */
 }
+
 .dashboard-card {
-  width: 100%;
-  margin-left: 15px;
+  width: 120%;
+  margin-left: 10px;
   background-color: rgb(241, 241, 241);
   border-radius: 15px;
   position: relative;
   cursor: pointer;
   border: 1px solid lightgrey;
 }
+
 
 .dashboard-card:hover {
   border: 2px solid var(--maincolor);
@@ -326,7 +327,7 @@ header {
   position: fixed;
   bottom: 0;
   right: 0px;
-  width: 300px;
+  width: 350px;
   overflow-y: scroll;
   height: 100%;
   background-color: rgb(255, 255, 255);
@@ -400,8 +401,10 @@ header {
 }
 
 .side-cart > h4 {
+  position: absolute;
   font-weight: 600;
-  margin-top: 10px;
+  top: 10px;
+  left:-7px;
   margin-left: 30px;
   justify-content: center;
 }
