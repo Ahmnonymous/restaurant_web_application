@@ -21,9 +21,16 @@
     <h1>Food Delivery Service </h1>
   </div>
   <div class="icons">
-    <div class="search-icon" title="Search Here">
-      <i class="fas fa-search"></i>
+
+
+    <div class="search-container">
+      <button id="search-button" onclick="showSearchInput()"><i class="fas fa-search"></i></button>
+      <input id="search-input" type="text" placeholder="Search" onkeydown="handleSearch(event)">
     </div>
+    
+      
+
+
     <div class="login-icon" title="Login/SignUp">
       <i class="fas fa-user"></i>
     </div>
@@ -35,6 +42,7 @@
     </div>
   </div>
 </header>
+
 
 
   <div class="container mt-3">

@@ -21,13 +21,18 @@
       <h1>Food Delivery Service </h1>
     </div>
     <div class="icons">
-      <div class="search-icon" title="Search Here">
-        <i class="fas fa-search"></i>
+  
+  
+      <div class="search-container">
+        <button id="search-button" onclick="showSearchInput()"><i class="fas fa-search"></i></button>
+        <input id="search-input" type="text" placeholder="Search" onkeydown="handleSearch(event)">
       </div>
+      
+        
       <div class="login-icon" title="Login/SignUp">
         <i class="fas fa-user"></i>
       </div>
-
+  
       <div class="cart-container" title="Cart">
         <div class="cart-icon" onclick="toggleCart()" data-count="0">
           <i id="cart-icon" class="fas fa-shopping-cart"></i>
@@ -35,7 +40,7 @@
       </div>
     </div>
   </header>
-
+  
 
 
 
@@ -79,12 +84,12 @@
       </form>
     </div>
 
+
     <div class="cart mt-3" style="flex: 1; background-color: lightgrey; padding: 20px; margin-left: 40px; margin-right: 20px; border-radius: 10px;">
       <h2 style="text-align: center;">Your Cart</h2>
-      <!-- Cart content -->
-
       
     </div>
+    
     
   </div>
   
@@ -140,7 +145,77 @@
         paypalFields.style.display = 'none';
       }
     });
+
+
+
+    const searchContainer = document.querySelector('.search-container');
+  const searchInput = document.getElementById('search-input');
+    document.addEventListener('click', function(event) {
+    const isClickedInsideSearchContainer = searchContainer.contains(event.target);
+    if (!isClickedInsideSearchContainer) {
+      searchInput.style.display = 'none';
+    }
+  });
+
+    function showSearchInput() {
+  var searchInput = document.getElementById("search-input");
+  searchInput.style.display = "inline-block";
+  searchInput.focus();
+}
+
+function handleSearch(event) {
+  if (event.keyCode === 13) { // Enter key pressed
+    searchWithinPage();
+    hideSearchInput();
+  }
+}
+
+function hideSearchInput() {
+  var searchInput = document.getElementById("search-input");
+  searchInput.style.display = "none";
+}
+
+
+function searchWithinPage() {
+    var searchQuery = document.getElementById("search-input").value.toLowerCase();
+    var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, span, a, button, div");
+
+    // Remove previous highlighting
+    removeHighlighting();
+
+    for (var i = 0; i < elementsToSearch.length; i++) {
+      var element = elementsToSearch[i];
+      var text = element.innerHTML.toLowerCase();
+      var index = text.indexOf(searchQuery);
+
+      if (index !== -1) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+        
+        highlightWord(element, index, searchQuery);
+        document.getElementById("search-input").value = ""; // Clear the search field
+        return; // Stop searching after the first occurrence is found
+      }
+    }
+  }
+
+  function highlightWord(element, index, searchQuery) {
+    var start = index;
+    var end = index + searchQuery.length;
+    var highlightedText = element.innerHTML.slice(0, start) + "<span class='highlighted'>" + element.innerHTML.slice(start, end) + "</span>" + element.innerHTML.slice(end);
+    element.innerHTML = highlightedText;
+  }
+
+  function removeHighlighting() {
+    var highlightedElements = document.getElementsByClassName("highlighted");
+    while (highlightedElements.length > 0) {
+      var parentElement = highlightedElements[0].parentNode;
+      parentElement.replaceChild(document.createTextNode(highlightedElements[0].textContent), highlightedElements[0]);
+    }
+  }
+
   </script>
+
+  <!-- <script src="./js/script.js"></script> -->
 
 
 

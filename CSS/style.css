@@ -4,7 +4,10 @@
   font-family: Poppins, Tahoma;
   outline: none;
   box-sizing: border-box;
+  transition: all 0.3s ease-in; /* Added smooth transition to all properties */
+
 }
+
 
 body {
   background-color: #f8f9fa;
@@ -16,10 +19,21 @@ body {
 
 .Line {
   border: 0.5px solid var(--maincolor);
+  transition: border-color 0.3s ease; /* Added smooth transition to border color */
+
+}
+::-webkit-scrollbar{
+  width: 2px;
+  background-color: rgb(255, 203, 4);
+  border-radius: 5px;
+  transition: width 0.3s ease; /* Added smooth transition to scrollbar width */
+
 }
 
 section {
   padding: 2rem 7%;
+  transition: padding 0.3s ease; /* Added smooth transition to padding */
+
 }
 
 header {
@@ -28,6 +42,8 @@ header {
   align-items: center;
   background-color: var(--maincolor);
   padding: 10px;
+  transition: background-color 0.3s ease; /* Added smooth transition to background color */
+
 }
 .delivery-icon,
 .logo,
@@ -38,18 +54,24 @@ header {
 .logo {
   margin-right: auto;
   margin-left: 30px;
+  transition: margin 0.3s ease; /* Added smooth transition to margin */
+
 }
 
 .delivery-icon i,
 .icons div {
   margin-right: 50px;
   font-size: 20px;
+  transition: margin 0.3s ease; /* Added smooth transition to margin */
+
 }
 .icons:hover {
   cursor: pointer;
 }
 .icons div:last-child {
   margin-right: 50px;
+  transition: margin 0.3s ease; /* Added smooth transition to margin */
+
 }
 
 
@@ -69,6 +91,7 @@ header {
   background-color: rgb(251, 220, 97);
   flex-grow: 1;
   display: none;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
 
 }
 #search-input[type=text] {
@@ -83,12 +106,16 @@ header {
   padding: 10px 15px;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 
 .highlighted {
   background-color: rgb(235, 195, 35);
   font-weight: bold;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 
@@ -102,6 +129,8 @@ header {
   min-width: 100px;
   height: 550px; /* Adjust the height as needed */
   overflow: hidden;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .carousel-inner {
@@ -116,6 +145,9 @@ header {
   object-fit: cover;
   object-position: center;
   border-radius: 10px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
+
 }
 
 @keyframes carousel-animation {
@@ -139,6 +171,8 @@ header {
   margin-top: 1rem;
   border-radius: 30px;
   cursor: pointer;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .dashboard-banner > img {
@@ -146,6 +180,8 @@ header {
   height: 100%;
   object-fit: cover;
   border-radius: 30px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .banner-promo {
@@ -154,6 +190,8 @@ header {
   top: 25%;
   left: 10%;
   font-weight: 800;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .banner-promo > h1 > span {
@@ -164,14 +202,13 @@ header {
   display: flex;
   position: sticky;
   top: 0;
-  padding: 0.3rem 1rem;
+  padding: 1rem 1rem;
   padding-top: 20px;
   padding-bottom: 0;
   overflow-x: auto;
   z-index: 100;
   background-color: #f8f9fa;
-  
-  
+  transition: all 0.3s ease; /* Added smooth transition to all properties */ 
 
 }
 
@@ -189,6 +226,8 @@ header {
   border: none;
   background-color: rgb(229, 229, 229);
   margin-bottom: 20px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .dashboard-menu > button.active,
@@ -208,6 +247,8 @@ header {
   margin-left: 30px;
   margin-right: 100px;
   grid-gap: 20px; /* Add the desired space between cards */
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 .dashboard-content .row .col-lg-2 {
   flex: 0 0 calc(50% - 20px);
@@ -232,6 +273,8 @@ header {
   position: relative;
   cursor: pointer;
   border: 1px solid lightgrey;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 
@@ -245,6 +288,8 @@ header {
   padding: 10px;
   object-fit: cover;
   border-radius: 15px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .card-detail {
@@ -255,6 +300,8 @@ header {
   font-size: 20px;
   text-align: center;
   margin-top: 10px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .card-detail > p {
@@ -262,6 +309,8 @@ header {
   font-weight: 500;
   font-size: 15px;
   color: #000;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 .card-detail .price {
   text-align: center;
@@ -271,11 +320,15 @@ header {
   color: rgb(154, 28, 28);
   margin-top: -5px;
   margin-bottom: 10px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 .card-time {
   color: darkgrey;
   font-size: 0.8rem;
   padding-top: 5px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 #B,
@@ -285,6 +338,8 @@ header {
   font-weight: 600;
   margin-top: 20px;
   margin-bottom: 20px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 /* Card items Ended */
@@ -300,7 +355,7 @@ header {
   border-radius: 10px;
   color: white;
   font-weight: 700;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
 }
 
 .btn.add-to-cart-btn:hover {
@@ -327,6 +382,8 @@ header {
 .cart-icon {
   cursor: pointer;
   position: relative;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .cart-icon::after {
@@ -343,6 +400,8 @@ header {
   background-color: red;
   color: white;
   font-size: 12px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 
@@ -369,6 +428,8 @@ header {
   position: fixed;
   bottom: 0;
   right: 0;
+  bottom: 0;
+  width: 350px;
   width: 350px;
   overflow-y: scroll;
   height: 100%;
@@ -380,6 +441,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .side-cart > h4 {
@@ -389,6 +452,8 @@ header {
   left: -7px;
   margin-left: 30px;
   justify-content: center;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .side-cart > span {
@@ -400,6 +465,8 @@ header {
   color: var(--maincolor);
   text-decoration: underline;
   cursor: pointer;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
   
 }
 
@@ -410,6 +477,8 @@ header {
   width: 250px;
   align-items: center;
   margin-top: 5px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .side-cart .dashboard-card .card-detail>h4
@@ -427,9 +496,11 @@ font-size: 18px !important;
 
 
 .cart-items {
-  flex: 1;
-  max-height: calc(100% - 50px);
+  height: 250px;
   overflow-y: auto;
+  padding-bottom: 60px; /* Add space for the footer */
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .hint-text {
@@ -439,16 +510,19 @@ font-size: 18px !important;
   margin-top: 90%;
   color: grey;
   margin-bottom: 10px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 
 /* Cart Footer */
 .cart-footer {
+  height: 120px; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: fixed;
-  width: 280px; /* Set the width to match the side cart width */
+  width: 300px;
   margin: auto;
   margin-top: auto;
   border: 1px solid lightgrey;
@@ -456,6 +530,8 @@ font-size: 18px !important;
   align-items: flex-start; /* Align the text to the left side */
   bottom: 0;
   padding: 10px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .cart-footer > .tag {
@@ -463,13 +539,17 @@ font-size: 18px !important;
   display: inline-block;
   margin-right: auto;
   margin-top: -4px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .cart-footer >.fee {
-  display: inline-block;
   font-size: 20px;
   margin-left: auto;
-  margin-top: -20px;
+  margin-right: 10px;
+  margin-top: -30px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .cart-footer a{
@@ -487,6 +567,8 @@ font-size: 18px !important;
   cursor: pointer;
   font-weight: bold;
   margin-top: 10px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .cart-footer a.checkout-btn:hover {
@@ -496,7 +578,10 @@ font-size: 18px !important;
 
 #totalPrice {
   font-weight: bold;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
+
 
 
 @media only screen and (min-width: 768px) {
@@ -515,12 +600,16 @@ font-size: 18px !important;
   background-color: var(--maincolor);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .questions > h2 {
   text-align: center;
   font-weight: 600;
   font-size: 40px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .section {
@@ -528,6 +617,8 @@ font-size: 18px !important;
   min-width: 100px;
   margin: auto;
   margin-bottom: 20px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .question {
@@ -537,10 +628,14 @@ font-size: 18px !important;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px 0px;
   padding: 10px;
   cursor: pointer;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .question > span {
   float: right;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .answer {
@@ -548,12 +643,16 @@ font-size: 18px !important;
   color: white;
   display: none;
   padding: 10px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 @media (min-width: 768px) {
   .questions {
     padding: 10px;
     max-width: 850px;
+      transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 
   }
 
@@ -563,15 +662,20 @@ font-size: 18px !important;
 
   .section {
     margin-bottom: 10px;
-    max-width: 700px;
+    max-width: 700px;  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
   }
 
   .question {
     padding: 8px;
+    transition: all 0.3s ease; /* Added smooth transition to all properties */
+
   }
 
   .answer {
     padding: 8px;
+    transition: all 0.3s ease; /* Added smooth transition to all properties */
+
   }
 }
 
@@ -586,6 +690,19 @@ font-size: 18px !important;
   display: none;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
+}
+
+/* CSS */
+.login-overlay {
+  display: none;
+  /* Other styles */
+  transition: display 0.3s ease;
+}
+
+.login-overlay.show {
+  display: flex;
 }
 
 .login-container,
@@ -594,12 +711,16 @@ font-size: 18px !important;
   padding: 30px;
   border-radius: 20px;
   text-align: center;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
   position: relative;
 }
 
 .overlay h3,
 p {
   text-align: left;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 form {
@@ -618,11 +739,15 @@ form {
   color: white;
   background-color: grey;
   cursor: pointer;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .hr-container {
   display: flex;
   align-items: center;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .left-hr,
@@ -631,10 +756,14 @@ form {
   border: none;
   border-top: 1px solid #000;
   margin: 0 10px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .or-text {
   font-weight: bold;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
   color: #999;
 }
 
@@ -643,11 +772,15 @@ a {
   color: black;
   text-align: center;
   margin-top: 15px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 a:hover {
   text-decoration: none;
   color: var(--maincolor);
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 /* Sign up Form */
@@ -816,6 +949,8 @@ footer {
   border: 2px solid rgb(243, 243, 243);
   border-radius: 20px;
   margin-bottom: 20px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
 }
 
 .footer_main {
