@@ -690,37 +690,72 @@ font-size: 18px !important;
   display: none;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(8px); /* Added backdrop-filter property to blur the content behind the overlay */
+  z-index: 999; /* Ensure the overlay appears on top of other elements */
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 
 }
 
-/* CSS */
-.login-overlay {
-  display: none;
-  /* Other styles */
-  transition: display 0.3s ease;
-}
-
-.login-overlay.show {
-  display: flex;
-}
 
 .login-container,
 .verification-container {
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   padding: 30px;
   border-radius: 20px;
   text-align: center;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
+  max-width: 500px;
+  width: 90%; /* Set the width to 90% to center-align the container */
 
   position: relative;
 }
 
-.overlay h3,
-p {
-  text-align: left;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
 
+.overlay h3{
+  font-weight: bold;
+  text-align:left;
+  font-size: 18px;
+  margin-top: 10px;
+}
+.overlay p{
+  text-align: left;
+  font-size: 15px;
+  margin-top: 10px;
+
+}
+.login{
+  background-color: rgb(212, 0, 0) !important;
+
+}
+.login-container a:hover{
+  color: #000 !important;
+  font-size: 20px;
+
+}
+
+#login-form button{
+  border-radius: 25px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+#login-form p{
+  background-color: rgb(255, 255, 255);
+  font-size: 14px;
+  
+}
+#login-form input{
+  border-radius: 25px;
+  background-color: rgb(255, 255, 255);
+  font-size: 14px;
+  padding-left: 30px;
+  height: 42px;
+}
+#verification-form input{
+  border-radius: 25px;
+  background-color: rgb(255, 255, 255);
+  font-size: 14px;
+  padding-left: 30px;
+  height: 42px;
 }
 
 form {
@@ -743,6 +778,8 @@ form {
 
 }
 
+
+/* Hr Line */
 .hr-container {
   display: flex;
   align-items: center;
@@ -778,7 +815,6 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: var(--maincolor);
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 
 }

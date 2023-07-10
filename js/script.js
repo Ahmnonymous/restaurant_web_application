@@ -1,27 +1,24 @@
-window.addEventListener('DOMContentLoaded', function() {
-  // Add a class to the body element when the page finishes loading
-  document.body.classList.add('page-loaded');
+var userIcon = document.querySelector('.login-icon');
+var loginOverlay = document.querySelector('#login-overlay');
+
+userIcon.addEventListener('click', function() {
+  loginOverlay.style.display = 'flex';
 });
-  
-  // Open the login overlay when the user icon is clicked
-  document.addEventListener('click', function(event) {
-    var userIcon = event.target.closest('.login-icon');
-    if (userIcon) {
-      var loginOverlay = document.querySelector('#login-overlay');
-      loginOverlay.style.display = 'flex';
-    }
-  });
 
 // For closing Overlays
-document.addEventListener('click', function(event) {
+function closeOverlay() {
   var loginOverlay = document.getElementById('login-overlay');
   var verificationOverlay = document.getElementById('verification-overlay');
-  var closeOverlay = event.target.closest('.close-overlay');
-  if (closeOverlay) {
-    loginOverlay.style.display = 'none';
+  
+  if (verificationOverlay.style.display !== 'none') {
     verificationOverlay.style.display = 'none';
+  } else {
+    loginOverlay.style.display = 'none';
   }
-});
+}
+
+// For closing Overlays
+
 
 
 var isScrolling = false;
