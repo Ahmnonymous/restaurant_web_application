@@ -307,7 +307,7 @@ header {
 .card-detail > p {
   text-align: center;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 10px;
   color: #000;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 
