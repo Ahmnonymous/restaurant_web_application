@@ -26,9 +26,10 @@
 
 
       <div class="search-container">
+        <button id="search-button" onclick="showSearchInput()"><i class="fas fa-search"></i></button>
         <input id="search-input" type="text" placeholder="Search" onkeydown="handleSearch(event)">
-        <button id="search-button" onclick="searchWithinPage()"><i class="fas fa-search"></i></button>
       </div>
+      
         
 
 
@@ -59,7 +60,7 @@
               <img src="./images/Home.jpg" alt="Image 3">
               <img src="./images/beverage.jpg" alt="Image 1">
               <img src="./images/dessert.jpg" alt="Image 2">
-              <img src="./images/pizza2.jpg" alt="Image 4">
+              <img src="./images/pizza1.jpg" alt="Image 4">
               <img src="./images/burger.jpg" alt="Image 5">
             </div>
           </div>
@@ -361,11 +362,6 @@
     </div>
   </div>
 
-
-
-
-
-
 <!-- Cart Code -->
 <div class="side-cart" id="sideCart" style="right: -350px;">
   <h4>Your Cart</h4>
@@ -384,15 +380,10 @@
   </div>
 </div>
 
-
-
   <!-- Questions -->
   <div class="questions mt-5">
     <h2>Finest Taste Ever</h2>
     <div class="section mt-4">
-
-
-
       <div class="question" onclick="toggleAnswer('answer1')" id="qanswer1">Craving for Something Cheesy and Magical
         <span> &#x25BC;</span></div>
 
@@ -449,11 +440,6 @@
     </div>
   </div>
 
-
-
-
-
-
   <!-- Login Overlay -->
   <div id="login-overlay" class="overlay">
     <div class="login-container">
@@ -478,9 +464,6 @@
 
     </div>
   </div>
-
-
-
   <!-- Verification Overlay -->
   <div id="verification-overlay" class="overlay">
     <div class="verification-container">
@@ -498,8 +481,6 @@
       </form>
     </div>
   </div>
-
-
 
   <!-- Footer -->
   <footer class="mt-4">
@@ -528,10 +509,7 @@
     <hr class="line">
     <p class="copyright">&copy; 2023 Powered By <span>Blink Co.</span></p>
   </footer>
-
-
 <script src="./js/script.js"></script>
-
 
   <script>
     document.addEventListener("click", function (event) {
@@ -555,14 +533,26 @@
 
 
     // Search Code
-    function handleSearch(event) {
-    if (event.key === 'Enter') {
-      event.preventDefault(); // Prevent form submission
-      searchWithinPage();
-    }
-  }
+    function showSearchInput() {
+  var searchInput = document.getElementById("search-input");
+  searchInput.style.display = "inline-block";
+  searchInput.focus();
+}
 
-  function searchWithinPage() {
+function handleSearch(event) {
+  if (event.keyCode === 13) { // Enter key pressed
+    searchWithinPage();
+    hideSearchInput();
+  }
+}
+
+function hideSearchInput() {
+  var searchInput = document.getElementById("search-input");
+  searchInput.style.display = "none";
+}
+
+
+function searchWithinPage() {
     var searchQuery = document.getElementById("search-input").value.toLowerCase();
     var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, span, a, button, div");
 
@@ -598,7 +588,6 @@
       parentElement.replaceChild(document.createTextNode(highlightedElements[0].textContent), highlightedElements[0]);
     }
   }
-
 
   </script>
 

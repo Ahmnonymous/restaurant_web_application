@@ -65,15 +65,20 @@ header {
   border-radius: 4px;
   border: none;
   font-size: 16px;
-  margin-right: -32px;
+  margin-right: -20px;
   background-color: rgb(251, 220, 97);
   flex-grow: 1;
+  display: none;
 
 }
+#search-input[type=text] {
+  color: black;
+}
+
 
 #search-button {
-  background-color: rgb(255, 203, 4);
-  color: white;
+  background-color: rgb(255, 204, 0);
+  color: black;
   border: none;
   padding: 10px 15px;
   border-radius: 4px;
@@ -165,6 +170,9 @@ header {
   overflow-x: auto;
   z-index: 100;
   background-color: #f8f9fa;
+  
+  
+
 }
 
 .dashboard-menu > button {
@@ -518,7 +526,6 @@ font-size: 18px !important;
 .section {
   max-width: 1000px;
   min-width: 100px;
-  display: block;
   margin: auto;
   margin-bottom: 20px;
 }
@@ -543,8 +550,29 @@ font-size: 18px !important;
   padding: 10px;
 }
 
-.arrow-down {
-  float: left;
+@media (min-width: 768px) {
+  .questions {
+    padding: 10px;
+    max-width: 850px;
+
+  }
+
+  .questions > h2 {
+    font-size: 30px;
+  }
+
+  .section {
+    margin-bottom: 10px;
+    max-width: 700px;
+  }
+
+  .question {
+    padding: 8px;
+  }
+
+  .answer {
+    padding: 8px;
+  }
 }
 
 /* Overlay */
