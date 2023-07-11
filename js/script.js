@@ -126,6 +126,8 @@ function toggleVerificationCodeVisibility() {
       p.parentNode.removeChild(p);
       var content = clonedItem.querySelector('.card-detail');
       content.style.marginTop = '3px';
+
+
       // Delete Button
       // Delete Icon
   var deleteIcon = document.createElement('i');
@@ -185,6 +187,39 @@ function toggleVerificationCodeVisibility() {
       var itemCount = cartItems.length;
       var cartIcon = document.querySelector('.cart-icon');
       cartIcon.setAttribute('data-count', itemCount);
+
+
+      var itemName = item.querySelector('.card-name').textContent; // Get the item name
+      var itemPrice = item.querySelector('.card-price').textContent;
+      var cartData = localStorage.getItem('cartData');
+      if (cartData) {
+        // If cartData already exists in localStorage, parse it and update the item
+        cartData = JSON.parse(cartData);
+        var existingCartItem = cartData.find(function (item) {
+          return item.itemId === itemId;
+        });
+        if (existingCartItem) {
+          existingCartItem.quantity++;
+        } else {
+          cartData.push({
+            itemId: itemId,
+            itemName: itemName,
+            itemPrice: itemPrice,
+            quantity: 1,
+          });
+        }
+      } else {
+        // If cartData doesn't exist in localStorage, create a new array with the item
+        cartData = [{
+          itemId: itemId,
+          itemName: itemName,
+          itemPrice: itemPrice,
+          quantity: 1,
+        }];
+      }
+      localStorage.setItem('cartData', JSON.stringify(cartData));
+    
+
       toggleCart();
     }
   
@@ -217,11 +252,15 @@ function toggleVerificationCodeVisibility() {
     var cartIcon = document.querySelector('.cart-icon');
     cartIcon.setAttribute('data-count', itemCount);
     toggleCart();
+
+
+
+
+
+
   }
   
-  
-
-// To clear the Cart data
+  // To clear the Cart data
 function clearCart() {
   var cart = document.getElementById("sideCart");
   var cartItems = cart.getElementsByClassName('dashboard-card');
@@ -230,11 +269,17 @@ function clearCart() {
   while (cartItems.length > 0) {
     cartItems[0].remove();
   }
-  var cartItems = document.getElementById('sideCart').getElementsByClassName('cart-item');
+  
+  // Clear the cart data in localStorage
+  localStorage.removeItem('cartData');
+  
+  // Reset the item count and total price on the second page
+  var cartItemsContainer = document.getElementById('cartItems');
+  cartItemsContainer.innerHTML = ''; // Clear the cart items
+  
   var cartIcon = document.querySelector('.cart-icon');
   cartIcon.setAttribute('data-count', 0);
 
-  // Reset total price
   var totalPriceElement = document.getElementById('totalPrice');
   totalPriceElement.innerText = '0.00';
 }

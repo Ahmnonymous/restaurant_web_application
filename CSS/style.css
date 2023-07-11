@@ -23,7 +23,7 @@ body {
 
 }
 ::-webkit-scrollbar{
-  width: 2px;
+  width: 1px;
   background-color: rgb(255, 203, 4);
   border-radius: 5px;
   transition: width 0.3s ease; /* Added smooth transition to scrollbar width */
@@ -268,11 +268,11 @@ header {
 .dashboard-card {
   width: 110%;
   margin-left: 10px;
-  background-color: rgb(241, 241, 241);
+  background-color:white;
   border-radius: 15px;
   position: relative;
   cursor: pointer;
-  border: 1px solid lightgrey;
+  border: 1px solid black;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 
 }
@@ -284,7 +284,7 @@ header {
 
 .card-image {
   width: 100%;
-  height: 250px;
+  height: 260px;
   padding: 10px;
   object-fit: cover;
   border-radius: 15px;
@@ -294,12 +294,15 @@ header {
 
 .card-detail {
   padding: 10px;
+  height: 240px; /* Adjust the height as needed */
+  overflow: auto;
 }
 .card-detail > h4 {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin: 0 10px;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 
 }
@@ -307,20 +310,27 @@ header {
 .card-detail > p {
   text-align: center;
   font-weight: 500;
-  font-size: 10px;
+  margin-bottom: 2em;
+  font-size: 12px;
+  margin: 0 10px;
+  margin-top: 8px;
   color: #000;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 
 }
 .card-detail .price {
   text-align: center;
-  display: block;
   margin: auto;
   font-weight: 600;
   color: rgb(154, 28, 28);
   margin-top: -5px;
   margin-bottom: 10px;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
+  position: absolute;
+   top: 65%;
+   left: 50%;
+    transform: translateX(-50%);
+     display: block;
 
 }
 .card-time {
@@ -351,6 +361,7 @@ header {
   padding: 8px 8px;
   background-color: red;
   text-decoration: none;
+  
   width: 120px;
   border-radius: 10px;
   color: white;
