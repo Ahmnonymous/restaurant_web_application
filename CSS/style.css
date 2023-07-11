@@ -358,8 +358,8 @@ h4 {
 #d,
 #b {
   font-weight: 600;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 }
 
