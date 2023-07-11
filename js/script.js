@@ -110,12 +110,12 @@ function toggleVerificationCodeVisibility() {
       var clonedItem = item.cloneNode(true);
       var itemId = clonedItem.getAttribute('data-id');
       clonedItem.style.width = '90%';
-      clonedItem.style.height = '29%';
+      clonedItem.style.height = '200px';
       var itemImage = clonedItem.querySelector('.card-image');
       itemImage.style.maxWidth = '110px';
       itemImage.style.height = '110px';
       itemImage.style.marginLeft = '2px';
-      itemImage.style.marginTop = '-20px';
+      itemImage.style.marginTop = '-80px';
     
       var originalImage = item.querySelector('.card-image');
       var clonedImage = clonedItem.querySelector('.card-image');
@@ -125,7 +125,7 @@ function toggleVerificationCodeVisibility() {
       var p =clonedItem.querySelector('p');
       p.parentNode.removeChild(p);
       var content = clonedItem.querySelector('.card-detail');
-      content.style.marginTop = '3px';
+      content.style.marginTop = '50px';
 
 
       // Delete Button

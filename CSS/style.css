@@ -293,29 +293,41 @@ header {
 }
 
 .card-detail {
+  position: relative;
   padding: 10px;
-  height: 240px; /* Adjust the height as needed */
+  height: 220px; /* Adjust the height as needed */
   overflow: auto;
 }
 .card-detail > h4 {
   font-weight: bold;
   font-size: 18px;
-  text-align: center;
   margin-top: 5px;
-  margin: 0 10px;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
 
+
+}
+.card-detail p,h4{
+  text-align: center;
+  margin: 0 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+}
+.card-detail hr{
+  position: absolute;
+  top: 42%;
+  left: 0;
+  right: 0;
 }
 
 .card-detail > p {
-  text-align: center;
   font-weight: 500;
   margin-bottom: 2em;
   font-size: 12px;
-  margin: 0 10px;
   margin-top: 8px;
   color: #000;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
 
 }
 .card-detail .price {
@@ -327,10 +339,10 @@ header {
   margin-bottom: 10px;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
   position: absolute;
-   top: 65%;
-   left: 50%;
-    transform: translateX(-50%);
-     display: block;
+  top: 57%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
 
 }
 .card-time {
@@ -356,17 +368,23 @@ header {
 
 /* Add to Cart Button */
 .btn.add-to-cart-btn {
-  display: block;
-  margin: auto;
+  position: absolute;
+  margin-top: -150px;
+  bottom: 10px;  
+  left: 50%; 
+  transform: translateX(-50%);
   padding: 8px 8px;
   background-color: red;
   text-decoration: none;
-  
   width: 120px;
   border-radius: 10px;
   color: white;
   font-weight: 700;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
+  bottom: calc(1% + 50px);
+  top: unset;
+  margin-bottom: -30px;
+
 }
 
 .btn.add-to-cart-btn:hover {
@@ -484,7 +502,7 @@ header {
 .side-cart .dashboard-card {
   display: flex;
   top:50px;
-  position: relative;
+  position: absolute;
   width: 250px;
   align-items: center;
   margin-top: 5px;
