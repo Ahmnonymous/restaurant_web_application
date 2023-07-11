@@ -260,9 +260,12 @@ header {
   .dashboard-content .row .col-lg-2 {
     flex: 0 0 calc(50% - 20px);
     margin-left: 10px;
-    margin-right: 10px;
   }
+ 
 }
+
+
+
 
 
 .dashboard-card {
@@ -273,9 +276,28 @@ header {
   position: relative;
   cursor: pointer;
   border: 1px solid black;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
+  transition: all 0.3s ease;
 
 }
+
+@media (max-width: 767px) {
+  .col-lg-2 {
+    margin-top: 10px; 
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-lg-2 {
+    margin-right: 20px;
+    margin-top: 13px;
+    padding-right: 35px;
+  }
+  .col-lg-2:last-child {
+    margin-right: 0; 
+  }
+}
+
 
 
 .dashboard-card:hover {
@@ -335,7 +357,7 @@ header {
   margin: auto;
   font-weight: 600;
   color: rgb(154, 28, 28);
-  margin-top: -5px;
+  margin-top: 5px;
   margin-bottom: 10px;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
   position: absolute;
