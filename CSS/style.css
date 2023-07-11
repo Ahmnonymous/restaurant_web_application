@@ -381,9 +381,8 @@ header {
   color: white;
   font-weight: 700;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
-  bottom: calc(1% + 50px);
+  bottom: calc(1% + 40px);
   top: unset;
-  margin-bottom: -30px;
 
 }
 
@@ -997,6 +996,7 @@ button[type="submit"]:hover {
 .payment-method {
   margin-top: 20px;
 }
+
 
 label {
   display: block;
