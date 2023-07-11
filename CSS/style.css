@@ -153,6 +153,7 @@ header {
 .dashboard {
   height: 100%;
   width: 100%;
+  background-color: #f8f9fa;
 }
 
 .dashboard-banner {
@@ -202,6 +203,7 @@ header {
 .dashboard-menu > button {
   text-decoration: none;
   text-align: center;
+  border: 1px solid lightgrey;
   border-radius: 20px;
   display: block;
   margin: 0 40px; /* Adjust the margin value to reduce the space between buttons */
@@ -210,8 +212,7 @@ header {
   padding: 0.5rem 0;
   font-size: 0.9rem;
   color: black;
-  border: none;
-  background-color: rgb(229, 229, 229);
+  background-color: #f8f9fa;
   margin-bottom: 20px;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 }
