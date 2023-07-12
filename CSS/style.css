@@ -32,7 +32,7 @@ section {
 }
 
 header {
-  min-width: 1260px; /* Adjust the value as needed */
+  min-width: 1200px; /* Adjust the value as needed */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -956,10 +956,19 @@ button[type="submit"]:hover {
   padding: 20px;
   margin-left: 10px;
   border-radius: 10px;
+  grid-column: 1;
 }
-.container-fluid {
+
+
+.container-grid {
   background-color: rgb(255, 255, 255);
   display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  box-sizing: border-box;
+  min-height: 100px;
+  margin-bottom:20px;
+  box-shadow: 2px 2px 2px 2px #bdbec0;
 }
 
 .cart {
@@ -967,6 +976,7 @@ button[type="submit"]:hover {
   padding: 20px;
   margin-left: 40px;
   margin-right: 20px;
+  grid-column: 2;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -991,10 +1001,15 @@ button[type="submit"]:hover {
   display: block;
   margin: auto;
   border-radius: 25px; 
+  margin-bottom: 10px;
+  font-size: 18px;
+  background-color: rgb(212, 0, 0) !important;
+
 }
 .paymentcart-footer button:hover{
   background-color: rgb(255, 203, 0) !important;
   color: black;
+  transition: all 0.6s ease;
 }
 
 
@@ -1003,16 +1018,23 @@ label {
   margin-bottom: 5px;
 }
 
+@media screen and (max-width: 1180px) {
+  .container-grid{
+    margin-left: 20px;
+    width: 1100px;
+  }
+}
 
 
 
 
 /* Footer */
 footer {
-  background-color: #f8f9fa;
+  background-color:  #f8f9fa;
   padding: 20px;
   text-align: center;
   border: 2px solid rgb(243, 243, 243);
+  box-shadow: 2px 2px 2px 2px rgb(210, 209, 209);
   margin-left: auto;
   margin-right: auto;
   max-width: 1000px; /* Adjust the value as per your preference */
@@ -1067,8 +1089,8 @@ footer {
 @media screen and (max-width: 1200px) {
   footer {
     min-width: auto;
-    max-width:100%; /* Resetting the max-width for smaller screens */
-    margin-left: 100px;
+    max-width:85%; /* Resetting the max-width for smaller screens */
+    margin-left: 120px;
   }
   .contact,
   .timing,
@@ -1092,9 +1114,8 @@ footer {
 
 @media screen and (max-width: 980px) {
   footer {
-    min-width: auto;
-    max-width:100%; /* Resetting the max-width for smaller screens */
-    margin-left: 180px;
+    width:1000px; /* Resetting the max-width for smaller screens */
+    margin-left: 230px;
   }
   .contact,
   .timing,
@@ -1126,16 +1147,16 @@ footer {
 @media screen and (max-width: 767px) {
   footer {
     width: 1200px; /* Resetting the max-width for smaller screens */
-    margin-left: 250px;
+    margin-left: 300px;
   }
   
   .contact,
   .timing,
   .follow-us{
-    font-size: 10px;
+    font-size: 13px;
   } 
   .footer-content h3{
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
   }
   .follow-us{
@@ -1158,15 +1179,14 @@ footer {
  @media screen and (max-width: 579px) {
   footer {
     width: 1400px; 
-
   }
   .contact,
   .timing,
   .follow-us{
-    font-size: 10px;
+    font-size: 13px;
   } 
   .footer-content h3{
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
   }
   .follow-us{
