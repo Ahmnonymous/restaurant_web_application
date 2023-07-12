@@ -32,12 +32,27 @@ section {
 }
 
 header {
+  min-width: 1260px; /* Adjust the value as needed */
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--maincolor);
   padding: 10px;
   transition: background-color 0.3s ease; /* Added smooth transition to background color */
+}
+@media (min-width: 768px) {
+  .logo {
+    text-align: left;
+  }
+
+  .search-container {
+    margin-right: 20px;
+  }
+
+  .login-icon,
+  .cart-container {
+    margin: 0;
+  }
 }
 .delivery-icon,
 .logo,
@@ -244,6 +259,7 @@ header {
     flex: 0 0 calc(50% - 20px);
     margin-left: 10px;
   }
+ 
 }
 
 .dashboard-card {
@@ -257,10 +273,23 @@ header {
   transition: all 0.3s ease;
 }
 
+
+/* Media Query for Dashboard Card Items */
 @media (max-width: 767px) {
+  .food-item {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
   .col-lg-2 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-right: 20px;
+    margin-top: 13px;
+    padding-right: 35px;
+  }
+  .col-lg-2:last-child {
+    margin-right: 0;
+  }
+  .dashboard-card .card-image {
+    height: 180px;
   }
 }
 
@@ -270,18 +299,16 @@ header {
     margin-top: 13px;
     padding-right: 15px;
   }
-  .dashboard-card
-  {
+  .dashboard-card {
     width: 100%;
   }
-  .dashboard-card .card-image{
+  .dashboard-card .card-image {
     height: 180px;
   }
   .col-lg-2:last-child {
     margin-right: 0;
   }
 }
-
 .dashboard-card:hover {
   border: 2px solid var(--maincolor);
 }
@@ -597,22 +624,21 @@ h4 {
   background-color: var(--maincolor);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
+  transition: all 0.3s ease;
 }
 
 .questions > h2 {
   text-align: center;
   font-weight: 600;
   font-size: 40px;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
+  transition: all 0.3s ease;
 }
 
 .section {
   max-width: 1000px;
-  min-width: 100px;
   margin: auto;
   margin-bottom: 20px;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
+  transition: all 0.3s ease;
 }
 
 .question {
@@ -622,49 +648,33 @@ h4 {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px 0px;
   padding: 10px;
   cursor: pointer;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
+  transition: all 0.3s ease;
 }
 
 .question > span {
   float: right;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
+  transition: all 0.3s ease;
 }
 
 .answer {
   background-color: black;
   color: white;
-  display: none;
   padding: 10px;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
+  transition: all 0.3s ease;
+  display: none;
 }
 
-@media (min-width: 768px) {
-  .questions {
-    padding: 10px;
-    max-width: 850px;
-    transition: all 0.3s ease; /* Added smooth transition to all properties */
-  }
-
+/* Added media query for responsiveness */
+@media screen and (max-width: 768px) {
   .questions > h2 {
     font-size: 30px;
   }
 
   .section {
-    margin-bottom: 10px;
-    max-width: 700px;
-    transition: all 0.3s ease; /* Added smooth transition to all properties */
-  }
-
-  .question {
-    padding: 8px;
-    transition: all 0.3s ease; /* Added smooth transition to all properties */
-  }
-
-  .answer {
-    padding: 8px;
-    transition: all 0.3s ease; /* Added smooth transition to all properties */
+    max-width: 500px;
   }
 }
+
 
 /* Overlay */
 .overlay {
@@ -865,13 +875,13 @@ button[type="submit"]:hover {
   font-size: large;
   font-weight: 500;
 }
-
+/* 
 @media screen and (max-width: 480px) {
   .container {
     max-width: 100%;
     padding: 10px;
   }
-}
+} */
 
 /* Address Page CSS */
 /* Address Page CSS */
@@ -993,101 +1003,185 @@ label {
   margin-bottom: 5px;
 }
 
+
+
+
+
 /* Footer */
 footer {
-  background-color: rgb(255, 255, 255);
-  color: black;
-  padding: 40px 0;
-  display: block;
-  margin: auto;
-  max-width: 1000px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
   border: 2px solid rgb(243, 243, 243);
-  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px; /* Adjust the value as per your preference */
+  box-sizing: border-box;
   margin-bottom: 20px;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
 }
 
-.footer_main {
+.footer-content {
   display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px; /* Same value as footer max-width */
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 
 .contact,
 .timing,
-.follow_us {
-  flex-basis: 25%;
-  margin-bottom: 40px;
+.follow-us {
+  flex: 1;
+  padding: 10px;
 }
 
-.tag h1 {
-  font-size: 22px;
-  margin-left: 30px;
-  margin-bottom: 15px;
-  font-weight: bold;
+.line{
+  height: 1.5px;
+  background-color: black;
 }
-
-.tag a {
-  display: block;
-  color: black;
-  margin-bottom: 10px;
-  text-decoration: none;
-}
-
-.tag a i {
-  margin-right: 5px;
-}
-
-.tag a .fa-house {
-  margin-left: 19px;
-}
-
-.tag .center {
-  text-align: center;
-  width: fit-content;
-}
-
-.social_link {
-  display: flex;
-}
-
-.social_link a {
-  color: black;
-  font-size: 20px;
-  margin-right: 50px;
-}
-
-.social_link a:hover {
-  color: white;
-}
-
-.line {
-  border-radius: 3px;
-  margin: 20px;
-  border: 1.5px solid black;
-}
-
-/* CSS */
-
-.copyright {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.copyright span {
-  font-weight: bold;
+.copyright span{
   text-decoration: underline;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-  .footer_main {
-    flex-direction: column;
+.follow-us {
+  text-align: right;
+  margin-top: -70px;
+}
+.timing{
+  margin-top: -30px;
+}
+
+.social-icons a {
+  margin-left: 5px;
+  color: #000;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #555;
+}
+
+@media screen and (max-width: 1200px) {
+  footer {
+    min-width: auto;
+    max-width:100%; /* Resetting the max-width for smaller screens */
+    margin-left: 100px;
+  }
+  .contact,
+  .timing,
+  .follow-us{
+    font-size: 15px;
+  }
+  .follow-us{
+    margin-top: -70px;
+    margin-right: 50px;
+  }
+  .social-icons a{
+    
+    margin-right: 20px;
   }
 
-  .contact,
-  .timing {
-    flex-basis: 100%;
-    text-align: center;
+  .questions{
+    margin-left: 100px;
+    width: 90%;
   }
 }
+
+@media screen and (max-width: 980px) {
+  footer {
+    min-width: auto;
+    max-width:100%; /* Resetting the max-width for smaller screens */
+    margin-left: 180px;
+  }
+  .contact,
+  .timing,
+  .follow-us{
+    font-size: 15px;
+  }
+  .follow-us{
+    margin-top: -70px;
+    margin-right: 50px;
+  }
+  .social-icons a{
+    
+    margin-right: 20px;
+  }
+
+  .questions{
+    margin-left: 200px;
+    width: 90%;
+  }
+  .section{
+    width: 600px;
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 767px) {
+  footer {
+    width: 1200px; /* Resetting the max-width for smaller screens */
+    margin-left: 250px;
+  }
+  
+  .contact,
+  .timing,
+  .follow-us{
+    font-size: 10px;
+  } 
+  .footer-content h3{
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .follow-us{
+    margin-top: -80px;
+    margin-right: 10px;
+
+  }
+  .social-icons a{
+    
+    margin-right: 5px;
+  }
+  .questions{
+    width: 700px;
+
+    margin-left: 300px;
+  }
+
+}
+
+ @media screen and (max-width: 579px) {
+  footer {
+    width: 1400px; 
+
+  }
+  .contact,
+  .timing,
+  .follow-us{
+    font-size: 10px;
+  } 
+  .footer-content h3{
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .follow-us{
+    margin-top: -110px;
+    margin-right: -10px;
+
+  }
+  .questions{
+    width: 700px;
+  }
+  .section{
+    width: 600px;
+  }
+  
+} 
+
+
+

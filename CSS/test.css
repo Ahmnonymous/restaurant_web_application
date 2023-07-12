@@ -1,31 +1,104 @@
-.phone-container {
-    display: flex;
-    align-items: center;
-    width: 300px;
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  min-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px; /* Adjust the value as per your preference */
+  box-sizing: border-box;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px; /* Same value as footer max-width */
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.contact,
+.timing,
+.follow-us {
+  flex: 1;
+  padding: 10px;
+}
+
+.follow-us {
+  text-align: right;
+  margin-top: -70px;
+}
+.timing{
+  margin-top: -30px;
+}
+
+.social-icons a {
+  margin-left: 5px;
+  color: #000;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #555;
+}
+
+@media screen and (max-width: 900px) {
+  footer {
+    min-width: auto;
+    max-width: 85%; /* Resetting the max-width for smaller screens */
+  }
+  .contact,
+  .timing,
+  .follow-us{
+    font-size: 15px;
+  }
+  .follow-us{
+    margin-top: -70px;
   }
   
-  .intl-tel-input {
-    position: relative;
-    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  footer {
+    min-width: auto;
+    max-width: 80%; /* Resetting the max-width for smaller screens */
   }
   
-  .intl-tel-input input {
-    width: 100%;
-    padding-left: 45px;
+  .contact,
+  .timing,
+  .follow-us{
+    font-size: 10px;
+  } 
+  .footer-content h3{
+    font-size: 12px;
+    font-weight: bold;
   }
-  
-  .iti-flag {
-    position: absolute;
-    top: 50%;
-    left: 12px;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 20px;
-    background-image: url("https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3.png");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: 100%;
-    opacity: 0.8;
-    cursor: pointer;
+  .follow-us{
+    margin-top: -80px;
   }
-  
+
+}
+
+@media screen and (max-width: 540px) {
+  footer {
+    min-width: auto;
+    max-width: 80%; /* Resetting the max-width for smaller screens */
+  }
+  .contact,
+  .timing,
+  .follow-us{
+    font-size: 10px;
+  } 
+  .footer-content h3{
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .follow-us{
+    margin-top: -110px;
+  }
+
+}
+
