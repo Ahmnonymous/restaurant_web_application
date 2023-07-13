@@ -136,6 +136,8 @@ function toggleVerificationCodeVisibility() {
   deleteIcon.style.position = 'absolute';
   deleteIcon.style.right = '10px';
   deleteIcon.style.bottom = '10px';
+  deleteIcon.style.top= '100px';
+
   deleteIcon.onclick = removeItemFromCart;
   clonedItem.appendChild(deleteIcon);
 
@@ -165,6 +167,8 @@ function toggleVerificationCodeVisibility() {
         quantityElement.textContent = '1';
         quantityElement.style.fontWeight="600";
         clonedItem.querySelector('.card-detail').appendChild(quantityElement);
+        quantityElement.style.marginLeft='60px'
+        quantityElement.style.marginTop='20px'
         cartItem.appendChild(clonedItem);
     
         cart.insertBefore(cartItem, cart.lastElementChild.previousSibling);
