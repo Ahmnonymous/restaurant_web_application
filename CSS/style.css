@@ -1050,7 +1050,7 @@ button[type="submit"]:hover {
 /* Payment File Css */
 .payment-method {
   margin-top: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: #f8f9fa;
   padding: 20px;
   margin-left: 10px;
   border-radius: 10px;
@@ -1059,7 +1059,7 @@ button[type="submit"]:hover {
 
 
 .container-grid {
-  background-color: rgb(255, 255, 255);
+  background-color: #f8f9fa;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 150px;
@@ -1069,7 +1069,7 @@ button[type="submit"]:hover {
 }
 
 .cart {
-  background-color: #f8f9fa;
+  background-color: rgb(255, 255, 255);
   padding: 20px;
   margin: 20px 20px 20px 20px;
   grid-column: 2;
