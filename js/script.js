@@ -104,165 +104,158 @@ function toggleVerificationCodeVisibility() {
   }
   
 
-    function addToCart(event) {
-      event.preventDefault();
-      var item = event.target.closest('.dashboard-card');
-      var clonedItem = item.cloneNode(true);
-      var itemId = clonedItem.getAttribute('data-id');
-      clonedItem.style.width = '90%';
-      clonedItem.style.height = '200px';
-      var itemImage = clonedItem.querySelector('.card-image');
-      itemImage.style.maxWidth = '110px';
-      itemImage.style.height = '110px';
-      itemImage.style.marginLeft = '2px';
-      itemImage.style.marginTop = '-80px';
-    
-      var originalImage = item.querySelector('.card-image');
-      var clonedImage = clonedItem.querySelector('.card-image');
-      clonedImage.src = originalImage.src;
-      var button = clonedItem.querySelector('.add-to-cart-btn');
-      button.parentNode.removeChild(button);
-      var p =clonedItem.querySelector('p');
-      p.parentNode.removeChild(p);
-      var content = clonedItem.querySelector('.card-detail');
-      content.style.marginTop = '50px';
 
+  function addToCart(event) {
+    event.preventDefault();
+    var item = event.target.closest('.dashboard-card');
+    var clonedItem = item.cloneNode(true);
+    var itemId = clonedItem.getAttribute('data-id');
+    clonedItem.style.width = '90%';
+    clonedItem.style.height = '200px';
+    clonedItem.querySelector('.card-image');
+  
+    var originalImage = item.querySelector('.card-image');
+    var clonedImage = clonedItem.querySelector('.card-image');
+    clonedImage.src = originalImage.src;
+    var button = clonedItem.querySelector('.add-to-cart-btn');
+    button.parentNode.removeChild(button);
+    var p =clonedItem.querySelector('p');
+    p.parentNode.removeChild(p);
+    var content = clonedItem.querySelector('.card-detail');
+    content.style.marginTop = '50px';
+  
+    // Delete Button
+    // Delete Icon
+    var deleteIcon = document.createElement('i');
+    deleteIcon.className = 'fas fa-trash delete-from-cart-btn';
 
-      // Delete Button
-      // Delete Icon
-  var deleteIcon = document.createElement('i');
-  deleteIcon.className = 'fas fa-trash delete-from-cart-btn';
-  deleteIcon.style.color = 'red';
-  deleteIcon.style.position = 'absolute';
-  deleteIcon.style.right = '10px';
-  deleteIcon.style.bottom = '10px';
-  deleteIcon.style.top= '100px';
-
-  deleteIcon.onclick = removeItemFromCart;
-  clonedItem.appendChild(deleteIcon);
-
-      var cart = document.getElementById('sideCart');
-      var cartItems = cart.getElementsByClassName('cart-item');
-    
-      var existingItem = Array.from(cartItems).find(function (item) {
-        var cartItemId = item.getAttribute('data-id');
-        return cartItemId === itemId;
-      });
-    
-      if (existingItem) {
-        // Item already exists in the cart, increase its quantity
-        var quantityElement = existingItem.querySelector('.quantity');
-        var quantity = parseInt(quantityElement.textContent);
-        ++quantity;
-        quantityElement.textContent = quantity;
-      } else {
-        // Item doesn't exist in the cart, add it
-        var cartItem = document.createElement('div');
-        cartItem.className = 'cart-item';
-        cartItem.setAttribute('data-id', itemId);
-    
-        // Quantity
-        var quantityElement = document.createElement('span');
-        quantityElement.className = 'quantity';
-        quantityElement.textContent = '1';
-        quantityElement.style.fontWeight="600";
-        clonedItem.querySelector('.card-detail').appendChild(quantityElement);
-        quantityElement.style.marginLeft='60px'
-        quantityElement.style.marginTop='20px'
-        cartItem.appendChild(clonedItem);
-    
-        cart.insertBefore(cartItem, cart.lastElementChild.previousSibling);
-    
-        // Hide the hint text
-        var hintElement = cart.querySelector('.hint-text');
-        if (hintElement) {
-          hintElement.style.display = 'none';
-        }
+  
+    deleteIcon.onclick = removeItemFromCart;
+    clonedItem.appendChild(deleteIcon);
+  
+    // Plus Button
+    var plusButton = document.createElement('button');
+    plusButton.className = 'plus-btn';
+    plusButton.textContent = '+';
+    plusButton.onclick = increaseQuantity;
+    clonedItem.appendChild(plusButton);
+  
+    // Minus Button
+    var minusButton = document.createElement('button');
+    minusButton.className = 'minus-btn';
+    minusButton.textContent = '-';
+    minusButton.onclick = decreaseQuantity;
+    clonedItem.appendChild(minusButton);
+  
+    var cart = document.getElementById('sideCart');
+    var cartItems = cart.getElementsByClassName('cart-item');
+  
+    var existingItem = Array.from(cartItems).find(function (item) {
+      var cartItemId = item.getAttribute('data-id');
+      return cartItemId === itemId;
+    });
+  
+    if (existingItem) {
+      // Item already exists in the cart, increase its quantity
+      var quantityElement = existingItem.querySelector('.quantity');
+      var quantity = parseInt(quantityElement.textContent);
+      ++quantity;
+      quantityElement.textContent = quantity;
+    } else {
+      // Item doesn't exist in the cart, add it
+      var cartItem = document.createElement('div');
+      cartItem.className = 'cart-item';
+      cartItem.setAttribute('data-id', itemId);
+  
+      // Quantity
+      var quantityElement = document.createElement('span');
+      quantityElement.className = 'quantity';
+      quantityElement.textContent = '01';
+      clonedItem.querySelector('.card-detail').appendChild(quantityElement);
+      cartItem.appendChild(clonedItem);
+  
+      cart.insertBefore(cartItem, cart.lastElementChild.previousSibling);
+  
+      // Hide the hint text
+      var hintElement = cart.querySelector('.hint-text');
+      if (hintElement) {
+        hintElement.style.display = 'none';
       }
-    
-      // Update total price
-      var itemPrice = parseFloat(event.target.previousElementSibling.textContent);
-      var totalPriceElement = document.getElementById('totalPrice');
-      var totalPrice = parseFloat(totalPriceElement.textContent);
-      totalPrice += itemPrice;
-      totalPriceElement.textContent = totalPrice.toFixed(2);
-    
+    }
+  
+    updateTotalPrice();
+  
+    // Update item count
+    var itemCount = cartItems.length;
+    var cartIcon = document.querySelector('.cart-icon');
+    cartIcon.setAttribute('data-count', itemCount);
+  
+    toggleCart();
+  }
+  
+  function increaseQuantity(event) {
+    var quantityElement = event.target.parentNode.querySelector('.quantity');
+    var quantity = parseInt(quantityElement.textContent);
+    quantity = (quantity < 9) ? "0" + (quantity + 1) : quantity + 1;
+    quantityElement.textContent = quantity;
+  
+    updateTotalPrice();
+  }
+  
+  function decreaseQuantity(event) {
+    var quantityElement = event.target.parentNode.querySelector('.quantity');
+    var quantity = parseInt(quantityElement.textContent);
+  
+    if (quantity > 1) {
+      quantity = (quantity <= 10) ? "0" + (quantity - 1) : quantity - 1;
+      quantityElement.textContent = quantity;
+      updateTotalPrice();
+    } else {
+      var cartItem = event.target.closest('.cart-item');
+      cartItem.remove();
+      updateTotalPrice();
+  
       // Update item count
+      var cartItems = document.getElementsByClassName('cart-item');
       var itemCount = cartItems.length;
       var cartIcon = document.querySelector('.cart-icon');
       cartIcon.setAttribute('data-count', itemCount);
-
-
-      var itemName = item.querySelector('.card-name').textContent; // Get the item name
-      var itemPrice = item.querySelector('.card-price').textContent;
-      var cartData = localStorage.getItem('cartData');
-      if (cartData) {
-        // If cartData already exists in localStorage, parse it and update the item
-        cartData = JSON.parse(cartData);
-        var existingCartItem = cartData.find(function (item) {
-          return item.itemId === itemId;
-        });
-        if (existingCartItem) {
-          existingCartItem.quantity++;
-        } else {
-          cartData.push({
-            itemId: itemId,
-            itemName: itemName,
-            itemPrice: itemPrice,
-            quantity: 1,
-          });
-        }
-      } else {
-        // If cartData doesn't exist in localStorage, create a new array with the item
-        cartData = [{
-          itemId: itemId,
-          itemName: itemName,
-          itemPrice: itemPrice,
-          quantity: 1,
-        }];
-      }
-      localStorage.setItem('cartData', JSON.stringify(cartData));
-    
-
-      toggleCart();
     }
+  }
   
   
+  
+  function updateTotalPrice() {
+    var cartItems = document.getElementsByClassName('cart-item');
+    var totalPrice = 0;
+  
+    Array.from(cartItems).forEach(function (item) {
+      var quantityElement = item.querySelector('.quantity');
+      var quantity = parseInt(quantityElement.textContent);
+      var itemPrice = parseFloat(item.querySelector('.price').textContent); // Update this line to retrieve the price correctly
+      totalPrice += itemPrice * quantity;
+    });
+  
+    var totalPriceElement = document.getElementById('totalPrice');
+    totalPriceElement.textContent = totalPrice.toFixed(2);
+  }  
 
   // Remove item form the care
   function removeItemFromCart(event) {
     event.preventDefault();
     var item = event.target.closest('.cart-item');
-    var itemPrice = parseFloat(item.querySelector('.price').textContent);
-    var quantityElement = item.querySelector('.quantity');
-    var quantity = parseInt(quantityElement.textContent);
-    if (quantity > 1) {
-      // Decrease quantity if greater than 1
-      quantity--;
-      quantityElement.textContent = quantity;
-    } else {
-      // Remove the item if quantity is 1
-      item.remove();
-    }
-  
-    var totalPriceElement = document.getElementById('totalPrice');
-    var totalPrice = parseFloat(totalPriceElement.textContent);
-    totalPrice -= itemPrice;
-    totalPriceElement.textContent = totalPrice.toFixed(2);
+    item.remove();
   
     // Update item count
-    var cartItems = document.getElementById('sideCart').getElementsByClassName('cart-item');
+    var cartItems = document.getElementsByClassName('cart-item');
     var itemCount = cartItems.length;
     var cartIcon = document.querySelector('.cart-icon');
     cartIcon.setAttribute('data-count', itemCount);
+  
+    updateTotalPrice();
     toggleCart();
-
-
-
-
-
-
   }
+  
   
   // To clear the Cart data
 function clearCart() {
@@ -275,7 +268,6 @@ function clearCart() {
   }
   
   // Clear the cart data in localStorage
-  localStorage.removeItem('cartData');
   
   // Reset the item count and total price on the second page
   var cartItemsContainer = document.getElementById('cartItems');
