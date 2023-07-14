@@ -321,7 +321,6 @@ header {
   border-radius: 15px;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 }
-
 .card-detail {
   position: relative;
   padding: 10px;
@@ -1115,6 +1114,56 @@ label {
   display: block;
   margin-bottom: 5px;
 }
+
+/* Payment Cart */
+#cartItems {
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+.payment-image {
+  max-width: 150px;
+  max-height: 150px;
+  padding: 10px;
+  margin-top: -20px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.payment-detail {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.payment-detail > h4,
+.payment-detail > p,
+.payment-detail .price {
+  margin: 0;
+}
+
+.payment-detail > h4 {
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 150px; /* Move to the right side */
+}
+
+.payment-detail > p {
+  font-size: 18px;
+  margin-left: auto; /* Move to the right side */
+  margin-top: 10px;
+}
+
+.payment-detail .price {
+  font-weight: 600;
+  margin-top: 10px;
+  color: rgb(154, 28, 28);
+  transition: all 0.3s ease;
+  margin-left: auto; /* Move to the right side */
+}
+
 
 @media screen and (max-width: 1180px) {
   .container-grid{
