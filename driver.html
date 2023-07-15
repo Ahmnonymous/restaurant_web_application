@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/css/flag-icon.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Driver</title>
+</head>
+
+
+<body>
+
+
+
+      <!-- Login Overlay -->
+  <div id="login-overlay" class="driver-overlay">
+    <div class="login-container driver">
+      <button class="close-button" onclick="closeOverlay()">X</button>
+
+      <h3>Enter your mobile number </h3>
+
+      <p>Please confirm your country code and enter your mobile number</p>
+      <form id="login-form">
+        <input type="phone" id="phone" name="phone" required>
+        <p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+        <button type="submit" class="login" onclick="showVerificationOverlay()">Login</button>
+      </form>
+
+      <div class="hr-container">
+        <hr class="left-hr">
+        <span class="or-text">OR</span>
+        <hr class="right-hr">
+      </div>
+      <!-- signup form link -->
+      <a href="signup.html" style="font-weight: bold; color: rgb(255, 203, 4);">Don't have an account? Sign Up</a>
+
+    </div>
+  </div>
+
+
+  <!-- Verification Overlay -->
+   <div id="verification-overlay" class="driver-overlay">
+    <div class="verification-container">
+      <button class="close-button" onclick="closeOverlay()">X</button>
+      <h3>Verify SMS Code</h3>
+      <p>Please enter the verification code sent to your mobile number.</p>
+      <form id="verification-form">
+        <div class="verification-code-container">
+          <input type="text" id="verification-code" name="verification-code" required>
+          <button type="button" class="toggle-visibility" onclick="toggleVerificationCodeVisibility()">
+            <i id="toggle-icon" class="fas fa-eye-slash"></i>
+          </button>
+        </div>
+        <button type="submit" class="verify">Verify</button>
+      </form>
+    </div>
+  </div> 
+
+</body>
+
+
+
+
+<script src="./js/script.js"></script>
+</html>
