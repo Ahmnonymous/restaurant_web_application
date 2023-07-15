@@ -792,8 +792,7 @@ h4 {
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 }
 
-.login-container,
-.verification-container {
+.login-container {
   background-color: rgb(255, 255, 255);
   padding: 30px;
   border-radius: 20px;
@@ -834,13 +833,6 @@ h4 {
   font-size: 14px;
 }
 #login-form input {
-  border-radius: 25px;
-  background-color: rgb(255, 255, 255);
-  font-size: 14px;
-  padding-left: 30px;
-  height: 42px;
-}
-#verification-form input {
   border-radius: 25px;
   background-color: rgb(255, 255, 255);
   font-size: 14px;
