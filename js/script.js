@@ -1,3 +1,4 @@
+// Show login overlay when click on user icon
 var userIcon = document.querySelector('.login-icon');
 var loginOverlay = document.querySelector('#login-overlay');
 
@@ -5,10 +6,19 @@ userIcon.addEventListener('click', function() {
   loginOverlay.style.display = 'flex';
 });
 
+// Show overlay when click on Driver icon
+var drivericon = document.querySelector('.motorcycle-icon');
+var driverloginOverlay = document.querySelector('#driver-login-overlay');
+
+drivericon.addEventListener('click', function() {
+  driverloginOverlay.style.display = 'flex';
+});
 // For closing Overlays
 function closeOverlay() {
   var loginOverlay = document.getElementById('login-overlay');
+  var driverloginOverlay = document.getElementById('driver-login-overlay');
     loginOverlay.style.display = 'none';
+    driverloginOverlay.style.display='none';
 }
 
 // For closing Overlays
@@ -28,61 +38,6 @@ function throttleScroll() {
   }
   isScrolling = true;
 }
-
-
-
-//To show verification Overlay
-
-function showVerificationOverlay(event) {
-  event.preventDefault();
-  var phoneInput = document.getElementById('phone');
-  var verificationOverlay = document.getElementById('verification-overlay');
-
-  if (phoneInput.value.trim() !== '') {
-    verificationOverlay.style.display = 'flex';
-  }
-}
-
-// For verification Code Validation
-
-function verifyCode(event) {
-  event.preventDefault(); 
-
-  var verificationCodeInput = document.getElementById('verification-code');
-  var verificationCode = verificationCodeInput.value.trim();
-  if (verificationCode === '1234') {
-    alert('Verification Successful!');
-    closeOverlay();
-  } else {
-    alert('Invalid Verification Code. Please try again.');
-  }
-}
-
-
-var loginForm = document.getElementById('login-form');
-var verificationForm = document.getElementById('verification-form');
-
-loginForm.addEventListener('submit', showVerificationOverlay);
-verificationForm.addEventListener('submit', verifyCode);
-
-
-// For Eye toggle button
-function toggleVerificationCodeVisibility() {
-  var verificationCodeInput = document.getElementById('verification-code');
-  var toggleIcon = document.getElementById('toggle-icon');
-
-  if (verificationCodeInput.type === 'text') {
-    verificationCodeInput.type = 'password';
-    toggleIcon.classList.remove('fa-eye');
-    toggleIcon.classList.add('fa-eye-slash');
-  } else {
-    verificationCodeInput.type = 'text';
-    toggleIcon.classList.remove('fa-eye-slash');
-    toggleIcon.classList.add('fa-eye');
-  }
-}
-
-
 
 
   // Cart Showing Code

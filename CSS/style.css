@@ -61,6 +61,7 @@ header {
   display: flex;
   align-items: center;
 }
+
 .logo {
   margin-right: auto;
   margin-left: 30px;
@@ -793,19 +794,17 @@ h4 {
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 }
 
+/* Login Signup */
+
 .login-container {
   background-color: rgb(255, 255, 255);
   padding: 30px;
   border-radius: 20px;
   text-align: center;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
-  max-width: 500px;
+  max-width: 400px;
   width: 90%; /* Set the width to 90% to center-align the container */
-
   position: relative;
-}
-.login {
-  background-color: rgb(212, 0, 0) !important;
 }
 
 
@@ -842,36 +841,34 @@ h4 {
 .or-text {
   font-weight: bold;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
-
   color: #999;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-  text-align: center;
-  margin-top: 15px;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
-}
-
-a:hover {
-  text-decoration: none;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
-}
 
 /* Buttons */
 .login-button,.signup-button
 {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: #ffffff;
+    padding: 10px 70px;
+    background:rgb(212, 0, 0);
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 25px;
     border: none;
+    margin-top: 20px;
     transition: background-color 0.3s ease;
     font-size: 16px;
+    
 }
+.login-button:hover,.signup-button:hover{
+  background-color: var(--maincolor);
+  color: black;
+  font-size: larger;
+  transition: all 0.7s ease;
+  text-decoration: none;
+}
+
 
 
 
@@ -935,7 +932,21 @@ h1 {
   margin-top: -110px;
   border-radius: 15px;
 }
+.signin-image{
+  flex: 1;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signin-image img
+{
+  max-width: 70%;
+  max-height: 70%;
+  margin-top: -70px;
+  border-radius: 15px;
 
+}
 .form-group {
   margin-bottom: 15px;
   margin-left: 30px;
