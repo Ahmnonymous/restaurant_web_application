@@ -37,7 +37,7 @@ int main() {
     MYSQL_ROW row;
     while ((row = mysql_fetch_row(result))) {
         std::string category = row[0];
-        categoryButtons += "<button class=\"menu-btn\" data-category=\"" + category + "\">" + category + "</button>\n";
+        categoryButtons += "<button class=\"menu-btn\" data-category=\"" + category + "\" id=\"" + category + "\">" + category + "</button>\n";
     }
 
     // Free the result

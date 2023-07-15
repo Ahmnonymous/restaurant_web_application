@@ -1,10 +1,9 @@
-g++ -o main.exe main.cpp
-g++ -o main.cgi main.cpp
-g++ -o retrieve.cgi retrieve.cpp -I"C:\Program Files\MySQL\MySQL Server 5.6\include" -L"C:\Program Files\MySQL\MySQL Server 5.6\lib" -lmysql
-g++ -o test.cgi test.cpp -I"C:\Program Files\MySQL\MySQL Server 5.6\include" -L"C:\Program Files\MySQL\MySQL Server 5.6\lib" -lmysql
+g++ -o item.cgi item.cpp -I"C:\Program Files\MySQL\MySQL Server 8.0\include" -L"C:\Program Files\MySQL\MySQL Server 8.0\lib" -lmysql
+g++ -o menu.cgi menu.cpp -I"C:\Program Files\MySQL\MySQL Server 8.0\include" -L"C:\Program Files\MySQL\MySQL Server 8.0\lib" -lmysql
 
 Commands to run to add changes to the main branch
 ----------------------------------------------------------
+git pull origin main
 git add .
 git commit -m "updates"
 git push -u origin main
