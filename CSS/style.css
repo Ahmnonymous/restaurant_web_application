@@ -804,47 +804,10 @@ h4 {
 
   position: relative;
 }
-
-.overlay h3 {
-  font-weight: bold;
-  text-align: left;
-  font-size: 18px;
-  margin-top: 10px;
-}
-.overlay p {
-  text-align: left;
-  font-size: 15px;
-  margin-top: 10px;
-}
 .login {
   background-color: rgb(212, 0, 0) !important;
 }
-.login-container a:hover {
-  color: #000 !important;
-  font-size: 20px;
-}
 
-#login-form button {
-  border-radius: 25px;
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-#login-form p {
-  background-color: rgb(255, 255, 255);
-  font-size: 14px;
-}
-#login-form input {
-  border-radius: 25px;
-  background-color: rgb(255, 255, 255);
-  font-size: 14px;
-  padding-left: 30px;
-  height: 42px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
 
 .close-button {
   position: absolute;
@@ -896,7 +859,19 @@ a:hover {
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 }
 
-
+/* Buttons */
+.login-button,.signup-button
+{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
 
 
 
@@ -940,7 +915,7 @@ h1 {
   height: 40px;
   background: rgb(88, 117, 219);
   width: 18%;
-  
+
   border: none;
   border-radius: 5px;
   font-size: medium;
