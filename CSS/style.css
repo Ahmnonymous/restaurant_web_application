@@ -9,6 +9,7 @@
 
 body {
   background-color: #f8f9fa;
+  background-image: url(/images/beverage.jpg);
 }
 
 :root {
@@ -933,11 +934,15 @@ h1 {
   display: flex;
 }
 
-.form-group .input-group .btn {
+.form-group .input-group .otp {
   margin-left: 364px;
   margin-top: -42px;
   height: 40px;
+  background: rgb(88, 117, 219);
   width: 18%;
+  
+  border: none;
+  border-radius: 5px;
   font-size: medium;
   font-weight: 200;
 }
@@ -993,7 +998,7 @@ h1 {
   margin-left: 20px;
   margin-top: -25px;
 }
-.btn {
+.signup {
   display: block;
   margin-left: 30px;
   width: 26%;
@@ -1009,9 +1014,10 @@ h1 {
   border-radius: 3px;
 }
 
-.btn:hover {
+.signup:hover {
   font-size: large;
-  background: rgb(255, 203, 4);
+  background: var(--maincolor);
+  color: black;
   transition: all 0.6 ease;
 }
 
