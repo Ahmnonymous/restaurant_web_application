@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/css/flag-icon.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Resturant Website</title>
+</head>
+
+<body>
+
+  <!-- Header Sectoin -->
+  <header>
+    <div class="logo">
+      <h1>Food Delivery Service </h1>
+    </div>
+    <div class="icons">
+
+
+      <div class="search-container">
+        <button id="search-button" onclick="showSearchInput()"><i class="fas fa-search"></i></button>
+        <input id="search-input" type="text" placeholder="Search" onkeydown="handleSearch(event)">
+      </div>
+      <div class="login-icon" title="Login/SignUp">
+        <i class="fas fa-user"></i>
+      </div>
+
+      <div class="cart-container" title="Cart">
+        <div class="cart-icon" onclick="toggleCart()" data-count="0">
+          <i id="cart-icon" class="fas fa-shopping-cart"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+
+  <!-- Home Section -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="dashboard">
+
+          <!-- Slider Code -->
+          <div class="carousel mt-4">
+            <div class="carousel-inner">
+              <img src="./images/Home.jpg" alt="Image 3">
+              <img src="./images/beverage.jpg" alt="Image 1">
+              <img src="./images/dessert.jpg" alt="Image 2">
+              <img src="./images/pizza1.jpg" alt="Image 4">
+              <img src="./images/burger.jpg" alt="Image 5">
+            </div>
+          </div>
+
+
+
+          <!-- Menus -->
+          <div class="dashboard-menu mt-4">
+          </div>
+
+          <div class="item-content">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Cart Code -->
+  <div class="side-cart" id="sideCart" style="right: -350px; ">
+    <h4>Your Cart</h4>
+    <span onclick="clearCart()">Clear Cart</span>
+
+    <div class="cart-items">
+      <div class="hint-text">Your cart is empty <br> Add an item and start making your order</div>
+      <!-- Cart items will be dynamically added here -->
+      <div class="cart-footer">
+        <span class="tag">Total Price: </span> <span id="totalPrice" class="fee">0.00</span>
+        <a href="payment.html"><button class="btn checkout-btn">Checkout</button></a>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <!-- Questions -->
+  <div class="questions mt-5">
+    <h2>Finest Taste Ever</h2>
+    <div class="section mt-4">
+      <div class="question" onclick="toggleAnswer('answer1')" id="qanswer1">Craving for Something Cheesy and Magical
+        <span> &#x25BC;</span>
+      </div>
+
+
+      <div class="answer" id="answer1">
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          A deal that is light on the pocket yet packed with flavors that are all set to tantalize your taste buds
+        </p>
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          We offer a variety of fast food items in our menu, including your favorite
+          <strong>pizza and zinger burger</strong>
+          bursting with flavors.
+        </p>
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          Even if at midnight you crave for something super delicious, dine-in isn't possible while you search for
+          <strong>pizza delivery near me</strong>
+          , just look up for Cheezious and we'll help fill your tummy with food that is finger-licking good.
+        </p>
+      </div>
+
+
+      <div class="question" onclick="toggleAnswer('answer2')" id="qanswer2">So what makes us different from the rest.
+        <span> &#x25BC;</span>
+      </div>
+
+
+      <div class="answer" id="answer2">
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          The TASTE, of course! And our deals too!
+        </p>
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          Are you up for looking for the best and affordable
+          <strong>zinger burger deals</strong>
+          in the twin cities? We bet you won't find deals better than ours.
+        </p>
+
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          We are sure, once you try our food, you'll come back for more!
+        </p>
+      </div>
+
+      <div class="question" onclick="toggleAnswer('answer3')" id="qanswer3">Who are we? <span> &#x25BC;</span></div>
+      <div class="answer" id="answer3">
+
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          We are a new set up in the twin cities, bringing exciting flavor for you to enjoy.
+        </p>
+
+        <p style="line-height: 1.6; color: rgb(255, 255, 255); font-size: 14px;">
+          Yes, we know you can find burgers and pizzas everywhere but not as good as ours!
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Login Overlay -->
+  <div id="login-overlay" class="overlay">
+    <div class="login-container">
+      <button class="close-button" onclick="closeOverlay()">X</button>
+
+      <h3>Enter your mobile number </h3>
+
+      <p>Please confirm your country code and enter your mobile number</p>
+      <form id="login-form">
+        <input type="phone" id="phone" name="phone" required>
+        <p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+        <button type="submit" class="login" onclick="showVerificationOverlay()">Login</button>
+      </form>
+
+      <div class="hr-container">
+        <hr class="left-hr">
+        <span class="or-text">OR</span>
+        <hr class="right-hr">
+      </div>
+      <!-- signup form link -->
+      <a href="signup.html" style="font-weight: bold; color: rgb(255, 203, 4);">Don't have an account? Sign Up</a>
+
+    </div>
+  </div>
+
+
+  <!-- Verification Overlay -->
+  <div id="verification-overlay" class="overlay">
+    <div class="verification-container">
+      <button class="close-button" onclick="closeOverlay()">X</button>
+      <h3>Verify SMS Code</h3>
+      <p>Please enter the verification code sent to your mobile number.</p>
+      <form id="verification-form">
+        <div class="verification-code-container">
+          <input type="text" id="verification-code" name="verification-code" required>
+          <button type="button" class="toggle-visibility" onclick="toggleVerificationCodeVisibility()">
+            <i id="toggle-icon" class="fas fa-eye-slash"></i>
+          </button>
+        </div>
+        <button type="submit" class="verify">Verify</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-5">
+    <div class="footer-content">
+      <div class="contact">
+        <h3>Contact Us</h3>
+        <p><i class="fa-solid fa-house"></i>&nbsp; 1 Main Street,City</p>
+        <p><i class="fa-solid fa-phone"></i>&nbsp;Phone: 123-456-7890</p>
+        <p><i class="fa-solid fa-envelope"></i>&nbsp;contact@gmail.com</p>
+      </div>
+      <div class="timing">
+        <h3>Timing</h3>
+        <p>Monday - Friday: 9am - 5pm</p>
+        <p>Saturday: 10am - 3pm</p>
+      </div>
+      <div class="follow-us">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="line">
+    <p class="copyright text-center">&copy; 2023 Powered By <span>Blink Co.</span></p>
+  </footer>
+
+
+
+  
+  <script src="js/script.js"></script>
+
+  <script>
+    document.addEventListener("click", function (event) {
+      var cart = document.getElementById("sideCart");
+      var cartIcon = document.getElementById("cart-icon");
+
+      if (!cart.contains(event.target) && event.target !== cartIcon && !cart.contains(event.target.closest(".cart-container"))) {
+        cart.style.display = "none";
+      }
+    });
+
+    var cartIcon = document.getElementById("cart-icon");
+    cartIcon.addEventListener("click", function () {
+      var cart = document.getElementById("sideCart");
+      cart.style.display = "block";
+    });
+
+
+
+
+
+
+    // Search Code
+
+    const searchContainer = document.querySelector('.search-container');
+    const searchInput = document.getElementById('search-input');
+    document.addEventListener('click', function (event) {
+      const isClickedInsideSearchContainer = searchContainer.contains(event.target);
+      if (!isClickedInsideSearchContainer) {
+        searchInput.style.display = 'none';
+      }
+    });
+
+    function showSearchInput() {
+      var searchInput = document.getElementById("search-input");
+      searchInput.style.display = "inline-block";
+      searchInput.focus();
+    }
+
+    function handleSearch(event) {
+      if (event.keyCode === 13) { // Enter key pressed
+        searchWithinPage();
+        hideSearchInput();
+      }
+    }
+
+    function hideSearchInput() {
+      var searchInput = document.getElementById("search-input");
+      searchInput.style.display = "none";
+    }
+
+
+    function searchWithinPage() {
+      var searchQuery = document.getElementById("search-input").value.toLowerCase();
+      var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, span, a, button, div");
+
+      // Remove previous highlighting
+      removeHighlighting();
+
+      for (var i = 0; i < elementsToSearch.length; i++) {
+        var element = elementsToSearch[i];
+        var text = element.innerHTML.toLowerCase();
+        var index = text.indexOf(searchQuery);
+
+        if (index !== -1) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+
+          highlightWord(element, index, searchQuery);
+          document.getElementById("search-input").value = ""; // Clear the search field
+          return; // Stop searching after the first occurrence is found
+        }
+      }
+    }
+
+    function highlightWord(element, index, searchQuery) {
+      var start = index;
+      var end = index + searchQuery.length;
+      var highlightedText = element.innerHTML.slice(0, start) + "<span class='highlighted'>" + element.innerHTML.slice(start, end) + "</span>" + element.innerHTML.slice(end);
+      element.innerHTML = highlightedText;
+    }
+
+    function removeHighlighting() {
+      var highlightedElements = document.getElementsByClassName("highlighted");
+      while (highlightedElements.length > 0) {
+        var parentElement = highlightedElements[0].parentNode;
+        parentElement.replaceChild(document.createTextNode(highlightedElements[0].textContent), highlightedElements[0]);
+      }
+    }
+
+  </script>
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Load the dynamic category menu using AJAX
+    $.ajax({
+      url: "cpp/menu.cgi",
+      method: "GET",
+      dataType: "html",
+      success: function(data) {
+        $(".dashboard-menu").html(data);
+      },
+      error: function() {
+        $(".dashboard-menu").html("<p>Error loading categories.</p>");
+      }
+    });
+
+    // Load the dynamic item cards using AJAX
+    $.ajax({
+      url: "cpp/item.cgi",
+      method: "GET",
+      dataType: "html",
+      success: function(data) {
+      $(".item-content").html(data);
+    },
+    error: function() {
+      $(".item-content").html(data);
+
+    }
+  });
+
+  });
+
+</script>
+
+</body>
+
+</html>
