@@ -41,7 +41,7 @@ int main() {
         std::string itemName = row[2];
         std::string itemDescription = row[3];
         std::string itemPrice = row[4];
-        std::string category = row[1];
+        std::string category = row[7];
 
         if (category != currentCategory) {
             // Add the previous item cards to the item menu
@@ -59,7 +59,7 @@ int main() {
         }
 
         // Add the current item card to the item cards
-        itemCards += "<div class=\"col-lg-2 col-md-6 food-item mx-1\">\n";
+        itemCards += "<div class=\"col-lg-2 col-md-4 col-xs-4 food-item mx-1\">\n";
         itemCards += "  <div class=\"dashboard-card\" data-id=\"" + std::to_string(std::stoull(row[0])) + "\">\n";
         itemCards += "    <img src=\"./images/burger1.jpg\" alt=\"\" class=\"card-image\">\n";
         itemCards += "    <div class=\"card-detail\">\n";
