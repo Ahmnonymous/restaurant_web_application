@@ -8,13 +8,7 @@ userIcon.addEventListener('click', function() {
 // For closing Overlays
 function closeOverlay() {
   var loginOverlay = document.getElementById('login-overlay');
-  var verificationOverlay = document.getElementById('verification-overlay');
-  
-  if (verificationOverlay.style.display !== 'none') {
-    verificationOverlay.style.display = 'none';
-  } else {
     loginOverlay.style.display = 'none';
-  }
 }
 
 // For closing Overlays
