@@ -1259,12 +1259,15 @@ footer {
   margin-right: auto;
   box-sizing: border-box;
 }
+.contact p{
+  width: max-content;
+}
 
 .contact,
 .timing,
 .follow-us {
   flex: 1;
-  padding: 10px;
+  padding: 40px;
 }
 
 .line{
@@ -1273,6 +1276,7 @@ footer {
 }
 .copyright span{
   text-decoration: underline;
+  font-weight: bolder;
 }
 
 .follow-us {
