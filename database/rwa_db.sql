@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2023 at 11:03 AM
+-- Generation Time: Jul 15, 2023 at 11:11 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -179,49 +179,50 @@ CREATE TABLE `item` (
   `description` text DEFAULT NULL,
   `price` decimal(10,2) NOT NULL,
   `picture` longblob DEFAULT NULL,
-  `availability` int(11) DEFAULT NULL
+  `availability` int(11) DEFAULT NULL,
+  `menu_name` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `item`
 --
 
-INSERT INTO `item` (`id`, `menu_id`, `name`, `description`, `price`, `picture`, `availability`) VALUES
-(4, 1, 'Cola', 'Refreshing cola drink', 2.99, NULL, 10),
-(5, 1, 'Iced Tea', 'Chilled iced tea', 3.49, NULL, 15),
-(6, 1, 'Lemonade', 'Homemade lemonade', 3.99, NULL, 12),
-(7, 1, 'Coffee', 'Freshly brewed coffee', 2.99, NULL, 20),
-(8, 1, 'Smoothie', 'Fruit smoothie', 4.49, NULL, 8),
-(9, 2, 'Chicken Wings', 'Crispy chicken wings with BBQ sauce', 9.99, NULL, 5),
-(10, 2, 'Mozzarella Sticks', 'Deep-fried mozzarella sticks', 7.99, NULL, 8),
-(11, 2, 'Nachos', 'Loaded nachos with cheese and toppings', 8.99, NULL, 10),
-(12, 2, 'Spinach Dip', 'Creamy spinach dip served with tortilla chips', 6.99, NULL, 15),
-(13, 2, 'Bruschetta', 'Toasted bread topped with tomatoes and basil', 5.99, NULL, 12),
-(14, 3, 'Steak', 'Grilled steak with mashed potatoes and vegetables', 19.99, NULL, 3),
-(15, 3, 'Salmon', 'Pan-seared salmon with lemon butter sauce', 17.99, NULL, 5),
-(16, 3, 'Chicken Parmesan', 'Breaded chicken topped with marinara sauce and cheese', 14.99, NULL, 8),
-(17, 3, 'Vegetable Stir-Fry', 'Assorted vegetables stir-fried in a savory sauce', 12.99, NULL, 10),
-(18, 3, 'Beef Tacos', 'Soft tortillas filled with seasoned beef and toppings', 10.99, NULL, 12),
-(19, 4, 'Margherita Pizza', 'Classic pizza with tomato sauce and mozzarella cheese', 12.99, NULL, 8),
-(20, 4, 'Pepperoni Pizza', 'Pizza topped with pepperoni and cheese', 13.99, NULL, 10),
-(21, 4, 'Vegetarian Pizza', 'Pizza loaded with assorted vegetables', 13.99, NULL, 6),
-(22, 4, 'BBQ Chicken Pizza', 'Pizza topped with BBQ chicken, onions, and cheese', 14.99, NULL, 7),
-(23, 4, 'Supreme Pizza', 'Pizza with a variety of toppings including pepperoni, sausage, and vegetables', 15.99, NULL, 9),
-(24, 5, 'Cheeseburger', 'Juicy beef patty with melted cheese', 9.99, NULL, 8),
-(25, 5, 'Bacon Burger', 'Burger topped with crispy bacon and cheese', 10.99, NULL, 10),
-(26, 5, 'Mushroom Swiss Burger', 'Burger topped with sautéed mushrooms and Swiss cheese', 10.99, NULL, 7),
-(27, 5, 'Veggie Burger', 'Plant-based burger patty with lettuce and tomato', 8.99, NULL, 12),
-(28, 5, 'BBQ Burger', 'Burger with BBQ sauce, onion rings, and cheddar cheese', 11.99, NULL, 6),
-(29, 6, 'Spaghetti Bolognese', 'Spaghetti pasta with meat sauce', 11.99, NULL, 10),
-(30, 6, 'Fettuccine Alfredo', 'Creamy Alfredo sauce served with fettuccine pasta', 12.99, NULL, 8),
-(31, 6, 'Penne Arrabiata', 'Penne pasta tossed in a spicy tomato sauce', 10.99, NULL, 12),
-(32, 6, 'Lasagna', 'Layers of pasta, meat, and cheese baked to perfection', 13.99, NULL, 6),
-(33, 6, 'Caprese Pasta Salad', 'Pasta salad with tomatoes, mozzarella, and basil', 9.99, NULL, 15),
-(34, 7, 'Club Sandwich', 'Triple-decker sandwich with turkey, bacon, lettuce, and tomato', 9.99, NULL, 10),
-(35, 7, 'BLT Sandwich', 'Classic sandwich with bacon, lettuce, and tomato', 8.99, NULL, 12),
-(36, 7, 'Chicken Caesar Wrap', 'Grilled chicken and Caesar salad wrapped in a tortilla', 9.99, NULL, 8),
-(37, 7, 'Grilled Cheese', 'Toasted bread with melted cheese', 7.99, NULL, 15),
-(38, 7, 'Turkey Avocado Sandwich', 'Sliced turkey, avocado, and mayo on bread', 8.99, NULL, 10);
+INSERT INTO `item` (`id`, `menu_id`, `name`, `description`, `price`, `picture`, `availability`, `menu_name`) VALUES
+(4, 1, 'Cola', 'Refreshing cola drink', 2.99, NULL, 10, 'Beverages'),
+(5, 1, 'Iced Tea', 'Chilled iced tea', 3.49, NULL, 15, 'Beverages'),
+(6, 1, 'Lemonade', 'Homemade lemonade', 3.99, NULL, 12, 'Beverages'),
+(7, 1, 'Coffee', 'Freshly brewed coffee', 2.99, NULL, 20, 'Beverages'),
+(8, 1, 'Smoothie', 'Fruit smoothie', 4.49, NULL, 8, 'Beverages'),
+(9, 2, 'Chicken Wings', 'Crispy chicken wings with BBQ sauce', 9.99, NULL, 5, 'Appetizers'),
+(10, 2, 'Mozzarella Sticks', 'Deep-fried mozzarella sticks', 7.99, NULL, 8, 'Appetizers'),
+(11, 2, 'Nachos', 'Loaded nachos with cheese and toppings', 8.99, NULL, 10, 'Appetizers'),
+(12, 2, 'Spinach Dip', 'Creamy spinach dip served with tortilla chips', 6.99, NULL, 15, 'Appetizers'),
+(13, 2, 'Bruschetta', 'Toasted bread topped with tomatoes and basil', 5.99, NULL, 12, 'Appetizers'),
+(14, 3, 'Steak', 'Grilled steak with mashed potatoes and vegetables', 19.99, NULL, 3, 'Main Dishes'),
+(15, 3, 'Salmon', 'Pan-seared salmon with lemon butter sauce', 17.99, NULL, 5, 'Main Dishes'),
+(16, 3, 'Chicken Parmesan', 'Breaded chicken topped with marinara sauce and cheese', 14.99, NULL, 8, 'Main Dishes'),
+(17, 3, 'Vegetable Stir-Fry', 'Assorted vegetables stir-fried in a savory sauce', 12.99, NULL, 10, 'Main Dishes'),
+(18, 3, 'Beef Tacos', 'Soft tortillas filled with seasoned beef and toppings', 10.99, NULL, 12, 'Main Dishes'),
+(19, 4, 'Margherita Pizza', 'Classic pizza with tomato sauce and mozzarella cheese', 12.99, NULL, 8, 'Pizza'),
+(20, 4, 'Pepperoni Pizza', 'Pizza topped with pepperoni and cheese', 13.99, NULL, 10, 'Pizza'),
+(21, 4, 'Vegetarian Pizza', 'Pizza loaded with assorted vegetables', 13.99, NULL, 6, 'Pizza'),
+(22, 4, 'BBQ Chicken Pizza', 'Pizza topped with BBQ chicken, onions, and cheese', 14.99, NULL, 7, 'Pizza'),
+(23, 4, 'Supreme Pizza', 'Pizza with a variety of toppings including pepperoni, sausage, and vegetables', 15.99, NULL, 9, 'Pizza'),
+(24, 5, 'Cheeseburger', 'Juicy beef patty with melted cheese', 9.99, NULL, 8, 'Burgers'),
+(25, 5, 'Bacon Burger', 'Burger topped with crispy bacon and cheese', 10.99, NULL, 10, 'Burgers'),
+(26, 5, 'Mushroom Swiss Burger', 'Burger topped with sautéed mushrooms and Swiss cheese', 10.99, NULL, 7, 'Burgers'),
+(27, 5, 'Veggie Burger', 'Plant-based burger patty with lettuce and tomato', 8.99, NULL, 12, 'Burgers'),
+(28, 5, 'BBQ Burger', 'Burger with BBQ sauce, onion rings, and cheddar cheese', 11.99, NULL, 6, 'Burgers'),
+(29, 6, 'Spaghetti Bolognese', 'Spaghetti pasta with meat sauce', 11.99, NULL, 10, 'Pasta'),
+(30, 6, 'Fettuccine Alfredo', 'Creamy Alfredo sauce served with fettuccine pasta', 12.99, NULL, 8, 'Pasta'),
+(31, 6, 'Penne Arrabiata', 'Penne pasta tossed in a spicy tomato sauce', 10.99, NULL, 12, 'Pasta'),
+(32, 6, 'Lasagna', 'Layers of pasta, meat, and cheese baked to perfection', 13.99, NULL, 6, 'Pasta'),
+(33, 6, 'Caprese Pasta Salad', 'Pasta salad with tomatoes, mozzarella, and basil', 9.99, NULL, 15, 'Pasta'),
+(34, 7, 'Club Sandwich', 'Triple-decker sandwich with turkey, bacon, lettuce, and tomato', 9.99, NULL, 10, 'Sandwiches'),
+(35, 7, 'BLT Sandwich', 'Classic sandwich with bacon, lettuce, and tomato', 8.99, NULL, 12, 'Sandwiches'),
+(36, 7, 'Chicken Caesar Wrap', 'Grilled chicken and Caesar salad wrapped in a tortilla', 9.99, NULL, 8, 'Sandwiches'),
+(37, 7, 'Grilled Cheese', 'Toasted bread with melted cheese', 7.99, NULL, 15, 'Sandwiches'),
+(38, 7, 'Turkey Avocado Sandwich', 'Sliced turkey, avocado, and mayo on bread', 8.99, NULL, 10, 'Sandwiches');
 
 -- --------------------------------------------------------
 
