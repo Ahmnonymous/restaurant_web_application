@@ -895,76 +895,132 @@ a:hover {
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 }
 
-/* Sign up Form */
 
-.container {
-  max-width: 850px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+
+
+/* Sign up Form */
+h1 {
+  text-align: center;
+  font-weight: bold;
+  padding: 20px 0px 0px 0px;
 }
 
-.container > h2 {
-  text-align: center;
-  font-weight: 600;
-  margin-bottom: 40px;
+.container {
+  background-color: #f8f9fa;
+  box-shadow: 22px 22px 22px lightgrey;
+}
+
+.signup-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.signup-form {
+  flex: 1;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .form-group {
+  position: relative;
   margin-bottom: 20px;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="tel"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
+.form-group .input-group {
+  display: flex;
+}
+
+.form-group .input-group .btn {
+  margin-left: 364px;
+  margin-top: -42px;
+  height: 40px;
+  width: 18%;
+  font-size: medium;
+  font-weight: 200;
+}
+.signup-image {
+  flex: 1;
   border-radius: 5px;
-  font-size: 16px;
-}
-
-label {
-  font-size: large;
-  margin-top: 5px;
-}
-
-button[type="submit"] {
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  font-weight: 600;
-  margin-top: 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button[type="submit"]:hover {
-  color: #000;
-  background-color: var(--maincolor) !important;
-}
-
-#paypal-fields,
-#card-fields {
-  display: none;
-}
-
-.radio-group {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.radio-label {
-  margin-right: 90px;
-  font-size: large;
-  font-weight: 500;
+.signup-image img {
+  max-width: 60%;
+  max-height: 60%;
+  margin-top: -110px;
+  border-radius: 15px;
 }
+
+.form-group {
+  margin-bottom: 15px;
+  margin-left: 30px;
+  position: relative;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="tel"],
+.form-group input[type="number"]
+ {
+  width: 90%;
+  padding: 8px 8px 8px 50px;
+  background-color:  #f8f9fa;
+  border-radius: 0;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid black;
+}
+
+.form-group i {
+  position: absolute;
+  padding-left: 10px;
+  top: 8px;
+  left: 10px;
+  color: black;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+.form-group label {
+  margin-left: 20px;
+  margin-top: -25px;
+}
+.btn {
+  display: block;
+  margin-left: 30px;
+  width: 26%;
+  padding: 10px;
+  margin-top: 30px;
+  border: none;
+  background: rgb(88, 117, 219);
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  font-size: large;
+  background: rgb(255, 203, 4);
+  transition: all 0.6 ease;
+}
+
+
+
+
+
+
+
 /* 
 @media screen and (max-width: 480px) {
   .container {
@@ -1040,6 +1096,26 @@ button[type="submit"]:hover {
 }
 
 /* Payment File Css */
+
+
+
+
+#paypal-fields,
+#card-fields {
+  display: none;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.radio-label {
+  margin-right: 90px;
+  font-size: large;
+  font-weight: 500;
+}
 .payment-method {
   margin-top: 20px;
   background-color: #f8f9fa;
