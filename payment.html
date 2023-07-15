@@ -12,16 +12,7 @@
     <link rel="stylesheet" href="./css/style.css">
   <title>Payment Method</title>
 </head>
-
-<style>
- 
-
-
-
-</style>
 <body>
-
-  
   <!-- Header Sectoin -->
   <header>
     <div class="logo">
@@ -45,51 +36,45 @@
       </div>
     </div>
   </header>
-
-
-
-
    <div class="container-fluid mt-5 pay">
     <div class="container-grid mt-3">
-    <div class="payment-method">
-  
-      <h2>Payment Method</h2>
-      <form id="payment-form">
-        <div class="form-group">
-          <div class="radio-group">
-            <input type="radio" id="paypal-option" name="payment-option" value="paypal">
-            <label for="paypal-option" class="radio-label"><i class="fa-brands fa-paypal fa-2xl" style="color: #567cbd;"></i>PayPal</label>
-  
-            <input type="radio" id="card-option" name="payment-option" value="card">
-            <label for="card-option" class="radio-label">&#128179;Credit/Debit Card</label>
-  
-            <input type="radio" id="cash-option" name="payment-option" value="cash" checked>
-            <label for="cash-option" class="radio-label">Cash on Delivery</label>
-          </div>
-        </div>
-        <div class="form-group" id="paypal-fields">
-          <label for="paypal-id">PayPal ID</label>
-          <input type="text" id="paypal-id" name="paypal-id" placeholder="Enter paypal id" required>
-          <label for="paypal-password" >Password</label>
-  
-          <input type="password" id="paypal-password" name="paypal-password" placeholder="Enter your password" required>
-          
-        </div>
-        <div class="form-group" id="card-fields">
-          <label for="card holder name">Card Holder Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required>
-          <label for="card-number">Card Number</label>
-          <input type="text" id="card-number" name="card-number" placeholder="1234 1234 1234 1234" required>
-          <label for="expiration-date">Expiration Date</label>
-          <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
-          <label for="cvv">CVV</label>
-          <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
-  
-        </div>
-        <button type="submit" class="mt-4" style="width: 30% ; display: block; margin: auto; font-size: larger;">Proceed</button>
-      </form>
-    </div>
+      <div class="payment-method-new">
 
+        <h2>Payment Method</h2>
+        <form id="payment-form-new">
+          <div class="form-group">
+            <div class="radio-group-new">
+              <input type="radio" id="paypal-option-new" name="payment-option-new" value="paypal">
+              <label for="paypal-option-new" class="radio-label-new"><i class="fa-brands fa-paypal fa-2xl" style="color: #567cbd;"></i>PayPal</label>
+      
+              <input type="radio" id="card-option-new" name="payment-option-new" value="card" class="credit">
+              <label for="card-option-new" class="radio-label-new">&#128179;Credit/Debit Card</label>
+      
+              <input type="radio" id="cash-option-new" name="payment-option-new" value="cash" class="cash" checked>
+              <label for="cash-option-new" class="radio-label-new">Cash on Delivery</label>
+            </div>
+          </div>
+          <div class="form-group" id="paypal-fields-new">
+            <label for="paypal-id-new">PayPal ID</label>
+            <input type="text" id="paypal-id-new" name="paypal-id-new" placeholder="Enter PayPal ID" required>
+            <label for="paypal-password-new" >Password</label>
+            <input type="password" id="paypal-password-new" name="paypal-password-new" placeholder="Enter your password" required>
+          </div>
+          <div class="form-group" id="card-fields-new">
+            <label for="card-holder-name-new">Card Holder Name</label>
+            <input type="text" id="card-holder-name-new" name="card-holder-name-new" placeholder="Enter your name" required>
+            <label for="card-number-new">Card Number</label>
+            <input type="text" id="card-number-new" name="card-number-new" placeholder="1234 1234 1234 1234" required>
+            <label for="expiration-date-new">Expiration Date</label>
+            <input type="text" id="expiration-date-new" name="expiration-date-new" placeholder="MM/YY" required>
+            <label for="cvv-new">CVV</label>
+            <input type="text" id="cvv-new" name="cvv-new" placeholder="CVV" required>
+          </div>
+          <button type="submit" class="mt-4 proceed-button" style="width: 30%; display: block; margin: auto; font-size: larger;">Proceed</button>
+        </form>
+      
+      </div>
+      
     <div class="cart mt-3">
       <h2 style="text-align: center; font-weight: bold;">Your Cart</h2>
       <div id="cartItems" class="mt-3">
@@ -162,18 +147,18 @@
 
 
   <script>
-    const paypalFields = document.getElementById('paypal-fields');
-    const cardFields = document.getElementById('card-fields');
+    const paypalFields = document.getElementById('paypal-fields-new');
+    const cardFields = document.getElementById('card-fields-new');
 
-    document.getElementById('payment-form').addEventListener('change', function() {
-      if (document.getElementById('paypal-option').checked) {
+    document.getElementById('payment-form-new').addEventListener('change', function() {
+      if (document.getElementById('paypal-option-new').checked) {
         paypalFields.style.display = 'block';
         cardFields.style.display = 'none';
-      } else if (document.getElementById('card-option').checked) {
+      } else if (document.getElementById('card-option-new').checked) {
         cardFields.style.display = 'block';
         paypalFields.style.display = 'none';
       }
-      else if (document.getElementById('cash-option').checked) {
+      else if (document.getElementById('cash-option-new').checked) {
         cardFields.style.display = 'none';
         paypalFields.style.display = 'none';
       }
