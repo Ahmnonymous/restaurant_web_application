@@ -533,7 +533,7 @@ h4 {
 .side-cart .dashboard-card {
   display: flex;
   top: 50px;
-  position: absolute;
+  position: relative;
   width: 250px;
   align-items: center;
   margin-top: 5px;
