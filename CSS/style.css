@@ -53,6 +53,10 @@ header {
   .cart-container {
     margin: 0;
   }
+  .container-fluid
+  {
+    width: 100vw;
+  }
 }
 .delivery-icon,
 .logo,
@@ -168,7 +172,7 @@ header {
 /* Home Section */
 .dashboard {
   height: 100%;
-  width: 100%;
+  width: fit-content;
   background-color: #f8f9fa;
 }
 
