@@ -1,5 +1,5 @@
 // Show login overlay when click on user icon
-var userIcon = document.querySelector('.login-icon');
+var userIcon = document.querySelector('.fa-user');
 var loginOverlay = document.querySelector('#login-overlay');
 
 userIcon.addEventListener('click', function() {
@@ -7,7 +7,7 @@ userIcon.addEventListener('click', function() {
 });
 
 // Show overlay when click on Driver icon
-var drivericon = document.querySelector('.motorcycle-icon');
+var drivericon = document.querySelector('.fa-motorcycle');
 var driverloginOverlay = document.querySelector('#driver-login-overlay');
 
 drivericon.addEventListener('click', function() {
