@@ -924,14 +924,42 @@ label {
 
 
 /* Question Answer Section */
+.questions {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--maincolor);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.questions > h2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 40px;
+  transition: all 0.3s ease;
+}
+
+.section {
+  max-width: 1000px;
+  margin: auto;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
 
 .question {
   background-color: rgba(0, 0, 0, 0.6);
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px 0px;
   color: white;
   font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px 0px;
   padding: 10px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.question > span {
+  float: right;
   transition: all 0.3s ease;
 }
 
@@ -943,7 +971,61 @@ label {
   display: none;
 }
 
+/* Added media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .questions > h2 {
+    font-size: 30px;
+  }
 
+  .section {
+    max-width: 500px;
+  }
+}
+
+
+
+/* Footer */
+ 
+  @media screen and (max-width: 1200px) {
+
+    .questions{
+      margin-left: 150px;
+      width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 980px) {
+    .questions{
+      margin-left: 200px;
+      width: 90%;
+    }
+    .section{
+      width: 600px;
+    }
+  }
+
+
+
+
+
+  @media screen and (max-width: 767px) {
+   .questions{
+      width: 700px;
+
+      margin-left: 300px;
+    }
+
+  }
+
+  @media screen and (max-width: 579px) {
+    .questions{
+      width: 700px;
+    }
+    .section{
+      width: 600px;
+    }
+    
+  } 
 .driver-overlay {
   position: fixed;
   top: 0;
