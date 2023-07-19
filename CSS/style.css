@@ -311,7 +311,7 @@ section {
     padding-left: 10px;
   }
   .menu-container{
-    margin-left: -20px;
+    margin-left: -10px;
     width: calc(5 * (160px + 40px)); /* (button width + gap) * number of buttons */
 
   }
