@@ -167,6 +167,12 @@ section {
   .carousel-inner img {
     width: 100%; /* Reset the image width */
   }
+
+/* For Dashboard */
+  .dashboard-content .row .col-lg-2 {
+    flex: 0 0 calc(50% - 20px);
+    margin-left: 10px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -210,9 +216,10 @@ section {
   gap: 20px; /* Adjust the gap between buttons as desired */
   /* Set a specific width to allow overflow */
   width: 1000px;
+  margin-left: 130px;
   justify-content: space-between;
   overflow-x: scroll;
-  width: calc(6 * (160px + 10px)); /* (button width + gap) * number of buttons */
+  width: calc(6 * (160px + 40px)); /* (button width + gap) * number of buttons */
 
 }
 
@@ -266,13 +273,6 @@ section {
   margin-right: 0px !important;
 }
 
-@media (max-width: 768px) {
-  .dashboard-content .row .col-lg-2 {
-    flex: 0 0 calc(50% - 20px);
-    margin-left: 10px;
-  }
- 
-}
 
 .dashboard-card {
   width: 110%;
@@ -313,7 +313,9 @@ section {
     padding-left: 0; /* Reset the left padding */
     width: calc(4 * (160px + 10px)); /* (button width + gap) * number of buttons */
   }
-  .dashboard-menu{padding-left: 50px;}
+  .dashboard-menu{
+    padding-left: 50px;
+  }
 }
 @media (max-width: 590px) {
   .food-item {
@@ -328,7 +330,9 @@ section {
     padding-left: 0; /* Reset the left padding */
     width: calc(2 * (150px + 10px)); /* (button width + gap) * number of buttons */
   }
-  .dashboard-menu{padding-left: 0;}
+  .menu-container{
+    margin-left: -10px;
+  }
 }
 @media (max-width: 490px) {
   .food-item {
@@ -340,6 +344,9 @@ section {
  .card-detail .add-to-cart-btn {
     max-width: 92px;
     font-size: 12px;
+}
+.menu-container{
+  margin-left: -20px;
 }
 
 }
