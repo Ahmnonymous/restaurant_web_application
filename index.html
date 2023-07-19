@@ -41,6 +41,8 @@
 </nav>
 
 
+
+
   <!-- Home Section -->
   <div class="container-fluid ">
     <div class="row">
@@ -56,19 +58,19 @@
               <img src="./images/burger.jpg" alt="Image 5">
             </div>
           </div>
-          <!-- Menus -->
-          <div class="dashboard-menu mt-4">
-            <button class="menu-btn" data-category="all">All</button>
-            <button class="menu-btn" data-category="pizza" onclick="scrollToCategory('p',this)">Pizza</button>
-            <button class="menu-btn" data-category="burgers" onclick="scrollToCategory('B',this)">Burgers</button>
-            <button class="menu-btn" data-category="desserts" onclick="scrollToCategory('d',this)">Desserts</button>
-            <button class="menu-btn" data-category="beverages" onclick="scrollToCategory('b',this)"> Beverages</button>
+          <div class="dashboard-menu mt-4 d-flex flex-wrap">
+            <button class="menu-btn col-4 col-md-auto" data-category="all">All</button>
+            <button class="menu-btn col-4 col-md-auto" data-category="pizza" onclick="scrollToCategory('p',this)">Pizza</button>
+            <button class="menu-btn col-4 col-md-auto" data-category="burgers" onclick="scrollToCategory('B',this)">Burgers</button>
+            <button class="menu-btn col-4 col-md-auto" data-category="desserts" onclick="scrollToCategory('d',this)">Desserts</button>
+            <button class="menu-btn col-4 col-md-auto" data-category="beverages" onclick="scrollToCategory('b',this)">Beverages</button>
           </div>
+
           <div class="item-content">
             <h2 id="B" class="mx-5">Burgers</h2>
             <hr class="Line">
           <div class="dashboard-content">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-6">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-xl-6">
               <!-- Burgers -->
               <div class="food-item burgers mx-1">
                 <div class="dashboard-card" data-id="1">
@@ -154,25 +156,25 @@
 
 
 
-<div class="container shadow p-5 " style="background-color: rgb(255,203,0);">
-  <h1 class="text-center" >Finest Taste Ever</h1>
+<div class="container shadow p-5 mt-5" style="background-color: rgb(255,203,0);">
+  <h1 class="text-center fw-bold" >Finest Taste Ever</h1>
 <div class=" mt-4 accordion  accordion-flush" id="accordionFlushExample">
   <div class="accordion-item">
     <h2 class="accordion-header bg-warning " id="flush-headingOne">
-      <button style="background-color: #666666;" class=" fw-bold text-light  accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+      <button style="background-color:#3c3636;" class=" fw-bold text-light  accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
           Craving for Something Cheesy and Magical
       </button>
     </h2>
     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">     <p >
+      <div class="accordion-body bg-dark">     <p class="text-white">
           A deal that is light on the pocket yet packed with flavors that are all set to tantalize your taste buds
         </p>
-        <p>
+        <p class="text-white">
           We offer a variety of fast food items in our menu, including your favorite
           <strong>pizza and zinger burger</strong>
           bursting with flavors.
         </p>
-        <p>
+        <p class="text-white">
           Even if at midnight you crave for something super delicious, dine-in isn't possible while you search for
           <strong>pizza delivery near me</strong>
           , just look up for Cheezious and we'll help fill your tummy with food that is finger-licking good.
@@ -181,38 +183,38 @@
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header  " id="flush-headingTwo">
-      <button style="background-color: #666666;" class=" fw-bold text-light accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+      <button style="background-color: #3c3636;" class=" fw-bold text-light accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
           So what makes us different from the rest.
       </button>
     </h2>
     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
-           <p>
+      <div class="accordion-body bg-dark">
+           <p class="text-white">
           The TASTE, of course! And our deals too!
         </p>
-        <p>
+        <p class="text-white">
           Are you up for looking for the best and affordable
           <strong>zinger burger deals</strong>
           in the twin cities? We bet you won't find deals better than ours.
         </p>
-        <p>
+        <p class="text-white">
           We are sure, once you try our food, you'll come back for more!
         </p></div>
     </div>
   </div>
   <div class="accordion-item  ">
     <h2 class="accordion-header" id="flush-headingThree">
-      <button style="background-color: #666666;" class=" text-light fw-bold  accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+      <button style="background-color:#3c3636;" class=" text-light fw-bold  accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
           Who are we?
       </button>
     </h2>
     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body"> 
-           <p>
+      <div class="accordion-body bg-dark"> 
+           <p class="text-white">
           We are a new set up in the twin cities, bringing exciting flavor for you to enjoy.
         </p>
 
-        <p>
+        <p class="text-white">
           Yes, we know you can find burgers and pizzas everywhere but not as good as ours!
         </p></div>
     </div>
@@ -263,15 +265,15 @@
         <div class="col-md-4  ">
             <h3 class="fw-bold text-center " >Contact</h3>
             
-            <div class="text-center" >  <i class="fa-solid fa-house"></i>123/Colombo/Sri Lanka </div>
-            <div class="text-center mt-3" >  <i class="fa-solid fa-phone"></i>+94 12 345 6789</div>
-            <div class="text-center mt-3" >  <i class="fa-solid fa-envelope"></i>+94 12 345 6789</div>
+            <div class="text-center" >  <i class="fa-solid fa-house"></i>Business Park New Capital</div>
+            <div class="text-center mt-3" >  <i class="fa-solid fa-phone"></i>+20 115 599 7999</div>
+            <div class="text-center mt-3" >  <i class="fa-solid fa-envelope"></i>mgrtal9@gmail.com</div>
            
         </div>
         <div class="col-md-4 ">
             <div>
                 <h3 class="fw-bold text-center " >Our Timing</h3>
-            <p class="text-center">Monday - Sunday <span>11:00 AM - 03:00 AM</span></p>
+            <p class="text-center">Monday - Sunday <span>10:00 - 23:00</span></p>
             </div>
             
         </div>
