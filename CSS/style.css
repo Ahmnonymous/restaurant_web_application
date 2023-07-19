@@ -158,7 +158,7 @@ section {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .carousel-inner {
     width: 500%; /* Each image occupies 50% of the carousel width */
     animation: carousel-animation 20s infinite; /* Adjust the animation duration as needed */
@@ -173,6 +173,7 @@ section {
     flex: 0 0 calc(50% - 20px);
     margin-left: 10px;
   }
+  
 }
 
 @media (max-width: 576px) {
@@ -184,7 +185,6 @@ section {
   .carousel-inner img {
     width: 80%; /* Reset the image width */
   }
-  
   
 }
 
@@ -216,7 +216,7 @@ section {
   gap: 20px; /* Adjust the gap between buttons as desired */
   /* Set a specific width to allow overflow */
   width: 1000px;
-  margin-left: 130px;
+  margin-left: 120px;
   justify-content: space-between;
   overflow-x: scroll;
   width: calc(6 * (160px + 40px)); /* (button width + gap) * number of buttons */
@@ -287,11 +287,18 @@ section {
 
 
 /* Media Query for Dashboard Card Items */
-@media (min-width: 1200px) {
+@media (max-width: 1300px) {
   .food-item {
     flex:0 0 20.33333%;
     max-width: 15.33333%;
     margin-top: 10px;
+  }
+  
+  .menu-container{
+    margin-left: -40px;
+
+    width: calc(6 * (150px + 40px)); /* (button width + gap) * number of buttons */
+
   }
 }
 @media (max-width: 1200px) {
@@ -299,6 +306,14 @@ section {
     flex:0 0 33.33333%;
     max-width: 22.33333%;
     margin-top: 10px;
+  }
+  .dashboard-menu{
+    padding-left: 10px;
+  }
+  .menu-container{
+    margin-left: -20px;
+    width: calc(5 * (160px + 40px)); /* (button width + gap) * number of buttons */
+
   }
 }
 @media (max-width: 980px) {
@@ -316,23 +331,33 @@ section {
   .dashboard-menu{
     padding-left: 50px;
   }
+  .menu-container{
+    margin-left: -20px;
+  }
 }
-@media (max-width: 590px) {
+@media (max-width: 700px) {
+  .menu-container {
+    margin-left: -10px;
+    padding-left: 0; /* Reset the left padding */
+    width: calc(3 * (160px + 10px)); /* (button width + gap) * number of buttons */
+  }
+
+}
+  @media (max-width: 590px) {
   .food-item {
     flex: 0 0 50%;
     max-width: 48%;
     margin-top: 20px;
   }
   .menu-container {
+    margin-left: -10px;
     flex-wrap: wrap; /* Allow wrapping of buttons */
     justify-content: flex-start; /* Start from the beginning */
     overflow-x: auto;
     padding-left: 0; /* Reset the left padding */
     width: calc(2 * (150px + 10px)); /* (button width + gap) * number of buttons */
   }
-  .menu-container{
-    margin-left: -10px;
-  }
+  
 }
 @media (max-width: 490px) {
   .food-item {
