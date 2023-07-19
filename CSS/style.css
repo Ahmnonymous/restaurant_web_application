@@ -75,6 +75,23 @@ section {
   cursor: pointer;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 }
+@media (max-width: 767px) {
+  .search-container {
+    position: relative; /* Add this to position the input relative to the container */
+  }
+  #search-input {
+    display: none; /* Hide the input by default */
+    position: absolute;
+    top: 100%; /* Position the input below the search icon */
+    left: 0;
+    width: 100px; /* Make the input full width of the container */
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(255, 203, 4);
+  }
+}
 
 .highlighted {
   background-color: rgb(235, 195, 35);
@@ -145,8 +162,15 @@ section {
   }
   
   .carousel-inner img {
-    width: 100%; /* Reset the image width */
+    width: 80%; /* Reset the image width */
   }
+  .dashboard-menu{
+    display: flex;
+    margin-right: 40px;
+    overflow: hidden;
+
+  } 
+  
 }
 
 
@@ -163,20 +187,22 @@ section {
   top: 0;
   padding: 1rem 0;
   padding-top: 20px;
+  justify-content: space-between;
   padding-bottom: 0;
   overflow-x: auto;
   z-index: 100;
   background-color: #f8f9fa;
   transition: all 0.3s ease;
 }
-
+.dashboard-menu .all{
+  margin-left: 170px;
+}
 .dashboard-menu > button {
   text-decoration: none;
   text-align: center;
   border: 1px solid lightgrey;
   border-radius: 20px;
   display: block;
-  margin: 0 10px;
   font-weight: 500;
   min-width: 150px;
   padding: 0.5rem 0;
@@ -267,7 +293,6 @@ section {
  .card-detail .add-to-cart-btn {
     max-width: 92px;
     font-size: 12px;
-
 }
 }
 
@@ -510,6 +535,9 @@ h4 {
 
 .shadow{
   max-width: 1100px;
+}
+.house{
+  margin-left: 60px;
 }
 
 

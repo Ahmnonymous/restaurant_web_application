@@ -18,7 +18,7 @@
 <body>
 
 
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-sm navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand m-2 ms-5 text-dark logo" href="#">Slide</a>
         <ul class="navbar-nav d-flex flex-row me-1 ">
@@ -26,15 +26,15 @@
                 <a class="nav-link text-dark" href="#"><i class="fas fa-motorcycle mx-1 "></i></a>
             </li>
             <li class="nav-item me-3 me-lg-0 search-container" title="Search Here">
-                <a class="nav-link text-dark" href="#"><i class="fas fa-search mx-1 me-3"></i></a>
-                <input id="search-input" type="text" placeholder="Search" onkeydown="handleSearch(event)">
-
+              <a class="nav-link text-dark" href="#"><i class="fas fa-search mx-1 me-3"></i></a>
+              <input id="search-input" type="text" placeholder="Search" onkeydown="handleSearch(event)">
             </li>
+            
             <li class="nav-item me-3 me-lg-0" title="Login/Signup">
                 <a class="nav-link text-dark" href="#"><i class="fas fa-user mx-1 ms-5"></i></a>
             </li>
-            <li class="nav-item me-3 me-lg-0" title="Shopping Cart">
-                <a class="nav-link text-dark" href="#"><i class="fas fa-shopping-cart mx-1"></i></a>
+            <li class="nav-item me-lg-0" title="Shopping Cart">
+                <a class="nav-link text-dark" href="#"><i class="fas fa-shopping-cart"></i></a>
             </li>
         </ul>
     </div>
@@ -59,7 +59,7 @@
             </div>
           </div>
           <div class="dashboard-menu mt-4 d-flex flex-wrap">
-            <button class="menu-btn col-4 col-md-auto" data-category="all">All</button>
+            <button class="menu-btn col-4 col-md-auto all" data-category="all">All</button>
             <button class="menu-btn col-4 col-md-auto" data-category="pizza" onclick="scrollToCategory('p',this)">Pizza</button>
             <button class="menu-btn col-4 col-md-auto" data-category="burgers" onclick="scrollToCategory('B',this)">Burgers</button>
             <button class="menu-btn col-4 col-md-auto" data-category="desserts" onclick="scrollToCategory('d',this)">Desserts</button>
@@ -265,15 +265,15 @@
         <div class="col-md-4  ">
             <h3 class="fw-bold text-center " >Contact</h3>
             
-            <div class="text-center" >  <i class="fa-solid fa-house"></i>Business Park New Capital</div>
-            <div class="text-center mt-3" >  <i class="fa-solid fa-phone"></i>+20 115 599 7999</div>
-            <div class="text-center mt-3" >  <i class="fa-solid fa-envelope"></i>mgrtal9@gmail.com</div>
+            <div class="text-center" > <i class="fa-solid fa-house house"></i> &nbsp; Business Park New Capital</div>
+            <div class="text-center mt-3" >  <i class="fa-solid fa-phone"></i> &nbsp;+20 115 599 7999</div>
+            <div class="text-center mt-3" >  <i class="fa-solid fa-envelope"></i> &nbsp;mgrtal9@gmail.com</div>
            
         </div>
         <div class="col-md-4 ">
             <div>
                 <h3 class="fw-bold text-center " >Our Timing</h3>
-            <p class="text-center">Monday - Sunday <span>10:00 - 23:00</span></p>
+            <p class="text-center">Monday - Sunday <br> <span>10:00 - 23:00</span></p>
             </div>
             
         </div>
@@ -311,7 +311,7 @@ const searchInput = document.getElementById('search-input');
 const searchIcon = document.querySelector('.search-container .nav-link');
 
 searchIcon.addEventListener('click', function (event) {
-  searchInput.style.display = 'inline-block';
+  searchInput.style.display = 'block'; /* Change the display property to block */
   searchInput.focus();
 });
 
@@ -321,6 +321,7 @@ document.addEventListener('click', function (event) {
     searchInput.style.display = 'none';
   }
 });
+
 
     function handleSearch(event) {
       if (event.keyCode === 13) { // Enter key pressed
