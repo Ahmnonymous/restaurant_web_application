@@ -6,7 +6,16 @@
   box-sizing: border-box;
   transition: all 0.3s ease-in; /* Added smooth transition to all properties */
 }
+.order-owner {
+  display: flex;
+}
 
+.order-owner img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-top: 15px;
+}
 body {
   background-color: #f8f9fa;
 }
@@ -36,9 +45,9 @@ section {
   font-weight: bolder;
   font-size: 30px;
 }
-.navbar-nav .nav-link:last-child {
+/* .navbar-nav .nav-link:last-child {
   margin-right: 50px;
-}
+} */
 .navbar-nav .nav-link
 {
   font-size: 22px;
@@ -46,51 +55,54 @@ section {
 
 
 /* Search Field */
-.search-container {
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  background-color: #f7f7f7;
+}
+
+.search-box {
+  position: relative;
+  border-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+  padding: 10px;
+  width: 300px; /* Initial width for larger screens */
 }
 
-#search-input {
-  padding: 7px;
-  border-radius: 4px;
+.search-box input[type="text"] {
   border: none;
+  outline: none;
   font-size: 16px;
-  margin-right: -20px;
-  background-color: rgb(251, 220, 97);
-  flex-grow: 1;
-  display: none;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
-}
-#search-input[type="text"] {
-  color: black;
+  padding: 8px 20px;
+  border-radius: 30px;
+  width: 100%; /* Fill the container width */
 }
 
-#search-button {
-  background-color: rgb(255, 204, 0);
-  color: black;
+.search-box button {
+  background-color: transparent;
   border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
+  padding: 8px;
 }
-@media (max-width: 767px) {
-  .search-container {
-    position: relative; /* Add this to position the input relative to the container */
+.search-box button i {
+  font-size: 16px;
+  color: #777;
+}
+
+
+/* Media query for responsive design */
+@media screen and (max-width: 600px) {
+  .search-box {
+    width: 80%;
   }
-  #search-input {
-    display: none; /* Hide the input by default */
-    position: absolute;
-    top: -43%; /* Position the input below the search icon */
-    left: 0;
-    width: 100px; /* Make the input full width of the container */
-    padding: 0px;
-    margin-top: 5px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: rgb(219, 186, 52);
+
+  .search-box input[type="text"]:focus {
+    width: 100%;
   }
   
 }
@@ -166,6 +178,7 @@ section {
   .carousel-inner img {
     width: 80%; /* Reset the image width */
   }
+  
   
 }
 
@@ -328,6 +341,7 @@ section {
     max-width: 92px;
     font-size: 12px;
 }
+
 }
 
 
