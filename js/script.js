@@ -19,6 +19,8 @@ function closeOverlay() {
   var driverloginOverlay = document.getElementById('driver-login-overlay');
     loginOverlay.style.display = 'none';
     driverloginOverlay.style.display='none';
+    document.getElementById("overlay").style.display = "none";
+
 }
 
 // For closing Overlays

@@ -54,6 +54,28 @@ section {
 }
 
 
+
+.cart-icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-count {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background-color: red;
+  color: #fff;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+
 /* Search Field */
 .search {
   display: flex;
@@ -382,13 +404,23 @@ section {
 
 }
 
-
-
-
 .dashboard-card:hover {
   border: 2px solid var(--maincolor);
 }
 
+.card-detail > h4 {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  margin: 0 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+
+}
 .card-image {
   width: 100%;
   height: 140px;
@@ -400,53 +432,8 @@ section {
 .card-detail {
   position: relative;
   padding: 10px;
-  height: 220px; /* Adjust the height as needed */
+  height: 150px; /* Adjust the height as needed */
   overflow: auto;
-}
-.card-detail > h4 {
-  font-weight: bold;
-  font-size: 18px;
-  margin-top: 5px;
-}
-.card-detail p,
-h4 {
-  text-align: center;
-  margin: 0 10px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
-}
-.card-detail hr {
-  position: absolute;
-  top: 42%;
-  left: 0;
-  right: 0;
-}
-
-.card-detail > p {
-  font-weight: 500;
-  margin-bottom: 2em;
-  font-size: 12px;
-  margin-top: 8px;
-  color: #000;
-}
-.card-detail .price {
-  text-align: center;
-  margin: auto;
-  font-weight: 600;
-  color: rgb(154, 28, 28);
-  margin-top: 5px;
-  margin-bottom: 10px;
-  transition: all 0.3s ease; /* Added smooth transition to all properties */
-  position: absolute;
-  margin-top: 20px;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: block;
 }
 
 
@@ -462,22 +449,34 @@ h4 {
 
 
 /* Add to Cart Button */
-.btn.add-to-cart-btn {
+.see-detail
+{
   position: absolute;
-  margin-top: -150px;
-  bottom: 10px;
+  left: 50%;
+  margin-top: 5px;
+  transform: translateX(-50%);
+  padding: 8px 8px;
+  background-color: red;
+  width: 120px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+}
+.btn.add-to-cart-btn{
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
   padding: 8px 8px;
   background-color: red;
-  text-decoration: none;
   width: 120px;
+  text-decoration: none;
   border-radius: 10px;
   color: white;
   font-weight: 700;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
   bottom: calc(1% + 10px);
-  top: unset;
 }
 
 .btn.add-to-cart-btn:hover {
@@ -526,6 +525,102 @@ h4 {
 /* Side Cart */
 
 /* Overlay */
+
+
+/* Styling for the overlay */
+.overlay-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(
+    8px
+  ); 
+  z-index: 999;
+}
+.overlay-close {
+  position: absolute;
+  top: 3px;
+  right: 2px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 10px 0px 10px;
+  background-color: #fff;
+  border-radius: 15px;
+  height: 400px; /* Adjust the height as needed */
+  max-width: 300px;
+}
+
+.overlay-content img {
+  height: 140px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+}
+.overlay-content h4,.overlay-content p{
+  text-align: center;
+  margin: 0 10px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+}
+.overlay-content p{
+  font-weight: 500;
+  margin-bottom: 2em;
+  font-size: 14px;
+  margin-top: 8px;
+  color: #000;
+}
+
+.overlay-content h4 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.overlay-content .price {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  margin-top:40px;
+  color: rgb(154, 28, 28);
+  transition: all 0.3s ease; /* Added smooth transition to all properties */
+}
+
+/* .overlay-content .btn {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+} */
+
+
+
+
+
+
+
+
 .overlay {
   position: fixed;
   top: 0;
@@ -1017,6 +1112,8 @@ label {
     width: 1100px;
   }
 }
+
+
 
 
 
