@@ -216,3 +216,16 @@ document.querySelector('#sidebar-close').onclick = () => {
     
 
 
+    // Rate order Stars
+    function setRating(stars) {
+      const starsElements = document.querySelectorAll('.star');
+      starsElements.forEach((star, index) => {
+          if (index < stars) {
+              star.classList.add('selected');
+          } else {
+              star.classList.remove('selected');
+          }
+      });
+  }
+
+

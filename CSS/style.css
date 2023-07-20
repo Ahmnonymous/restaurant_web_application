@@ -1161,6 +1161,94 @@ label {
 
 
 
+/* Rate Screen CSS */
+.rate-order {
+  display: block;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 400px;
+  background-color: #f9f9f9;
+}
+.rate-order p{
+  font-size: 18px;
+}
+.stars {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.star {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.star.selected {
+  color: orange;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+textarea::placeholder {
+  color: #aaa;
+}
+
+
+
+/* Cart checkout button */
+/* Add this CSS to style the checkout button */
+.checkout a{
+  display: block;
+  margin: auto;
+}
+.checkout button {
+  background-color: rgb(255, 203, 0);
+  display: block;
+  margin: auto;
+  color: black;
+  font-weight: bolder;
+  padding: 12px 40px;
+  margin-top: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout button:hover {
+  color: white;
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
+}
+
+.checkout button:focus {
+  outline: none;
+}
+
+.checkout button:active {
+  background-color: rgb(255, 203, 0);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
