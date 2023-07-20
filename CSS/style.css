@@ -1211,7 +1211,7 @@ textarea::placeholder {
   display: block;
   margin: auto;
 }
-.checkout button {
+.checkout button,button {
   background-color: rgb(255, 203, 0);
   display: block;
   margin: auto;
@@ -1226,13 +1226,13 @@ textarea::placeholder {
   transition: background-color 0.3s ease;
 }
 
-.checkout button:hover {
+.checkout button:hover, button:hover {
   color: white;
   transform: scale(1.1);
   transition: all 0.5s ease-in-out;
 }
 
-.checkout button:focus {
+.checkout button:focus , button:focus {
   outline: none;
 }
 
@@ -1242,6 +1242,88 @@ textarea::placeholder {
 
 
 
+/* User Privileges */
+
+.privilege {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-card {
+  background-color: #fff;
+  width: 250px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+}
+/* Style checkboxes */
+.user-card input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  vertical-align: middle;
+  position: relative;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.user-card input[type="checkbox"]:checked::before {
+  content: '\2713';
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  top: -1px;
+  left: 2px;
+}
+
+.user-card input[type="checkbox"]:checked {
+  background-color: rgb(255, 203, 0);
+  border-color: rgb(255, 203, 0);
+}
+.user-privileges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.user-card h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.user-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.user-card li {
+  margin-bottom: 5px;
+  padding-left: 10px;
+  color: #333;
+}
+
+.user-card .changed {
+  color: #ff2600; /* Orange color for the changed privilege */
+  background-color: #fff; /* Reset background color to white */
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
 
 
 

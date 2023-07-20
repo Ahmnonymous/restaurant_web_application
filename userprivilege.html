@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/css/flag-icon.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <div class="container-fluid">
+            <div class="order-owner">
+                <img src="./images/beverage.jpg" alt="user image">
+                <a class="navbar-brand m-2 ms-4 text-dark logo" href="#">Slide</a>
+            </div>
+            <ul class="navbar-nav d-flex flex-row">
+                <li class="nav-item me-3 me-lg-0" title="Driver Career">
+                    <a class="nav-link text-dark" href="#"><i class="fas fa-motorcycle"></i></a>
+                </li>
+
+                <li class="nav-item me-3 me-lg-0" title="Login/Signup">
+                    <a class="nav-link text-dark" href="#"><i class="fas fa-user ms-4"></i></a>
+                </li>
+                <!-- Add a cart count indicator -->
+                <li class="nav-item me-lg-0" title="Shopping Cart">
+                    <div class="cart-icon-container">
+                        <a class="nav-link text-dark" href="cart.html">
+                            <i class="fas fa-shopping-cart ms-4"></i>
+                        </a>
+                        <span id="cartCount" class="cart-count">0</span> <!-- This is the cart count indicator -->
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <div class="privilege mt-4">
+        <h1>User Privilege Screen</h1>
+        <div class="user-privileges">
+            <div class="user-card" data-user="employee1">
+                <h3>Employee 1</h3>
+                <ul>
+                    <li>Driver <input type="checkbox" name="employee1_Driver"></li>
+                    <li>Manage Orders <input type="checkbox" name="employee1_manage_orders"></li>
+                    <li>Cook <input type="checkbox" name="employee1_Cook"></li>
+                </ul>
+            </div>
+            <div class="user-card" data-user="employee2">
+                <h3>Employee 2</h3>
+                <ul>
+                    <li>Waiter <input type="checkbox" name="employee2_Waiter"></li>
+                    <li>Manage Inventory <input type="checkbox" name="employee2_manage_inventory"></li>
+                    <li>Cook <input type="checkbox" name="employee2_Cook"></li>
+                </ul>
+            </div>
+            <!-- Add more user cards for other employees -->
+        </div>
+        <div class="buttons">
+            <button id="changeButton">Change</button>
+            <button id="setButton" disabled>Set</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+<script>
+    // app.js
+
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', handlePrivilegeChange);
+    });
+
+    document.getElementById('changeButton').addEventListener('click', () => {
+        document.getElementById('setButton').removeAttribute('disabled');
+        resetCheckboxes();
+    });
+
+    // Handle privilege changes
+    function handlePrivilegeChange(event) {
+        const user = event.target.closest('.user-card').getAttribute('data-user');
+        const privilege = event.target.getAttribute('name');
+        const hasPrivilege = event.target.checked;
+
+        const userCard = event.target.closest('.user-card');
+        const privilegeItems = userCard.querySelectorAll('li');
+        privilegeItems.forEach(item => {
+            item.classList.remove('changed');
+        });
+
+        // Apply the 'changed' class to the changed privilege
+        event.target.closest('li').classList.add('changed');
+
+        console.log(`Admin changed privilege for ${user}: ${privilege} - ${hasPrivilege}`);
+    }
+
+    // Show an alert when the "Set" button is clicked
+    document.getElementById('setButton').addEventListener('click', () => {
+        // You can implement a logic to save the privilege changes to the backend here.
+        // For now, we'll just show an alert to indicate that the role is assigned.
+        alert('Role assigned! Privilege changes have been applied.');
+    });
+
+    function resetCheckboxes() {
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = false;
+        });
+    }
+
+
+</script>
+
+</html>
