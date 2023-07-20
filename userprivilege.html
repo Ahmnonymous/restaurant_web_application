@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
@@ -46,71 +47,136 @@
 
 
 
-    <div class="privilege mt-4">
-        <h1>User Privilege Screen</h1>
-        <div class="user-privileges">
-            <div class="user-card" data-user="employee1">
-                <h3>Employee 1</h3>
-                <ul>
-                    <li>Driver <input type="checkbox" name="employee1_Driver"></li>
-                    <li>Manage Orders <input type="checkbox" name="employee1_manage_orders"></li>
-                    <li>Cook <input type="checkbox" name="employee1_Cook"></li>
-                </ul>
-            </div>
-            <div class="user-card" data-user="employee2">
-                <h3>Employee 2</h3>
-                <ul>
-                    <li>Waiter <input type="checkbox" name="employee2_Waiter"></li>
-                    <li>Manage Inventory <input type="checkbox" name="employee2_manage_inventory"></li>
-                    <li>Cook <input type="checkbox" name="employee2_Cook"></li>
-                </ul>
-            </div>
-            <!-- Add more user cards for other employees -->
-        </div>
-        <div class="buttons">
-            <button id="changeButton" class="change">Change</button>
-            <button id="setButton" disabled class="set">Set</button>
-        </div>
-    </div>
 
-
-
+    <div class="form-container mt-4">
+        <!-- Drop-down for Employee Names -->
+        <label for="employee">Select Employee:</label>
+        <select id="employee">
+            <option value="Ali Haider">Ali Haider</option>
+            <option value="Ali">Ali</option>
+            <option value="Ahmad">Ahmad</option>
+        </select>
     
-  <!-- Login Overlay -->
-  <div id="login-overlay" class="overlay">
-    <div class="login-container">
-      <button class="close-button" onclick="closeoverlay()">X</button>
-
-      <a href="clogin.html" class="login-button">Login</a>
-      <div class="hr-container mt-4">
-        <hr class="left-hr">
-        <span class="or-text">OR</span>
-        <hr class="right-hr">
-      </div>
-      <!-- signup form link -->
-      <a href="csignup.html" class="signup-button mt-4">Signup</a>
-
+        <!-- Drop-down for Roles -->
+        <label for="role">Select Role:</label>
+        <select id="role">
+            <option value="Admin">Admin</option>
+            <option value="Driver">Driver</option>
+            <option value="Dealer">Dealer</option>
+        </select>
+    
+        <!-- Submit Button -->
+        <button id="assignRole">Assign Role</button>
     </div>
-  </div>
 
 
-  <!-- Driver Login Overlay -->
-  <div id="driver-login-overlay" class="overlay">
-    <div class="login-container">
-      <button class="close-button" onclick="closeoverlay()">X</button>
+    <div class="row m-5 mt-3 user">
+        <div class="col-3 col-md-6 col-sm-12">
+        </div>
+        <div class="col-12">
+            <div class="box">
+                <div class="box-header">
+                    Emplyees Information
+                </div>
+                <div class="box-body overflow-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Employee ID</th>
+                                <th class="item">Name</th>
+                                <th>Role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#1</td>
+                                <td>
+                                    <div class="order-owner">
+                                        <span>Ali Haider</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    Admin
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#2</td>
+                                <td>
+                                    <div class="order-owner">
+                                        <span>Ali</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    Driver
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#3</td>
+                                <td>
+                                    <div class="order-owner">
+                                        <span>Ahmad</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    Dealer
+                                </td>
+                            </tr>
 
-      <a href="dlogin.html" class="login-button">Login</a>
-      <div class="hr-container mt-4">
-        <hr class="left-hr">
-        <span class="or-text">OR</span>
-        <hr class="right-hr">
-      </div>
-      <!-- signup form link -->
-      <a href="dsignup.html" class="signup-button mt-4">Signup</a>
-
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-    <script src="js/script.js"></script>
+
+
+
+    <!-- Login Overlay -->
+    <div id="login-overlay" class="overlay">
+        <div class="login-container">
+            <button class="close-button" onclick="closeoverlay()">X</button>
+
+            <a href="clogin.html" class="login-button">Login</a>
+            <div class="hr-container mt-4">
+                <hr class="left-hr">
+                <span class="or-text">OR</span>
+                <hr class="right-hr">
+            </div>
+            <!-- signup form link -->
+            <a href="csignup.html" class="signup-button mt-4">Signup</a>
+
+        </div>
+    </div>
+
+
+    <!-- Driver Login Overlay -->
+    <div id="driver-login-overlay" class="overlay">
+        <div class="login-container">
+            <button class="close-button" onclick="closeoverlay()">X</button>
+
+            <a href="dlogin.html" class="login-button">Login</a>
+            <div class="hr-container mt-4">
+                <hr class="left-hr">
+                <span class="or-text">OR</span>
+                <hr class="right-hr">
+            </div>
+            <!-- signup form link -->
+            <a href="dsignup.html" class="signup-button mt-4">Signup</a>
+
+        </div>
+    </div>
+    
 </body>
+<script>
+     document.getElementById("assignRole").addEventListener("click", function () {
+        var selectedEmployee = document.getElementById("employee").value;
+        var selectedRole = document.getElementById("role").value;
+        var message = "Role assigned: " + selectedRole + " to " + selectedEmployee;
+        alert(message);
 
+        // Optional: You can perform additional actions here, such as updating the server, etc.
+    });s
+</script>
+
+<script src="js/script.js"></script>
 </html>

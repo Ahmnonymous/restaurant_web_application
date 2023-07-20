@@ -1223,7 +1223,7 @@ textarea::placeholder {
   display: block;
   margin: auto;
 }
-.checkout button,.change,.set {
+.checkout button,.change,.set,#assignRole {
   background-color: rgb(255, 203, 0);
   display: block;
   margin: auto;
@@ -1237,14 +1237,17 @@ textarea::placeholder {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+#assignRole{
+  padding: 8px 20px !important;
+}
 
-.checkout button:hover, .change:hover,.set:hover {
+.checkout button:hover, .change:hover,.set:hover,#assignRole:hover   {
   color: white;
   transform: scale(1.1);
   transition: all 0.5s ease-in-out;
 }
 
-.checkout button:focus ,.change:focus,.set:focus {
+.checkout button:focus ,.change:focus,.set:focus,#assignRole:focus {
   outline: none;
 }
 
@@ -1255,90 +1258,41 @@ textarea::placeholder {
 
 
 /* User Privileges */
+.user .box{
+  margin: 0 auto;
+  max-width: 1000px;
+}
 
-.privilege {
-  max-width: 800px;
+
+/* Styling for Form Container */
+.form-container {
+  max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.user-card {
-  background-color: #fff;
-  width: 250px;
-  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 10px;
-}
-/* Style checkboxes */
-.user-card input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 16px;
-  height: 16px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  vertical-align: middle;
-  position: relative;
-  margin-right: 8px;
-  cursor: pointer;
+  border-radius: 4px;
+  background-color: #ffffff;
 }
 
-.user-card input[type="checkbox"]:checked::before {
-  content: '\2713';
-  font-size: 14px;
-  color: black;
-  font-weight: bold;
-  position: absolute;
-  top: -1px;
-  left: 2px;
-}
-
-.user-card input[type="checkbox"]:checked {
-  background-color: rgb(255, 203, 0);
-  border-color: rgb(255, 203, 0);
-}
-.user-privileges {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.user-card h3 {
-  margin-top: 0;
-  text-align: center;
-}
-
-.user-card ul {
-  list-style: none;
-  padding: 0;
-}
-
-.user-card li {
+/* Styling for Labels */
+label {
+  display: block;
   margin-bottom: 5px;
-  padding-left: 10px;
-  color: #333;
+  font-weight: bold;
 }
 
-.user-card .changed {
-  color: #ff2600; /* Orange color for the changed privilege */
-  background-color: #fff; /* Reset background color to white */
-}
-.buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-button[disabled] {
-  background-color: #ccc;
-  cursor: not-allowed;
+/* Styling for Dropdowns */
+select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
 }
 
-
-
+/* Optional: Styling for Submit Button */
 
 
 
