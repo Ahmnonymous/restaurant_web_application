@@ -37,17 +37,17 @@
 
         <!-- Your existing HTML code remains the same -->
 
-<!-- Add a cart count indicator -->
-<li class="nav-item me-lg-0" title="Shopping Cart">
-  <div class="cart-icon-container">
-    <a class="nav-link text-dark" href="cart.html">
-      <i class="fas fa-shopping-cart ms-4"></i>
-    </a>
-    <span id="cartCount" class="cart-count">0</span> <!-- This is the cart count indicator -->
-  </div>
-</li>
+        <!-- Add a cart count indicator -->
+        <li class="nav-item me-lg-0" title="Shopping Cart">
+          <div class="cart-icon-container">
+            <a class="nav-link text-dark" href="cart.html">
+              <i class="fas fa-shopping-cart ms-4"></i>
+            </a>
+            <span id="cartCount" class="cart-count">0</span> <!-- This is the cart count indicator -->
+          </div>
+        </li>
 
-        
+
       </ul>
     </div>
   </nav>
@@ -102,20 +102,6 @@
             <hr class="Line">
             <div class="dashboard-content">
               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-xl-6">
-                <!-- Burgers -->
-                <!-- <div class="food-item burgers">
-                  <div class="dashboard-card" data-id="1">
-                    <img src="./images/burger1.jpg" alt="" class="card-image">
-                    <div class="card-detail">
-                      <h4>Beef Burger Beef Burger</h4>
-                      <p>Freshly Made Burger</p>
-                      <hr>
-                      <span class="price">560.00</span>
-                      <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add To Cart</a>
-                    </div>
-                  </div>
-                </div> -->
-
                 <div class="food-item burgers">
                   <div class="dashboard-card" data-id="1">
                     <img src="./images/burger1.jpg" alt="" class="card-image">
@@ -126,7 +112,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="food-item burgers">
                   <div class="dashboard-card" data-id="1">
                     <img src="./images/burger1.jpg" alt="" class="card-image">
@@ -137,7 +122,6 @@
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -229,37 +213,37 @@
     </div>
   </div>
 
-<!-- Burger overlay -->
-<div id="overlay" class="overlay-container">
-  <div class="overlay-content">
-    <div class="overlay-close" onclick="closeOverlay(event)">X</div>
-    <img src="./images/burger1.jpg" alt="" class="card-image">
-    <h4>Beef Burger Beef Burger</h4>
-    <p>Freshly Made Burger</p>
-    <hr>
-    <span class="price">560.00</span>
+  <!-- Burger overlay -->
+  <div id="overlay" class="overlay-container">
+    <div class="overlay-content">
+      <div class="overlay-close" onclick="closeOverlay(event)">X</div>
+      <img src="./images/burger1.jpg" alt="" class="card-image">
+      <h4>Beef Burger Beef Burger</h4>
+      <p>Freshly Made Burger</p>
+      <hr>
+      <span class="price">560.00</span>
 
-    <!-- Quantity buttons -->
-    <div class="quantity-controls">
-      <button class="quantity-btn" onclick="decrementQuantity()">-</button>
-      <span class="quantity">1</span>
-      <button class="quantity-btn" onclick="incrementQuantity()">+</button>
+      <!-- Quantity buttons -->
+      <div class="quantity-controls">
+        <button class="quantity-btn" onclick="decrementQuantity()">-</button>
+        <span class="quantity">1</span>
+        <button class="quantity-btn" onclick="incrementQuantity()">+</button>
+      </div>
+
+      <!-- Add on or Changes heading -->
+      <h5>Add on or Changes:</h5>
+      <div class="checkbox-options">
+        <label>
+          <input type="checkbox" name="cheese"> Cheese
+        </label>
+        <label>
+          <input type="checkbox" name="bread"> Bread
+        </label>
+      </div>
+
+      <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add to Cart</a>
     </div>
-
-    <!-- Add on or Changes heading -->
-    <h5>Add on or Changes:</h5>
-    <div class="checkbox-options">
-      <label>
-        <input type="checkbox" name="cheese"> Cheese
-      </label>
-      <label>
-        <input type="checkbox" name="bread"> Bread
-      </label>
-    </div>
-
-    <a href="#" class="btn add-to-cart-btn"  onclick="addToCart(event)">Add to Cart</a>
   </div>
-</div>
 
 
 
@@ -307,8 +291,10 @@
         <h3 class="fw-bold text-center ">Contact</h3>
 
         <div class="text-center"> <i class="fa-solid fa-house house"></i> &nbsp; Business Park New Capital</div>
-        <div class="text-center mt-3"><a href="tel:+201155997999"> <i class="fa-solid fa-phone"></i> &nbsp;+20 115 599 7999</div></a>
-        <div class="text-center mt-3"><a href="mailto:mgrtal9@gmail.com"> <i class="fa-solid fa-envelope"></i> &nbsp;mgrtal9@gmail.com</a></div>
+        <div class="text-center mt-3"><a href="tel:+201155997999"> <i class="fa-solid fa-phone"></i> &nbsp;+20 115 599
+            7999</div></a>
+        <div class="text-center mt-3"><a href="mailto:mgrtal9@gmail.com"> <i class="fa-solid fa-envelope"></i>
+            &nbsp;mgrtal9@gmail.com</a></div>
 
       </div>
       <div class="col-md-4 ">

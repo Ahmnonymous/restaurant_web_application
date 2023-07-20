@@ -92,6 +92,7 @@ section {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 10px;
   width: 300px; /* Initial width for larger screens */
 }
@@ -141,7 +142,7 @@ section {
   border-radius: 10px;
   max-width: 1200px;
   display: block;
-  margin: auto;
+  margin-left: 220px;
   height: 550px; /* Adjust the height as needed */
   overflow: hidden;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
@@ -205,6 +206,9 @@ section {
   
   .carousel-inner img {
     width: 80%; /* Reset the image width */
+  }
+  .carousel{
+    margin-left: 0px;
   }
   
 }
@@ -316,9 +320,11 @@ section {
   }
   
   .menu-container{
-    margin-left: -40px;
-
+    margin-left: -30px;
     width: calc(6 * (150px + 40px)); /* (button width + gap) * number of buttons */
+  }
+  .carousel{
+    margin-left: 40px;
 
   }
 }
@@ -334,6 +340,10 @@ section {
   .menu-container{
     margin-left: -10px;
     width: calc(5 * (160px + 40px)); /* (button width + gap) * number of buttons */
+
+  }
+  .carousel{
+    margin-left: 20px;
 
   }
 }
@@ -357,6 +367,7 @@ section {
   }
   .carousel{
     height: 400px;
+      margin-left: 20px;
   }
   .carousel-inner img{
     height: 400px;
@@ -456,6 +467,7 @@ section {
   margin-top: 5px;
   transform: translateX(-50%);
   padding: 8px 8px;
+  text-align: center;
   background-color: red;
   width: 120px;
   border-radius: 10px;
@@ -1211,7 +1223,7 @@ textarea::placeholder {
   display: block;
   margin: auto;
 }
-.checkout button,button {
+.checkout button,.change,.set {
   background-color: rgb(255, 203, 0);
   display: block;
   margin: auto;
@@ -1226,13 +1238,13 @@ textarea::placeholder {
   transition: background-color 0.3s ease;
 }
 
-.checkout button:hover, button:hover {
+.checkout button:hover, .change:hover,.set:hover {
   color: white;
   transform: scale(1.1);
   transition: all 0.5s ease-in-out;
 }
 
-.checkout button:focus , button:focus {
+.checkout button:focus ,.change:focus,.set:focus {
   outline: none;
 }
 

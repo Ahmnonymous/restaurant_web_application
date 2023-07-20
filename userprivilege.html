@@ -68,58 +68,49 @@
             <!-- Add more user cards for other employees -->
         </div>
         <div class="buttons">
-            <button id="changeButton">Change</button>
-            <button id="setButton" disabled>Set</button>
+            <button id="changeButton" class="change">Change</button>
+            <button id="setButton" disabled class="set">Set</button>
         </div>
     </div>
-    <script src="app.js"></script>
+
+
+
+    
+  <!-- Login Overlay -->
+  <div id="login-overlay" class="overlay">
+    <div class="login-container">
+      <button class="close-button" onclick="closeoverlay()">X</button>
+
+      <a href="clogin.html" class="login-button">Login</a>
+      <div class="hr-container mt-4">
+        <hr class="left-hr">
+        <span class="or-text">OR</span>
+        <hr class="right-hr">
+      </div>
+      <!-- signup form link -->
+      <a href="csignup.html" class="signup-button mt-4">Signup</a>
+
+    </div>
+  </div>
+
+
+  <!-- Driver Login Overlay -->
+  <div id="driver-login-overlay" class="overlay">
+    <div class="login-container">
+      <button class="close-button" onclick="closeoverlay()">X</button>
+
+      <a href="dlogin.html" class="login-button">Login</a>
+      <div class="hr-container mt-4">
+        <hr class="left-hr">
+        <span class="or-text">OR</span>
+        <hr class="right-hr">
+      </div>
+      <!-- signup form link -->
+      <a href="dsignup.html" class="signup-button mt-4">Signup</a>
+
+    </div>
+  </div>
+    <script src="js/script.js"></script>
 </body>
-
-<script>
-    // app.js
-
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', handlePrivilegeChange);
-    });
-
-    document.getElementById('changeButton').addEventListener('click', () => {
-        document.getElementById('setButton').removeAttribute('disabled');
-        resetCheckboxes();
-    });
-
-    // Handle privilege changes
-    function handlePrivilegeChange(event) {
-        const user = event.target.closest('.user-card').getAttribute('data-user');
-        const privilege = event.target.getAttribute('name');
-        const hasPrivilege = event.target.checked;
-
-        const userCard = event.target.closest('.user-card');
-        const privilegeItems = userCard.querySelectorAll('li');
-        privilegeItems.forEach(item => {
-            item.classList.remove('changed');
-        });
-
-        // Apply the 'changed' class to the changed privilege
-        event.target.closest('li').classList.add('changed');
-
-        console.log(`Admin changed privilege for ${user}: ${privilege} - ${hasPrivilege}`);
-    }
-
-    // Show an alert when the "Set" button is clicked
-    document.getElementById('setButton').addEventListener('click', () => {
-        // You can implement a logic to save the privilege changes to the backend here.
-        // For now, we'll just show an alert to indicate that the role is assigned.
-        alert('Role assigned! Privilege changes have been applied.');
-    });
-
-    function resetCheckboxes() {
-        checkboxes.forEach(checkbox => {
-            checkbox.checked = false;
-        });
-    }
-
-
-</script>
 
 </html>

@@ -229,3 +229,46 @@ document.querySelector('#sidebar-close').onclick = () => {
   }
 
 
+  // User Privileges Code
+  
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', handlePrivilegeChange);
+  });
+
+  document.getElementById('changeButton').addEventListener('click', () => {
+      document.getElementById('setButton').removeAttribute('disabled');
+      resetCheckboxes();
+  });
+
+  // Handle privilege changes
+  function handlePrivilegeChange(event) {
+      const user = event.target.closest('.user-card').getAttribute('data-user');
+      const privilege = event.target.getAttribute('name');
+      const hasPrivilege = event.target.checked;
+
+      const userCard = event.target.closest('.user-card');
+      const privilegeItems = userCard.querySelectorAll('li');
+      privilegeItems.forEach(item => {
+          item.classList.remove('changed');
+      });
+
+      // Apply the 'changed' class to the changed privilege
+      event.target.closest('li').classList.add('changed');
+
+      console.log(`Admin changed privilege for ${user}: ${privilege} - ${hasPrivilege}`);
+  }
+
+  // Show an alert when the "Set" button is clicked
+  document.getElementById('setButton').addEventListener('click', () => {
+      // You can implement a logic to save the privilege changes to the backend here.
+      // For now, we'll just show an alert to indicate that the role is assigned.
+      alert('Role assigned! Privilege changes have been applied.');
+  });
+
+  function resetCheckboxes() {
+      checkboxes.forEach(checkbox => {
+          checkbox.checked = false;
+      });
+  }
+
