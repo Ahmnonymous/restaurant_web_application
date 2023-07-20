@@ -36,3 +36,29 @@ function updateCartCount() {
   const cartCount = Object.values(cartItems).reduce((total, count) => total + count, 0);
   document.getElementById("cartCount").innerText = cartCount;
 }
+
+let quantity = 1;
+  const pricePerItem = 560.00; // Adjust this value according to your actual price
+
+  function incrementQuantity() {
+    quantity++;
+    updateQuantityAndPrice();
+  }
+
+  function decrementQuantity() {
+    if (quantity > 1) {
+      quantity--;
+      updateQuantityAndPrice();
+    }
+  }
+
+  function updateQuantityAndPrice() {
+    const quantityElement = document.querySelector(".quantity");
+    const priceElement = document.querySelector(".price");
+
+    if (quantityElement && priceElement) {
+      quantityElement.textContent = quantity;
+      const totalPrice = (quantity * pricePerItem).toFixed(2);
+      priceElement.textContent = totalPrice;
+    }
+  }

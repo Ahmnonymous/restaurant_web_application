@@ -412,6 +412,7 @@
   .payment-status {
     display: flex;
     align-items: center;
+    margin-left: 20px;
   }
   
   .payment-status .dot {
@@ -420,6 +421,23 @@
     border-radius: 50%;
     margin-right: 10px;
   }
+  .remove-item >button{
+    margin-left: 25px;
+  }
+  .delete-button {
+    background-color: #e61102;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
   
   .payment-paid .dot {
     background-color: #04d182;
@@ -431,6 +449,9 @@
   
   .overflow-scroll {
     overflow-y: auto;
+  }
+  .overflow-scroll::-webkit-scrollbar{
+    display: none;
   }
   
   .overlay {

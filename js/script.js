@@ -14,13 +14,11 @@ drivericon.addEventListener('click', function() {
   driverloginOverlay.style.display = 'flex';
 });
 // For closing Overlays
-function closeOverlay() {
+function closeoverlay() {
   var loginOverlay = document.getElementById('login-overlay');
   var driverloginOverlay = document.getElementById('driver-login-overlay');
     loginOverlay.style.display = 'none';
     driverloginOverlay.style.display='none';
-    document.getElementById("overlay").style.display = "none";
-
 }
 
 // For closing Overlays
