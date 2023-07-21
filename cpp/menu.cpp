@@ -37,7 +37,9 @@ int main() {
     MYSQL_ROW row;
     while ((row = mysql_fetch_row(result))) {
         std::string category = row[0];
-        categoryButtons += "<button class=\"menu-btn\" data-category=\"" + category + "\" id=\"" + category + "\">" + category + "</button>\n";
+        //categoryButtons += "<button class=\"menu-btn\" data-category=\"" + category + "\" id=\"" + category + "\">" + category + "</button>\n";
+        categoryButtons += "<button class=\"menu-btn\" data-category=\"" + category + "\" onclick=\"scrollToCategory('" + category + "', this)\">" + category + "</button>\n";
+
     }
 
     // Free the result
@@ -51,10 +53,10 @@ int main() {
     std::cout << "<!DOCTYPE html>\n";
     std::cout << "<html>\n<head>\n";
     std::cout << "</head>\n<body>\n";
-    std::cout << "<div class=\"dashboard-menu\">\n";
-    std::cout << "<button class=\"menu-btn active\" data-category=\"all\">All</button>\n";
+    //std::cout << "<div class=\"menu-container d-flex flex-nowrap\">\n";
+    //std::cout << "<button class=\"menu-btn active\" data-category=\"all\">All</button>\n";
     std::cout << categoryButtons; // Insert the dynamically generated category buttons
-    std::cout << "</div>\n";
+    //std::cout << "</div>\n";
     std::cout << "</body>\n</html>\n";
 
     return 0;

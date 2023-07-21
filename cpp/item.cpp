@@ -15,7 +15,7 @@ int main() {
     }
 
     // Prepare the SQL statement to retrieve items
-    std::string sql = "SELECT Item.*, Menu.category FROM Item INNER JOIN Menu ON Item.menu_id = Menu.id ORDER BY Menu.category ASC";
+    std::string sql = "SELECT Item.*, Menu.category FROM Item INNER JOIN Menu ON Item.menu_id = Menu.id ORDER BY Menu.category";
 
     // Execute the query
     if (mysql_query(connection, sql.c_str()) != 0) {
@@ -41,33 +41,37 @@ int main() {
         std::string itemName = row[2];
         std::string itemDescription = row[3];
         std::string itemPrice = row[4];
-        std::string category = row[7];
+        std::string itemPic = row[5];
+        std::string category = row[6];
 
         if (category != currentCategory) {
             // Add the previous item cards to the item menu
             if (!itemCards.empty()) {
-                itemMenu += "<div class=\"row\">\n";
+                itemMenu += "<div class=\"row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-xl-6\">\n";
                 itemMenu += itemCards;
                 itemMenu += "</div>\n";
                 itemCards.clear();
             }
 
             // Add a category header to the item menu
-            itemMenu += "<h2 id=\"" + category + "\" class=\"mx-5\">" + category + "</h2>\n";
+            itemMenu += "<h2 id=\"" + category + "\" class=\"mx-5\" style=\"";
+            itemMenu += "font-weight: 600;";
+            itemMenu += "margin-top: 50px;";
+            itemMenu += "margin-bottom: 30px;";
+            itemMenu += "transition: all 0.3s ease;";
+            itemMenu += "\">" + category + "</h2>\n";
             itemMenu += "<hr class=\"Line\">\n";
             currentCategory = category;
+            
         }
 
-        // Add the current item card to the item cards
-        itemCards += "<div class=\"col-lg-2 col-md-4 col-xs-4 food-item mx-1\">\n";
+        itemCards += "<div class=\"food-item " + category + "\">\n";
         itemCards += "  <div class=\"dashboard-card\" data-id=\"" + std::to_string(std::stoull(row[0])) + "\">\n";
-        itemCards += "    <img src=\"./images/burger1.jpg\" alt=\"\" class=\"card-image\">\n";
+        itemCards += "    <img src=\"./images/"+itemPic+"\" alt=\"\" class=\"card-image\">\n";
         itemCards += "    <div class=\"card-detail\">\n";
         itemCards += "      <h4>" + itemName + "</h4>\n";
-        itemCards += "      <p>" + itemDescription + "</p>\n";
         itemCards += "      <hr>\n";
-        itemCards += "      <span class=\"price\">" + itemPrice + "</span>\n";
-        itemCards += "      <a href=\"#\" class=\"btn add-to-cart-btn\" onclick=\"addToCart(event)\">Add To Cart</a>\n";
+        itemCards += "      <a href=\"#\" class=\"see-detail\" data-id=\"" + std::to_string(std::stoull(row[0])) + "\" onclick=\"showOverlay(event)\">Add To Cart</a>\n";
         itemCards += "    </div>\n";
         itemCards += "  </div>\n";
         itemCards += "</div>\n";
@@ -76,7 +80,7 @@ int main() {
     // Add the last item cards to the item menu
     if (!itemCards.empty()) {
         itemMenu += "<div class=\"dashboard-content\">\n";
-        itemMenu += "<div class=\"row\">\n";
+        itemMenu += "<div class=\"row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-xl-6\">\n";
         itemMenu += itemCards;
         itemMenu += "</div>\n";
         itemMenu += "</div>";
@@ -93,9 +97,9 @@ int main() {
     std::cout << "<!DOCTYPE html>\n";
     std::cout << "<html>\n<head>\n";
     std::cout << "</head>\n<body>\n";
-    std::cout << "<div class=\"item-content\">\n";
+    //std::cout << "<div class=\"item-content\">\n";
     std::cout << itemMenu; // Insert the dynamically generated item menu
-    std::cout << "</div>\n";
+    //std::cout << "</div>\n";
     std::cout << "</body>\n</html>\n";
 
     return 0;
