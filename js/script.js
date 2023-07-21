@@ -182,32 +182,7 @@ function handleSearch(event) {
 }
     
     
-    // function searchWithinPage() {
-    //   const searchInput = document.getElementById('search-input').value.toLowerCase();
-    //   const foodItems = document.querySelectorAll('.food-item');
-    //   let itemsFound = false;
-    
-    //   foodItems.forEach(item => {
-    //     const itemName = item.querySelector('h4').innerText.toLowerCase();
-    //     if (itemName.includes(searchInput)) {
-    //       item.style.display = 'block';
-    //       itemsFound = true;
-    //     } else {
-    //       item.style.display = 'none';
-    //     }
-    //   });
-    
-    //   const burgersHeading = document.querySelector('.mx-5');
-    //   burgersHeading.style.display = 'block'; // Always show the category header
-    
-    //   const noItemsMessage = document.getElementById('no-items-message');
-    //   if (itemsFound) {
-    //     noItemsMessage.style.display = 'none';
-    //   } else {
-    //     noItemsMessage.style.display = 'block';
-    //   }
-    // }
-    
+
 
     // Rate order Stars
     function setRating(stars) {
