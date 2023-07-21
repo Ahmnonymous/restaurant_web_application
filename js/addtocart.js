@@ -37,6 +37,34 @@ function updateCartCount() {
   document.getElementById("cartCount").innerText = cartCount;
 }
 
+
+  
+function updateQuantityAndPrice() {
+  const quantityElement = document.querySelector(".quantity");
+  const priceElement = document.querySelector(".price");
+
+  if (quantityElement && priceElement) {
+    quantityElement.textContent = quantity;
+    const basePrice = quantity * pricePerItem;
+    const addonsPrice = calculateAddonsPrice(); // Calculate the total price of selected addons
+    const totalPrice = (basePrice + addonsPrice).toFixed(2);    
+    priceElement.textContent = totalPrice;
+  }
+}
+function calculateAddonsPrice() {
+  const checkboxes = document.querySelectorAll(".checkbox-options input[type=checkbox]");
+  let addonsPrice = 0;
+
+  checkboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+      const price = parseFloat(checkbox.nextElementSibling.nextElementSibling.textContent);
+      addonsPrice += price;
+    }
+  });
+
+  return addonsPrice;
+}
+
 let quantity = 1;
   const pricePerItem = 560.00; // Adjust this value according to your actual price
 
@@ -49,16 +77,5 @@ let quantity = 1;
     if (quantity > 1) {
       quantity--;
       updateQuantityAndPrice();
-    }
-  }
-
-  function updateQuantityAndPrice() {
-    const quantityElement = document.querySelector(".quantity");
-    const priceElement = document.querySelector(".price");
-
-    if (quantityElement && priceElement) {
-      quantityElement.textContent = quantity;
-      const totalPrice = (quantity * pricePerItem).toFixed(2);
-      priceElement.textContent = totalPrice;
     }
   }
