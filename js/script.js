@@ -138,32 +138,49 @@ document.querySelector('#sidebar-close').onclick = () => {
 
     
 
+function handleSearch(event) {
+  const searchInput = event.target.value.toLowerCase();
+  const foodItems = document.querySelectorAll('.food-item');
+  let itemsFound = false;
 
-    function handleSearch(event) {
-      const searchInput = event.target.value.toLowerCase();
-      const foodItems = document.querySelectorAll('.food-item');
-      let itemsFound = false;
-    
-      foodItems.forEach(item => {
-        const itemName = item.querySelector('h4').innerText.toLowerCase();
-        if (itemName.includes(searchInput)) {
-          item.style.display = 'block';
-          itemsFound = true;
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    
-      const burgersHeading = document.querySelector('.mx-5');
-      burgersHeading.style.display = 'block'; // Always show the category header
-    
-      const noItemsMessage = document.getElementById('no-items-message');
-      if (itemsFound) {
-        noItemsMessage.style.display = 'none';
-      } else {
-        noItemsMessage.style.display = 'block';
-      }
+  foodItems.forEach(item => {
+    const itemName = item.querySelector('h4').innerText.toLowerCase();
+    if (itemName.includes(searchInput)) {
+      item.style.display = 'block';
+      itemsFound = true;
+    } else {
+      item.style.display = 'none';
     }
+  });
+
+  const allHeadings = document.querySelectorAll('h2.mx-5');
+  allHeadings.forEach(heading => {
+    const hrLine = heading.nextElementSibling; // Get the hr element
+    if (heading.innerText.toLowerCase() === searchInput && itemsFound) {
+      heading.style.display = 'block';
+      hrLine.style.display = 'block';
+      isSearchPerformed = true; // Set the flag to true after the first search
+    }
+    else if(!searchInput){
+      heading.style.display = 'block';
+      hrLine.style.display = 'block';
+    }
+     else {
+      heading.style.display = 'none';
+      hrLine.style.display = 'none';
+    }
+  });
+  
+    const noItemsMessage = document.getElementById('no-items-message');
+    if (itemsFound) {
+      noItemsMessage.style.display = 'none';
+    } else {
+      noItemsMessage.style.display = 'block';
+    }
+
+  
+}
+    
     
     // function searchWithinPage() {
     //   const searchInput = document.getElementById('search-input').value.toLowerCase();
