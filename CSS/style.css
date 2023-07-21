@@ -82,7 +82,7 @@ section {
   justify-content: center;
   align-items: center;
   height: 15vh;
-  background-color: #f7f7f7;
+  background-color:  #f8f9fa;
 }
 
 .search-box {
@@ -426,19 +426,21 @@ section {
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 }
 .btn.add-to-cart-btn{
-  position: absolute;
+  position: relative;
   left: 50%;
+  font-size: larger;
   transform: translateX(-50%);
-  padding: 8px 8px;
+  margin: 20px 20px 20px 0;
+  padding: 10px 10px;
   background-color: red;
-  width: 120px;
+  width: 150px;
   text-decoration: none;
   border-radius: 10px;
   color: white;
   font-weight: 700;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
-  bottom: calc(1% + 10px);
 }
+
 
 .btn.add-to-cart-btn:hover ,.see-detail:hover {
   background-color: var(--maincolor);
@@ -515,14 +517,14 @@ section {
     padding: 10px 10px 0px 10px;
     background-color: #fff;
     border-radius: 15px;
-    height: 470px; /* Adjust the height as needed */
-    max-width: 320px;
+    height: auto; /* Adjust the height as needed */
+    width: 470px;
   }
 .overlay-close {
   position: absolute;
   top: 3px;
   right: 2px;
-  font-size: 15px;
+  font-size: 20px;
   cursor: pointer;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.7);
@@ -566,25 +568,36 @@ section {
 
 h5 {
   font-weight: 550;
+  font-size: 20px;
 }
 
 .checkbox-options {
   margin-left: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
 }
 
 .checkbox-options label {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   display: flex;
+  font-size: 18px;
   align-items: center;
+}
+.checkbox-options .option-text {
+  margin-left: 10px;
+}
+.checkbox-options .option-price {
+  margin-left: auto;
 }
 
 .checkbox-options input[type="checkbox"] {
   margin-right: 8px;
 }
 .overlay-content img {
-  height: 140px;
+  height: 160px;
+  width: 270px;
+  display: block;
+  margin: auto;
   object-fit: cover;
   border-radius: 15px;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
@@ -612,7 +625,7 @@ h5 {
   font-size: 20px;
   margin-top: 5px;
 }
-.price {
+.price,.subtotal,.price-per-item {
   display: block;
   font-weight: 600;
   color: rgb(154, 28, 28);

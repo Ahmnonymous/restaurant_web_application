@@ -136,60 +136,6 @@ document.querySelector('#sidebar-close').onclick = () => {
 
 
 
-
-    // function handleSearch(event) {
-    //   if (event.keyCode === 13) { 
-    //     searchWithinPage();
-    //     hideSearchInput();
-    //   }
-    // }
-    
-    // function searchWithinPage() {
-    //   var searchQuery = document.getElementById("search-input").value.toLowerCase();
-    
-    //   removeHighlighting();
-    
-    //   var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-    //   while (walker.nextNode()) {
-    //     var node = walker.currentNode;
-    //     var text = node.nodeValue.toLowerCase();
-    //     var index = text.indexOf(searchQuery);
-    
-    //     if (index !== -1) {
-    //       var parentElement = node.parentElement;
-    //       scrollToElement(parentElement);
-    //       highlightWord(node, index, searchQuery);
-    //       document.getElementById("search-input").value = ""; 
-    //       return;
-    //     }
-    //   }
-    // }
-    
-    // function scrollToElement(element) {
-    //   var topOffset = element.getBoundingClientRect().top;
-    //   var bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    //   var elementTop = topOffset + bodyScrollTop;
-    //   window.scrollTo({ top: elementTop - 100, behavior: "smooth" });
-    // }
-    
-    // function highlightWord(node, index, searchQuery) {
-    //   var range = document.createRange();
-    //   var start = index;
-    //   var end = index + searchQuery.length;
-    //   range.setStart(node, start);
-    //   range.setEnd(node, end);
-    //   var span = document.createElement("span");
-    //   span.classList.add("highlighted");
-    //   range.surroundContents(span);
-    // }
-    
-    // function removeHighlighting() {
-    //   var highlightedElements = document.getElementsByClassName("highlighted");
-    //   while (highlightedElements.length > 0) {
-    //     var parentElement = highlightedElements[0].parentNode;
-    //     parentElement.replaceChild(document.createTextNode(highlightedElements[0].textContent), highlightedElements[0]);
-    //   }
-    // }
     
 
 
@@ -219,31 +165,31 @@ document.querySelector('#sidebar-close').onclick = () => {
       }
     }
     
-    function searchWithinPage() {
-      const searchInput = document.getElementById('search-input').value.toLowerCase();
-      const foodItems = document.querySelectorAll('.food-item');
-      let itemsFound = false;
+    // function searchWithinPage() {
+    //   const searchInput = document.getElementById('search-input').value.toLowerCase();
+    //   const foodItems = document.querySelectorAll('.food-item');
+    //   let itemsFound = false;
     
-      foodItems.forEach(item => {
-        const itemName = item.querySelector('h4').innerText.toLowerCase();
-        if (itemName.includes(searchInput)) {
-          item.style.display = 'block';
-          itemsFound = true;
-        } else {
-          item.style.display = 'none';
-        }
-      });
+    //   foodItems.forEach(item => {
+    //     const itemName = item.querySelector('h4').innerText.toLowerCase();
+    //     if (itemName.includes(searchInput)) {
+    //       item.style.display = 'block';
+    //       itemsFound = true;
+    //     } else {
+    //       item.style.display = 'none';
+    //     }
+    //   });
     
-      const burgersHeading = document.querySelector('.mx-5');
-      burgersHeading.style.display = 'block'; // Always show the category header
+    //   const burgersHeading = document.querySelector('.mx-5');
+    //   burgersHeading.style.display = 'block'; // Always show the category header
     
-      const noItemsMessage = document.getElementById('no-items-message');
-      if (itemsFound) {
-        noItemsMessage.style.display = 'none';
-      } else {
-        noItemsMessage.style.display = 'block';
-      }
-    }
+    //   const noItemsMessage = document.getElementById('no-items-message');
+    //   if (itemsFound) {
+    //     noItemsMessage.style.display = 'none';
+    //   } else {
+    //     noItemsMessage.style.display = 'block';
+    //   }
+    // }
     
 
     // Rate order Stars

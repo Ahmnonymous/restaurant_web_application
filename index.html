@@ -239,6 +239,7 @@
   </div>
 
   <!-- Burger overlay -->
+  <div class="overlay-items">
   <div id="overlay" class="overlay-container">
     <div class="overlay-content">
       <div class="overlay-close" onclick="closeOverlay(event)">X</div>
@@ -247,6 +248,8 @@
       <p>Freshly Made Burger</p>
       <hr>
       <span class="price">560.00</span>
+      <span class="subtotal">560.00</span>
+
 
       <!-- Quantity buttons -->
       <div class="quantity-controls">
@@ -259,16 +262,33 @@
       <h5>Add on or Changes:</h5>
       <div class="checkbox-options">
         <label>
-          <input type="checkbox" name="cheese"> Cheese
+          <input type="checkbox" name="cheese">
+          <span class="option-text">Cheese</span>
+          <span class="option-price">100</span>
         </label>
         <label>
-          <input type="checkbox" name="bread"> Bread
+          <input type="checkbox" name="bread">
+          <span class="option-text">Bread</span>
+          <span class="option-price">100</span>
+        </label>
+        <label>
+          <input type="checkbox" name="bread">
+          <span class="option-text">Bread</span>
+          <span class="option-price">100</span>
+        </label>
+        <label>
+          <input type="checkbox" name="bread">
+          <span class="option-text">Bread</span>
+          <span class="option-price">50</span>
         </label>
       </div>
+      
 
-      <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add to Cart</a>
+      <a href="#" class="btn add-to-cart-btn" data-id="burger1" onclick="addToCart(event)">Add to Cart</a>
     </div>
   </div>
+</div>
+
 
 
 
