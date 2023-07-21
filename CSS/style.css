@@ -316,7 +316,7 @@ section {
   .menu-container {
     margin-left: -10px;
     padding-left: 0; /* Reset the left padding */
-    width: calc(3 * (160px + 10px)); /* (button width + gap) * number of buttons */
+    width: calc(4 * (160px + 10px)); /* (button width + gap) * number of buttons */
   }
   .home img{
     margin-left: 30px;
@@ -331,12 +331,15 @@ section {
     margin-top: 20px;
   }
   .menu-container {
-    margin-left: -10px;
     flex-wrap: wrap; /* Allow wrapping of buttons */
     justify-content: flex-start; /* Start from the beginning */
     overflow-x: auto;
     padding-left: 0; /* Reset the left padding */
     width: calc(2 * (150px + 10px)); /* (button width + gap) * number of buttons */
+  }
+  .home img{
+    width: 350px;
+    margin-left: -10px;
   }
   
   
@@ -353,7 +356,10 @@ section {
     font-size: 12px;
 }
 .menu-container{
-  margin-left: -20px;
+  margin-left: -30px;
+}
+.home img{
+  width: 330px;
 }
 
 }
