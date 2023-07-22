@@ -341,6 +341,7 @@ section {
     width: 350px;
     margin-left: -10px;
   }
+    
   
   
 }
@@ -364,6 +365,12 @@ section {
 .question{
   width: 360px;
 }
+ 
+.overlay-container .overlay-content{
+  width: 300px;
+}
+
+
 
 }
 
@@ -521,7 +528,7 @@ section {
     background-color: #fff;
     border-radius: 15px;
     height: auto; /* Adjust the height as needed */
-    width: 470px;
+    width: 430px;
   }
 .overlay-close {
   position: absolute;
