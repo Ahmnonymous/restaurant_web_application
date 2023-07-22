@@ -408,6 +408,11 @@
     color: #00ab6f;
     background-color: rgba(4, 209, 130, 0.1);
   }
+  .order-canceled
+  {
+    color: #e61102;
+    background-color: rgba(247, 99, 62, 0.1);
+  }
   
   .payment-status {
     display: flex;

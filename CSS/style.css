@@ -255,7 +255,9 @@ section {
 }
 
 
-/* Media Query for Dashboard Card Items */
+
+
+/* Media Queries */
 @media (max-width: 1300px) {
   .food-item {
     flex:0 0 20.33333%;
@@ -1301,3 +1303,73 @@ select {
   }
 
 
+
+
+  /* Driver Acceptance */
+  
+.acceptance-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #fff;
+  display: block;
+  margin: auto;
+  text-align: center;
+  width: 500px;
+}
+
+h2 {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.confirmation {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  width: 450px;
+}
+
+
+
+/* Order Screen */
+.order-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 700px;
+  display: block;
+  margin: auto;
+  background-color: #fff;
+}
+
+.order {
+  display: flex;
+  align-items: center;
+}
+
+.order-details {
+  flex-grow: 1;
+}
+
+.order-details h2 {
+  margin: 0;
+}
+
+button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#process-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#delivery-btn {
+  background-color: #f39c12;
+  color: white;
+}
