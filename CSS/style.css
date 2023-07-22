@@ -1318,7 +1318,7 @@ select {
   width: 500px;
 }
 
-h2 {
+.acceptance-container h2 {
   margin: 0;
   padding-bottom: 10px;
 }
@@ -1356,7 +1356,7 @@ h2 {
   margin: 0;
 }
 
-button {
+.order-details button {
   padding: 10px 20px;
   margin-left: 10px;
   border: none;
