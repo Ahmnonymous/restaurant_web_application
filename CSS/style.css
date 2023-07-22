@@ -769,6 +769,9 @@ h1 {
   font-weight: bold;
   padding: 20px 0px 0px 0px;
 }
+.login,.up{
+  box-shadow: 4px 4px 14px lightgrey;
+}
 
 .signup-container {
   display: flex;
@@ -792,12 +795,13 @@ h1 {
 }
 
 .form-group .input-group .otp {
-  margin-left: 364px;
-  margin-top: -42px;
+  display: block;
+  left: 367px;
+  top: -1px;
+  position: absolute;
   height: 40px;
   background: rgb(88, 117, 219);
   width: 18%;
-
   border: none;
   border-radius: 5px;
   font-size: medium;
