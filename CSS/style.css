@@ -371,8 +371,12 @@ section {
 .overlay-container .overlay-content{
   width: 300px;
 }
-
-
+.container .center-wrapper{
+  margin-top: 30px;
+} 
+.container .center-wrapper .container button{
+  margin-top: 10px;
+}
 
 }
 
