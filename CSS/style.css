@@ -1219,10 +1219,16 @@ textarea::placeholder {
   padding: 8px 20px !important;
 }
 
-.checkout button:hover, .change:hover,.set:hover,#assignRole:hover   {
+.checkout button:hover,
+.change:hover,
+.set:hover,
+#assignRole:hover,
+.items button:hover,
+.center-wrapper button:hover
+  {
   color: white;
   transform: scale(1.1);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in;
 }
 
 .checkout button:focus ,.change:focus,.set:focus,#assignRole:focus {
@@ -1269,17 +1275,6 @@ select {
   box-sizing: border-box;
   margin-bottom: 15px;
 }
-
-/* Optional: Styling for Submit Button */
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1377,3 +1372,58 @@ select {
   background-color: #f39c12;
   color: white;
 }
+
+
+/* Menu */
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+
+.center-wrapper .container {
+  text-align: center;
+}
+
+/* Style the input field */
+.center-wrapper input[type="text"] 
+,.items input[type="text"]
+,.items input[type="number"] {
+  width: 250px;
+  padding: 5px 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 15px 30px 20px 20px;
+  display: inline-block;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+/* Style the submit button */
+.items button[type="submit"],
+.center-wrapper button[type="submit"] {
+  background-color: rgb(255, 203, 0);
+  display: inline-block;
+  margin: auto;
+  color: black;
+  font-weight: bolder;
+  padding: 7px 30px;
+  margin-top: 50px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.items,.menu{
+  border: 1px solid lightgrey;
+  border-radius: 12px;
+}
+.items .box,.menu .box{
+  background-color: #f8f9fa;
+}
+
+/* Style the submit button on hover */
+
+
