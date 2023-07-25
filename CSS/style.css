@@ -378,7 +378,12 @@ section {
   margin-top: 10px;
 }
 
+
+
 }
+
+
+/* */
 
 .dashboard-card:hover {
   border: 2px solid var(--maincolor);
@@ -1040,56 +1045,74 @@ padding-top: 30px;
   font-size: large;
 }
 
+/* Update the existing CSS to use flexbox for both larger and smaller screens */
+
+/* Container */
 .container-grid {
   background-color: #f8f9fa;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
+  flex-wrap: wrap; /* Allow flex items to wrap to a new line when needed */
   gap: 150px;
   box-sizing: border-box;
   min-height: 100px;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
 
-.cart {
-  background-color: rgb(255, 255, 255);
+/* Payment Div */
+.payment-method-new {
+  flex: 2; /* Take 2 parts out of 3 in the container */
   padding: 20px;
-  margin: 20px 20px 20px 20px;
-  grid-column: 2;
+  margin: 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
 }
-.paymentcart-footer{
-  text-align: left; 
+
+/* Cart Div */
+.cart {
+  flex: 1; /* Take 1 part out of 3 in the container */
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.paymentcart-footer {
+  text-align: left;
   margin-top: 50px;
 }
 
-.paymentcart-footer>p{
+.paymentcart-footer > p {
   font-weight: bold;
 }
-.paymentcart-footer>p>span{
+
+.paymentcart-footer > p > span {
   font-weight: 500;
   float: right;
 }
-.place-order
-{
-  padding: 10px 20px; 
-  font-weight: bold; 
+
+.place-order {
+  padding: 10px 20px;
+  font-weight: bold;
   width: 70%;
   display: block;
   margin: auto;
-  border-radius: 25px; 
+  border-radius: 25px;
   margin-bottom: 10px;
   font-size: 18px;
   background-color: rgb(212, 0, 0) !important;
-
 }
-.paymentcart-footer button:hover{
+
+.paymentcart-footer button:hover {
   background-color: rgb(255, 203, 0) !important;
   color: black;
   transition: all 0.6s ease;
 }
+
 label {
   display: block;
   margin-bottom: 5px;
@@ -1098,7 +1121,7 @@ label {
 /* Payment Cart */
 #cartItems {
   display: flex;
-  align-items: center; /* Align items vertically */
+  align-items: center;
 }
 
 .payment-image {
@@ -1127,13 +1150,14 @@ label {
 .payment-detail > h4 {
   font-weight: bold;
   font-size: 18px;
-  margin-left: 150px; /* Move to the right side */
+  margin-left: 150px;
 }
 
 .payment-detail > p {
   font-size: 18px;
-  margin-left: auto; /* Move to the right side */
+  margin-left: auto;
   margin-top: 10px;
+  width: fit-content;
 }
 
 .payment-detail .price {
@@ -1141,17 +1165,50 @@ label {
   margin-top: 10px;
   color: rgb(154, 28, 28);
   transition: all 0.3s ease;
-  margin-left: auto; /* Move to the right side */
+  margin-left: auto;
 }
 
-
-@media screen and (max-width: 1180px) {
-  .container-grid{
-    margin-left: 20px;
-    width: 1100px;
+/* Additional media query for smaller screens */
+@media screen and (max-width: 708px) {
+  .container-grid {
+    flex-direction: column;
   }
-}
+  
+  .payment-method-new,
+  .cart {
+    width: 100%;
+    margin: 10px; /* Reduce the margin for better spacing */
+  }
+  .radio-group-new {
+    display: flex;
+    flex-direction: column;
+  }
 
+  .radio-label-new {
+    display: flex;
+    align-items: center;
+    margin-left: 0; /* Align labels to the left */
+    margin-bottom: 5px; /* Add some spacing between radio options */
+  }
+  
+  .radio-label-new i {
+    margin-right: 5px; /* Add some spacing between the icon and label */
+  }
+  #cartItems {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .payment-image {
+    margin-top: 0; /* Remove margin-top for the image */
+  }
+  
+  .payment-detail {
+    text-align: center;
+    margin-top: 10px; /* Add some spacing between image and details */
+  }
+  
+}
 
 
 
