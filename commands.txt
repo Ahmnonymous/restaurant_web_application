@@ -9,3 +9,21 @@ git pull origin main
 git add .
 git commit -m "updates"
 git push -u origin main
+
+
+TEXT FOR CUSTOMER POPUP
+------------------------
+HEADING - Experience More as a Member 
+DESCRIPTION - Login or Sign Up Today!
+
+TEXT FOR DRIVER POPUP
+------------------------
+HEADING : Accelerate Your Journey
+DESCRIPTION : Join Our Driver Careers - Login or Sign Up Now!
+
+WHEN DRIVER GOES TO THE SIGNUP PAGE
+-------------------------------------
+Are you passionate about driving and seeking a rewarding career on the road? 
+Look no further! We are thrilled to welcome talented drivers to our team. 
+Whether you are an experienced professional or just starting, we have exciting opportunities for you to excel as a delivery person. 
+Join us by signing up or logging in today, and together, let's drive towards a successful and fulfilling future!
