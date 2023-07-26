@@ -18,7 +18,7 @@
 
 <body>
 
-
+<!-- Navbar -->
   <nav class="navbar navbar-expand-sm navbar-dark">
     <div class="container-fluid">
       <div class="order-owner">
@@ -54,27 +54,22 @@
 
 
 
-
   <!-- Home Section -->
   <div class="container-fluid ">
     <div class="row">
       <div class="col-12">
         <div class="dashboard">
           <!-- Slider Code -->
-          <div class="carousel mt-4">
-            <div class="carousel-inner">
-              <img src="./images/Home.jpg" alt="Image 3">
-              <img src="./images/beverage.jpg" alt="Image 1">
-              <img src="./images/dessert.jpg" alt="Image 2">
-              <img src="./images/pizza1.jpg" alt="Image 4">
-              <img src="./images/burger.jpg" alt="Image 5">
-            </div>
+          <div class="home">
+            <img src="images/home.jpg" alt="">
           </div>
+         
           <div class="dashboard-menu mt-5">
             <div class="menu-container d-flex flex-nowrap">
               <!-- Add more buttons here -->
             </div>
           </div>
+
           <!-- Search Input Field -->
           <div class="search">
             <div class="search-box">
@@ -84,9 +79,9 @@
               </button>
             </div>
           </div>
-          
-          <div id="no-items-message" style="display: none; font-size:xx-large; text-align: center;">No items found</div>
-          
+
+          <div id="no-items-message" style="display: none; font-size:xx-large; text-align: center;">No items found</div>
+
           <!--Card Items -->
           <div class="item-content">
           </div>
@@ -98,8 +93,8 @@
 
 
 
-
-  <div class="container shadow p-5 mt-5" style="background-color: rgb(255,203,0);">
+<!-- question section -->
+  <div class="container shadow p-5 mt-5 question" style="background-color: rgb(255,203,0);">
     <h1 class="text-center fw-bold">Finest Taste Ever</h1>
     <div class=" mt-4 accordion  accordion-flush" id="accordionFlushExample">
       <div class="accordion-item">
@@ -107,7 +102,7 @@
           <button style="background-color:#3c3636;" class=" fw-bold text-light  accordion-button collapsed"
             type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
             aria-controls="flush-collapseOne">
-            Craving for Something Cheesy and Magical
+            Craving for Something?
           </button>
         </h2>
         <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
@@ -134,7 +129,7 @@
           <button style="background-color: #3c3636;" class=" fw-bold text-light accordion-button collapsed"
             type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false"
             aria-controls="flush-collapseTwo">
-            So what makes us different from the rest.
+            So what makes us different?
           </button>
         </h2>
         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
@@ -179,40 +174,8 @@
   </div>
 
   <!-- Burger overlay -->
-  <div class="">
-  <div id="overlay" class="overlay-container">
-    <div class="overlay-content">
-      <div class="overlay-close" onclick="closeOverlay(event)">X</div>
-      <img src="./images/burger1.jpg" alt="" class="card-image">
-      <h4>Beef Burger Beef Burger</h4>
-      <p>Freshly Made Burger</p>
-      <hr>
-      <span class="price">560.00</span>
-
-      <!-- Quantity buttons -->
-      <div class="quantity-controls">
-        <button class="quantity-btn" onclick="decrementQuantity()">-</button>
-        <span class="quantity">1</span>
-        <button class="quantity-btn" onclick="incrementQuantity()">+</button>
-      </div>
-
-      <!-- Add on or Changes heading -->
-      <h5>Add on or Changes:</h5>
-      <div class="checkbox-options">
-        <label>
-          <input type="checkbox" name="cheese"> Cheese
-        </label>
-        <label>
-          <input type="checkbox" name="bread"> Bread
-        </label>
-      </div>
-
-      <a href="#" class="btn add-to-cart-btn" onclick="addToCart(event)">Add to Cart</a>
-    </div>
+  <div class="overlay-items" id="overlay-items">
   </div>
-</div>
-
-
 
   <!-- Login Overlay -->
   <div id="login-overlay" class="overlay">
@@ -298,6 +261,8 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
+    // Function to show the overlay
+
     $(document).ready(function() {
       // Load the dynamic category menu using AJAX
       $.ajax({
@@ -321,29 +286,29 @@
         $(".item-content").html(data);
       },
       error: function() {
-        $(".item-content").html(data);
+        $(".item-content").html(data).html("<p>Error loading items.</p>");
   
       }
     });
   
-    // Load the dynamic overlay using AJAX
+    //Load the dynamic overlay using AJAX
     $.ajax({
-        url: "cpp/overlay.cgi",
+        url: "cpp/test.cgi?itemId=8",
         method: "GET",
         dataType: "html",
         success: function(data) {
-        $(".overlay-item").html(data);
+        $(".overlay-items").html(data);
       },
       error: function() {
-        $(".overlay-item").html(data);
+        $(".overlay-items").html(data).html("<p>Error loading overlay.</p>");
   
       }
     });
   
     });
+
   
   </script>
-  
 
 </body>
 

@@ -38,11 +38,14 @@ int main() {
     MYSQL_ROW row;
     std::string currentCategory;
     while ((row = mysql_fetch_row(result))) {
+        std::string itemID = row[0];
+        std::string categoryID = row[1];
         std::string itemName = row[2];
         std::string itemDescription = row[3];
         std::string itemPrice = row[4];
         std::string itemPic = row[5];
         std::string category = row[6];
+        
 
         if (category != currentCategory) {
             // Add the previous item cards to the item menu
@@ -66,12 +69,12 @@ int main() {
         }
 
         itemCards += "<div class=\"food-item " + category + "\">\n";
-        itemCards += "  <div class=\"dashboard-card\" data-id=\"" + std::to_string(std::stoull(row[0])) + "\">\n";
+         itemCards += "  <div class=\"dashboard-card\" data-id=\"" + itemID + "\" data-category-id=\"" + categoryID + "\">\n";
         itemCards += "    <img src=\"./images/"+itemPic+"\" alt=\"\" class=\"card-image\">\n";
         itemCards += "    <div class=\"card-detail\">\n";
         itemCards += "      <h4>" + itemName + "</h4>\n";
         itemCards += "      <hr>\n";
-        itemCards += "      <a href=\"#\" class=\"see-detail\" data-id=\"" + std::to_string(std::stoull(row[0])) + "\" onclick=\"showOverlay(event)\">Add To Cart</a>\n";
+        itemCards += "      <a href=\"#\" class=\"see-detail\" data-id=\"" + itemID + "\" data-category-id=\"" + categoryID + "\" onclick=\"showOverlay(event)\">Add To Cart</a>\n";
         itemCards += "    </div>\n";
         itemCards += "  </div>\n";
         itemCards += "</div>\n";

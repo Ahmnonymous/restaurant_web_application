@@ -1,8 +1,11 @@
 #include <iostream>
+#include <winsock2.h>
+#include <windows.h>
+#include <mysql.h>
+#include <mysql_com.h>
+#include <string>
 #include <cstdlib>
 #include <unordered_map>
-#include <mysql.h>
-#include <string>
 #include <cstdio>
 
 // Define a data structure to store items and their toppings
@@ -14,44 +17,64 @@ struct ItemWithToppings {
     std::unordered_map<std::string, std::string> toppings;
 };
 
-// Constants
-const int MAX_BUFFER_SIZE = 1024;
+void displayErrorAndExit(MYSQL* connection, const std::string& errorMessage) {
+    std::cerr << errorMessage << ": " << mysql_error(connection) << std::endl;
+    mysql_close(connection);
+    exit(1);
+}
 
-// Function to read POST data
-std::string readPostData() {
+int getContentLength() {
     char* envContentLength = getenv("CONTENT_LENGTH");
     if (envContentLength != nullptr) {
-        int contentLength = std::atoi(envContentLength);
-        if (contentLength > 0) {
-            char buffer[MAX_BUFFER_SIZE];
-            int bytesRead = 0;
-            int totalBytesRead = 0;
-            while (totalBytesRead < contentLength) {
-                bytesRead = fread(buffer + totalBytesRead, 1, contentLength - totalBytesRead, stdin);
-                if (bytesRead <= 0) {
-                    break;
-                }
-                totalBytesRead += bytesRead;
-            }
-            buffer[totalBytesRead] = '\0';
-            std::string postData(buffer);
-            return postData;
+        return std::atoi(envContentLength);
+    }
+    return 0;
+}
+
+std::string readPostData() {
+    int contentLength = getContentLength();
+    if (contentLength <= 0) {
+        return "";
+    }
+
+    char* buffer = new char[contentLength + 1];
+    int bytesRead = 0;
+    int totalBytesRead = 0;
+    while (totalBytesRead < contentLength) {
+        bytesRead = fread(buffer + totalBytesRead, 1, contentLength - totalBytesRead, stdin);
+        if (bytesRead <= 0) {
+            break;
         }
+        totalBytesRead += bytesRead;
     }
-    return "";
+
+    buffer[totalBytesRead] = '\0';
+
+    std::string postData(buffer);
+
+    delete[] buffer;
+
+    return postData;
 }
 
-// Function to read GET data
-std::string readGetData() {
-    char* envQueryString = getenv("QUERY_STRING");
-    if (envQueryString != nullptr) {
-        return std::string(envQueryString);
-    }
-    return "";
-}
 
-// Function to execute the database query and retrieve item with toppings
-bool getItemWithToppings(MYSQL* connection, const std::string& itemId, std::unordered_map<int, ItemWithToppings>& itemsMap) {
+int main() {
+    MYSQL* connection = mysql_init(nullptr);
+    if (!mysql_real_connect(connection, "localhost", "root", "", "rwa_db", 0, nullptr, 0)) {
+        std::cerr << "Error connecting to database: " << mysql_error(connection) << std::endl;
+        return 1;
+    }
+
+    // Read the POST data
+    std::string postData = readPostData();
+
+    // Extract the itemId from the POST data
+    std::string itemId;
+    std::size_t found = postData.find("itemId=");
+    if (found != std::string::npos) {
+        itemId = postData.substr(found + 7); // Length of "itemId=" is 7
+    }
+
     std::string itemWithToppingSql = "SELECT i.name AS item_name, i.description, i.price AS item_price, i.picture, "
                                      "t.name AS topping_name, t.price AS topping_price "
                                      "FROM Item AS i "
@@ -59,15 +82,15 @@ bool getItemWithToppings(MYSQL* connection, const std::string& itemId, std::unor
                                      "WHERE i.id = " + itemId;
 
     if (mysql_query(connection, itemWithToppingSql.c_str()) != 0) {
-        std::cerr << "Error executing the item with topping query: " << mysql_error(connection) << std::endl;
-        return false;
+        displayErrorAndExit(connection, "Error executing the item with topping query");
     }
 
     MYSQL_RES* itemWithToppingResult = mysql_store_result(connection);
     if (itemWithToppingResult == nullptr) {
-        std::cerr << "Error retrieving item with topping result: " << mysql_error(connection) << std::endl;
-        return false;
+        displayErrorAndExit(connection, "Error retrieving item with topping result");
     }
+
+    std::unordered_map<int, ItemWithToppings> itemsMap;
 
     MYSQL_ROW row;
     while ((row = mysql_fetch_row(itemWithToppingResult))) {
@@ -78,10 +101,10 @@ bool getItemWithToppings(MYSQL* connection, const std::string& itemId, std::unor
         std::string toppingName = row[4] ? row[4] : "";
         std::string toppingPrice = row[5] ? row[5] : "";
 
-        int itemIdInt = std::stoi(itemId);
+        int itemId = 8; // Replace this with the actual item ID from the database
 
         // Check if the item already exists in the map
-        if (itemsMap.find(itemIdInt) == itemsMap.end()) {
+        if (itemsMap.find(itemId) == itemsMap.end()) {
             // If the item does not exist, create a new entry in the map
             ItemWithToppings newItem;
             newItem.itemName = itemName;
@@ -95,11 +118,11 @@ bool getItemWithToppings(MYSQL* connection, const std::string& itemId, std::unor
             }
 
             // Insert the item into the map
-            itemsMap[itemIdInt] = newItem;
+            itemsMap[itemId] = newItem;
         } else {
             // If the item already exists, add the topping to the toppings map for the current item
             if (!toppingName.empty()) {
-                itemsMap[itemIdInt].toppings[toppingName] = toppingPrice;
+                itemsMap[itemId].toppings[toppingName] = toppingPrice;
             }
         }
     }
@@ -107,11 +130,10 @@ bool getItemWithToppings(MYSQL* connection, const std::string& itemId, std::unor
     // Free the result
     mysql_free_result(itemWithToppingResult);
 
-    return true;
-}
+    // Close the connection
+    mysql_close(connection);
 
-// Function to generate the HTML response
-void generateHTMLResponse(const std::unordered_map<int, ItemWithToppings>& itemsMap, const std::string& itemId) {
+    // Generate the HTML response
     std::cout << "Content-Type: text/html\n\n";
     std::cout << "<!DOCTYPE html>\n";
     std::cout << "<html>\n<head>\n";
@@ -160,44 +182,8 @@ void generateHTMLResponse(const std::unordered_map<int, ItemWithToppings>& items
 
     // Insert the dynamically generated item menu
     std::cout << itemCards;
-    std::cout << "<p>Received itemId: " << itemId << "</p>\n";
+    //std::cout << "value: "+itemId;
     std::cout << "</body>\n</html>\n";
-}
-
-int main() {
-    MYSQL* connection = mysql_init(nullptr);
-    if (!mysql_real_connect(connection, "localhost", "root", "", "rwa_db", 0, nullptr, 0)) {
-        std::cerr << "Error connecting to database: " << mysql_error(connection) << std::endl;
-        return 1;
-    }
-
-    std::string method = getenv("REQUEST_METHOD");
-    std::string itemId;
-    std::string data;
-
-    if (method == "POST") {
-        data = readPostData();
-    } else if (method == "GET") {
-        data = readGetData();
-    } else {
-        // Unsupported method
-        std::cout << "Status: 405 Method Not Allowed\n\n";
-        std::cout << "Method not allowed.";
-        return 0;
-    }
-
-    std::size_t found = data.find("itemId=");
-    if (found != std::string::npos) {
-        itemId = data.substr(found + 7); // Length of "itemId=" is 7
-    }
-
-    std::unordered_map<int, ItemWithToppings> itemsMap;
-    if (!itemId.empty() && getItemWithToppings(connection, itemId, itemsMap)) {
-        generateHTMLResponse(itemsMap, itemId);
-    }
-
-    // Close the connection
-    mysql_close(connection);
 
     return 0;
 }
