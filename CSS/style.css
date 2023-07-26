@@ -6,13 +6,13 @@
   box-sizing: border-box;
   transition: all 0.3s ease-in; /* Added smooth transition to all properties */
 }
-.order-owner {
+.owner {
   display: flex;
 }
-.order-owner a{
+.owner a{
   padding-left: 30px;
 }
-.order-owner img {
+.owner img {
   width: 45px;
   height: 45px;
   position: absolute;
@@ -319,8 +319,8 @@ section {
     padding-left: 50px;
   }
   .home img{
-    margin-left: 10px;
-    width: 800px;
+    margin-left: 0px;
+    width: 780px;
   }
   .form-group .input-group .otp{
     width: 33%;
@@ -334,7 +334,7 @@ section {
     width: calc(4 * (160px + 10px)); /* (button width + gap) * number of buttons */
   }
   .home img{
-    margin-left: 30px;
+    margin-left: 20px;
     width: 700px;
   }
 
