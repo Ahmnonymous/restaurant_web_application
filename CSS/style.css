@@ -9,12 +9,15 @@
 .order-owner {
   display: flex;
 }
-
+.order-owner a{
+  padding-left: 30px;
+}
 .order-owner img {
   width: 45px;
   height: 45px;
+  position: absolute;
   border-radius: 50%;
-  margin-top: 15px;
+  margin-top: 12px;
 }
 body {
   background-color: #f8f9fa;
@@ -45,6 +48,7 @@ section {
   font-weight: bolder;
   font-size: 30px;
 }
+
 /* .navbar-nav .nav-link:last-child {
   margin-right: 50px;
 } */
@@ -302,14 +306,14 @@ section {
     justify-content: flex-start; /* Start from the beginning */
     overflow-x: auto;
     padding-left: 0; /* Reset the left padding */
-    width: calc(4 * (160px + 40px)); /* (button width + gap) * number of buttons */
+    width: calc(4 * (150px + 40px)); /* (button width + gap) * number of buttons */
     margin-left: -20px;
   }
   .dashboard-menu{
     padding-left: 50px;
   }
   .home img{
-    margin-left: 30px;
+    margin-left: 10px;
     width: 800px;
   }
   
