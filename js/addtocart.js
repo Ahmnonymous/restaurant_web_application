@@ -17,12 +17,23 @@ function closeOverlay(event) {
 // Function to handle the "Add to Cart" button
 function addToCart(event) {
   event.preventDefault();
+  const alertMessage = document.createElement('div');
+  alertMessage.className = 'alert';
+  alertMessage.textContent = 'Item added to cart!';
+  document.body.appendChild(alertMessage);
+
+  // Hide the alert after 2 seconds
+  setTimeout(function() {
+    alertMessage.style.display = 'none';
+  }, 2000);
+  
   const itemId = event.target.getAttribute('data-id'); // Extract the item ID from the data-id attribute
 
   // Check if the item already exists in the cart
   if (!cartItems.hasOwnProperty(itemId)) {
     // Item doesn't exist, add it to the cart with count 1
     cartItems[itemId] = 1;
+
   }
 
   // Update the cart count indicator in the navbar

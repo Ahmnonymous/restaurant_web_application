@@ -1,8 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Poppins, Tahoma;
-  outline: none;
+  font-family: 'Poppins', sans-serif;
+      outline: none;
   box-sizing: border-box;
   transition: all 0.3s ease-in; /* Added smooth transition to all properties */
 }
@@ -27,6 +27,19 @@ body {
   --maincolor: rgb(255, 203, 4);
 }
 
+
+.alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 9999;
+}
 .Line {
   border: 1px solid var(--maincolor) !important;
 }
@@ -86,6 +99,7 @@ section {
   justify-content: center;
   align-items: center;
   height: 15vh;
+  margin-left: 80px;
   background-color:  #f8f9fa;
 }
 
@@ -326,6 +340,10 @@ section {
     width: 33%;
   }
   
+.search{
+  margin-left: 10px;
+}
+  
 }
 @media (max-width: 770px) {
   .menu-container {
@@ -359,10 +377,8 @@ section {
 .form-group .input-group .otp{
   width: 23%;
 }
-
-
-
 }
+
   @media (max-width: 590px) {
   .food-item {
     flex: 0 0 50%;
@@ -420,6 +436,33 @@ section {
   width: 32%;
 }
 
+.search{
+  margin-left: 0px;
+}
+}
+@media (max-width: 300px) {
+  .menu-container {
+    flex-wrap: wrap; /* Allow wrapping of buttons */
+    justify-content: flex-start; /* Start from the beginning */
+    overflow-x: auto;
+    padding-left: 0; /* Reset the left padding */
+    width: calc(1 * (150px + 10px)); /* (button width + gap) * number of buttons */
+  }
+  .home img{
+    width: 250px;
+    margin-left: -20px;
+  }
+  .question{
+    width: 260px;
+    margin-left: -10px;
+  }
+  .search{
+    margin-left: -20px;
+  }
+  .foot{
+    width: 260px;
+    margin-left: -10px;
+  }
 
 }
 
