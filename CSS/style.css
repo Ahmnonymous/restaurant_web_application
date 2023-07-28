@@ -777,7 +777,13 @@ h5 {
   width: 90%; /* Set the width to 90% to center-align the container */
   position: relative;
 }
-
+.login-container h3{
+  font-size:25px ;
+  font-weight: bold;
+}
+.login-container p{
+  font-size: 18px;
+}
 
 .close-button {
   position: absolute;
