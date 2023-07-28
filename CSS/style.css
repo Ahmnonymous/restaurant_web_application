@@ -163,10 +163,9 @@ section {
 }
 
 .home img {
-  width: 1200px;
+  width:100%;
   max-height: 400px;
   object-fit: cover;
-  margin-left: 230px;
   border-radius: 5px;
   box-shadow: 15px 5px 5px #ebe8e8;
 }
