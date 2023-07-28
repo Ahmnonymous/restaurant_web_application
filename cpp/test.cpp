@@ -4,6 +4,7 @@
 #include <mysql.h>
 #include <string>
 #include <cstdio>
+#include <vector>
 
 // Define a data structure to store items and their toppings
 struct ItemWithToppings {
@@ -50,13 +51,12 @@ std::string readGetData() {
     return "";
 }
 
-// Function to execute the database query and retrieve item with toppings
-bool getItemWithToppings(MYSQL* connection, const std::string& itemId, std::unordered_map<int, ItemWithToppings>& itemsMap) {
-    std::string itemWithToppingSql = "SELECT i.name AS item_name, i.description, i.price AS item_price, i.picture, "
+// Function to execute the database query and retrieve all items with toppings
+bool getAllItemsWithToppings(MYSQL* connection, std::unordered_map<int, ItemWithToppings>& itemsMap) {
+    std::string itemWithToppingSql = "SELECT i.id, i.name AS item_name, i.description, i.price AS item_price, i.picture, "
                                      "t.name AS topping_name, t.price AS topping_price "
                                      "FROM Item AS i "
-                                     "LEFT JOIN Topping AS t ON i.id = t.item_id "
-                                     "WHERE i.id = " + itemId;
+                                     "LEFT JOIN Topping AS t ON i.id = t.item_id";
 
     if (mysql_query(connection, itemWithToppingSql.c_str()) != 0) {
         std::cerr << "Error executing the item with topping query: " << mysql_error(connection) << std::endl;
@@ -71,12 +71,13 @@ bool getItemWithToppings(MYSQL* connection, const std::string& itemId, std::unor
 
     MYSQL_ROW row;
     while ((row = mysql_fetch_row(itemWithToppingResult))) {
-        std::string itemName = row[0] ? row[0] : "";
-        std::string itemDescription = row[1] ? row[1] : "";
-        std::string itemPrice = row[2] ? row[2] : "";
-        std::string itemPic = row[3] ? row[3] : "";
-        std::string toppingName = row[4] ? row[4] : "";
-        std::string toppingPrice = row[5] ? row[5] : "";
+        std::string itemId = row[0] ? row[0] : "";
+        std::string itemName = row[1] ? row[1] : "";
+        std::string itemDescription = row[2] ? row[2] : "";
+        std::string itemPrice = row[3] ? row[3] : "";
+        std::string itemPic = row[4] ? row[4] : "";
+        std::string toppingName = row[5] ? row[5] : "";
+        std::string toppingPrice = row[6] ? row[6] : "";
 
         int itemIdInt = std::stoi(itemId);
 
@@ -110,57 +111,50 @@ bool getItemWithToppings(MYSQL* connection, const std::string& itemId, std::unor
     return true;
 }
 
-// Function to generate the HTML response
-void generateHTMLResponse(const std::unordered_map<int, ItemWithToppings>& itemsMap, const std::string& itemId) {
+void generateHTMLResponse(const std::unordered_map<int, ItemWithToppings>& itemsMap) {
     std::cout << "Content-Type: text/html\n\n";
     std::cout << "<!DOCTYPE html>\n";
     std::cout << "<html>\n<head>\n";
     std::cout << "</head>\n<body>\n";
 
     // Build the item cards using the data from the itemsMap
-    std::string itemCards;
     for (const auto& item : itemsMap) {
-        std::string itemIdStr = std::to_string(item.first);
+        int itemId = item.first;
         const ItemWithToppings& currentItem = item.second;
 
-        // Build the item card for the current item
-        std::string itemCard;
-        std::cout << "  <div id=\"overlay\" class=\"overlay-container\">\n";
-        std::cout << "  <div class=\"overlay-content\">\n";
-        std::cout << "    <div class=\"overlay-close\" onclick=\"closeOverlay(event)\">X</div>\n";
-        std::cout << "    <img src=\"./images/" << currentItem.itemPic << "\" alt=\"\" class=\"card-image\">\n";
-        std::cout << "    <h4>" << currentItem.itemName << "</h4>\n"; // Using the item name as the category
-        std::cout << "    <p>" << currentItem.itemDescription << "</p>\n"; // Replace with the actual item description
-        std::cout << "    <hr>\n";
-        std::cout << "    <span class=\"price\">" << currentItem.itemPrice << "</span>\n"; // Display the item price
-        std::cout << "    <div class=\"quantity-controls\">\n";
-        std::cout << "      <button class=\"quantity-btn\" onclick=\"decrementQuantity()\">-</button>\n";
-        std::cout << "      <span class=\"quantity\">1</span>\n";
-        std::cout << "      <button class=\"quantity-btn\" onclick=\"incrementQuantity()\">+</button>\n";
-        std::cout << "    </div>\n";
-        std::cout << "    <h5>Add on or Changes:</h5>\n";
-        std::cout << "    <div class=\"checkbox-options\">\n";
+        // Build the overlay for the current item
+        std::cout << "  <div id=\"overlay-" << itemId << "\" class=\"overlay-container\">\n";
+        std::cout << "    <div class=\"overlay-content\">\n";
+        std::cout << "      <div class=\"overlay-close\" onclick=\"closeOverlay(event,"<<itemId<<")\">X</div>\n";
+        std::cout << "      <img src=\"./images/" << currentItem.itemPic << "\" alt=\"\" class=\"card-image\">\n";
+        std::cout << "      <h4>" << currentItem.itemName << "</h4>\n";
+        std::cout << "      <p>" << currentItem.itemDescription << "</p>\n";
+        std::cout << "      <hr>\n";
+        std::cout << "      <span class=\"price\">" << currentItem.itemPrice << "</span>\n";
+        std::cout << "      <div class=\"quantity-controls\">\n";
+        std::cout << "        <button class=\"quantity-btn\" onclick=\"decrementQuantity("<<itemId<<","<<currentItem.itemPrice<<")\">-</button>\n";
+        std::cout << "        <span class=\"quantity\">1</span>\n";
+        std::cout << "        <button class=\"quantity-btn\" onclick=\"incrementQuantity("<<itemId<<","<<currentItem.itemPrice<<")\">+</button>\n";
+        std::cout << "      </div>\n";
+        std::cout << "      <h5>Add-ons</h5>\n";
+        std::cout << "      <div class=\"checkbox-options\">\n";
 
         for (const auto& topping : currentItem.toppings) {
-            // Append the topping information to the item card
-            std::cout << "      <label>\n";
-            std::cout << "        <input type=\"checkbox\" name=\"" << topping.first << "\" onchange=\"updateQuantityAndPrice()\">\n";
-            std::cout << "        <span class=\"option-text\">" << topping.first << "</span>\n";
-            std::cout << "        <span class=\"option-price\">" << topping.second << "</span>\n";
-            std::cout << "      </label>\n";
+            // Append the topping information to the overlay
+            std::cout << "        <label>\n";
+            std::cout << "  <input type=\"checkbox\" name=\"" << topping.first << "\" onchange=\"updateQuantityAndPrice(" << itemId << "," << currentItem.itemPrice << ")\">\n";
+            std::cout << "          <span class=\"option-text\">" << topping.first << "</span>\n";
+            std::cout << "          <span class=\"option-price\">" << topping.second << "</span>\n";
+            std::cout << "        </label>\n";
         }
 
-        itemCard += "    <a href=\"#\" class=\"btn add-to-cart-btn\" onclick=\"addToCart(event)\">Add to Cart</a>\n";
-        itemCard += "  </div>\n";
-        itemCard += "</div>\n";
+        std::cout << "        <a href=\"#\" class=\"btn add-to-cart-btn\" onclick=\"addToCart(event," << itemId << ")\">Add to Cart</a>\n";
+        std::cout << "      </div>\n";
+        std::cout << "    </div>\n";
+        std::cout << "  </div>\n";
 
-        // Add the item card to the item menu
-        itemCards += itemCard;
     }
 
-    // Insert the dynamically generated item menu
-    std::cout << itemCards;
-    std::cout << "<p>Received itemId: " << itemId << "</p>\n";
     std::cout << "</body>\n</html>\n";
 }
 
@@ -172,7 +166,6 @@ int main() {
     }
 
     std::string method = getenv("REQUEST_METHOD");
-    std::string itemId;
     std::string data;
 
     if (method == "POST") {
@@ -186,14 +179,9 @@ int main() {
         return 0;
     }
 
-    std::size_t found = data.find("itemId=");
-    if (found != std::string::npos) {
-        itemId = data.substr(found + 7); // Length of "itemId=" is 7
-    }
-
     std::unordered_map<int, ItemWithToppings> itemsMap;
-    if (!itemId.empty() && getItemWithToppings(connection, itemId, itemsMap)) {
-        generateHTMLResponse(itemsMap, itemId);
+    if (getAllItemsWithToppings(connection, itemsMap)) {
+        generateHTMLResponse(itemsMap);
     }
 
     // Close the connection

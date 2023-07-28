@@ -73,8 +73,7 @@ int main() {
         itemCards += "    <img src=\"./images/"+itemPic+"\" alt=\"\" class=\"card-image\">\n";
         itemCards += "    <div class=\"card-detail\">\n";
         itemCards += "      <h4>" + itemName + "</h4>\n";
-        itemCards += "      <hr>\n";
-        itemCards += "      <a href=\"#\" class=\"see-detail\" data-id=\"" + itemID + "\" data-category-id=\"" + categoryID + "\" onclick=\"showOverlay(event)\">Add To Cart</a>\n";
+        itemCards += "      <a href=\"#\" class=\"see-detail\" data-id=\"" + itemID + "\" data-category-id=\"" + categoryID + "\" onclick=\"showOverlay(event,"+itemID+")\">Add To Cart</a>\n";
         itemCards += "    </div>\n";
         itemCards += "  </div>\n";
         itemCards += "</div>\n";
