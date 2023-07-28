@@ -310,9 +310,7 @@ section {
     width: 900px;
   }
 
-  .form-group .input-group .otp{
-    width: 23%;
-  }
+ 
 
 
 }
@@ -336,9 +334,7 @@ section {
     margin-left: 0px;
     width: 780px;
   }
-  .form-group .input-group .otp{
-    width: 33%;
-  }
+  
   
 .search{
   margin-left: 10px;
@@ -374,9 +370,7 @@ section {
     max-height: 100%;
     margin-top: 0;
 }
-.form-group .input-group .otp{
-  width: 23%;
-}
+
 }
 
   @media (max-width: 590px) {
@@ -396,9 +390,6 @@ section {
     width: 350px;
     margin-left: -10px;
   }
-  .form-group .input-group .otp{
-    width: 23%;
-  } 
   
   
 }
@@ -432,9 +423,7 @@ section {
 .container .center-wrapper .container button{
   margin-top: 10px;
 }
-.form-group .input-group .otp{
-  width: 32%;
-}
+
 
 .search{
   margin-left: 0px;
@@ -934,7 +923,6 @@ h1 {
   max-height: 70%;
   margin-top: -70px;
   border-radius: 15px;
-
 }
 .form-group {
   margin-bottom: 15px;
