@@ -462,6 +462,13 @@ section {
   border: 2px solid var(--maincolor);
 }
 
+.card-detail {
+  position: relative;
+  padding: 10px;
+  height: 120px; /* Adjust the height as needed */
+  overflow: auto;
+}
+
 .card-detail > h4 {
   font-weight: bold;
   font-size: 18px;
@@ -472,7 +479,7 @@ section {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 2.9em;
+  margin-bottom: 2.0em;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 
 }
@@ -483,12 +490,6 @@ section {
   object-fit: cover;
   border-radius: 15px;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
-}
-.card-detail {
-  position: relative;
-  padding: 10px;
-  height: 150px; /* Adjust the height as needed */
-  overflow: auto;
 }
 
 
@@ -512,13 +513,13 @@ section {
   left: 50%;
   margin-top: 5px;
   transform: translateX(-50%);
-  padding: 8px 8px;
+  padding: 6px 8px;
   text-align: center;
   background-color: red;
-  width: 120px;
-  border-radius: 10px;
+  width: 110px;
+  border-radius: 8px;
   color: white !important;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease; /* Added smooth transition to all properties */
 }
