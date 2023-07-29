@@ -6,43 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        THMA Admin
+        Slide Admin
     </title>
     <link rel="shortcut icon" href="/images/logo-mb.png" type="image/png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="css/style.css">
+  
 </head>
 
 <body>
-<!-- Side bar Menu -->
+
+    <!-- SIDEBAR -->
     <div class="sidebar">
         <div class="sidebar-logo">
-            <img src="./images/logo-lg.png" alt="Comapny logo">
-            <!-- for company Logo -->
+            <img src="images/burger.jpg" alt="Comapny logo">
             <div class="sidebar-close" id="sidebar-close">
                 <i class='bx bx-left-arrow-alt'></i>
             </div>
         </div>
         <div class="sidebar-user">
             <div class="sidebar-user-info">
-                <!-- For Profile Picture -->
-                <img src="./images/user-image.jpg" alt="Adminpic" class="profile-image">
+                <img src="images/logo.png" alt="User picture" class="profile-image">
                 <div class="sidebar-user-name">
-                    Slide
+                    THMA 
                 </div>
             </div>
             <button class="btn btn-outline">
                 <i class='bx bx-log-out bx-flip-horizontal'></i>
             </button>
         </div>
+        <!-- SIDEBAR MENU -->
         <ul class="sidebar-menu">
             <li>
                 <a href="#" class="active">
@@ -52,40 +48,36 @@
             </li>
             <li>
                 <a href="menu.html">
-                    <i class='bx bx-shopping-bag'></i>
-                    <span>Menu Screen</span>
+                    <i class='bx bx-menu'></i>
+                    <span>Menu</span>
                 </a>
             </li>
             <li>
                 <a href="orderscreen.html">
-                    <i class='bx bx-user'></i>
-                    <span>Orders Details</span>
+                    <i class='bx bx-package'></i>
+                    <span>Orders</span>
                 </a>
             </li>
             <li>
-                <a href="userprivilege.html">
-                    <i class='bx bx-user'></i>
+                <a href="privilege.html">
+                    <i class='bx bxs-user-account'></i>
                     <span>User Privilege</span>
                 </a>
             </li>
             <li class="sidebar-submenu">
                 <a href="#" class="sidebar-menu-dropdown">
-                    <i class='bx bx-cog'></i>
-                    <span>settings</span>
-                    <div class="dropdown-icon"></div>
                 </a>
                 <ul class="sidebar-menu sidebar-menu-dropdown-content">
                     <li>
                         <a href="#" class="darkmode-toggle" id="darkmode-toggle">
-                            darkmode
-                            <span class="darkmode-switch"></span>
                         </a>
                     </li>
                 </ul>
             </li>
         </ul>
     </div>
-<!-- Table -->
+
+    <!-- MAIN CONTENT -->
     <div class="main">
         <div class="main-header">
             <div class="mobile-toggle" id="mobile-toggle">
@@ -96,73 +88,13 @@
             </div>
         </div>
         <div class="main-content">
-            <div class="row">
-                <div class="col-3 col-md-6 col-sm-12">
-                    <div class="box box-hover">
-                        <div class="counter">
-                            <div class="counter-title">
-                                total order
-                            </div>
-                            <div class="counter-info">
-                                <div class="counter-count">
-                                    6578
-                                </div>
-                                <i class='bx bx-shopping-bag'></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3 col-md-6 col-sm-12">
-                    <div class="box box-hover">
-                        <div class="counter">
-                            <div class="counter-title">
-                                conversion rate
-                            </div>
-                            <div class="counter-info">
-                                <div class="counter-count">
-                                    30.5%
-                                </div>
-                                <i class='bx bx-chat'></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3 col-md-6 col-sm-12">
-                    <div class="box box-hover">
-                        <div class="counter">
-                            <div class="counter-title">
-                                total profit
-                            </div>
-                            <div class="counter-info">
-                                <div class="counter-count">
-                                    $9,780
-                                </div>
-                                <i class='bx bx-line-chart'></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3 col-md-6 col-sm-12">
-                    <div class="box box-hover">
-                        <div class="counter">
-                            <div class="counter-title">
-                                daily Customer
-                            </div>
-                            <div class="counter-info">
-                                <div class="counter-count">
-                                    690
-                                </div>
-                                <i class='bx bx-user'></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+         
 
             <div class="row">
                 <div class="col-3 col-md-6 col-sm-12">
                 </div>
                 <div class="col-12">
+                    <!-- ORDERS TABLE -->
                     <div class="box">
                         <div class="box-header">
                             Recent orders
@@ -184,11 +116,11 @@
                                         <td>#1</td>
                                         <td>
                                             <div class="order-owner">
-                                                <img src="./images/beverage.jpg" alt="user image">
+                                                <img src="images/burger.jpg" alt="user image">
                                                 <span>Ali Haider</span>
                                             </div>
                                         </td>
-                                        <td>2023-07-16</td>
+                                        <td>2021-05-09</td>
                                         <td>
                                             <span class="order-status order-ready">
                                                 Ready
@@ -200,17 +132,17 @@
                                                 <span>Pending</span>
                                             </div>
                                         </td>
-                                        <td>$123.45</td>
+                                        <td>1000</td>
                                     </tr>
                                     <tr>
                                         <td>#2</td>
                                         <td>
                                             <div class="order-owner">
-                                                <img src="./images/burger1.jpg" alt="user image">
+                                                <img src="images/pizza.jpg" alt="user image">
                                                 <span>Ahmad Raza</span>
                                             </div>
                                         </td>
-                                        <td>2023-07-16</td>
+                                        <td>2021-05-09</td>
                                         <td>
                                             <span class="order-status order-shipped">
                                                 Shipped
@@ -222,17 +154,17 @@
                                                 <span>Paid</span>
                                             </div>
                                         </td>
-                                        <td>$123.45</td>
+                                        <td>1500</td>
                                     </tr>
                                     <tr>
                                         <td>#3</td>
                                         <td>
                                             <div class="order-owner">
-                                                <img src="./images/desert1.jpg" alt="user image">
+                                                <img src="images/beverage.jpg" alt="user image">
                                                 <span>Zain</span>
                                             </div>
                                         </td>
-                                        <td>2023-07-16</td>
+                                        <td>2021-05-09</td>
                                         <td>
                                             <span class="order-status order-shipped">
                                                 Shipped
@@ -244,94 +176,62 @@
                                                 <span>Paid</span>
                                             </div>
                                         </td>
-                                        <td>$123.45</td>
+                                        <td>600</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
+                    <!-- END ORDERS TABLE -->
                 </div>
             </div>
         </div>
     </div>
+    <!-- END MAIN CONTENT -->
+<script>
+    
 
 
-    <!-- Login Overlay -->
- <div id="login-overlay" class="overlay">
-    <div class="login-container">
-      <button class="close-button" onclick="closeoverlay()">X</button>
-      <h3>Experience More as a Member</h3>
-      <p>Login or Sign Up Today!</p>
-      <a href="clogin.html" class="login-button">Login</a>
-      <div class="hr-container mt-4">
-        <hr class="left-hr">
-        <span class="or-text">OR</span>
-        <hr class="right-hr">
-      </div>
-      <!-- signup form link -->
-      <a href="csignup.html" class="signup-button mt-4">Signup</a>
 
-    </div>
-  </div>
+document.querySelectorAll('.sidebar-submenu').forEach(e => {
+  e.querySelector('.sidebar-menu-dropdown').onclick = (event) => {
+      event.preventDefault()
+      e.querySelector('.sidebar-menu-dropdown .dropdown-icon').classList.toggle('active')
 
-  <!-- Driver Login Overlay -->
-  <div id="driver-login-overlay" class="overlay">
-    <div class="login-container">
-      <button class="close-button" onclick="closeoverlay()">X</button>
-      <h3>Accelerate Your Journey</h3>
-      <p>Join Our Driver Careers <br> Login or Sign Up Now!</p>
-      <a href="dlogin.html" class="login-button">Login</a>
-      <div class="hr-container mt-4">
-        <hr class="left-hr">
-        <span class="or-text">OR</span>
-        <hr class="right-hr">
-      </div>
-      <!-- signup form link -->
-      <a href="dsignup.html" class="signup-button mt-4">Signup</a>
+      let dropdown_content = e.querySelector('.sidebar-menu-dropdown-content')
+      let dropdown_content_lis = dropdown_content.querySelectorAll('li')
 
-    </div>
-  </div>
+      let active_height = dropdown_content_lis[0].clientHeight * dropdown_content_lis.length
+
+      dropdown_content.classList.toggle('active')
+
+      dropdown_content.style.height = dropdown_content.classList.contains('active') ? active_height + 'px' : '0'
+  }
+})
+// DARK MODE TOGGLE
+let darkmode_toggle = document.querySelector('#darkmode-toggle')
+
+darkmode_toggle.onclick = (e) => {
+  e.preventDefault()
+  document.querySelector('body').classList.toggle('dark')
+  darkmode_toggle.querySelector('.darkmode-switch').classList.toggle('active')
+  setDarkChart(document.querySelector('body').classList.contains('dark'))
+}
+
+let overlay = document.querySelector('.overlay')
+let sidebar = document.querySelector('.sidebar')
+
+document.querySelector('#mobile-toggle').onclick = () => {
+  sidebar.classList.toggle('active')
+  overlay.classList.toggle('active')
+}
+
+document.querySelector('#sidebar-close').onclick = () => {
+  sidebar.classList.toggle('active')
+  overlay.classList.toggle('active')
+}
+</script>
 
 </body>
-<script>
-    document.querySelectorAll('.sidebar-submenu').forEach(e => {
-        e.querySelector('.sidebar-menu-dropdown').onclick = (event) => {
-            event.preventDefault()
-            e.querySelector('.sidebar-menu-dropdown .dropdown-icon').classList.toggle('active')
-
-            let dropdown_content = e.querySelector('.sidebar-menu-dropdown-content')
-            let dropdown_content_lis = dropdown_content.querySelectorAll('li')
-
-            let active_height = dropdown_content_lis[0].clientHeight * dropdown_content_lis.length
-
-            dropdown_content.classList.toggle('active')
-
-            dropdown_content.style.height = dropdown_content.classList.contains('active') ? active_height + 'px' : '0'
-        }
-    })
-    // DARK MODE TOGGLE
-    let darkmode_toggle = document.querySelector('#darkmode-toggle')
-
-    darkmode_toggle.onclick = (e) => {
-        e.preventDefault()
-        document.querySelector('body').classList.toggle('dark')
-        darkmode_toggle.querySelector('.darkmode-switch').classList.toggle('active')
-        setDarkChart(document.querySelector('body').classList.contains('dark'))
-    }
-
-    let overlay = document.querySelector('.overlay')
-    let sidebar = document.querySelector('.sidebar')
-
-    document.querySelector('#mobile-toggle').onclick = () => {
-        sidebar.classList.toggle('active')
-        overlay.classList.toggle('active')
-    }
-
-    document.querySelector('#sidebar-close').onclick = () => {
-        sidebar.classList.toggle('active')
-        overlay.classList.toggle('active')
-    }</script>
-
-<script src="js/script.js"></script>
 
 </html>
