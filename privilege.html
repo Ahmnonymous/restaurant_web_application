@@ -24,6 +24,77 @@
 
 
 
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <img src="images/burger.jpg" alt="Comapny logo">
+            <div class="sidebar-close" id="sidebar-close">
+                <i class='bx bx-left-arrow-alt'></i>
+            </div>
+        </div>
+        <div class="sidebar-user">
+            <div class="sidebar-user-info">
+                <img src="images/logo.png" alt="User picture" class="profile-image">
+                <div class="sidebar-user-name">
+                    THMA
+                </div>
+            </div>
+            <button class="btn btn-outline">
+                <i class='bx bx-log-out bx-flip-horizontal'></i>
+            </button>
+        </div>
+        <!-- SIDEBAR MENU -->
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#" class="active">
+                    <i class='bx bx-home'></i>
+                    <span>dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="menu.html">
+                    <i class='bx bx-menu'></i>
+                    <span>Menu</span>
+                </a>
+            </li>
+            <li>
+                <a href="orderscreen.html">
+                    <i class='bx bx-package'></i>
+                    <span>Orders</span>
+                </a>
+            </li>
+            <li>
+                <a href="privilege.html">
+                    <i class='bx bxs-user-account'></i>
+                    <span>User Privilege</span>
+                </a>
+            </li>
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="#" class="darkmode-toggle" id="darkmode-toggle">
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <div class="main-header">
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i class='bx bx-menu-alt-right'></i>
+            </div>
+            <div class="main-title">
+                dashboard
+            </div>
+        </div>
+        <div class="main-content">
+        </div>
+    </div>
+
 
 
     <div class="form-container mt-4">
@@ -121,7 +192,45 @@
         alert(message);
 
         // Optional: You can perform additional actions here, such as updating the server, etc.
-    });s
+    });
+    document.querySelectorAll('.sidebar-submenu').forEach(e => {
+      e.querySelector('.sidebar-menu-dropdown').onclick = (event) => {
+          event.preventDefault()
+          e.querySelector('.sidebar-menu-dropdown .dropdown-icon').classList.toggle('active')
+    
+          let dropdown_content = e.querySelector('.sidebar-menu-dropdown-content')
+          let dropdown_content_lis = dropdown_content.querySelectorAll('li')
+    
+          let active_height = dropdown_content_lis[0].clientHeight * dropdown_content_lis.length
+    
+          dropdown_content.classList.toggle('active')
+    
+          dropdown_content.style.height = dropdown_content.classList.contains('active') ? active_height + 'px' : '0'
+      }
+    })
+    // DARK MODE TOGGLE
+    let darkmode_toggle = document.querySelector('#darkmode-toggle')
+    
+    darkmode_toggle.onclick = (e) => {
+      e.preventDefault()
+      document.querySelector('body').classList.toggle('dark')
+      darkmode_toggle.querySelector('.darkmode-switch').classList.toggle('active')
+      setDarkChart(document.querySelector('body').classList.contains('dark'))
+    }
+    
+    let overlay = document.querySelector('.overlay')
+    let sidebar = document.querySelector('.sidebar')
+    
+    document.querySelector('#mobile-toggle').onclick = () => {
+      sidebar.classList.toggle('active')
+      overlay.classList.toggle('active')
+    }
+    
+    document.querySelector('#sidebar-close').onclick = () => {
+      sidebar.classList.toggle('active')
+      overlay.classList.toggle('active')
+    }
+
 </script>
 
 <script src="js/script.js"></script>
