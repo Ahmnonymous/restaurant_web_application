@@ -50,10 +50,10 @@
   .sidebar-logo {
     height: var(--sidebar-logo-size);
     position: relative;
-    padding: 10px 5px;
+    padding: 10px 15px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
   }
   
   .sidebar-logo img {
@@ -65,17 +65,7 @@
     display: none;
   }
   
-  .sidebar-user {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-  }
   
-  .sidebar-user-info {
-    display: flex;
-    align-items: center;
-  }
   
   .sidebar-user-name {
     margin-left: 10px;
@@ -473,7 +463,7 @@
     display: block;
   }
   
-  @media only screen and (max-width: 2280px) {
+  @media only screen and (max-width: 3080px) {
     .sidebar {
         transition: transform 0.3s ease-in-out;
         max-width: 100%;
