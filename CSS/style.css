@@ -941,6 +941,13 @@ h1 {
   border-radius: 15px;
 
 }
+.clogin img{
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: -110px;
+  border-radius: 15px;
+
+}
 .signin-image{
   flex: 1;
   border-radius: 5px;
