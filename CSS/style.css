@@ -929,10 +929,17 @@ h1 {
 }
 
 .signup-image img {
-  max-width: 60%;
+  max-width: 70%;
   max-height: 60%;
   margin-top: -110px;
   border-radius: 15px;
+}
+.customer img{
+  max-width: 90%;
+  max-height: 90%;
+  margin-top: -110px;
+  border-radius: 15px;
+
 }
 .signin-image{
   flex: 1;
