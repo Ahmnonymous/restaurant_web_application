@@ -23,10 +23,10 @@ function addToCart(event) {
   document.body.appendChild(alertMessage);
 
   // Hide the alert after 2 seconds
-  setTimeout(function() {
+  setTimeout(function () {
     alertMessage.style.display = 'none';
   }, 2000);
-  
+
   const itemId = event.target.getAttribute('data-id'); // Extract the item ID from the data-id attribute
 
   // Check if the item already exists in the cart
@@ -49,7 +49,7 @@ function updateCartCount() {
 }
 
 
-  
+
 function updateQuantityAndPrice() {
   const quantityElement = document.querySelector(".quantity");
   const priceElement = document.querySelector(".price");
@@ -58,7 +58,7 @@ function updateQuantityAndPrice() {
     quantityElement.textContent = quantity;
     const basePrice = quantity * pricePerItem;
     const addonsPrice = calculateAddonsPrice(); // Calculate the total price of selected addons
-    const totalPrice = (basePrice + addonsPrice).toFixed(2);    
+    const totalPrice = (basePrice + addonsPrice).toFixed(2);
     priceElement.textContent = totalPrice;
   }
 }
@@ -77,16 +77,37 @@ function calculateAddonsPrice() {
 }
 
 let quantity = 1;
-  const pricePerItem = 560.00; // Adjust this value according to your actual price
+const pricePerItem = 560.00; // Adjust this value according to your actual price
 
-  function incrementQuantity() {
-    quantity++;
+function incrementQuantity() {
+  quantity++;
+  updateQuantityAndPrice();
+}
+
+function decrementQuantity() {
+  if (quantity > 1) {
+    quantity--;
     updateQuantityAndPrice();
   }
+}
 
-  function decrementQuantity() {
-    if (quantity > 1) {
-      quantity--;
-      updateQuantityAndPrice();
-    }
+
+
+
+function cart(event) {
+  const count = parseInt(document.getElementById("cartCount").innerText);
+  const cartLink = document.querySelector('.cart-icon-container a.nav-link');
+
+  if (count === 0) {
+    event.preventDefault();
+    const alertMessage = document.createElement('div');
+    alertMessage.className = 'alert';
+    alertMessage.textContent = 'Your cart is Empty!';
+    document.body.appendChild(alertMessage);
+    setTimeout(function () {
+      alertMessage.style.display = 'none';
+    }, 2000);
+  } else {
+    cartLink.href = 'cart.html';
   }
+}
