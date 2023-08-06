@@ -9,7 +9,7 @@
 int main() {
     // Connect to the database
     MYSQL* connection = mysql_init(nullptr);
-    if (!mysql_real_connect(connection, "localhost", "root", "", "rwa_db", 0, nullptr, 0)) {
+    if (!mysql_real_connect(connection, "localhost", "root", "786$toqA", "rwa_db", 0, nullptr, 0)) {
         std::cerr << "Error connecting to database: " << mysql_error(connection) << std::endl;
         return 1;
     }
@@ -73,7 +73,7 @@ int main() {
         itemCards += "    <img src=\"./images/"+itemPic+"\" alt=\"\" class=\"card-image\">\n";
         itemCards += "    <div class=\"card-detail\">\n";
         itemCards += "      <h4>" + itemName + "</h4>\n";
-        itemCards += "      <a href=\"#\" class=\"see-detail\" data-id=\"" + itemID + "\" data-category-id=\"" + categoryID + "\" onclick=\"showOverlay(event,"+itemID+")\">Add To Cart</a>\n";
+        itemCards += "      <a href=\"#\" class=\"see-detail\" data-id=\"" + itemID + "\" data-category-id=\"" + categoryID + "\" onclick=\"showOverlay(event,"+itemID+")\">Order Me</a>\n";
         itemCards += "    </div>\n";
         itemCards += "  </div>\n";
         itemCards += "</div>\n";

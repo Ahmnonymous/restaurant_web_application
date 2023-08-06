@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <cstdlib>
 #include <unordered_map>
@@ -5,6 +6,7 @@
 #include <string>
 #include <cstdio>
 #include <vector>
+#include <sstream>
 
 // Define a data structure to store items and their toppings
 struct ItemWithToppings {
@@ -12,7 +14,7 @@ struct ItemWithToppings {
     std::string itemDescription;
     std::string itemPrice;
     std::string itemPic;
-    std::unordered_map<std::string, std::string> toppings;
+    std::unordered_map<int, std::pair<std::string, std::string>> toppings;
 };
 
 // Constants
@@ -51,10 +53,23 @@ std::string readGetData() {
     return "";
 }
 
+// Utility function to safely convert a string to an integer
+int safeStoi(const std::string& str) {
+    try {
+        return std::stoi(str);
+    } catch (const std::invalid_argument& e) {
+        // Handle invalid argument exception (e.g., empty string)
+        return 0; // Return a default value or an appropriate error code
+    } catch (const std::out_of_range& e) {
+        // Handle out-of-range exception (e.g., the string value is too large)
+        return 0; // Return a default value or an appropriate error code
+    }
+}
+
 // Function to execute the database query and retrieve all items with toppings
 bool getAllItemsWithToppings(MYSQL* connection, std::unordered_map<int, ItemWithToppings>& itemsMap) {
     std::string itemWithToppingSql = "SELECT i.id, i.name AS item_name, i.description, i.price AS item_price, i.picture, "
-                                     "t.name AS topping_name, t.price AS topping_price "
+                                     "t.id AS topping_id, t.name AS topping_name, t.price AS topping_price "
                                      "FROM Item AS i "
                                      "LEFT JOIN Topping AS t ON i.id = t.item_id";
 
@@ -76,10 +91,12 @@ bool getAllItemsWithToppings(MYSQL* connection, std::unordered_map<int, ItemWith
         std::string itemDescription = row[2] ? row[2] : "";
         std::string itemPrice = row[3] ? row[3] : "";
         std::string itemPic = row[4] ? row[4] : "";
-        std::string toppingName = row[5] ? row[5] : "";
-        std::string toppingPrice = row[6] ? row[6] : "";
+        std::string toppingId = row[5] ? row[5] : "";
+        std::string toppingName = row[6] ? row[6] : "";
+        std::string toppingPrice = row[7] ? row[7] : "";
 
-        int itemIdInt = std::stoi(itemId);
+        int itemIdInt = safeStoi(itemId); // Use the utility function to safely convert to integer
+        int toppingIdInt = safeStoi(toppingId); // Use the utility function to safely convert to integer
 
         // Check if the item already exists in the map
         if (itemsMap.find(itemIdInt) == itemsMap.end()) {
@@ -91,16 +108,16 @@ bool getAllItemsWithToppings(MYSQL* connection, std::unordered_map<int, ItemWith
             newItem.itemPic = itemPic;
 
             // Add the topping to the toppings map for the current item
-            if (!toppingName.empty()) {
-                newItem.toppings[toppingName] = toppingPrice;
+            if (toppingIdInt != 0 && !toppingName.empty()) {
+                newItem.toppings[toppingIdInt] = std::make_pair(toppingName, toppingPrice);
             }
 
             // Insert the item into the map
             itemsMap[itemIdInt] = newItem;
         } else {
             // If the item already exists, add the topping to the toppings map for the current item
-            if (!toppingName.empty()) {
-                itemsMap[itemIdInt].toppings[toppingName] = toppingPrice;
+            if (toppingIdInt != 0 && !toppingName.empty()) {
+                itemsMap[itemIdInt].toppings[toppingIdInt] = std::make_pair(toppingName, toppingPrice);
             }
         }
     }
@@ -140,15 +157,19 @@ void generateHTMLResponse(const std::unordered_map<int, ItemWithToppings>& items
         std::cout << "      <div class=\"checkbox-options\">\n";
 
         for (const auto& topping : currentItem.toppings) {
+            int toppingId = topping.first;
+            const std::string& toppingName = topping.second.first;
+            const std::string& toppingPrice = topping.second.second;
+
             // Append the topping information to the overlay
             std::cout << "        <label>\n";
-            std::cout << "  <input type=\"checkbox\" name=\"" << topping.first << "\" onchange=\"updateQuantityAndPrice(" << itemId << "," << currentItem.itemPrice << ")\">\n";
-            std::cout << "          <span class=\"option-text\">" << topping.first << "</span>\n";
-            std::cout << "          <span class=\"option-price\">" << topping.second << "</span>\n";
+            std::cout << "          <input type=\"checkbox\"  class=\"topping-checkbox\" name=\"" << toppingName << "\" value=\"" << toppingId << "\" onchange=\"updateQuantityAndPrice(" << itemId << "," << currentItem.itemPrice << ")\">\n";
+            std::cout << "          <span class=\"option-text\">" << toppingName << "</span>\n";
+            std::cout << "          <span class=\"option-price\">" << toppingPrice << "</span>\n";
             std::cout << "        </label>\n";
         }
 
-        std::cout << "        <a href=\"#\" class=\"btn add-to-cart-btn\" onclick=\"addToCart(event," << itemId << ")\">Add to Cart</a>\n";
+        std::cout << "<a href=\"#\" class=\"btn add-to-cart-btn\" data-id=\"" << currentItem.itemName << "\" onclick=\"addToCart(event," << itemId << ")\">Add to Cart</a>\n";
         std::cout << "      </div>\n";
         std::cout << "    </div>\n";
         std::cout << "  </div>\n";
@@ -158,9 +179,10 @@ void generateHTMLResponse(const std::unordered_map<int, ItemWithToppings>& items
     std::cout << "</body>\n</html>\n";
 }
 
+
 int main() {
     MYSQL* connection = mysql_init(nullptr);
-    if (!mysql_real_connect(connection, "localhost", "root", "", "rwa_db", 0, nullptr, 0)) {
+    if (!mysql_real_connect(connection, "localhost", "root", "786$toqA", "rwa_db", 0, nullptr, 0)) {
         std::cerr << "Error connecting to database: " << mysql_error(connection) << std::endl;
         return 1;
     }
