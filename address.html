@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +8,22 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-  <title>Rate Order</title>
-</head>
+  <title>Address Manager</title>
 
 <body>
 
+  <!-- Header Sectoin -->
   <nav class="navbar navbar-expand-sm navbar-dark">
     <div class="container-fluid">
       <div class="owner">
-        <img src="logo.png" alt="user image">
+        <img src="/images/logo.png" alt="user image">
         <a class="navbar-brand m-2 ms-4 text-dark logo" href="index.html">TMHA</a>
       </div>
       <ul class="navbar-nav d-flex flex-row">
@@ -34,11 +34,6 @@
         <li class="nav-item me-3 me-lg-0" title="Login/Signup">
           <a class="nav-link text-dark" href="#"><i class="fas fa-user ms-4"></i></a>
         </li>
-
-
-        <!-- Your existing HTML code remains the same -->
-
-        <!-- Add a cart count indicator -->
         <li class="nav-item me-lg-0" title="Shopping Cart">
           <div class="cart-icon-container" onclick="cart(event)">
             <a class="nav-link text-dark" href="">
@@ -47,25 +42,65 @@
             <span id="cartCount" class="cart-count">0</span> <!-- This is the cart count indicator -->
           </div>
         </li>
+
       </ul>
     </div>
   </nav>
 
 
+  <div class="container mt-3">
+    <h2>Address Manager</h2>
+    <form id="address-form">
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required>
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state" required>
+      <label for="zip">ZIP:</label>
+      <input type="text" id="zip" name="zip" required>
+      <button type="submit" class="address-btn">Add Address</button>
+    </form>
 
-  <div class="rate-order mt-4">
-    <h2>Rate Your Order</h2>
-    <div class="stars">
-      <span class="star" onclick="setRating(1)">&#9733;</span>
-      <span class="star" onclick="setRating(2)">&#9733;</span>
-      <span class="star" onclick="setRating(3)">&#9733;</span>
-      <span class="star" onclick="setRating(4)">&#9733;</span>
-      <span class="star" onclick="setRating(5)">&#9733;</span>
-    </div>
-    <p>Any Suggestions or Comments:</p>
-    <textarea name="" id="" cols="5" rows="2" placeholder="Write somthing here...."></textarea>
+  </div>
+  <div class="addresses">
+    <h2>Addresses</h2>
+    <ul id="address-list"></ul>
   </div>
 
+
+  <!-- Footer -->
+  <div class="container mt-5 shadow p-4 mb-4">
+    <div class="row g-4">
+      <div class="col-md-4  ">
+        <h3 class="fw-bold text-center ">Contact</h3>
+
+        <div class="text-center"> <i class="fa-solid fa-house house"></i> &nbsp; Business Park New Capital</div>
+        <div class="text-center mt-3"> <i class="fa-solid fa-phone"></i> &nbsp;+20 115 599 7999</div>
+        <div class="text-center mt-3"> <i class="fa-solid fa-envelope"></i> &nbsp;mgrtal9@gmail.com</div>
+
+      </div>
+      <div class="col-md-4 ">
+        <div>
+          <h3 class="fw-bold text-center ">Our Timing</h3>
+          <p class="text-center">Monday - Sunday <br> <span>10:00 - 23:00</span></p>
+        </div>
+
+      </div>
+      <div class="col-md-4">
+        <h3 class=" text-center mt-0 fw-bold">Follow Us</h3>
+        <div class=" text-center social_link">
+          <a href="#"><i class="fa-brands text-dark fa-facebook-f m-4"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter text-dark m-4"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram text-dark m-4"></i></a>
+        </div>
+
+      </div>
+      <div class="fw-bold  border border-1 border-dark"></div>
+      <p class="copyright text-center">&copy; 2023 Powered By <span class="fw-bold"
+          style="text-decoration: underline;">Blink Co.</span></p>
+    </div>
+  </div>
 
   <!-- Login Overlay -->
   <div id="login-overlay" class="overlay">
@@ -85,18 +120,15 @@
     </div>
   </div>
 
-
   <!-- Driver Login Overlay -->
   <div id="driver-login-overlay" class="overlay">
     <div class="login-container">
       <button class="close-button" onclick="closeoverlay()">X</button>
       <h3>Accelerate Your Journey</h3>
       <p>Join Our Driver Careers</p>
-      <a href="/driver/index.html" class="signup-button mt-4">Apply Now</a>
+      <a href="driver.html" class="signup-button mt-4">Apply Now</a>
     </div>
   </div>
-
-
 
 
 
@@ -142,6 +174,63 @@
 </body>
 
 
-<script src="script.js"></script>
+
+<script src="/js/script.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const addressForm = document.getElementById('address-form');
+    const addressList = document.getElementById('address-list');
+
+    addressForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const address = document.getElementById('address').value;
+      const city = document.getElementById('city').value;
+      const state = document.getElementById('state').value;
+      const zip = document.getElementById('zip').value;
+
+      addAddressToList(address, city, state, zip);
+
+      // Reset the form fields
+      addressForm.reset();
+    });
+
+    addressList.addEventListener('click', function (event) {
+      if (event.target.classList.contains('delete-btn')) {
+        const listItem = event.target.closest('.address-item');
+        listItem.remove();
+      }
+    });
+
+
+    function addAddressToList(address, city, state, zip) {
+      const listItem = document.createElement('li');
+      listItem.className = 'address-item';
+
+      listItem.innerHTML = `
+    <div><strong>Address :</strong> ${address}</div>
+    <div><strong>City :</strong> ${city}
+       <strong>State :</strong> ${state}
+      <strong>Zip Code :</strong> ${zip}</div>
+    <div class="delete-btn">Delete</div>
+`;
+
+
+      addressList.insertBefore(listItem, addressList.firstChild);
+
+      // Update the numbering
+      updateAddressNumbering();
+    }
+
+    function updateAddressNumbering() {
+      const addressItems = document.querySelectorAll('.address-item');
+      addressItems.forEach((item, index) => {
+        item.querySelector('span').innerText = `: ${index + 1} `;
+      });
+    }
+
+  });
+</script>
 
 </html>
