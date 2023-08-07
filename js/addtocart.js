@@ -101,7 +101,7 @@ function cart(event) {
   if (count === 0) {
     event.preventDefault();
     const alertMessage = document.createElement('div');
-    alertMessage.className = 'alert';
+    alertMessage.className = 'empty';
     alertMessage.textContent = 'Your cart is Empty!';
     document.body.appendChild(alertMessage);
     setTimeout(function () {

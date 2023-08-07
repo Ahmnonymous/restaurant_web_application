@@ -14,11 +14,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/admin.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/style.css">
   <title>Order Screen - Restaurant Workers</title>
 </head>
 <style>
@@ -30,67 +30,67 @@
 
 <body>
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-      <div class="sidebar-logo">
-        <img src="images/logo.png" alt="User picture" class="profile-image">
-        <div class="sidebar-user-name">
-            TMHA
-        </div>
-        <div class="sidebar-close" id="sidebar-close">
-            <i class='bx bx-left-arrow-alt'></i>
-        </div>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <img src="/images/logo.png" alt="User picture" class="profile-image">
+      <div class="sidebar-user-name">
+        TMHA
+      </div>
+      <div class="sidebar-close" id="sidebar-close">
+        <i class='bx bx-left-arrow-alt'></i>
+      </div>
     </div>
-      <!-- SIDEBAR MENU -->
-      <ul class="sidebar-menu">
+    <!-- SIDEBAR MENU -->
+    <ul class="sidebar-menu">
+      <li>
+        <a href="dadmin.html" class="active">
+          <i class='bx bx-home'></i>
+          <span>dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="menu.html">
+          <i class='bx bx-menu'></i>
+          <span>Menu</span>
+        </a>
+      </li>
+      <li>
+        <a href="orderscreen.html">
+          <i class='bx bx-package'></i>
+          <span>Orders</span>
+        </a>
+      </li>
+      <li>
+        <a href="privilege.html">
+          <i class='bx bxs-user-account'></i>
+          <span>User Privilege</span>
+        </a>
+      </li>
+      <li class="sidebar-submenu">
+        <a href="#" class="sidebar-menu-dropdown">
+        </a>
+        <ul class="sidebar-menu sidebar-menu-dropdown-content">
           <li>
-              <a href="dadmin.html" class="active">
-                  <i class='bx bx-home'></i>
-                  <span>dashboard</span>
-              </a>
+            <a href="#" class="darkmode-toggle" id="darkmode-toggle">
+            </a>
           </li>
-          <li>
-              <a href="menu.html">
-                  <i class='bx bx-menu'></i>
-                  <span>Menu</span>
-              </a>
-          </li>
-          <li>
-              <a href="orderscreen.html">
-                  <i class='bx bx-package'></i>
-                  <span>Orders</span>
-              </a>
-          </li>
-          <li>
-              <a href="privilege.html">
-                  <i class='bx bxs-user-account'></i>
-                  <span>User Privilege</span>
-              </a>
-          </li>
-          <li class="sidebar-submenu">
-              <a href="#" class="sidebar-menu-dropdown">
-              </a>
-              <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                  <li>
-                      <a href="#" class="darkmode-toggle" id="darkmode-toggle">
-                      </a>
-                  </li>
-              </ul>
-          </li>
-      </ul>
+        </ul>
+      </li>
+    </ul>
   </div>
 
   <div class="main">
-      <div class="main-header">
-          <div class="mobile-toggle" id="mobile-toggle">
-              <i class='bx bx-menu-alt-right'></i>
-          </div>
-          <div class="main-title">
-              dashboard
-          </div>
+    <div class="main-header">
+      <div class="mobile-toggle" id="mobile-toggle">
+        <i class='bx bx-menu-alt-right'></i>
       </div>
-      <div class="main-content">
+      <div class="main-title">
+        dashboard
       </div>
+    </div>
+    <div class="main-content">
+    </div>
   </div>
 
   <div class="row m-5">
@@ -116,7 +116,7 @@
                 <td>#1</td>
                 <td>
                   <div class="order-owner">
-                    <img src="./images/beverage.jpg" alt="user image">
+                    <img src="/images/beverage.jpg" alt="user image">
                     <span>Ali Haider</span>
                   </div>
                 </td>
@@ -131,7 +131,7 @@
                 <td>#2</td>
                 <td>
                   <div class="order-owner">
-                    <img src="./images/burger1.jpg" alt="user image">
+                    <img src="/images/burger1.jpg" alt="user image">
                     <span>Ahmad Raza</span>
                   </div>
                 </td>
@@ -146,7 +146,7 @@
                 <td>#3</td>
                 <td>
                   <div class="order-owner">
-                    <img src="./images/desert1.jpg" alt="user image">
+                    <img src="/images/beverage.jpg" alt="user image">
                     <span>Zain</span>
                   </div>
                 </td>
@@ -168,49 +168,49 @@
 
 
 
-<script src="js/script.js"></script>
+<script src="/js/script.js"></script>
 
 
 <script>
 
-  
-document.querySelectorAll('.sidebar-submenu').forEach(e => {
-      e.querySelector('.sidebar-menu-dropdown').onclick = (event) => {
-          event.preventDefault()
-          e.querySelector('.sidebar-menu-dropdown .dropdown-icon').classList.toggle('active')
-    
-          let dropdown_content = e.querySelector('.sidebar-menu-dropdown-content')
-          let dropdown_content_lis = dropdown_content.querySelectorAll('li')
-    
-          let active_height = dropdown_content_lis[0].clientHeight * dropdown_content_lis.length
-    
-          dropdown_content.classList.toggle('active')
-    
-          dropdown_content.style.height = dropdown_content.classList.contains('active') ? active_height + 'px' : '0'
-      }
-    })
-    // DARK MODE TOGGLE
-    let darkmode_toggle = document.querySelector('#darkmode-toggle')
-    
-    darkmode_toggle.onclick = (e) => {
-      e.preventDefault()
-      document.querySelector('body').classList.toggle('dark')
-      darkmode_toggle.querySelector('.darkmode-switch').classList.toggle('active')
-      setDarkChart(document.querySelector('body').classList.contains('dark'))
+
+  document.querySelectorAll('.sidebar-submenu').forEach(e => {
+    e.querySelector('.sidebar-menu-dropdown').onclick = (event) => {
+      event.preventDefault()
+      e.querySelector('.sidebar-menu-dropdown .dropdown-icon').classList.toggle('active')
+
+      let dropdown_content = e.querySelector('.sidebar-menu-dropdown-content')
+      let dropdown_content_lis = dropdown_content.querySelectorAll('li')
+
+      let active_height = dropdown_content_lis[0].clientHeight * dropdown_content_lis.length
+
+      dropdown_content.classList.toggle('active')
+
+      dropdown_content.style.height = dropdown_content.classList.contains('active') ? active_height + 'px' : '0'
     }
-    
-    let overlay = document.querySelector('.overlay')
-    let sidebar = document.querySelector('.sidebar')
-    
-    document.querySelector('#mobile-toggle').onclick = () => {
-      sidebar.classList.toggle('active')
-      overlay.classList.toggle('active')
-    }
-    
-    document.querySelector('#sidebar-close').onclick = () => {
-      sidebar.classList.toggle('active')
-      overlay.classList.toggle('active')
-    }
+  })
+  // DARK MODE TOGGLE
+  let darkmode_toggle = document.querySelector('#darkmode-toggle')
+
+  darkmode_toggle.onclick = (e) => {
+    e.preventDefault()
+    document.querySelector('body').classList.toggle('dark')
+    darkmode_toggle.querySelector('.darkmode-switch').classList.toggle('active')
+    setDarkChart(document.querySelector('body').classList.contains('dark'))
+  }
+
+  let overlay = document.querySelector('.overlay')
+  let sidebar = document.querySelector('.sidebar')
+
+  document.querySelector('#mobile-toggle').onclick = () => {
+    sidebar.classList.toggle('active')
+    overlay.classList.toggle('active')
+  }
+
+  document.querySelector('#sidebar-close').onclick = () => {
+    sidebar.classList.toggle('active')
+    overlay.classList.toggle('active')
+  }
   // Get elements from the DOM
   const orderIdElement = document.getElementById('order-id');
   const orderStatusElement = document.getElementById('order-status');
