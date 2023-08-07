@@ -144,7 +144,6 @@ CREATE TABLE IF NOT EXISTS Cart (
   item_id INT,
   item_topping_id INT,
   quantity INT,
-  creation_date DATETIME,
   FOREIGN KEY (customer_id) REFERENCES Customer(id),
   FOREIGN KEY (item_id) REFERENCES Item(id),
   FOREIGN KEY (item_topping_id) REFERENCES Item_Topping(id)
@@ -186,8 +185,11 @@ SELECT
     cu.name AS customer_name,
     c.customer_id,
     c.item_id,
+    c.quantity,
     i.name AS item_name,
     i.price AS item_price,
+    i.description,
+    i.picture,
     c.item_topping_id,
     t.name AS topping_name,
     t.price AS topping_price
