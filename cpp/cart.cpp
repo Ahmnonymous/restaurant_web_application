@@ -28,7 +28,7 @@ int main() {
     }
 
     // Prepare and execute the SQL INSERT statement
-    std::string sql = "INSERT INTO Cart (customer_id, item_id, item_topping_id, quantity, creation_date) VALUES (501, ?, ?, ?, NOW())";
+    std::string sql = "INSERT INTO Cart (customer_id, item_id, item_topping_id, quantity) VALUES (501, ?, ?, ?)";
     MYSQL_STMT* stmt = mysql_stmt_init(connection);
     if (stmt == nullptr) {
         std::cerr << "Failed to initialize MySQL statement" << std::endl;
