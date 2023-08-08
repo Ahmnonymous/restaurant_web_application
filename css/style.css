@@ -697,7 +697,7 @@ section {
 .btn.add-to-cart-btn:hover ,.see-detail:hover {
   background-color: var(--maincolor);
   color: black !important;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .btn.add-to-cart-btn:focus {
@@ -1535,7 +1535,7 @@ textarea::placeholder {
   color: black;
   font-weight: bolder;
   padding: 7px 25px;
-  margin-top: 15px;
+  margin-top: 10px;
   font-size: 18px;
   border: none;
   border-radius: 5px;
