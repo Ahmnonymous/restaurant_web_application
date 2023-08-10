@@ -1798,6 +1798,13 @@ select {
   text-align: center;
   margin-top: -2px;
 }
+.row .contact h3{
+  margin-left: 45px;
+}
+.row .contact i{
+  margin-left: 30px;
+
+}
 
 
 
