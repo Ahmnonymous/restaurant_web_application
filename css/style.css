@@ -436,6 +436,13 @@ section {
   .account a{
     margin-left: 40px;
   }
+
+  
+.timing .time{
+  text-align: center;
+  margin-top: 32px !important;
+}
+
 }
 @media (max-width: 770px) {
   .menu-container {
@@ -472,6 +479,16 @@ section {
 .signin-image img{
   width: 400px;
 }
+
+.social_link i{
+  margin: 15px 15px 0px 10px !important;
+}
+
+.timing .time{
+  text-align: center;
+  margin-top: 32px !important;
+}
+
 }
 @media (max-width: 700px) {
 
