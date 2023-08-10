@@ -1776,14 +1776,28 @@ select {
 }
 
 
-.space{
+.text-center .space{
   margin-left: 17px;
 }
 
-.space1{
+.text-center .space1{
   margin-left: 10px;
 }
 
+.social_link i{
+  padding-right: 15px;
+  padding-left: 12px;
+
+}
+
+.timing .monday{
+  margin-top: 13px;
+}
+
+.timing .time{
+  text-align: center;
+  margin-top: -2px;
+}
 
 
 
