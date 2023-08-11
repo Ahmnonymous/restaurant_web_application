@@ -280,13 +280,12 @@
   <!-- Location Overlay -->
   <div class="overlay-location" id="overlay-location">
     <div class="l-overlay-content">
-      <h2 class="overlay-heading">Please Select your location</h2>
-      <input type="text" class="overlay-input" placeholder="City/Region">
-      <input type="text" class="overlay-input" placeholder="Area/Sub region">
-      <button class="overlay-select">Select</button>
-
+        <h2 class="overlay-heading">Please Select your location</h2>
+        <input type="text" class="overlay-input" placeholder="Cairo,Egypt" id="location-input">
+        <button class="overlay-select" id="select-button">Select</button>
     </div>
-  </div>
+</div>
+
 
 
 
@@ -377,7 +376,6 @@
 </body>
 <script>
 
-  // Hide the overlay when the button is clicked
   document.querySelector('.overlay-select').addEventListener('click', function () {
     let inputs = document.querySelectorAll('.overlay-input');
     let filled = true;
@@ -413,6 +411,64 @@
       }
     });
   });
+
+
+  function reverseGeocode(latitude, longitude, callback) {
+    var geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(latitude, longitude);
+
+    geocoder.geocode({ 'latLng': latlng }, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+                callback(results[0].formatted_address);
+            } else {
+                callback("Location not found");
+            }
+        } else {
+            callback("Geocoder failed due to: " + status);
+        }
+    });
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  if ("geolocation" in navigator) {
+    var locationInput = document.getElementById("location-input");
+    var overlay = document.getElementById("overlay-location");
+    var selectButton = document.getElementById("select-button");
+
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        console.log("Latitude:", latitude);
+        console.log("Longitude:", longitude);
+
+        reverseGeocode(latitude, longitude, function(formattedLocation) {
+          console.log("Formatted Location:", formattedLocation);
+          locationInput.value = formattedLocation;
+          overlay.style.display = "block";
+        });
+      },
+      function(error) {
+        console.error("Error getting location:", error);
+        overlay.style.display = "block";
+      }
+    );
+
+    selectButton.addEventListener("click", function() {
+      overlay.style.display = "none";
+    });
+  } else {
+    console.error("Geolocation is not supported by this browser.");
+    // You might want to set a default value for locationInput here
+  }
+});
+
+
+
 </script>
 
 
