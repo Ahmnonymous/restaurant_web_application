@@ -344,11 +344,6 @@ section {
     margin-left: 155px;
     width: 1250px;
   }
-
-  .text-center .space {
-    margin-left: 11px;
-  }
-
   .search {
     margin-left: 150px;
   }
@@ -376,9 +371,6 @@ section {
     width: 1150px;
   }
 
-  .text-center .space {
-    margin-left: 11px;
-  }
 }
 
 @media (max-width: 1400px) {
@@ -418,9 +410,7 @@ section {
     width: 1060px;
   }
 
-  .text-center .space {
-    margin-left: 9px;
-  }
+
 }
 
 @media (max-width: 1200px) {
@@ -468,9 +458,6 @@ section {
     margin-left: 10px;
   }
 
-  .text-center .space {
-    margin-left: -47px;
-  }
 }
 
 
@@ -638,10 +625,6 @@ section {
     margin-left: 0px;
   }
 
-  .text-center .space {
-    margin-left: 14px;
-  }
-
   .timing {
     margin-top: 36px;
   }
@@ -682,9 +665,6 @@ section {
     width: 300px;
   }
 
-  .text-center .space {
-    margin-left: 11px;
-  }
 }
 
 @media (max-width: 300px) {
@@ -719,9 +699,6 @@ section {
     margin-left: -10px;
   }
 
-  .text-center .space {
-    margin-left: -41px;
-  }
 
   .account {
     margin-left: -50px;
@@ -2031,10 +2008,6 @@ select {
 
 .monday {
   line-height: 30px;
-}
-
-.text-center .space1 {
-  margin-left: 10px;
 }
 
 .social_link i {
