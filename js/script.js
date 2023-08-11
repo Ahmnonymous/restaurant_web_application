@@ -163,4 +163,10 @@ function handleSearch(event) {
 
 
 
+// Hide the overlay when the button is clicked
+document.querySelector('.overlay-select').addEventListener('click', function () {
+  document.getElementById('overlay-location').style.display = 'none';
+});
+
+
 

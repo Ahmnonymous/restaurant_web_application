@@ -54,7 +54,7 @@
     </div>
   </nav>
 
-  
+
   <!-- Home Image -->
   <div class="home">
     <img src="/images/Home.webp" alt="">
@@ -277,6 +277,22 @@
 
 
 
+  <!-- Location Overlay -->
+  <div class="overlay-location" id="overlay-location">
+    <div class="l-overlay-content">
+      <h2 class="overlay-heading">Please Select your location</h2>
+      <input type="text" class="overlay-input" placeholder="City/Region">
+      <input type="text" class="overlay-input" placeholder="Area/Sub region">
+      <button class="overlay-select">Select</button>
+
+    </div>
+  </div>
+
+
+
+
+
+
 
   <!-- Login Overlay -->
   <div id="login-overlay" class="overlay">
@@ -359,6 +375,45 @@
 
 
 </body>
+<script>
+
+  // Hide the overlay when the button is clicked
+  document.querySelector('.overlay-select').addEventListener('click', function () {
+    let inputs = document.querySelectorAll('.overlay-input');
+    let filled = true;
+
+    inputs.forEach(input => {
+      if (input.value.trim() === '') {
+        filled = false;
+      }
+    });
+
+    if (!filled) {
+      alert("Please enter your location first.");
+    } else {
+      document.getElementById('overlay-location').style.display = 'none';
+      document.querySelector('.overlay-select').classList.add('valid');
+    }
+  });
+
+  document.querySelectorAll('.overlay-input').forEach(input => {
+    input.addEventListener('input', function () {
+      let allInputsFilled = true;
+
+      document.querySelectorAll('.overlay-input').forEach(input => {
+        if (input.value.trim() === '') {
+          allInputsFilled = false;
+        }
+      });
+
+      if (allInputsFilled) {
+        document.querySelector('.overlay-select').classList.add('valid');
+      } else {
+        document.querySelector('.overlay-select').classList.remove('valid');
+      }
+    });
+  });
+</script>
 
 
 
