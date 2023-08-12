@@ -652,26 +652,17 @@ section {
     margin-top: -4px !important;
   }
 
-  .Cart-container {
-    width: 380px;
-  }
 
-  .Cart {
-    margin: 0px;
-    flex: 0 0 12%;
-  }
 
-  .Cart .delete-cart {
-    width: 120px;
+  .Cart .Cart-detail .price{
+    display: flex;
+    flex-direction: row;
   }
+  
 
-  .Cart .Cart-image {
-    width: 120px;
-  }
 
-  .Cart .price {
-    margin-left: 0px;
-  }
+
+
 
 
 
@@ -693,6 +684,8 @@ section {
   .text-center .space {
     margin-left: 11px;
   }
+
+  
 }
 
 @media (max-width: 300px) {
@@ -1500,65 +1493,73 @@ h1 {
 
 
 
-/* Cart.html page CSS */
-.Cart-container {
-  margin-left: 30px;
-}
 
+
+/* Cart page Css */
 .Cart {
   border: 1px solid grey;
-  flex: 0 0 22.33333%;
   background-color: rgb(255, 255, 255);
-  padding: 10px;
-  margin: 5px;
+  padding: 5px;
+  /* flex: 0 0 22.33333%; */
+  width: 225px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  margin-left: 20px;
 }
 
 .Cart-image {
-  max-width: 120px;
-  max-height: 120px;
-  margin-top: -20px;
-  object-fit: cover;
-  border-radius: 15px;
-  transition: all 0.3s ease;
+  max-width: 90px;
+  border-radius: 20px;
 }
 
-.cart-detail {
+
+.heading {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-.Cart-detail>h4 {
-  margin: 0;
+.heading h4 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-size: larger;
+  width: max-content;
   text-overflow: ellipsis;
-  font-weight: bold;
-  font-size: 18px;
-  margin-left: 50px;
 }
 
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-btn {
+  border: none;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.quantity {
+  margin: 0 10px;
+}
 
 .Cart-detail .price {
+  margin: 5px 20px 0px 10px;
   font-weight: 600;
   color: rgb(154, 28, 28);
   transition: all 0.3s ease;
-  margin-left: auto;
 }
 
 .delete-cart {
-  padding: 6px 20px;
+  padding: 4px 15px;
   font-weight: bold;
-  width: 150px;
+  width: 130px;
   display: block;
-  color: #fff !important;
   margin: auto;
+  border: none;
+  color: #fff !important;
   border-radius: 25px;
   font-size: 18px;
   background-color: rgb(212, 0, 0) !important;
@@ -1566,7 +1567,7 @@ h1 {
 
 .Cart-quantity {
   position: relative;
-  margin: 40px 0px 0px 20px;
+  margin: 40px 0px 0px 10px;
 }
 
 
