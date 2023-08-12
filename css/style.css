@@ -1497,17 +1497,21 @@ h1 {
 
 
 /* Cart page Css */
+.container-fluid{
+  overflow-x: hidden;
+}
 .Cart {
   border: 1px solid grey;
   background-color: rgb(255, 255, 255);
   padding: 5px;
-  /* flex: 0 0 22.33333%; */
   width: 210px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   margin-left: 5px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .Cart-image {
