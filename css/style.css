@@ -1536,10 +1536,13 @@ h1 {
   align-items: center;
 }
 
-.quantity-btn {
+.qbtn {
   border: none;
-  background-color: #f0f0f0;
+  background-color: rgb(212, 0, 0) !important;
+  color: #fff;
   cursor: pointer;
+  font-size: large;
+  border-radius: 25px;
 }
 
 .quantity {
@@ -1554,13 +1557,13 @@ h1 {
 }
 
 .Cart-detail .description {
-  text-align: right;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin: 0%;
   font-size: smaller;
+  position: relative;
+  left: 86px;
 }
 
 .delete-cart {
