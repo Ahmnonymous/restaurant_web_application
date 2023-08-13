@@ -1559,6 +1559,8 @@ h1 {
 
 .Cart-q {
   padding: 5px;
+  width: 27px;
+  text-align: center;
 }
 
 .cart-price {
@@ -1588,6 +1590,42 @@ h1 {
   background-color: rgb(212, 0, 0) !important;
   
 }
+
+.total{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.prices{
+  text-align: center;
+  width: 300px;
+  border-radius: 5px;
+}
+.prices p{
+  margin: 10px;
+}
+.prices span{
+  color:  rgb(212, 0, 0);
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.add-item-button,
+.checkout-button {
+  padding: 10px 20px;
+  background-color: rgb(255, 203, 0);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
 
 
 
