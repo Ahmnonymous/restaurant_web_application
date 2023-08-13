@@ -1390,33 +1390,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-.radio-group-new {
-  display: flex;
-  align-items: center;
-}
-
-.radio-label-new>i {
-  margin-left: 10px;
-  margin-top: 10px;
-}
-
-.radio-group-new .credit {
-  margin-left: 50px;
-}
-
-.radio-group-new .cash {
-  margin-left: 35px;
-}
-
-
-
-.radio-label-new {
-  padding-left: 30px;
-  padding-top: 30px;
-  font-size: 18px;
-  color: #333333;
-}
-
 #paypal-fields-new,
 #card-fields-new {
   display: none;
@@ -1540,7 +1513,7 @@ h1 {
 .quantity-controls {
   display: flex;
   align-items: center;
-  left: 5px;
+  left: 0;
   top: -30px;
   margin: 0%;
   padding: 0%;
@@ -1690,6 +1663,30 @@ label {
   align-items: center;
 }
 
+
+.button-group-new {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.payment-button-new {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+
+.payment-button-new.cash {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.payment-button-new:hover {
+  background-color: #ddd;
+}
+
 .payment-image {
   max-width: 150px;
   max-height: 150px;
@@ -1745,27 +1742,7 @@ label {
     width: 100%;
     margin: 10px;
     /* Reduce the margin for better spacing */
-  }
-
-  .radio-group-new {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .radio-label-new {
-    display: flex;
-    align-items: center;
-    margin-left: 0;
-    /* Align labels to the left */
-    margin-bottom: 5px;
-    /* Add some spacing between radio options */
-  }
-
-  .radio-label-new i {
-    margin-right: 5px;
-    /* Add some spacing between the icon and label */
-  }
-
+  } 
   #cartItems {
     flex-direction: column;
     align-items: center;

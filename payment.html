@@ -13,9 +13,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
   <title>Payment Method</title>
 </head>
 
@@ -43,28 +43,31 @@
             <span id="cartCount" class="cart-count">0</span> <!-- This is the cart count indicator -->
           </div>
         </li>
-        
+
       </ul>
     </div>
   </nav>
 
+  <style>
+   
+  </style>
   <div class="container-fluid mt-5 pay">
     <div class="container-grid mt-3">
       <div class="payment-method-new">
-
         <h2>Payment Method</h2>
         <form id="payment-form-new">
           <div class="form-group">
-            <div class="radio-group-new">
-              <input type="radio" id="paypal-option-new" name="payment-option-new" value="paypal">
-              <label for="paypal-option-new" class="radio-label-new"><i class="fa-brands fa-paypal fa-2xl"
-                  style="color: #567cbd;"></i>PayPal</label>
+            <div class="button-group-new">
+              <button type="button" id="paypal-option-new" class="payment-button-new" data-value="paypal">
+                <i class="fa-brands fa-paypal fa-2xl p-2 mt-1" style="color: #567cbd;"></i><span class="mx-4">Paypal</span>
+              </button>
+              <button type="button" id="card-option-new" class="payment-button-new credit" data-value="card">
+                <span> &#128179; Credit/Debit Card</span>
+              </button>
+              <button type="button" id="cash-option-new" class="payment-button-new cash" data-value="cash" checked>
+                <span> Cash on Delivery </span>
 
-              <input type="radio" id="card-option-new" name="payment-option-new" value="card" class="credit">
-              <label for="card-option-new" class="radio-label-new">&#128179;Credit/Debit Card</label>
-
-              <input type="radio" id="cash-option-new" name="payment-option-new" value="cash" class="cash" checked>
-              <label for="cash-option-new" class="radio-label-new">Cash on Delivery</label>
+              </button>
             </div>
           </div>
           <div class="form-group" id="paypal-fields-new">
@@ -122,24 +125,24 @@
 
 
   <!-- Login Overlay -->
- 
- <!-- Login Overlay -->
- <div id="login-overlay" class="overlay">
-  <div class="login-container">
-    <button class="close-button" onclick="closeoverlay()">X</button>
-    <h3>Experience More as a Member</h3>
-    <p>Login or Sign Up Today!</p>
-    <a href="clogin.html" class="login-button">Login</a>
-    <div class="hr-container mt-4">
-      <hr class="left-hr">
-      <span class="or-text">OR</span>
-      <hr class="right-hr">
-    </div>
-    <!-- signup form link -->
-    <a href="csignup.html" class="signup-button mt-4">Signup</a>
 
+  <!-- Login Overlay -->
+  <div id="login-overlay" class="overlay">
+    <div class="login-container">
+      <button class="close-button" onclick="closeoverlay()">X</button>
+      <h3>Experience More as a Member</h3>
+      <p>Login or Sign Up Today!</p>
+      <a href="clogin.html" class="login-button">Login</a>
+      <div class="hr-container mt-4">
+        <hr class="left-hr">
+        <span class="or-text">OR</span>
+        <hr class="right-hr">
+      </div>
+      <!-- signup form link -->
+      <a href="csignup.html" class="signup-button mt-4">Signup</a>
+
+    </div>
   </div>
-</div>
 
 
   <!-- Driver Login Overlay -->
@@ -166,8 +169,8 @@
         <div class="text-center mt-3"><a href="mailto:mgrtal9@gmail.com"> <span class="space1"></span><i
               class="fa-solid fa-envelope"></i>
             &nbsp;tmha@gmail.com</a></div>
-            <div class="text-center mt-3"><a href="tel:+201155997999"><i class="fa-solid fa-phone "></i> &nbsp;+20 115 599
-              7999</div></a>
+        <div class="text-center mt-3"><a href="tel:+201155997999"><i class="fa-solid fa-phone "></i> &nbsp;+20 115 599
+            7999</div></a>
 
       </div>
       <div class="col-md-4 timing">
@@ -202,89 +205,29 @@
 
 
 <script>
-  const paypalFields = document.getElementById('paypal-fields-new');
-  const cardFields = document.getElementById('card-fields-new');
+  document.addEventListener("DOMContentLoaded", function () {
+    const paymentButtons = document.querySelectorAll('.payment-button-new');
+    const paypalFields = document.getElementById('paypal-fields-new');
+    const cardFields = document.getElementById('card-fields-new');
 
-  document.getElementById('payment-form-new').addEventListener('change', function () {
-    if (document.getElementById('paypal-option-new').checked) {
-      paypalFields.style.display = 'block';
-      cardFields.style.display = 'none';
-    } else if (document.getElementById('card-option-new').checked) {
-      cardFields.style.display = 'block';
-      paypalFields.style.display = 'none';
-    }
-    else if (document.getElementById('cash-option-new').checked) {
-      cardFields.style.display = 'none';
-      paypalFields.style.display = 'none';
-    }
+    paymentButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const value = button.getAttribute('data-value');
+        if (value === 'paypal') {
+          paypalFields.style.display = 'block';
+          cardFields.style.display = 'none';
+        } else if (value === 'card') {
+          cardFields.style.display = 'block';
+          paypalFields.style.display = 'none';
+        } else {
+          paypalFields.style.display = 'none';
+          cardFields.style.display = 'none';
+        }
+      });
+    });
   });
 
 
-
-  const searchContainer = document.querySelector('.search-container');
-  const searchInput = document.getElementById('search-input');
-  document.addEventListener('click', function (event) {
-    const isClickedInsideSearchContainer = searchContainer.contains(event.target);
-    if (!isClickedInsideSearchContainer) {
-      searchInput.style.display = 'none';
-    }
-  });
-
-  function showSearchInput() {
-    var searchInput = document.getElementById("search-input");
-    searchInput.style.display = "inline-block";
-    searchInput.focus();
-  }
-
-  function handleSearch(event) {
-    if (event.keyCode === 13) { // Enter key pressed
-      searchWithinPage();
-      hideSearchInput();
-    }
-  }
-
-  function hideSearchInput() {
-    var searchInput = document.getElementById("search-input");
-    searchInput.style.display = "none";
-  }
-
-
-  function searchWithinPage() {
-    var searchQuery = document.getElementById("search-input").value.toLowerCase();
-    var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, span, a, button, div");
-
-    // Remove previous highlighting
-    removeHighlighting();
-
-    for (var i = 0; i < elementsToSearch.length; i++) {
-      var element = elementsToSearch[i];
-      var text = element.innerHTML.toLowerCase();
-      var index = text.indexOf(searchQuery);
-
-      if (index !== -1) {
-        element.scrollIntoView({ behavior: "smooth", block: "center" });
-
-        highlightWord(element, index, searchQuery);
-        document.getElementById("search-input").value = ""; // Clear the search field
-        return; // Stop searching after the first occurrence is found
-      }
-    }
-  }
-
-  function highlightWord(element, index, searchQuery) {
-    var start = index;
-    var end = index + searchQuery.length;
-    var highlightedText = element.innerHTML.slice(0, start) + "<span class='highlighted'>" + element.innerHTML.slice(start, end) + "</span>" + element.innerHTML.slice(end);
-    element.innerHTML = highlightedText;
-  }
-
-  function removeHighlighting() {
-    var highlightedElements = document.getElementsByClassName("highlighted");
-    while (highlightedElements.length > 0) {
-      var parentElement = highlightedElements[0].parentNode;
-      parentElement.replaceChild(document.createTextNode(highlightedElements[0].textContent), highlightedElements[0]);
-    }
-  }
 
 
 </script>
