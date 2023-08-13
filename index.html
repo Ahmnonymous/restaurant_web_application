@@ -376,6 +376,14 @@
 </body>
 <script>
 
+function setLocalStorageItem(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (e) {
+    console.error('Local storage is not supported by this browser.');
+  }
+}
+
   document.querySelector('.overlay-select').addEventListener('click', function () {
     let inputs = document.querySelectorAll('.overlay-input');
     let filled = true;
@@ -430,9 +438,9 @@
     });
 }
 
-
-
 document.addEventListener("DOMContentLoaded", function() {
+  var hasLocationOverlayShown = localStorage.getItem("locationOverlayShown");
+  if (hasLocationOverlayShown !== "true") { 
   if ("geolocation" in navigator) {
     var locationInput = document.getElementById("location-input");
     var overlay = document.getElementById("overlay-location");
@@ -465,6 +473,7 @@ document.addEventListener("DOMContentLoaded", function() {
     console.error("Geolocation is not supported by this browser.");
     // You might want to set a default value for locationInput here
   }
+}
 });
 
 

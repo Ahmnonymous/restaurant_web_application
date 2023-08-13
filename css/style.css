@@ -1601,6 +1601,7 @@ h1 {
   text-align: center;
   width: 300px;
   border-radius: 5px;
+  border: 1px solid #cccccc;
 }
 .prices p{
   margin: 10px;
