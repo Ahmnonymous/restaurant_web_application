@@ -2093,6 +2093,13 @@ textarea::placeholder {
   width: 12rem;
 }
 
+#Category {
+  height: 2.4rem;
+  width: 12rem;
+  margin-top: 15px;
+
+}
+
 .form-container button {
   margin-top: 2rem;
   background-color: rgb(255, 203, 0);
@@ -2122,17 +2129,19 @@ table td {
   width: 13% !important;
   padding: 18px 20px;
 }
+
 @media (max-width: 768px) {
   .ordertable {
     width: 90%;
   }
-  
+
   table th,
   table td {
     width: auto;
     padding: 10px;
   }
 }
+
 .order-status {
   display: inline-block;
   padding: 4px 8px;
@@ -2178,6 +2187,12 @@ table td {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-top: 0.5rem;
+}
+#overlay-category{
+  width: 95%;
+  margin: 10px 0px 15px 10px;
+  height: 2.5rem;
+
 }
 
 .overlaycontainer button {
@@ -2342,8 +2357,7 @@ table td {
 }
 
 /* Align input and button in a row */
-.add-category input
- {
+.add-category input {
   padding: 5px 14px;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -2370,7 +2384,8 @@ table td {
   padding: 5px 14px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  margin: 15px 10px 20px 10px;}
+  margin: 15px 10px 20px 10px;
+}
 
 .submit-button {
   text-align: center;
@@ -2379,7 +2394,7 @@ table td {
 
 #update-form button,
 .submit-button button,
-.add-category button{
+.add-category button {
   background-color: rgb(255, 203, 0);
   display: block;
   margin: auto;
@@ -2397,8 +2412,8 @@ table td {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .add-item-container {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -2432,7 +2447,8 @@ table td {
   font-size: 30px;
   cursor: pointer;
 }
-.menu-close-btn:hover{
+
+.menu-close-btn:hover {
   cursor: pointer;
 }
 
@@ -2541,15 +2557,18 @@ table td {
   }
 }
 
-
-.owner a .back-icon{
-  margin: 25px 0px 0px 10px;
-  left: 0%;
-  
-  position: absolute;
-  font-size: 25px;
-}
-.T{
-  margin-left: 30px;
+a .back {
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  padding: 6px 6px;
+  background-color: rgb(255, 203, 0);
+  margin: 10px 0px 0px 15px;
+  border: none;
 }
 
+.back i {
+  display: block;
+  text-align: center;
+
+}

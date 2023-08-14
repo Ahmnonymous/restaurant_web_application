@@ -28,11 +28,10 @@
 
     <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container-fluid">
-            
+
             <div class="owner">
-                <a href="dadmin.html"><i class="fas fa-arrow-left back-icon me-2"></i></a>
                 <img src="/images/logo.webp" alt="user image" class="T">
-                <a class="navbar-brand m-2 ms-4 text-dark logo" href="">Admin Panel</a>
+                <a class="navbar-brand m-2 ms-4 text-dark logo" href="">MENU</a>
             </div>
             <ul class="list-unstyled">
                 <li class="nav-item me-3 me-lg-0" title="Login/Signup">
@@ -42,6 +41,8 @@
         </div>
     </nav>
 
+    <a href="dadmin.html"><button class="back"> <i class="fas fa-arrow-left back-icon me-2"></i>Back to
+            Dashboard</button></a>
     <!-- Menu Categories -->
     <div class="add-category">
         <h2>Add Menu Category</h2>
@@ -93,7 +94,12 @@
 
     <div class="add-item-container">
         <input type="text" id="item-id" placeholder="Name">
-        <input type="text" id="item-name" placeholder="Category">
+
+        <select id="Category">
+            <option value="Category 1">Category 1</option>
+            <option value="Category 1">Category 1</option>
+            <option value="Category 1">Category 1</option>
+        </select>
         <input type="text" id="item-category" placeholder="Description">
         <input type="text" id="item-description" placeholder="Price">
         <input type="file" id="item-description" placeholder="Picture">
@@ -156,7 +162,12 @@
 
     <div class="add-item-container">
         <input type="text" id="item-id" placeholder="Name">
-        <input type="text" id="item-name" placeholder="Category">
+
+        <select id="Category">
+            <option value="Category 1">Category 1</option>
+            <option value="Category 1">Category 1</option>
+            <option value="Category 1">Category 1</option>
+        </select>
         <input type="text" id="item-category" placeholder="Price">
     </div>
     <div class="submit-button">
@@ -211,11 +222,16 @@
             <h2 class="text-center">Update Item Details</h2>
             <form id="update-form">
                 <input type="text" id="update-item-name" placeholder="Name">
-                <input type="text" id="update-item-category" placeholder="Category">
+
+                <select id="overlay-category">
+                    <option value="Category 1">Category 1</option>
+                    <option value="Category 1">Category 1</option>
+                    <option value="Category 1">Category 1</option>
+                </select>
                 <input type="text" id="update-item-description" placeholder="Description">
                 <input type="text" id="update-item-price" placeholder="Price">
                 <input type="file" id="update-item-image" accept="image/*">
-                <button type="button" onclick="updateItem()" >Update</button>
+                <button type="button" onclick="updateItem()">Update</button>
             </form>
         </div>
     </div>
