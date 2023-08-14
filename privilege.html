@@ -90,39 +90,35 @@
     </div>
 
 
-
-    <div class="form-container mt-4">
+    <div class="form-container">
         <div class="section">
-
             <div class="input-group">
-                <label for="employee">User:</label>
+                <label for="employee">USER</label>
                 <select id="employee">
                     <option value="Emp 1">Emp 1</option>
                     <option value="Emp 2">Emp 2</option>
                     <option value="Emp 3">Emp 3</option>
                 </select>
             </div>
-
             <div class="input-group">
-                <label for="role">Previlege:</label>
+                <label for="role">PRIVILEGES</label>
                 <select id="role">
                     <option value="Updating Orders">Updating Orders</option>
                     <option value="Shipping">Shipping</option>
                     <option value="Mealing Category">Mealing Category</option>
-                    <option value="User Previlege">User Previlege</option>
+                    <option value="User Privilege">User Privilege</option>
                 </select>
             </div>
             <button id="assignRole">Update</button>
         </div>
-    </div>
+    </div> 
+    <hr class="Line">
+
     <div class="row m-5 mt-3 user">
         <div class="col-3 col-md-6 col-sm-12">
         </div>
         <div class="col-12">
             <div class="box User" >
-                <div class="box-header text-center">
-                    User Privileges
-                </div>
                 <div class="box-body overflow-scroll ">
                     <table>
                         <thead>
@@ -172,12 +168,11 @@
     </div>
 
 
-
-
-
-
 </body>
 <script>
+
+
+
     document.getElementById("assignRole").addEventListener("click", function () {
         var selectedEmployee = document.getElementById("employee").value;
         var selectedRole = document.getElementById("role").value;

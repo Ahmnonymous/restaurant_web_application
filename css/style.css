@@ -2007,48 +2007,63 @@ textarea::placeholder {
 /* User Privileges */
 .user .box {
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 570px;
 }
 
 .form-container {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.form-container button {
-  background-color: rgb(255, 203, 0);
-  display: block;
-  margin: auto;
-  color: black;
-  font-weight: bolder;
-  margin: 35px 0 0px 30px;
-  border: none; 
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 .section {
   display: flex;
-  flex-direction: row;
+  align-items: center;
 }
 
 .input-group {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 8px;
-}
-select{
-  width: max-content;
-  padding: 5px;
-  margin: 0px 30px 0px 0px;
-  border-radius: 25px;
+  margin: 0 1rem;
 }
 
 .input-group label {
-  margin-right: 8px;
-  font-size: larger;
+  margin-bottom: 0.5rem;
+  font-size: large;
   font-weight: bold;
+}
+
+.form-container select, .form-container button {
+  width: 100%;
+  max-width: 250px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Increase the height of the select dropdown */
+.form-container select {
+  height: 2.5rem;
+  width: 10rem;
+}
+
+.form-container button {
+  margin-top: 2rem;
+  background-color: rgb(255, 203, 0);
+  color: black;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .section {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .input-group {
+      margin: 1rem 0;
+  }
 }
 
 /* Account */
