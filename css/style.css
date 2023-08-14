@@ -49,8 +49,8 @@ body {
   font-size: 16px;
   z-index: 9999;
 }
-.updatealert
-{
+
+.updatealert {
   position: fixed;
   top: 19%;
   left: 50%;
@@ -63,8 +63,8 @@ body {
   z-index: 9999;
 
 }
-.privileg
-{
+
+.privileg {
   position: fixed;
   top: 35%;
   left: 50%;
@@ -131,9 +131,9 @@ section {
   font-size: 22px;
 }
 
-.navbar ul li i{
+.navbar ul li i {
   font-size: 30px;
-  margin:10px 40px 0px 0px;
+  margin: 10px 40px 0px 0px;
 }
 
 
@@ -699,6 +699,7 @@ section {
     display: flex;
     flex-direction: column;
   }
+
   .payment-button-new {
     width: 90%;
     margin-bottom: 10px;
@@ -1418,9 +1419,10 @@ h1 {
 
 
 /* Cart Page CSS */
-.container-fluid{
+.container-fluid {
   overflow-x: hidden;
 }
+
 .Cart {
   border: 1px solid grey;
   background-color: rgb(255, 255, 255);
@@ -1432,7 +1434,7 @@ h1 {
   border-radius: 25px;
   max-width: 100%;
   box-sizing: border-box;
-  
+
 }
 
 .Cart h4 {
@@ -1440,7 +1442,7 @@ h1 {
   font-size: medium;
   text-align: center;
   display: -webkit-box;
-  -webkit-line-clamp:2;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1514,24 +1516,28 @@ h1 {
   background-color: rgb(212, 0, 0) !important;
 }
 
-.total{
+.total {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.prices{
+
+.prices {
   text-align: center;
   width: 300px;
   border-radius: 5px;
   border: 1px solid #cccccc;
 }
-.prices p{
+
+.prices p {
   margin: 10px;
 }
-.prices span{
-  color:  rgb(212, 0, 0);
+
+.prices span {
+  color: rgb(212, 0, 0);
 }
+
 .buttons {
   display: flex;
   justify-content: center;
@@ -1625,20 +1631,22 @@ label {
   box-sizing: border-box;
   min-height: 100px;
   margin-bottom: 20px;
-  justify-content: space-between; /* Align items vertically */
+  justify-content: space-between;
+  /* Align items vertically */
 }
 
 .address-payment-container {
-  flex: 2; /* Take 2 parts out of 3 in the container */
+  flex: 2;
+  /* Take 2 parts out of 3 in the container */
   display: flex;
   flex-direction: column;
 }
 
-.address-section, 
+.address-section,
 .payment-method-new {
   padding: 20px;
   margin: 20px;
-  border-radius: 10px;  
+  border-radius: 10px;
   background-color: #fff;
 }
 
@@ -1684,6 +1692,7 @@ label {
   justify-content: space-between;
   margin-bottom: 10px;
 }
+
 .payment-button-new {
   padding: 10px 20px;
   border: none;
@@ -1749,6 +1758,7 @@ label {
   left: -30px;
   transition: all 0.3s ease;
 }
+
 /* Payment  Css */
 
 
@@ -1829,7 +1839,8 @@ label {
     width: 100%;
     margin: 10px;
     /* Reduce the margin for better spacing */
-  } 
+  }
+
   #cartItems {
     flex-direction: column;
     align-items: center;
@@ -2048,6 +2059,7 @@ textarea::placeholder {
   justify-content: center;
   align-items: center;
 }
+
 .section {
   display: flex;
   align-items: center;
@@ -2066,7 +2078,7 @@ textarea::placeholder {
   font-weight: bold;
 }
 
- .form-container button {
+.form-container button {
   width: 100%;
   max-width: 250px;
   padding: 0.5rem;
@@ -2074,6 +2086,7 @@ textarea::placeholder {
   border-radius: 4px;
 
 }
+
 /* Increase the height of the select dropdown */
 .form-container select {
   height: 2.5rem;
@@ -2093,19 +2106,35 @@ textarea::placeholder {
 /* Orders Screen */
 
 .ordertable {
-  width: 40%; /* Reduced width of the table */
-  margin: 50px auto; /* Align the table in the center */
-}
-tbody,thead{
-border: 1px solid lightgrey;
+  width: 40%;
+  /* Reduced width of the table */
+  margin: 50px auto;
+  /* Align the table in the center */
 }
 
-table th, table td {
-  width: 13% !important; /* Equal width for each column */
+tbody,
+thead {
+  border: 1px solid lightgrey;
+}
+
+table th,
+table td {
+  width: 13% !important;
+  /* Equal width for each column */
   padding: 18px 20px;
   text-align: center;
 }
-
+@media (max-width: 768px) {
+  .ordertable {
+    width: 90%;
+  }
+  
+  table th,
+  table td {
+    width: auto;
+    padding: 10px;
+  }
+}
 .order-status {
   display: inline-block;
   padding: 4px 8px;
@@ -2130,8 +2159,10 @@ table th, table td {
   padding: 20px;
   border-radius: 5px;
   text-align: center;
-  width: 80%; /* Adjust the width as needed */
-  max-width: 400px; /* Added max-width to limit the width */
+  width: 80%;
+  /* Adjust the width as needed */
+  max-width: 400px;
+  /* Added max-width to limit the width */
 }
 
 .overlaycontainer {
@@ -2160,7 +2191,7 @@ table th, table td {
 
 
 /*Orders Shipping  */
-.driver-select{
+.driver-select {
   width: 100%;
   max-width: 250px;
   padding: 0.2rem;
@@ -2173,12 +2204,12 @@ table th, table td {
 
 @media (max-width: 768px) {
   .section {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .input-group {
-      margin: 1rem 0;
+    margin: 1rem 0;
   }
 }
 
@@ -2297,41 +2328,65 @@ table th, table td {
 
 
 /* Menu */
-.center-wrapper {
+
+
+.add-category {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 20vh;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
 }
 
-.center-wrapper .container {
+.add-category h2 {
   text-align: center;
 }
 
-/* Style the input field */
-.center-wrapper input[type="text"],
-.items input[type="text"],
-.items input[type="number"] {
-  width: 250px;
+/* Align input and button in a row */
+.add-category input
+ {
   padding: 5px 14px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  margin: 15px 30px 20px 20px;
+  margin: 15px 10px 20px 10px;
   display: inline-block;
-  border-radius: 3px;
   vertical-align: middle;
 }
 
-/* Style the submit button */
-.items button[type="submit"],
-.center-wrapper button[type="submit"] {
+
+.add-heading {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Center and align input fields in a row */
+.add-item-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.add-item-container input {
+  padding: 5px 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 15px 10px 20px 10px;}
+
+/* Center the submit button */
+.submit-button {
+  text-align: center;
+  margin-top: 20px;
+}
+.submit-button button,
+.add-category button{
   background-color: rgb(255, 203, 0);
-  display: inline-block;
+  display: block;
   margin: auto;
   color: black;
   font-weight: bolder;
-  padding: 7px 30px;
-  margin-top: 50px;
+  padding: 7px 25px;
+  margin-top: 10px;
   font-size: 18px;
   border: none;
   border-radius: 5px;
@@ -2339,15 +2394,12 @@ table th, table td {
   transition: background-color 0.3s ease;
 }
 
-.items,
-.menu {
-  border: 1px solid lightgrey;
-  border-radius: 12px;
-}
-
-.items .box,
-.menu .box {
-  background-color: #f8f9fa;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .add-item-container {
+      flex-direction: column;
+      align-items: center;
+  }
 }
 
 /* Style the submit button on hover */
@@ -2402,8 +2454,8 @@ table th, table td {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.dashboard-heading
-{
+
+.dashboard-heading {
   font-size: 20px;
   font-weight: bolder;
 }
@@ -2444,6 +2496,6 @@ table th, table td {
 
 @media (max-width: 768px) {
   .box {
-      width: 100%;
+    width: 100%;
   }
 }
