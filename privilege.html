@@ -24,80 +24,27 @@
 
 <body>
 
-
-
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-        <div class="sidebar-logo">
-            <img src="/images/logo.webp" alt="User picture" class="profile-image">
-            <div class="sidebar-user-name">
-                TMHA
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <div class="container-fluid">
+            <div class="owner">
+                <img src="/images/logo.webp" alt="user image">
+                <a class="navbar-brand m-2 ms-4 text-dark logo" href="index.html">USER PRIVILEGE</a>
             </div>
-            <div class="sidebar-close" id="sidebar-close">
-                <i class='bx bx-left-arrow-alt'></i>
-            </div>
+            <ul class="list-unstyled">
+                <li class="nav-item me-3 me-lg-0" title="Login/Signup">
+                    <a class="nav-link text-dark" href="#"><i class="fas fa-user ms-4 use"></i></a>
+                </li>
+            </ul>
         </div>
-        <!-- SIDEBAR MENU -->
-        <ul class="sidebar-menu">
-            <li>
-                <a href="dadmin.html" class="active">
-                    <i class='bx bx-home'></i>
-                    <span>dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="menu.html">
-                    <i class='bx bx-menu'></i>
-                    <span>Menu</span>
-                </a>
-            </li>
-            <li>
-                <a href="orderscreen.html">
-                    <i class='bx bx-package'></i>
-                    <span>Orders</span>
-                </a>
-            </li>
-            <li>
-                <a href="privilege.html">
-                    <i class='bx bxs-user-account'></i>
-                    <span>User Privilege</span>
-                </a>
-            </li>
-            <li class="sidebar-submenu">
-                <a href="#" class="sidebar-menu-dropdown">
-                </a>
-                <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                    <li>
-                        <a href="#" class="darkmode-toggle" id="darkmode-toggle">
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+    </nav>
 
-    <div class="main">
-        <div class="main-header">
-            <div class="mobile-toggle" id="mobile-toggle">
-                <i class='bx bx-menu-alt-right'></i>
-            </div>
-            <div class="main-title">
-                dashboard
-            </div>
-        </div>
-        <div class="main-content">
-        </div>
-    </div>
-
-
-    <h2 style="text-align: center;">User Privilege</h2>
     <div class="form-container mt-4">
 
         <div class="section">
             <div class="input-group">
                 <label for="employee">USER</label>
                 <select id="employee">
-                    <option value="Emp 1">Emp 1</option>
+                    <option value="Emp 1">Zain-ul-Abidin</option>
                     <option value="Emp 2">Emp 2</option>
                     <option value="Emp 3">Emp 3</option>
                 </select>
@@ -105,122 +52,60 @@
             <div class="input-group">
                 <label for="role">PRIVILEGES</label>
                 <select id="role">
-                    <option value="Updating Orders">Updating Orders</option>
+                    <option value="Updating Orders">Updating Order</option>
                     <option value="Shipping">Shipping</option>
                     <option value="Mealing Category">Mealing Category</option>
                     <option value="User Privilege">User Privilege</option>
                 </select>
             </div>
-            <button id="assignRole">Update</button>
-        </div>
-    </div> 
-
-    <hr class="Line">
-
-    <div class="row m-5 mt-3 user">
-        <div class="col-3 col-md-6 col-sm-12">
-        </div>
-        <div class="col-12">
-            <div class="box User" >
-                <div class="box-body overflow-scroll ">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="item">User</th>
-                                <th>Privilege</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="order-owner">
-                                        <span>Emp 1</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    Order
-                                </td>
-                            </tr>
-                            <tr>
-                            
-                                <td>
-                                    <div class="order-owner">
-                                        <span>Emp 2</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    Ship
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="order-owner">
-                                        <span>Emp 3</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    Dealer
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <button id="assignRole" onclick="privileg(event)">Update</button>
         </div>
     </div>
+
+
+    <table class="ordertable">
+        <thead>
+          <tr>
+            <th>USER</th>
+            <th>PRIVILEGE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>EMP 01</td>
+            
+            <td>
+              <span class="privilege" >SHIP</span>
+            </td>
+          </tr>
+          <tr>
+            <td>EMP 02</td>
+           
+            <td>
+                <span class="privilege" >ORDERS</button>
+            </td>
+          </tr>
+          <tr>
+            <td>EMP 03</td>
+         
+            <td>
+                <span class="privilege" >MEAL</span>
+            </td>
+          </tr>
+          <tr>
+            <td>EMP 04</td>
+        
+            <td>
+                <span class="privilege" >PRIVILEGE</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
 
 </body>
 <script>
 
-
-
-    document.getElementById("assignRole").addEventListener("click", function () {
-        var selectedEmployee = document.getElementById("employee").value;
-        var selectedRole = document.getElementById("role").value;
-        var message = "Role assigned: " + selectedRole + " to " + selectedEmployee;
-        alert(message);
-
-        // Optional: You can perform additional actions here, such as updating the server, etc.
-    });
-    document.querySelectorAll('.sidebar-submenu').forEach(e => {
-        e.querySelector('.sidebar-menu-dropdown').onclick = (event) => {
-            event.preventDefault()
-            e.querySelector('.sidebar-menu-dropdown .dropdown-icon').classList.toggle('active')
-
-            let dropdown_content = e.querySelector('.sidebar-menu-dropdown-content')
-            let dropdown_content_lis = dropdown_content.querySelectorAll('li')
-
-            let active_height = dropdown_content_lis[0].clientHeight * dropdown_content_lis.length
-
-            dropdown_content.classList.toggle('active')
-
-            dropdown_content.style.height = dropdown_content.classList.contains('active') ? active_height + 'px' : '0'
-        }
-    })
-    // DARK MODE TOGGLE
-    let darkmode_toggle = document.querySelector('#darkmode-toggle')
-
-    darkmode_toggle.onclick = (e) => {
-        e.preventDefault()
-        document.querySelector('body').classList.toggle('dark')
-        darkmode_toggle.querySelector('.darkmode-switch').classList.toggle('active')
-        setDarkChart(document.querySelector('body').classList.contains('dark'))
-    }
-
-    let overlay = document.querySelector('.overlay')
-    let sidebar = document.querySelector('.sidebar')
-
-    document.querySelector('#mobile-toggle').onclick = () => {
-        sidebar.classList.toggle('active')
-        overlay.classList.toggle('active')
-    }
-
-    document.querySelector('#sidebar-close').onclick = () => {
-        sidebar.classList.toggle('active')
-        overlay.classList.toggle('active')
-    }
 
 </script>
 

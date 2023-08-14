@@ -2,235 +2,59 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        Slide Admin
-    </title>
-    <link rel="shortcut icon" href="/images/logo-mb.png" type="image/png">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/css/flag-icon.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/css/admin.css">
-    <link rel="stylesheet" href="/css/style.css">
-  
+
 </head>
 
 <body>
-
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-        <div class="sidebar-logo">
-            <img src="/images/logo.webp" alt="User picture" class="profile-image">
-            <div class="sidebar-user-name">
-                TMHA
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <div class="container-fluid">
+            <div class="owner">
+                <img src="/images/logo.webp" alt="user image">
+                <a class="navbar-brand m-2 ms-4 text-dark logo" href="index.html">Admin Panel</a>
             </div>
-            <div class="sidebar-close" id="sidebar-close">
-                <i class='bx bx-left-arrow-alt'></i>
-            </div>
+            <ul class="list-unstyled">
+                <li class="nav-item me-3 me-lg-0" title="Login/Signup">
+                    <a class="nav-link text-dark" href="#"><i class="fas fa-user ms-4 use"></i></a>
+                </li>
+            </ul>
         </div>
-        <!-- SIDEBAR MENU -->
-        <ul class="sidebar-menu">
-            <li>
-                <a href="dadmin.html" class="active">
-                    <i class='bx bx-home'></i>
-                    <span>dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="menu.html">
-                    <i class='bx bx-menu'></i>
-                    <span>Menu</span>
-                </a>
-            </li>
-            <li>
-                <a href="orderscreen.html">
-                    <i class='bx bx-package'></i>
-                    <span>Orders</span>
-                </a>
-            </li>
-            <li>
-                <a href="privilege.html">
-                    <i class='bx bxs-user-account'></i>
-                    <span>User Privilege</span>
-                </a>
-            </li>
-            <li class="sidebar-submenu">
-                <a href="#" class="sidebar-menu-dropdown">
-                </a>
-                <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                    <li>
-                        <a href="#" class="darkmode-toggle" id="darkmode-toggle">
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+    </nav>
 
-    <!-- MAIN CONTENT -->
-    <div class="main">
-        <div class="main-header">
-            <div class="mobile-toggle" id="mobile-toggle">
-                <i class='bx bx-menu-alt-right'></i>
-            </div>
-            <div class="main-title">
-                dashboard
-            </div>
+    <div class="dashboard-heading mt-4">DASHBOARD</div>
+    <hr class="Line">
+    <div class="container">
+        <div class="box">
+            <div class="icon">&#128228;</div>
+            <h3>ORDERS</h3>
         </div>
-        <div class="main-content">
-         
-
-            <div class="row">
-                <div class="col-3 col-md-6 col-sm-12">
-                </div>
-                <div class="col-12 ">
-                    <!-- ORDERS TABLE -->
-                    <div class="box">
-                        <div class="box-header">
-                            Recent orders
-                        </div>
-                        <div class="box-body overflow-scroll">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Customer</th>
-                                        <th>Date</th>
-                                        <th>Order status</th>
-                                        <th>Payment status</th>
-                                        <th>Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>#1</td>
-                                        <td>
-                                            <div class="order-owner">
-                                                <img src="/images/burger.webp" alt="user image">
-                                                <span>Ali Haider</span>
-                                            </div>
-                                        </td>
-                                        <td>2021-05-09</td>
-                                        <td>
-                                            <span class="order-status order-ready">
-                                                Ready
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div class="payment-status payment-pending">
-                                                <div class="dot"></div>
-                                                <span>Pending</span>
-                                            </div>
-                                        </td>
-                                        <td>1000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>#2</td>
-                                        <td>
-                                            <div class="order-owner">
-                                                <img src="/images/pizza.webp" alt="user image">
-                                                <span>Ahmad Raza</span>
-                                            </div>
-                                        </td>
-                                        <td>2021-05-09</td>
-                                        <td>
-                                            <span class="order-status order-shipped">
-                                                Shipped
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div class="payment-status payment-paid">
-                                                <div class="dot"></div>
-                                                <span>Paid</span>
-                                            </div>
-                                        </td>
-                                        <td>1500</td>
-                                    </tr>
-                                    <tr>
-                                        <td>#3</td>
-                                        <td>
-                                            <div class="order-owner">
-                                                <img src="/images/beverage.webp" alt="user image">
-                                                <span>Zain</span>
-                                            </div>
-                                        </td>
-                                        <td>2021-05-09</td>
-                                        <td>
-                                            <span class="order-status order-shipped">
-                                                Shipped
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div class="payment-status payment-paid">
-                                                <div class="dot"></div>
-                                                <span>Paid</span>
-                                            </div>
-                                        </td>
-                                        <td>600</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- END ORDERS TABLE -->
-                </div>
-            </div>
+        <div class="box">
+            <div class="icon">&#128722;</div>
+            <h3>SHIPPING</h3>
+        </div>
+        <div class="box">
+            <div class="icon">&#128274;</div>
+            <h3>USER PRIVILEGES</h3>
+        </div>
+        <div class="box">
+            <div class="icon">&#127828;</div>
+            <h3>MEALS CATEGORY</h3>
         </div>
     </div>
-    <!-- END MAIN CONTENT -->
-<script>
-    
 
-
-
-document.querySelectorAll('.sidebar-submenu').forEach(e => {
-  e.querySelector('.sidebar-menu-dropdown').onclick = (event) => {
-      event.preventDefault()
-      e.querySelector('.sidebar-menu-dropdown .dropdown-icon').classList.toggle('active')
-
-      let dropdown_content = e.querySelector('.sidebar-menu-dropdown-content')
-      let dropdown_content_lis = dropdown_content.querySelectorAll('li')
-
-      let active_height = dropdown_content_lis[0].clientHeight * dropdown_content_lis.length
-
-      dropdown_content.classList.toggle('active')
-
-      dropdown_content.style.height = dropdown_content.classList.contains('active') ? active_height + 'px' : '0';
-  }
-})
-// DARK MODE TOGGLE
-let darkmode_toggle = document.querySelector('#darkmode-toggle')
-
-darkmode_toggle.onclick = (e) => {
-  e.preventDefault()
-  document.querySelector('body').classList.toggle('dark')
-  darkmode_toggle.querySelector('.darkmode-switch').classList.toggle('active')
-  setDarkChart(document.querySelector('body').classList.contains('dark'))
-}
-
-let overlay = document.querySelector('.overlay')
-let sidebar = document.querySelector('.sidebar')
-
-document.querySelector('#mobile-toggle').onclick = () => {
-  sidebar.classList.toggle('active')
-  overlay.classList.toggle('active')
-}
-
-document.querySelector('#sidebar-close').onclick = () => {
-  sidebar.classList.toggle('active')
-  overlay.classList.toggle('active')
-}
-
-document.querySelector('#logout-btn').onclick = () => {
-       
-        document.querySelector('.sidebar').classList.remove('active');
-        document.querySelector('.overlay').classList.remove('active');
-    };
-
-</script>
 
 </body>
 

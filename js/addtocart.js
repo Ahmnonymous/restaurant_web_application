@@ -27,6 +27,7 @@ function addToCart(event) {
     alertMessage.style.display = 'none';
   }, 2000);
 
+  
   const itemId = event.target.getAttribute('data-id'); // Extract the item ID from the data-id attribute
 
   // Check if the item already exists in the cart

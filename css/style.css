@@ -49,6 +49,34 @@ body {
   font-size: 16px;
   z-index: 9999;
 }
+.updatealert
+{
+  position: fixed;
+  top: 19%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 9999;
+
+}
+.privileg
+{
+  position: fixed;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 9999;
+
+}
 
 .empty {
   position: fixed;
@@ -101,6 +129,11 @@ section {
 } */
 .navbar-nav .nav-link {
   font-size: 22px;
+}
+
+.navbar ul li i{
+  font-size: 30px;
+  margin:10px 40px 0px 0px;
 }
 
 
@@ -2033,7 +2066,7 @@ textarea::placeholder {
   font-weight: bold;
 }
 
-.form-container select, .form-container button {
+ .form-container button {
   width: 100%;
   max-width: 250px;
   padding: 0.5rem;
@@ -2041,12 +2074,50 @@ textarea::placeholder {
   border-radius: 4px;
 
 }
+/* Increase the height of the select dropdown */
+.form-container select {
+  height: 2.5rem;
+  width: 12rem;
+}
+
+.form-container button {
+  margin-top: 2rem;
+  background-color: rgb(255, 203, 0);
+  color: black;
+  cursor: pointer;
+}
+
+
+
+
+/* Orders Screen */
+
+.ordertable {
+  width: 40%; /* Reduced width of the table */
+  margin: 50px auto; /* Align the table in the center */
+}
+tbody,thead{
+border: 1px solid lightgrey;
+}
+
+table th, table td {
+  width: 13% !important; /* Equal width for each column */
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.order-status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
 
 .orderoverlay {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -2059,9 +2130,10 @@ textarea::placeholder {
   padding: 20px;
   border-radius: 5px;
   text-align: center;
+  width: 80%; /* Adjust the width as needed */
+  max-width: 400px; /* Added max-width to limit the width */
 }
 
-/* Styles for the form inside the overlay */
 .overlaycontainer {
   display: flex;
   flex-direction: column;
@@ -2069,7 +2141,8 @@ textarea::placeholder {
   margin-top: 1rem;
 }
 
-.overlaycontainer  select,.overlaycontainer button {
+.overlaycontainer select,
+.overlaycontainer button {
   width: 100%;
   max-width: 250px;
   padding: 0.5rem;
@@ -2086,20 +2159,17 @@ textarea::placeholder {
 
 
 
-
-
-/* Increase the height of the select dropdown */
-.form-container select {
-  height: 2.5rem;
-  width: 10rem;
+/*Orders Shipping  */
+.driver-select{
+  width: 100%;
+  max-width: 250px;
+  padding: 0.2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.form-container button {
-  margin-top: 2rem;
-  background-color: rgb(255, 203, 0);
-  color: black;
-  cursor: pointer;
-}
+
+
 
 @media (max-width: 768px) {
   .section {
@@ -2322,4 +2392,58 @@ textarea::placeholder {
   height: 80%;
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.dashboard-heading
+{
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.box {
+  width: calc(50% - 10px);
+  height: 200px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.box h3 {
+  margin: 0;
+}
+
+.icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.dashboard-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .box {
+      width: 100%;
+  }
 }

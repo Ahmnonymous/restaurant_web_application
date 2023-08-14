@@ -21,169 +21,109 @@
   <link rel="stylesheet" href="/css/style.css">
   <title>Order Screen - Restaurant Workers</title>
 </head>
+<style>
+  
+</style>
 
 <body>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-    <div class="sidebar-logo">
-      <img src="/images/logo.webp" alt="User picture" class="profile-image">
-      <div class="sidebar-user-name">
-        TMHA
+  <nav class="navbar navbar-expand-sm navbar-dark">
+    <div class="container-fluid">
+      <div class="owner">
+        <img src="/images/logo.webp" alt="user image">
+        <a class="navbar-brand m-2 ms-4 text-dark logo" href="index.html">ORDERS</a>
       </div>
-      <div class="sidebar-close" id="sidebar-close">
-        <i class='bx bx-left-arrow-alt'></i>
-      </div>
+      <ul class="list-unstyled">
+        <li class="nav-item me-3 me-lg-0" title="Login/Signup">
+          <a class="nav-link text-dark" href="#"><i class="fas fa-user ms-4 use"></i></a>
+        </li>
+      </ul>
     </div>
-    <!-- SIDEBAR MENU -->
-    <ul class="sidebar-menu">
-      <li>
-        <a href="dadmin.html" class="active">
-          <i class='bx bx-home'></i>
-          <span>dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="menu.html">
-          <i class='bx bx-menu'></i>
-          <span>Menu</span>
-        </a>
-      </li>
-      <li>
-        <a href="orderscreen.html">
-          <i class='bx bx-package'></i>
-          <span>Orders</span>
-        </a>
-      </li>
-      <li>
-        <a href="privilege.html">
-          <i class='bx bxs-user-account'></i>
-          <span>User Privilege</span>
-        </a>
-      </li>
-      <li class="sidebar-submenu">
-        <a href="#" class="sidebar-menu-dropdown">
-        </a>
-        <ul class="sidebar-menu sidebar-menu-dropdown-content">
-          <li>
-            <a href="#" class="darkmode-toggle" id="darkmode-toggle">
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+  </nav>
 
-  <div class="main">
-    <div class="main-header">
-      <div class="mobile-toggle" id="mobile-toggle">
-        <i class='bx bx-menu-alt-right'></i>
-      </div>
-      <div class="main-title">
-        dashboard
-      </div>
-    </div>
-    <div class="main-content">
-    </div>
-  </div>
 
-  <div class="row m-5">
-    <div class="col-3 col-md-6 col-sm-12">
-    </div>
-    <div class="col-12">
-      <div class="box">
-        <div class="box-header">
-          orders Details
-        </div>
-        <div class="box-body overflow-scroll">
-          <table>
-            <thead>
-              <tr>
-                <th>ORDER ID</th>
-                <th>ORDER STATUS</th>
-                <th>UPDATE</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>#1</td>
-                <td>
-                  <span class="order-status order-ready">
-                    Ready
-                  </span>
-                </td>
-                <td>
-                  <button class="update" id="showOverlay">Update Status</button>
-                </td>
-              </tr>
-              <tr>
-                <td>#2</td>
-
-                <td>
-                  <span class="order-status order-shipped">
-                    Delivered
-                  </span>
-                </td>
-                <td>
-                  <button class="update" id="showOverlay">Update Status</button>
-                </td>
-              </tr>
-              <tr>
-                <td>#3</td>
-                <td>
-                  <span class="order-status order-canceled">
-                    Cancelled
-                  </span>
-                </td>
-                <td>
-                  <button class="update" id="showOverlay">Update Status</button>
-                </td>
-              </tr>
-              <tr>
-                <td>#4</td>
-                <td>
-                  <span class="order-status order-processing">
-                    Processing
-                  </span>
-                </td>
-                <td>
-                  <button class="update" id="showOverlay">Update Status</button>
-                </td>
-              </tr>
-              <tr>
-                <td>#4</td>
-                <td>
-                  <span class="order-status order-outdelivery">
-                    Out of Delivery
-                  </span>
-                </td>
-                <td>
-                  <button class="update" id="showOverlay">Update Status</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
+  <table class="ordertable">
+    <thead>
+      <tr>
+        <th>ORDER ID</th>
+        <th>ORDER STATUS</th>
+        <th>UPDATE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>#1</td>
+        <td>
+          <span class="order-status order-ready">
+            Ready
+          </span>
+        </td>
+        <td>
+          <button class="update" id="showOverlay" onclick="show()">Update Status</button>
+        </td>
+      </tr>
+      <tr>
+        <td>#2</td>
+        <td>
+          <span class="order-status order-shipped">
+            Delivered
+          </span>
+        </td>
+        <td>
+          <button class="update" id="showOverlay" onclick="show()">Update Status</button>
+        </td>
+      </tr>
+      <tr>
+        <td>#3</td>
+        <td>
+          <span class="order-status order-canceled">
+            Cancelled
+          </span>
+        </td>
+        <td>
+          <button class="update" id="showOverlay" onclick="show()">Update Status</button>
+        </td>
+      </tr>
+      <tr>
+        <td>#4</td>
+        <td>
+          <span class="order-status order-processing">
+            Processing
+          </span>
+        </td>
+        <td>
+          <button class="update" id="showOverlay" onclick="show()">Update Status</button>
+        </td>
+      </tr>
+      <tr>
+        <td>#5</td>
+        <td>
+          <span class="order-status order-outdelivery">
+            Out of Delivery
+          </span>
+        </td>
+        <td>
+          <button class="update" id="showOverlay" onclick="show()">Update Status</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
   <div class="orderoverlay" id="orderoverlay">
     <div class="order-overlay-content">
-        <h2>Update Status</h2>
-        <div class="overlaycontainer">
-            <label for="status">Status:</label>
-            <select id="status">
-                <option value="Ready">Ready</option>
-                <option value="Delivered">Delivered</option>
-                <option value="Out of Delivery">Out of Delivery</option>
-                <option value="Processing">Processing</option>
-                <option value="Cancelled">Cancelled</option>
-            </select>
-            <button id="updateStatus">Update</button>
-        </div>
+      <h2>Update Status</h2>
+      <div class="overlaycontainer">
+        <select id="status">
+          <option value="Ready">Ready</option>
+          <option value="Delivered">Delivered</option>
+          <option value="Out of Delivery">Out of Delivery</option>
+          <option value="Processing">Processing</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+        <button id="updateStatus" onclick="status(event)">Update</button>
+      </div>
     </div>
-</div>
+  </div>
 </body>
 
 
@@ -193,82 +133,6 @@
 
 <script>
 
-const showOverlayButton = document.getElementById('showOverlay');
-        const overlay1 = document.getElementById('overlay');
-
-        showOverlayButton.addEventListener('click', () => {
-            overlay1.style.display = 'block';
-        });
-
-        // Close the overlay when clicking outside of it
-        window.addEventListener('click', (event) => {
-            if (event.target === overlay1) {
-                overlay1.style.display = 'none';
-            }
-        });
-
-
-  document.querySelectorAll('.sidebar-submenu').forEach(e => {
-    e.querySelector('.sidebar-menu-dropdown').onclick = (event) => {
-      event.preventDefault()
-      e.querySelector('.sidebar-menu-dropdown .dropdown-icon').classList.toggle('active')
-
-      let dropdown_content = e.querySelector('.sidebar-menu-dropdown-content')
-      let dropdown_content_lis = dropdown_content.querySelectorAll('li')
-
-      let active_height = dropdown_content_lis[0].clientHeight * dropdown_content_lis.length
-
-      dropdown_content.classList.toggle('active')
-
-      dropdown_content.style.height = dropdown_content.classList.contains('active') ? active_height + 'px' : '0'
-    }
-  })
-  // DARK MODE TOGGLE
-  let darkmode_toggle = document.querySelector('#darkmode-toggle')
-
-  darkmode_toggle.onclick = (e) => {
-    e.preventDefault()
-    document.querySelector('body').classList.toggle('dark')
-    darkmode_toggle.querySelector('.darkmode-switch').classList.toggle('active')
-    setDarkChart(document.querySelector('body').classList.contains('dark'))
-  }
-
-  let overlay = document.querySelector('.overlay')
-  let sidebar = document.querySelector('.sidebar')
-
-  document.querySelector('#mobile-toggle').onclick = () => {
-    sidebar.classList.toggle('active')
-    overlay.classList.toggle('active')
-  }
-
-  document.querySelector('#sidebar-close').onclick = () => {
-    sidebar.classList.toggle('active')
-    overlay.classList.toggle('active')
-  }
-  // Get elements from the DOM
-  const orderIdElement = document.getElementById('order-id');
-  const orderStatusElement = document.getElementById('order-status');
-  const processButton = document.getElementById('process-btn');
-  const deliveryButton = document.getElementById('delivery-btn');
-
-  // Initial order status
-  let orderStatus = 'Processing';
-
-  // Function to update order status
-  function updateOrderStatus(status) {
-    orderStatus = status;
-    orderStatusElement.textContent = status;
-  }
-
-  // Event listener for Process Order button
-  processButton.addEventListener('click', () => {
-    updateOrderStatus('Processing');
-  });
-
-  // Event listener for Out for Delivery button
-  deliveryButton.addEventListener('click', () => {
-    updateOrderStatus('Out for Delivery');
-  });
 
 
 

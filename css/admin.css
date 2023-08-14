@@ -354,10 +354,6 @@
     height: 100%;
   }
   
-  table {
-    width: 100%;
-    min-width: 1000px;
-  }
   
   .order-owner {
     display: flex;
@@ -445,6 +441,14 @@
 
   .update{
     background-color:  rgb(255, 203, 0);
+    color: black;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  table td span{
     color: black;
     border: none;
     padding: 6px 10px;

@@ -150,15 +150,6 @@ function handleSearch(event) {
   }
 
 
-  // User Privileges Code
-  document.getElementById("assignRole").addEventListener("click", function () {
-    var selectedEmployee = document.getElementById("employee").value;
-    var selectedRole = document.getElementById("role").value;
-    var message = "Role assigned: " + selectedRole + " to " + selectedEmployee;
-    alert(message);
-
-    // Optional: You can perform additional actions here, such as updating the server, etc.
-});
 
 
 
@@ -167,6 +158,65 @@ function handleSearch(event) {
 document.querySelector('.overlay-select').addEventListener('click', function () {
   document.getElementById('overlay-location').style.display = 'none';
 });
+
+
+
+// Order Status Updation
+function status(event){
+  event.preventDefault();
+
+  // Create the alert message element
+  const alertMessage = document.createElement('div');
+  alertMessage.className = 'updatealert';
+  alertMessage.textContent = 'Successfully Updated!';
+  document.body.appendChild(alertMessage);
+
+  // Show the alert message
+  alertMessage.style.display = 'block';
+
+  // Hide the alert after 2 seconds
+  setTimeout(function () {
+    alertMessage.style.display = 'none';
+  }, 2000);
+}
+
+function privileg(event){
+  event.preventDefault();
+
+  // Create the alert message element
+  const alertMessage = document.createElement('div');
+  alertMessage.className = 'privileg';
+  alertMessage.textContent = 'Successfully Updated!';
+  document.body.appendChild(alertMessage);
+
+  // Show the alert message
+  alertMessage.style.display = 'block';
+
+  // Hide the alert after 2 seconds
+  setTimeout(function () {
+    alertMessage.style.display = 'none';
+  }, 2000);
+}
+
+
+function show() {
+  const showOverlayButton = document.getElementById('showOverlay');
+  const overlay1 = document.getElementById('orderoverlay');
+
+  showOverlayButton.addEventListener('click', () => {
+    overlay1.style.display = 'flex';
+  });
+
+  // Close the overlay when clicking outside of it
+  window.addEventListener('click', (event) => {
+    if (event.target === overlay1) {
+      overlay1.style.display = 'none';
+    }
+  });
+}
+
+// Call the show function to set up the event listeners
+show();
 
 
 
