@@ -28,9 +28,11 @@
 
     <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container-fluid">
+            
             <div class="owner">
-                <img src="/images/logo.webp" alt="user image">
-                <a class="navbar-brand m-2 ms-4 text-dark logo" href="index.html">MENU</a>
+                <a href="dadmin.html"><i class="fas fa-arrow-left back-icon me-2"></i></a>
+                <img src="/images/logo.webp" alt="user image" class="T">
+                <a class="navbar-brand m-2 ms-4 text-dark logo" href="">Admin Panel</a>
             </div>
             <ul class="list-unstyled">
                 <li class="nav-item me-3 me-lg-0" title="Login/Signup">
@@ -40,212 +42,187 @@
         </div>
     </nav>
 
-
     <!-- Menu Categories -->
     <div class="add-category">
         <h2>Add Menu Category</h2>
-        <input type="text" id="category-name" placeholder="Category Name">
+        <input type="text" id="category-name" placeholder="Name">
         <button type="submit" id="add-category-btn">Add Category</button>
     </div>
 
 
-        <!-- Menu Table -->
-                        <table class="ordertable">
-                            <thead>
-                                <tr>
-                                    <th>Category ID</th>
-                                    <th>Category Name</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>#1</td>
-                                    <td>
-                                        <div class="order-owner">
-                                            <span>Pizza</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#2</td>
-                                    <td>
-                                        <div class="order-owner">
-                                            <span>Burger</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#3</td>
-                                    <td>
-                                        <div class="order-owner">
-                                            <span>Beverages</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-          
+    <!-- Menu Table -->
+    <table class="ordertable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>#1</td>
+                <td>
+                    <div class="order-owner">
+                        <span>Pizza</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>#2</td>
+                <td>
+                    <div class="order-owner">
+                        <span>Burger</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>#3</td>
+                <td>
+                    <div class="order-owner">
+                        <span>Beverages</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
 
 
     <!-- Items Categories -->
     <h2 class="add-heading">Add Item</h2>
 
     <div class="add-item-container">
-        <input type="text" id="item-id" placeholder="Item ID">
-        <input type="text" id="item-name" placeholder="Item Name">
-        <input type="text" id="item-category" placeholder="Item Category">
-        <input type="text" id="item-description" placeholder="Item Description">
+        <input type="text" id="item-id" placeholder="Name">
+        <input type="text" id="item-name" placeholder="Category">
+        <input type="text" id="item-category" placeholder="Description">
+        <input type="text" id="item-description" placeholder="Price">
+        <input type="file" id="item-description" placeholder="Picture">
     </div>
-    
+
     <div class="submit-button">
         <button type="submit" id="add-item-btn">Submit</button>
     </div>
-        <!-- Items Table -->
-                    
-                        <table class="ordertable">
-                            <thead>
-                                <tr>
-                                    <th>Item Name</th>
-                                    <th>Item Category</th>
-                                    <th>Item Description</th>
-                                    <th>Item Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="order-owner">
-                                            <span>Mutton</span>
-                                        </div>
-                                    </td>
-                                    <td>Burger</td>
-                                    <td>Hot and Cheezy Burger</td>
-                                    <td>1200</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="order-owner">
-                                            <span>Beef</span>
-                                        </div>
-                                    </td>
-                                    <td>Burger</td>
-                                    <td>Full Cheezy burger made with fresh meat</td>
-                                    <td>700</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="order-owner">
-                                            <span>Fish</span>
-                                        </div>
-                                    </td>
-                                    <td>Pizza</td>
-                                    <td>Soft and Spicy Pizza</td>
-                                    <td>1200</td>
-                                </tr>
-                            </tbody>
-                        </table>
+    <!-- Items Table -->
+
+    <table class="ordertable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="order-owner">
+                        <span>Mutton</span>
+                    </div>
+                </td>
+                <td>Burger</td>
+                <td>1200</td>
+                <td> <button class="update" onclick="openOverlay()">Update</button> </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="order-owner">
+                        <span>Beef</span>
+                    </div>
+                </td>
+                <td>Burger</td>
+                <td>700</td>
+                <td> <button class="update" onclick="openOverlay()">Update</button> </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="order-owner">
+                        <span>Fish</span>
+                    </div>
+                </td>
+                <td>Pizza</td>
+                <td>1200</td>
+                <td> <button class="update" onclick="openOverlay()">Update</button> </td>
+
+            </tr>
+        </tbody>
+    </table>
+
 
 
     <!-- Topping -->
     <h2 class="add-heading">Add Topping</h2>
 
     <div class="add-item-container">
-        <input type="text" id="item-id" placeholder="Topping Name">
-        <input type="text" id="item-name" placeholder="Topping Category">
-        <input type="text" id="item-category" placeholder="Topping Price">
+        <input type="text" id="item-id" placeholder="Name">
+        <input type="text" id="item-name" placeholder="Category">
+        <input type="text" id="item-category" placeholder="Price">
     </div>
     <div class="submit-button">
         <button type="submit" id="add-item-btn">Submit</button>
     </div>
 
 
-                        <table class="ordertable">
-                            <thead>
-                                <tr>
-                                    <th>Topping Name</th>
-                                    <th>Topping Category</th>
-                                    <th>Topping Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="order-owner">
-                                            <span>Cheese</span>
-                                        </div>
-                                    </td>
-                                    <td>Burger</td>
-                                    <td>1200</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="order-owner">
-                                            <span>Chicken</span>
-                                        </div>
-                                    </td>
-                                    <td>Burger</td>
-                                    <td>700</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="order-owner">
-                                            <span>Butter</span>
-                                        </div>
-                                    </td>
-                                    <td>Pizza</td>
-                                    <td>1200</td>
-                                </tr>
-                            </tbody>
-                        </table>
-          
+    <table class="ordertable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="order-owner">
+                        <span>Cheese</span>
+                    </div>
+                </td>
+                <td>Burger</td>
+                <td>1200</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="order-owner">
+                        <span>Chicken</span>
+                    </div>
+                </td>
+                <td>Burger</td>
+                <td>700</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="order-owner">
+                        <span>Butter</span>
+                    </div>
+                </td>
+                <td>Pizza</td>
+                <td>1200</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <div id="update-overlay" class="menu-overlay">
+        <div class="menu-overlay-content">
+            <span class="menu-close-btn" onclick="closeOverlay()">&times;</span>
+            <h2 class="text-center">Update Item Details</h2>
+            <form id="update-form">
+                <input type="text" id="update-item-name" placeholder="Name">
+                <input type="text" id="update-item-category" placeholder="Category">
+                <input type="text" id="update-item-description" placeholder="Description">
+                <input type="text" id="update-item-price" placeholder="Price">
+                <input type="file" id="update-item-image" accept="image/*">
+                <button type="button" onclick="updateItem()" >Update</button>
+            </form>
+        </div>
+    </div>
+
 
 
 </body>
-
-
-<script>
-
-
-
-
-    document.querySelectorAll('.sidebar-submenu').forEach(e => {
-        e.querySelector('.sidebar-menu-dropdown').onclick = (event) => {
-            event.preventDefault()
-            e.querySelector('.sidebar-menu-dropdown .dropdown-icon').classList.toggle('active')
-
-            let dropdown_content = e.querySelector('.sidebar-menu-dropdown-content')
-            let dropdown_content_lis = dropdown_content.querySelectorAll('li')
-
-            let active_height = dropdown_content_lis[0].clientHeight * dropdown_content_lis.length
-
-            dropdown_content.classList.toggle('active')
-
-            dropdown_content.style.height = dropdown_content.classList.contains('active') ? active_height + 'px' : '0'
-        }
-    })
-    // DARK MODE TOGGLE
-    let darkmode_toggle = document.querySelector('#darkmode-toggle')
-
-    darkmode_toggle.onclick = (e) => {
-        e.preventDefault()
-        document.querySelector('body').classList.toggle('dark')
-        darkmode_toggle.querySelector('.darkmode-switch').classList.toggle('active')
-        setDarkChart(document.querySelector('body').classList.contains('dark'))
-    }
-
-    let overlay = document.querySelector('.overlay')
-    let sidebar = document.querySelector('.sidebar')
-
-    document.querySelector('#mobile-toggle').onclick = () => {
-        sidebar.classList.toggle('active')
-        overlay.classList.toggle('active')
-    }
-
-    document.querySelector('#sidebar-close').onclick = () => {
-        sidebar.classList.toggle('active')
-        overlay.classList.toggle('active')
-    }
-</script>
 <script src="/js/script.js"></script>
 
 </html>
