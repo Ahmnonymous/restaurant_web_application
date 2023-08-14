@@ -1479,7 +1479,6 @@ h1 {
   border-radius: 25px;
   font-size: 18px;
   background-color: rgb(212, 0, 0) !important;
-  
 }
 
 .total{
@@ -1699,6 +1698,7 @@ label {
 .payment-detail>h4 {
   font-weight: bold;
   font-size: 18px;
+  margin-left: 40px;
 }
 
 .payment-detail>p {
@@ -1960,8 +1960,7 @@ textarea::placeholder {
 
 .checkout button,
 .change,
-.set,
-#assignRole {
+.set {
   background-color: rgb(255, 203, 0);
   display: block;
   margin: auto;
@@ -1975,6 +1974,7 @@ textarea::placeholder {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 
 #assignRole {
   padding: 8px 20px !important;
@@ -2010,36 +2010,46 @@ textarea::placeholder {
   max-width: 1000px;
 }
 
-
-/* Styling for Form Container */
 .form-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
 }
 
-/* Styling for Labels */
-label {
+.form-container button {
+  background-color: rgb(255, 203, 0);
   display: block;
-  margin-bottom: 5px;
+  margin: auto;
+  color: black;
+  font-weight: bolder;
+  margin: 35px 0 0px 30px;
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.section {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8px;
+}
+select{
+  width: max-content;
+  padding: 5px;
+  margin: 0px 30px 0px 0px;
+  border-radius: 25px;
+}
+
+.input-group label {
+  margin-right: 8px;
+  font-size: larger;
   font-weight: bold;
 }
-
-/* Styling for Dropdowns */
-select {
-  width: 100%;
-  padding: 8px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-bottom: 15px;
-}
-
-
 
 /* Account */
 .account {

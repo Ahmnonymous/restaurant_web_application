@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <title>Order Screen - Restaurant Workers</title>
 </head>
+
 <body>
 
   <!-- SIDEBAR -->
@@ -98,56 +99,66 @@
           <table>
             <thead>
               <tr>
-                <th>Order ID</th>
                 <th>Customer</th>
-                <th>Date</th>
                 <th>Order status</th>
+                <th>Update</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>#1</td>
                 <td>
-                  <div class="order-owner">
-                    <img src="/images/beverage.webp" alt="user image">
-                    <span>Ali Haider</span>
-                  </div>
-                </td>
-                <td>2023-07-16</td>
-                <td>
                   <span class="order-status order-ready">
                     Ready
                   </span>
                 </td>
+                <td>
+                  <button class="update">Update Status</button>
+                </td>
               </tr>
               <tr>
                 <td>#2</td>
-                <td>
-                  <div class="order-owner">
-                    <img src="/images/burger.webp" alt="user image">
-                    <span>Ahmad Raza</span>
-                  </div>
-                </td>
-                <td>2023-07-16</td>
+
                 <td>
                   <span class="order-status order-shipped">
-                    Shipped
+                    Delivered
                   </span>
+                </td>
+                <td>
+                  <button class="update">Update Status</button>
                 </td>
               </tr>
               <tr>
                 <td>#3</td>
                 <td>
-                  <div class="order-owner">
-                    <img src="/images/beverage.webp" alt="user image">
-                    <span>Zain</span>
-                  </div>
-                </td>
-                <td>2023-07-16</td>
-                <td>
                   <span class="order-status order-canceled">
                     Canceled
                   </span>
+                </td>
+                <td>
+                  <button class="update">Update Status</button>
+                </td>
+              </tr>
+              <tr>
+                <td>#4</td>
+                <td>
+                  <span class="order-status order-processing">
+                    Processing
+                  </span>
+                </td>
+                <td>
+                  <button class="update">Update Status</button>
+                </td>
+              </tr>
+              <tr>
+                <td>#4</td>
+                <td>
+                  <span class="order-status order-outdelivery">
+                    Out of Delivery
+                  </span>
+                </td>
+                <td>
+                  <button class="update">Update Status</button>
                 </td>
               </tr>
             </tbody>

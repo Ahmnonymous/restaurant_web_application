@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/css/admin.css">
-        <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -92,72 +92,71 @@
 
 
     <div class="form-container mt-4">
-        <!-- Drop-down for Employee Names -->
-        <label for="employee">Select Employee:</label>
-        <select id="employee">
-            <option value="Ali Haider">Ali Haider</option>
-            <option value="Ali">Ali</option>
-            <option value="Ahmad">Ahmad</option>
-        </select>
-    
-        <!-- Drop-down for Roles -->
-        <label for="role">Select Role:</label>
-        <select id="role">
-            <option value="Admin">Admin</option>
-            <option value="Driver">Driver</option>
-            <option value="Dealer">Dealer</option>
-        </select>
-    
-        <!-- Submit Button -->
-        <button id="assignRole">Assign Role</button>
+        <div class="section">
+
+            <div class="input-group">
+                <label for="employee">User:</label>
+                <select id="employee">
+                    <option value="Emp 1">Emp 1</option>
+                    <option value="Emp 2">Emp 2</option>
+                    <option value="Emp 3">Emp 3</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="role">Previlege:</label>
+                <select id="role">
+                    <option value="Updating Orders">Updating Orders</option>
+                    <option value="Shipping">Shipping</option>
+                    <option value="Mealing Category">Mealing Category</option>
+                    <option value="User Previlege">User Previlege</option>
+                </select>
+            </div>
+            <button id="assignRole">Update</button>
+        </div>
     </div>
-
-
     <div class="row m-5 mt-3 user">
         <div class="col-3 col-md-6 col-sm-12">
         </div>
         <div class="col-12">
-            <div class="box">
-                <div class="box-header">
-                    Emplyees Information
+            <div class="box User" >
+                <div class="box-header text-center">
+                    User Privileges
                 </div>
-                <div class="box-body overflow-scroll">
+                <div class="box-body overflow-scroll ">
                     <table>
                         <thead>
                             <tr>
-                                <th>Employee ID</th>
-                                <th class="item">Name</th>
-                                <th>Role</th>
+                                <th class="item">User</th>
+                                <th>Privilege</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>#1</td>
                                 <td>
                                     <div class="order-owner">
-                                        <span>Ali Haider</span>
+                                        <span>Emp 1</span>
                                     </div>
                                 </td>
                                 <td>
-                                    Admin
+                                    Order
                                 </td>
                             </tr>
                             <tr>
-                                <td>#2</td>
+                            
                                 <td>
                                     <div class="order-owner">
-                                        <span>Ali</span>
+                                        <span>Emp 2</span>
                                     </div>
                                 </td>
                                 <td>
-                                    Driver
+                                    Ship
                                 </td>
                             </tr>
                             <tr>
-                                <td>#3</td>
                                 <td>
                                     <div class="order-owner">
-                                        <span>Ahmad</span>
+                                        <span>Emp 3</span>
                                     </div>
                                 </td>
                                 <td>
@@ -173,13 +172,13 @@
     </div>
 
 
-    
+
 
 
 
 </body>
 <script>
-     document.getElementById("assignRole").addEventListener("click", function () {
+    document.getElementById("assignRole").addEventListener("click", function () {
         var selectedEmployee = document.getElementById("employee").value;
         var selectedRole = document.getElementById("role").value;
         var message = "Role assigned: " + selectedRole + " to " + selectedEmployee;
@@ -188,44 +187,45 @@
         // Optional: You can perform additional actions here, such as updating the server, etc.
     });
     document.querySelectorAll('.sidebar-submenu').forEach(e => {
-      e.querySelector('.sidebar-menu-dropdown').onclick = (event) => {
-          event.preventDefault()
-          e.querySelector('.sidebar-menu-dropdown .dropdown-icon').classList.toggle('active')
-    
-          let dropdown_content = e.querySelector('.sidebar-menu-dropdown-content')
-          let dropdown_content_lis = dropdown_content.querySelectorAll('li')
-    
-          let active_height = dropdown_content_lis[0].clientHeight * dropdown_content_lis.length
-    
-          dropdown_content.classList.toggle('active')
-    
-          dropdown_content.style.height = dropdown_content.classList.contains('active') ? active_height + 'px' : '0'
-      }
+        e.querySelector('.sidebar-menu-dropdown').onclick = (event) => {
+            event.preventDefault()
+            e.querySelector('.sidebar-menu-dropdown .dropdown-icon').classList.toggle('active')
+
+            let dropdown_content = e.querySelector('.sidebar-menu-dropdown-content')
+            let dropdown_content_lis = dropdown_content.querySelectorAll('li')
+
+            let active_height = dropdown_content_lis[0].clientHeight * dropdown_content_lis.length
+
+            dropdown_content.classList.toggle('active')
+
+            dropdown_content.style.height = dropdown_content.classList.contains('active') ? active_height + 'px' : '0'
+        }
     })
     // DARK MODE TOGGLE
     let darkmode_toggle = document.querySelector('#darkmode-toggle')
-    
+
     darkmode_toggle.onclick = (e) => {
-      e.preventDefault()
-      document.querySelector('body').classList.toggle('dark')
-      darkmode_toggle.querySelector('.darkmode-switch').classList.toggle('active')
-      setDarkChart(document.querySelector('body').classList.contains('dark'))
+        e.preventDefault()
+        document.querySelector('body').classList.toggle('dark')
+        darkmode_toggle.querySelector('.darkmode-switch').classList.toggle('active')
+        setDarkChart(document.querySelector('body').classList.contains('dark'))
     }
-    
+
     let overlay = document.querySelector('.overlay')
     let sidebar = document.querySelector('.sidebar')
-    
+
     document.querySelector('#mobile-toggle').onclick = () => {
-      sidebar.classList.toggle('active')
-      overlay.classList.toggle('active')
+        sidebar.classList.toggle('active')
+        overlay.classList.toggle('active')
     }
-    
+
     document.querySelector('#sidebar-close').onclick = () => {
-      sidebar.classList.toggle('active')
-      overlay.classList.toggle('active')
+        sidebar.classList.toggle('active')
+        overlay.classList.toggle('active')
     }
 
 </script>
 
 <script src="/js/script.js"></script>
+
 </html>

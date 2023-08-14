@@ -403,6 +403,16 @@
     color: #e61102;
     background-color: rgba(247, 99, 62, 0.1);
   }
+  .order-processing
+  {
+    color: #FFA500;
+    background-color: rgba(244, 158, 54, 0.1);
+  }
+  .order-outdelivery{
+    color: #2972ba;
+    background-color: rgba(86, 133, 214, 0.1);
+
+  }
   
   .payment-status {
     display: flex;
@@ -431,6 +441,15 @@
     border-radius: 4px;
     cursor: pointer;
     margin-right: 5px;
+  }
+
+  .update{
+    background-color:  rgb(255, 203, 0);
+    color: black;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
   }
   
   
