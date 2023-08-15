@@ -15,7 +15,7 @@ int main() {
     }
 
     // Prepare the SQL statement to retrieve category names
-    std::string sql = "SELECT DISTINCT category FROM Menu";
+    std::string sql = "SELECT DISTINCT category FROM Menu WHERE available = 'Y' ORDER BY category";
 
     // Execute the query
     if (mysql_query(connection, sql.c_str()) != 0) {

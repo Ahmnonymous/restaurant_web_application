@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/css/flag-icon.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Cart</title>
+</head>
+
+<body>
+  <!-- Home Section -->
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center mt-4">Your Cart</h2>
+        <hr class="Line">
+        <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 row-cols-xl-6" id="ahm">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="Line ">
+  <div class="total">
+    <div class="prices">
+      <p>Grand Total: <span>00.00</span></p>
+    </div>
+      <div class="buttons">
+       <a href="index.html"> <button class="add-item-button">Add Item</button></a>
+        <a href="payment.html"><button class="checkout-button">Checkout</button></a>
+      </div>
+  </div>
+
+</body>
+<script src="js/script.js"></script>
+<script src="js/add_to_cart.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  // Function to show the cart
+  $(document).ready(function() {
+    $.ajax({
+      url: "cpp/cartd.cgi",
+      method: "GET",
+      dataType: "html",
+      success: function(data) {
+        $("#ahm").html(data);
+      },
+      error: function() {
+        $("#ahm").html("<p>Error loading cart.</p>");
+      }
+    });
+  });
+</script>
+<script>
+  // Cart Delete button
+  document.addEventListener('DOMContentLoaded', function () {
+    var deleteButtons = document.querySelectorAll('.delete-button');
+
+    deleteButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        // Find the parent <tr> element and remove it
+        var row = this.closest('tr');
+        if (row) {
+          row.remove();
+        }
+      });
+    });
+  });
+
+</script>
+
+</html>

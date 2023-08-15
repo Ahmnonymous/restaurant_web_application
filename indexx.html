@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -13,19 +12,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
   <title>Resturant Website</title>
 </head>
 
 <body>
 
-<!-- Navbar -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-sm navbar-dark">
     <div class="container-fluid">
       <div class="owner">
-        <img src="./images/logo.png" alt="user image">
+        <img src="images/logo.webp" alt="user image">
         <a class="navbar-brand m-2 ms-4 text-dark logo" href="index.html">TMHA</a>
       </div>
       <ul class="navbar-nav d-flex flex-row">
@@ -49,25 +48,25 @@
             <span id="cartCount" class="cart-count">0</span> <!-- This is the cart count indicator -->
           </div>
         </li>
+
+
       </ul>
     </div>
   </nav>
 
 
+  <!-- Home Image -->
+  <div class="home">
+    <img src="images/Home.webp" alt="">
+  </div>
+
+<div class="menus-name"></div>
 
   <!-- Home Section -->
   <div class="container-fluid ">
     <div class="row">
       <div class="col-12">
         <div class="dashboard">
-          <!-- Slider Code -->
-          <div class="home">
-            <img src="images/home.jpg" alt="">
-          </div>
-         
-          <div class="menus-name">
-          </div>
-
           <!-- Search Input Field -->
           <div class="search">
             <div class="search-box">
@@ -77,8 +76,8 @@
               </button>
             </div>
           </div>
-
-          <div id="no-items-message" style="display: none; font-size:xx-large; text-align: center;">No items found</div>
+          <!-- No item Found Message -->
+          <div id="no-items-message" style="display: none; font-size:xx-large; text-align: center;">No items found</div>
 
           <!--Card Items -->
           <div class="item-content">
@@ -88,7 +87,10 @@
     </div>
   </div>
 
-<!-- question section -->
+
+
+
+  <!-- question section -->
   <div class="container shadow p-5 mt-5 question" style="background-color: rgb(255,203,0);">
     <h1 class="text-center fw-bold">Finest Taste Ever</h1>
     <div class=" mt-4 accordion  accordion-flush" id="accordionFlushExample">
@@ -104,7 +106,7 @@
           data-bs-parent="#accordionFlushExample">
           <div class="accordion-body bg-dark">
             <p class="text-white">
-              Indulge in a diverse menu, ranging from hearty platters to mouthwatering sandwiches and 
+              Indulge in a diverse menu, ranging from hearty platters to mouthwatering sandwiches and
               a variety of refreshing beverages to complement your meal.
               Even if at midnight you crave for something super delicious,
               just look up for us and we'll help fill your tummy with food that is finger-licking good.
@@ -124,9 +126,12 @@
           data-bs-parent="#accordionFlushExample">
           <div class="accordion-body bg-dark">
             <p class="text-white">
-              We offer an extensive and diverse menu, thoughtfully designed to cater to various preferences. From delectable platters 
-              that encourage shared enjoyment to mouthwatering sandwiches that cater to individual tastes, we have something for everyone.
-              Each food is a masterpiece, carefully crafted with the finest and freshest ingredients to delight your taste buds.
+              We offer an extensive and diverse menu, thoughtfully designed to cater to various preferences. From
+              delectable platters
+              that encourage shared enjoyment to mouthwatering sandwiches that cater to individual tastes, we have
+              something for everyone.
+              Each food is a masterpiece, carefully crafted with the finest and freshest ingredients to delight your
+              taste buds.
             </p>
           </div>
         </div>
@@ -154,7 +159,16 @@
 
   <!-- Burger overlay -->
   <div class="overlay-items">
-</div>
+  </div>
+  
+  <!-- Location Overlay -->
+  <!-- <div class="overlay-location" id="overlay-location">
+    <div class="l-overlay-content">
+        <h2 class="overlay-heading">Please Select your location</h2>
+        <input type="text" class="overlay-input" placeholder="Cairo,Egypt" id="location-input">
+        <button class="overlay-select" id="select-button">Select</button>
+    </div>
+</div> -->
 
 
   <!-- Login Overlay -->
@@ -182,15 +196,7 @@
       <button class="close-button" onclick="closeoverlay()">X</button>
       <h3>Accelerate Your Journey</h3>
       <p>Join Our Driver Careers</p>
-      <a href="dlogin.html" class="login-button">Login</a>
-      <div class="hr-container mt-4">
-        <hr class="left-hr">
-        <span class="or-text">OR</span>
-        <hr class="right-hr">
-      </div>
-      <!-- signup form link -->
-      <a href="dsignup.html" class="signup-button mt-4">Signup</a>
-
+      <a href="driver.html" class="signup-button mt-4">Apply Now</a>
     </div>
   </div>
 
@@ -198,42 +204,52 @@
   <!-- Footer -->
   <div class="container mt-5 shadow p-4 mb-4 foot">
     <div class="row g-4">
-      <div class="col-md-4  ">
-        <h3 class="fw-bold text-center ">Contact</h3>
-        <div class="text-center "> <span class="space"></span><i class="fa-solid fa-house house"></i> &nbsp;Business Park New Capital</div>
-        <div class="text-center mt-3"><a href="tel:+201155997999" ><i class="fa-solid fa-phone "></i> &nbsp;+20 115 599
-            7999</div></a>
-        <div class="text-center mt-3"><a href="mailto:mgrtal9@gmail.com"> <span class="space1"></span><i class="fa-solid fa-envelope"></i>
+      <div class="col-md-4 contact">
+        <h3 class="fw-bold text-center">Contact Us</h3>
+        <div class="text-center mt-3"> <span class="space"></span><i class="fa-solid fa-house house"></i> &nbsp;Business
+          Park New Capital</div>
+        <div class="text-center mt-3"><a href="mailto:mgrtal9@gmail.com"> <span class="space1"></span><i
+              class="fa-solid fa-envelope"></i>
             &nbsp;tmha@gmail.com</a></div>
+            <div class="text-center mt-3"><a href="tel:+201155997999"><i class="fa-solid fa-phone "></i> &nbsp;+20 115 599
+              7999</div></a>
 
       </div>
-      <div class="col-md-4 ">
+      <div class="col-md-4 timing">
         <div>
           <h3 class="fw-bold text-center ">Our Timing</h3>
-          <p class="text-center monday">Monday - Sunday <br> <span>10:00 - 23:00</span></p>
+          <p class="text-center monday">Monday - Sunday</p>
+          <p class="time">10:00 - 23:00</p>
         </div>
 
       </div>
       <div class="col-md-4">
         <h3 class=" text-center mt-0 fw-bold">Follow Us</h3>
         <div class=" text-center social_link">
-          <a href="#"><i class="fa-brands text-dark fa-facebook-f m-4"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter text-dark m-4"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram text-dark m-4"></i></a>
+          <a href="#"><i class="fa-brands text-dark fa-facebook-f m-3"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter text-dark m-3"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram text-dark m-3"></i></a>
         </div>
 
       </div>
       <div class="fw-bold  border border-1 border-dark"></div>
-    <a href="https://ahmnonymous.netlify.app" target="_blank">  <p class="copyright text-center">&copy; 2023 Powered By <span class="fw-bold"
-          style="text-decoration: underline;">Ahmed & Ali Co.</span></p></a>
+      <a href="https://ahmnonymous.netlify.app" target="_blank">
+        <p class="copyright text-center">&copy; 2023 Powered By <span class="fw-bold"
+            style="text-decoration: underline;">Ahmed & Ali Co.</span></p>
+      </a>
     </div>
   </div>
 
-  <script src="js/script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+
+</body>
+<script src="js/script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
   integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
   crossorigin="anonymous"></script>
-  <script src="add_to_cart.js"></script>
+<script src="add_to_cart.js"></script>
+
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
   $(document).ready(function() {
@@ -279,5 +295,110 @@
   });  
   });
 </script>
-</body>
+
+<script>
+
+function setLocalStorageItem(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (e) {
+    console.error('Local storage is not supported by this browser.');
+  }
+}
+
+  document.querySelector('.overlay-select').addEventListener('click', function () {
+    let inputs = document.querySelectorAll('.overlay-input');
+    let filled = true;
+
+    inputs.forEach(input => {
+      if (input.value.trim() === '') {
+        filled = false;
+      }
+    });
+
+    if (!filled) {
+      alert("Please enter your location first.");
+    } else {
+      document.getElementById('overlay-location').style.display = 'none';
+      document.querySelector('.overlay-select').classList.add('valid');
+    }
+  });
+
+  document.querySelectorAll('.overlay-input').forEach(input => {
+    input.addEventListener('input', function () {
+      let allInputsFilled = true;
+
+      document.querySelectorAll('.overlay-input').forEach(input => {
+        if (input.value.trim() === '') {
+          allInputsFilled = false;
+        }
+      });
+
+      if (allInputsFilled) {
+        document.querySelector('.overlay-select').classList.add('valid');
+      } else {
+        document.querySelector('.overlay-select').classList.remove('valid');
+      }
+    });
+  });
+
+  function reverseGeocode(latitude, longitude, callback) {
+    var geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(latitude, longitude);
+
+    geocoder.geocode({ 'latLng': latlng }, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+                callback(results[0].formatted_address);
+            } else {
+                callback("Location not found");
+            }
+        } else {
+            callback("Geocoder failed due to: " + status);
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  var hasLocationOverlayShown = localStorage.getItem("locationOverlayShown");
+  if (hasLocationOverlayShown !== "true") { 
+  if ("geolocation" in navigator) {
+    var locationInput = document.getElementById("location-input");
+    var overlay = document.getElementById("overlay-location");
+    var selectButton = document.getElementById("select-button");
+
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        console.log("Latitude:", latitude);
+        console.log("Longitude:", longitude);
+
+        reverseGeocode(latitude, longitude, function(formattedLocation) {
+          console.log("Formatted Location:", formattedLocation);
+          locationInput.value = formattedLocation;
+          overlay.style.display = "block";
+        });
+      },
+      function(error) {
+        console.error("Error getting location:", error);
+        overlay.style.display = "block";
+      }
+    );
+
+    selectButton.addEventListener("click", function() {
+      overlay.style.display = "none";
+    });
+  } else {
+    console.error("Geolocation is not supported by this browser.");
+    // You might want to set a default value for locationInput here
+  }
+}
+});
+
+</script>
+
+
+
 </html>
