@@ -30,7 +30,7 @@
         <div class="container-fluid">
 
             <div class="owner">
-                <img src="/images/logo.webp" alt="user image" class="T">
+                <!-- <img src="/images/logo.webp" alt="user image" class="T"> -->
                 <a class="navbar-brand m-2 ms-4 text-dark logo" href="">MENU</a>
             </div>
             <ul class="list-unstyled">
@@ -71,7 +71,7 @@
                 <td>Yes</td>
                 <td>
                     <span class="action-icons">
-                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Update" onclick="openOverlay('MenuOverlay')">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
                     </span>
                 </td>
@@ -86,10 +86,11 @@
                 <td>No</td>
                 <td>
                     <span class="action-icons">
-                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Update" onclick="openOverlay('MenuOverlay')">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
                     </span>
-                </td>            </tr>
+                </td>
+            </tr>
             <tr>
                 <td>#3</td>
                 <td>
@@ -100,10 +101,11 @@
                 <td>Yes</td>
                 <td>
                     <span class="action-icons">
-                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Update" onclick="openOverlay('MenuOverlay')">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
                     </span>
-                </td>            </tr>
+                </td>
+            </tr>
         </tbody>
     </table>
 
@@ -150,7 +152,7 @@
                 <td>Yes</td>
                 <td>
                     <span class="action-icons">
-                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Update" onclick="openOverlay('update-overlay')">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
                     </span>
                 </td>
@@ -165,7 +167,7 @@
                 <td>Yes</td>
                 <td>
                     <span class="action-icons">
-                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Update" onclick="openOverlay('update-overlay')">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
                     </span>
                 </td>
@@ -180,7 +182,7 @@
                 <td>Yes</td>
                 <td>
                     <span class="action-icons">
-                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Update" onclick="openOverlay('update-overlay')">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
                     </span>
                 </td>
@@ -265,12 +267,28 @@
             </tr>
         </tbody>
     </table>
-    
 
+<!-- Menu Overlay -->
 
+<div id="MenuOverlay" class="menu-overlay">
+    <div class="menu-overlay-content">
+        <span class="menu-close-btn" onclick="closeOverlay('MenuOverlay')">&times;</span>
+
+        <h3 class="text-center">Update Menu</h3>
+        <form id="update-form" action="">
+            <input type="text" id="toppingName" placeholder="Name">
+            <select id="menuAvailability">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <button class="update" type="button" onclick="updateItem('empty','Successfully Updated!')">Update</button>
+        </form>      
+    </div>
+</div>
+    <!-- Overlay for Items -->
     <div id="update-overlay" class="menu-overlay">
         <div class="menu-overlay-content">
-            <span class="menu-close-btn" onclick="closeOverlay()">&times;</span>
+            <span class="menu-close-btn" onclick="closeOverlay('update-overlay')">&times;</span>
             <h2 class="text-center">Update Item </h2>
             <form id="update-form">
                 <input type="text" id="update-item-name" placeholder="Name">
@@ -283,8 +301,47 @@
                 <input type="text" id="update-item-description" placeholder="Description">
                 <input type="text" id="update-item-price" placeholder="Price">
                 <input type="file" id="update-item-image" accept="image/*">
-                <button type="button" onclick="updateItem()">Update</button>
+                <select id="itemAvailability">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <button type="button" onclick="updateItem('empty','Successfully Updated!')">Update</button>
             </form>
+        </div>
+    </div>
+    <!-- Overlay for Topping -->
+    <div id="toppingOverlay" class="menu-overlay">
+        <div class="menu-overlay-content">
+            <span class="menu-close-btn" onclick="closeOverlay('toppingOverlay')">&times;</span>
+
+            <h3 class="text-center">Update Topping</h3>
+            <form id="update-form" action="">
+                <input type="text" id="toppingName" placeholder="Name">
+                <input type="number" id="toppingPrice" placeholder="Price">
+                <select id="toppingAvailability">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </form>
+            <div class="toppingbtn">
+                <button class="update" onclick="addTopping()">Add</button>
+                <button class="update" onclick="closeOverlay('toppingOverlay')">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <!-- Delete Overlay -->
+    <div id="deleteOverlay" class="overlay">
+        <div class="overlay-content">
+            <h3 class="text-center">Delete Item</h2>
+                <p class="text-center">Do you want to delete this item?</p>
+                <div class="deletebtn">
+                    <button class="update" onclick="deleteConfirmed()">Yes</button>
+                    <button class="update" onclick="closeOverlay('deleteOverlay')">No</button>
+                </div>
         </div>
     </div>
 

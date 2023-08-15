@@ -48,22 +48,21 @@ body {
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
+  width: 230px !important;
+
   z-index: 9999;
 }
 
 .updatealert {
   top: 19% !important;
-
 }
 
 .privileg {
-  top: 35% !important;
+  top: 42% !important;
 
 }
-
 .empty {
   background-color: rgba(0, 0, 0, 1) !important;
-
 }
 
 /* Hr line */
@@ -668,10 +667,9 @@ section {
     cursor: pointer;
   }
 
-.add-item-container input[type="file"]
-{
-  width: 230px;
-}
+  .add-item-container input[type="file"] {
+    width: 230px;
+  }
 
 
 
@@ -697,7 +695,7 @@ section {
     margin: 15px 0px 0px 0px;
   }
 
-  
+
 
 
 }
@@ -1267,7 +1265,7 @@ h1 {
   border: 1px solid grey;
   background-color: rgb(255, 255, 255);
   margin: 5px 0px 0px 10px;
-  width: 165px;
+  width: 180px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -1924,6 +1922,29 @@ textarea::placeholder {
   cursor: pointer;
 }
 
+.toppingbtn {
+  display: flex;
+  align-items: center;
+  padding: 10px 8px;
+  justify-content: space-around;
+  margin: 10px 0px 0px 0px;
+}
+.deletebtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -20px 5px 5px 5px;
+}
+.deletebtn button{
+  margin: 10px;
+  width: 50px;
+}
+
+#menuAvailability,#toppingAvailability {
+  width: 14.6rem;
+  margin: 5px 0px 0px 10px;
+  padding: 4px 4px;
+}
 
 
 
@@ -1980,11 +2001,14 @@ thead {
 table th,
 table td {
   border-bottom: 1px solid var(--border-color);
-  padding: 20px 20px;
+  padding: 20px 15px;
+}
+table th{
+  text-align: left !important;
 }
 
 table td {
-  text-align: center;
+  text-align: left !important; 
 }
 
 @media (max-width: 768px) {
@@ -2172,6 +2196,7 @@ table td {
 }
 
 #update-form input,
+#itemAvailability,
 .add-item-container input {
   padding: 5px 14px;
   border: 1px solid #ccc;

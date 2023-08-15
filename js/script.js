@@ -180,23 +180,6 @@ function status(event){
   }, 2000);
 }
 
-function privileg(event){
-  event.preventDefault();
-
-  // Create the alert message element
-  const alertMessage = document.createElement('div');
-  alertMessage.className = 'privileg';
-  alertMessage.textContent = 'Successfully Updated!';
-  document.body.appendChild(alertMessage);
-
-  // Show the alert message
-  alertMessage.style.display = 'block';
-
-  // Hide the alert after 2 seconds
-  setTimeout(function () {
-    alertMessage.style.display = 'none';
-  }, 2000);
-}
 
 
 function show() {
@@ -220,21 +203,13 @@ show();
 
 
 
-function openOverlay() {
-  document.getElementById("update-overlay").style.display = "block";
-}
 
-function closeOverlay() {
-  document.getElementById("update-overlay").style.display = "none";
-}
-
-
-function updateItem() {
+function updateItem(clas,msg) {
   event.preventDefault();
 
   const alertMessage = document.createElement('div');
-  alertMessage.className = 'empty';
-  alertMessage.textContent = 'Successfully Updated!';
+  alertMessage.className = clas;
+  alertMessage.textContent = msg;
   document.body.appendChild(alertMessage);
   alertMessage.style.display = 'block';
 
@@ -243,11 +218,139 @@ function updateItem() {
   }, 2000);
 
   closeOverlay();
-  closetoppingOverlay();
 }
 
 
 
+function toppingOverlay() {
+  openOverlay('toppingOverlay');
+}
+
+function deleteItem() {
+  openOverlay('deleteOverlay');
+}
+
+function openOverlay(overlayId) {
+  document.getElementById(overlayId).style.display = 'block';
+}
+function closeOverlay(overlayId) {
+  document.getElementById(overlayId).style.display = 'none';
+}
+function addTopping() {
+  closeOverlay('toppingOverlay');
+}
+
+function deleteConfirmed() {
+  
+  closeOverlay('deleteOverlay');
+}
+
+
+
+
+
+// Code For Live Location of User.
+
+
+function setLocalStorageItem(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (e) {
+    console.error('Local storage is not supported by this browser.');
+  }
+}
+
+  document.querySelector('.overlay-select').addEventListener('click', function () {
+    let inputs = document.querySelectorAll('.overlay-input');
+    let filled = true;
+
+    inputs.forEach(input => {
+      if (input.value.trim() === '') {
+        filled = false;
+      }
+    });
+
+    if (!filled) {
+      alert("Please enter your location first.");
+    } else {
+      document.getElementById('overlay-location').style.display = 'none';
+      document.querySelector('.overlay-select').classList.add('valid');
+    }
+  });
+
+  document.querySelectorAll('.overlay-input').forEach(input => {
+    input.addEventListener('input', function () {
+      let allInputsFilled = true;
+
+      document.querySelectorAll('.overlay-input').forEach(input => {
+        if (input.value.trim() === '') {
+          allInputsFilled = false;
+        }
+      });
+
+      if (allInputsFilled) {
+        document.querySelector('.overlay-select').classList.add('valid');
+      } else {
+        document.querySelector('.overlay-select').classList.remove('valid');
+      }
+    });
+  });
+
+
+  function reverseGeocode(latitude, longitude, callback) {
+    var geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(latitude, longitude);
+
+    geocoder.geocode({ 'latLng': latlng }, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+                callback(results[0].formatted_address);
+            } else {
+                callback("Location not found");
+            }
+        } else {
+            callback("Geocoder failed due to: " + status);
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  var hasLocationOverlayShown = localStorage.getItem("locationOverlayShown");
+  if (hasLocationOverlayShown !== "true") { 
+  if ("geolocation" in navigator) {
+    var locationInput = document.getElementById("location-input");
+    var overlay = document.getElementById("overlay-location");
+    var selectButton = document.getElementById("select-button");
+
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        console.log("Latitude:", latitude);
+        console.log("Longitude:", longitude);
+
+        reverseGeocode(latitude, longitude, function(formattedLocation) {
+          console.log("Formatted Location:", formattedLocation);
+          locationInput.value = formattedLocation;
+          overlay.style.display = "block";
+        });
+      },
+      function(error) {
+        console.error("Error getting location:", error);
+        overlay.style.display = "block";
+      }
+    );
+
+    selectButton.addEventListener("click", function() {
+      overlay.style.display = "none";
+    });
+  } else {
+    console.error("Geolocation is not supported by this browser.");
+    // You might want to set a default value for locationInput here
+  }
+}
+});
 
 
 
