@@ -61,6 +61,7 @@ body {
   top: 42% !important;
 
 }
+
 .empty {
   background-color: rgba(0, 0, 0, 1) !important;
 }
@@ -1929,18 +1930,21 @@ textarea::placeholder {
   justify-content: space-around;
   margin: 10px 0px 0px 0px;
 }
-.deletebtn{
+
+.deletebtn {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: -20px 5px 5px 5px;
 }
-.deletebtn button{
+
+.deletebtn button {
   margin: 10px;
   width: 50px;
 }
 
-#menuAvailability,#toppingAvailability {
+#menuAvailability,
+#toppingAvailability {
   width: 14.6rem;
   margin: 5px 0px 0px 10px;
   padding: 4px 4px;
@@ -2003,12 +2007,13 @@ table td {
   border-bottom: 1px solid var(--border-color);
   padding: 20px 15px;
 }
-table th{
+
+table th {
   text-align: left !important;
 }
 
 table td {
-  text-align: left !important; 
+  text-align: left !important;
 }
 
 @media (max-width: 768px) {
@@ -2399,4 +2404,85 @@ a .back {
   display: block;
   text-align: center;
 
+}
+
+
+/* OTP */
+.OTP {
+  width: 400px;
+  height: auto;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.OTP h4 {
+  font-size: 20px;
+  color: #121212;
+}
+
+.otpform {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.input_field_box {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input_field_box input {
+  border: none;
+  max-width: 15%;
+  height: 60px;
+  text-align: center;
+  border-radius: 5px;
+  background: #f0f0f0;
+  font-size: 25px;
+}
+
+.input_field_box input:focus {
+  outline: 1.5px solid #00b991;
+  outline-offset: 2px;
+}
+
+.otpform .otpbtn {
+  margin-top: 25px;
+  width: 92%;
+  color: #525252;
+  font-size: 16px;
+  padding: 10px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #e9d585;
+  transition: all 0.2s ease;
+}
+
+.otpform .otpbtn.active {
+  background: #ffcc00;
+  pointer-events: auto;
+  color: #000000;
+}
+.otpbtn:hover{
+  cursor: pointer;
+  background-color: rgb(255, 203, 0);
+  color: black;
+}
+
+
+.input_field_box input::-webkit-inner-spin-button,
+.input_field_box input::-webkit-inner-outer-button {
+  display: none;
 }
