@@ -36,19 +36,19 @@
         </div>
         <ul class="list-unstyled">
             <li class="nav-item me-3 me-lg-0" title="Login/Signup">
-                <a class="nav-link text-dark" href="#"><i class="fas fa-user ms-4 use"></i></a>
+                <a class="nav-link text-dark user" href="#"><i class="fas fa-user ms-4 use"></i></a>
             </li>
         </ul>
     </div>
 </nav>
 
-<a href="dadmin.html"><button class="back"> <i class="fas fa-arrow-left back-icon me-2"></i>Back to Dashboard</button></a>
+<a href="dadmin.html"><button class="back"> <i class="fas fa-arrow-left back-icon me-2"></i> Dashboard</button></a>
 
   <table class="ordertable">
     <thead>
       <tr>
-        <th>ORDER ID</th>
-        <th>ORDER STATUS</th>
+        <th>ID</th>
+        <th>STATUS</th>
         <th>UPDATE</th>
       </tr>
     </thead>
@@ -61,7 +61,7 @@
           </span>
         </td>
         <td>
-          <button class="update" id="showOverlay" onclick="show()">Update Status</button>
+          <button class="update" id="showOverlay" onclick="show()">Status</button>
         </td>
       </tr>
       <tr>
@@ -72,7 +72,7 @@
           </span>
         </td>
         <td>
-          <button class="update" id="showOverlay" onclick="show()">Update Status</button>
+          <button class="update" id="showOverlay" onclick="show()"> Status</button>
         </td>
       </tr>
       <tr>
@@ -83,7 +83,7 @@
           </span>
         </td>
         <td>
-          <button class="update" id="showOverlay" onclick="show()">Update Status</button>
+          <button class="update" id="showOverlay" onclick="show()"> Status</button>
         </td>
       </tr>
       <tr>
@@ -94,7 +94,7 @@
           </span>
         </td>
         <td>
-          <button class="update" id="showOverlay" onclick="show()">Update Status</button>
+          <button class="update" id="showOverlay" onclick="show()"> Status</button>
         </td>
       </tr>
       <tr>
@@ -105,7 +105,7 @@
           </span>
         </td>
         <td>
-          <button class="update" id="showOverlay" onclick="show()">Update Status</button>
+          <button class="update" id="showOverlay" onclick="show()"> Status</button>
         </td>
       </tr>
     </tbody>
@@ -113,7 +113,7 @@
 
   <div class="orderoverlay" id="orderoverlay">
     <div class="order-overlay-content">
-      <h2>Update Status</h2>
+      <h2> Status</h2>
       <div class="overlaycontainer">
         <select id="status">
           <option value="Ready">Ready</option>

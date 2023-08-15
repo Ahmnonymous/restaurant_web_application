@@ -5,7 +5,6 @@
   outline: none;
   box-sizing: border-box;
   transition: all 0.3s ease-in;
-  /* Added smooth transition to all properties */
 }
 
 html {
@@ -36,8 +35,10 @@ body {
   --maincolor: rgb(255, 203, 4);
 }
 
-
-.alert {
+.alert,
+.empty,
+.privileg,
+.updatealert {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -51,50 +52,21 @@ body {
 }
 
 .updatealert {
-  position: fixed;
-  top: 19%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  z-index: 9999;
+  top: 19% !important;
 
 }
 
 .privileg {
-  position: fixed;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  z-index: 9999;
+  top: 35% !important;
 
 }
 
 .empty {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 1);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  z-index: 9999;
+  background-color: rgba(0, 0, 0, 1) !important;
+
 }
 
-
-
-
-
+/* Hr line */
 .Line {
   border: 1px solid var(--maincolor) !important;
   width: 100% !important;
@@ -106,13 +78,11 @@ body {
   background-color: rgb(255, 203, 4);
   border-radius: 5px;
   transition: width 0.3s ease;
-  /* Added smooth transition to scrollbar width */
 }
 
 section {
   padding: 2rem 7%;
   transition: padding 0.3s ease;
-  /* Added smooth transition to padding */
 }
 
 .navbar {
@@ -124,19 +94,14 @@ section {
   font-size: 30px;
 }
 
-/* .navbar-nav .nav-link:last-child {
-  margin-right: 50px;
-} */
 .navbar-nav .nav-link {
   font-size: 22px;
 }
 
-.navbar ul li i {
+.navbar ul .user i {
   font-size: 30px;
   margin: 10px 40px 0px 0px;
 }
-
-
 
 .cart-icon-container {
   position: relative;
@@ -204,25 +169,6 @@ section {
   color: #777;
 }
 
-
-/* Media query for responsive design */
-@media screen and (max-width: 600px) {
-  .search-box {
-    width: 80%;
-  }
-
-  .search-box input[type="text"]:focus {
-    width: 100%;
-  }
-
-}
-
-.highlighted {
-  background-color: rgb(235, 195, 35);
-  font-weight: bold;
-  transition: all 0.3s ease;
-  /* Added smooth transition to all properties */
-}
 
 /* Slider on home page */
 .home {
@@ -301,7 +247,6 @@ section {
   transition: all 0.3s ease;
 }
 
-
 .dashboard-menu .menu-btn.active,
 .dashboard-menu .menu-btn:hover {
   font-weight: bold;
@@ -309,18 +254,14 @@ section {
   color: #000;
 }
 
-
 .menu-container::-webkit-scrollbar {
   width: 5px;
-  /* Set the width of the scrollbar */
   height: 11px;
 }
 
 .menu-container::-webkit-scrollbar-thumb:horizontal {
   background-color: #888;
-  /* Set the color of the scrollbar thumb */
   border-radius: 25px;
-  /* Set the border radius of the scrollbar thumb */
 }
 
 
@@ -355,10 +296,6 @@ section {
   border: 1px solid black;
   transition: all 0.3s ease;
 }
-
-
-
-
 
 
 /* Media Queries */
@@ -399,7 +336,6 @@ section {
   .menu-container {
     margin-left: 28px;
     width: calc(6 * (150px + 40px));
-    /* (button width + gap) * number of buttons */
   }
 
   .home img {
@@ -418,10 +354,8 @@ section {
   .menu-container {
     margin-left: 0px;
     width: calc(6 * (150px + 40px));
-    /* (button width + gap) * number of buttons */
   }
 }
-
 
 /* 1300 Width */
 @media (max-width: 1300px) {
@@ -445,8 +379,6 @@ section {
     margin-left: 110px;
     width: 1060px;
   }
-
-
 }
 
 @media (max-width: 1200px) {
@@ -530,9 +462,7 @@ section {
   .menu-container {
     margin-left: 20px;
     padding-left: 0;
-    /* Reset the left padding */
     width: calc(4 * (130px + 20px));
-    /* (button width + gap) * number of buttons */
   }
 
   .home img {
@@ -578,7 +508,6 @@ section {
 }
 
 @media (max-width: 700px) {
-
   .home img {
     margin-left: 40px;
     width: 550px;
@@ -587,7 +516,6 @@ section {
   .menu-container {
     margin-left: 0px;
     width: calc(3 * (140px + 40px));
-    /* (button width + gap) * number of buttons */
   }
 }
 
@@ -600,19 +528,23 @@ section {
 
   .menu-container {
     flex-wrap: wrap;
-    /* Allow wrapping of buttons */
     justify-content: flex-start;
-    /* Start from the beginning */
     overflow-x: auto;
     padding-left: 0;
-    /* Reset the left padding */
     width: calc(2 * (170px + 50px));
-    /* (button width + gap) * number of buttons */
   }
 
   .home img {
     width: 450px;
     margin-left: 50px;
+  }
+
+  .search-box {
+    width: 80%;
+  }
+
+  .search-box input[type="text"]:focus {
+    width: 100%;
   }
 }
 
@@ -633,7 +565,6 @@ section {
     margin-left: -2px;
     width: calc(2 * (140px + 30px));
     /* (button width + gap) * number of buttons */
-
   }
 
   .home img {
@@ -641,20 +572,8 @@ section {
     width: 330px;
   }
 
-  .question {
-    width: 360px;
-  }
-
   .overlay-container .overlay-content {
     width: 300px;
-  }
-
-  .container .center-wrapper {
-    margin-top: 30px;
-  }
-
-  .container .center-wrapper .container button {
-    margin-top: 10px;
   }
 
   .search {
@@ -667,6 +586,11 @@ section {
 
   .empty {
     width: 200px;
+  }
+
+  .privileg,
+  .updatealert {
+    width: 220px;
   }
 
   .account a {
@@ -686,14 +610,10 @@ section {
     margin-top: -4px !important;
   }
 
-
-
   .Cart .Cart-detail .price {
     display: flex;
     flex-direction: row;
   }
-
-
 
   .button-group-new {
     display: flex;
@@ -705,23 +625,54 @@ section {
     margin-bottom: 10px;
   }
 
+  .navbar ul .user i {
+    font-size: 27px;
+    margin: 10px 0px 0px 0px;
+  }
 
+  .navbar .owner .p {
+    font-size: 25px;
+  }
 
+  .navbar .owner .t {
+    margin: 5px 0px 0px 0px;
+  }
 
+  .container .box h3 {
+    margin: 0;
+    font-size: 34px;
+  }
 
+  .container .icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
 
+  .add-item-container #Category {
+    height: 2rem;
+    width: 14.5rem;
+    margin-top: 5px;
+    margin-bottom: 7px;
 
+  }
 
+  .menu-overlay-content {
+    width: 90%;
+  }
 
-
+  .menu-overlay .menu-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 30px;
+    cursor: pointer;
+  }
 
 }
 
 @media (max-width:400px) {
   .menu-container {
     width: calc(2 * (120px + 20px));
-    /* (button width + gap) * number of buttons */
-
   }
 
   .home img {
@@ -733,7 +684,10 @@ section {
     margin-left: 11px;
   }
 
-
+  .navbar ul .user i {
+    font-size: 30px;
+    margin: 15px 0px 0px 0px;
+  }
 }
 
 @media (max-width: 300px) {
@@ -754,20 +708,9 @@ section {
     margin-left: -20px;
   }
 
-  .question {
-    width: 260px;
-    margin-left: -10px;
-  }
-
   .search {
     margin-left: -20px;
   }
-
-  .foot {
-    width: 260px;
-    margin-left: -10px;
-  }
-
 
   .account {
     margin-left: -50px;
@@ -779,9 +722,6 @@ section {
   }
 
 }
-
-
-/* */
 
 .dashboard-card:hover {
   border: 2px solid var(--maincolor);
@@ -835,7 +775,6 @@ section {
 
 
 /* Add to Cart Button */
-
 .see-detail {
   position: absolute;
   bottom: 8%;
@@ -854,6 +793,7 @@ section {
   /* Added smooth transition to all properties */
 }
 
+/* Index Add to cart overlay button */
 .btn.add-to-cart-btn {
   position: relative;
   left: 50%;
@@ -868,7 +808,6 @@ section {
   color: white;
   font-weight: 700;
   transition: all 0.3s ease;
-  /* Added smooth transition to all properties */
 }
 
 
@@ -888,37 +827,8 @@ section {
   background-color: #f3f85e;
 }
 
-/*   Cart Icon Container Code */
-.cart-container {
-  position: relative;
-}
 
-.cart-icon {
-  cursor: pointer;
-  position: relative;
-  transition: all 0.3s ease;
-  /* Added smooth transition to all properties */
-}
-
-.cart-icon::after {
-  content: attr(data-count);
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: red;
-  color: white;
-  font-size: 12px;
-  transition: all 0.3s ease;
-  /* Added smooth transition to all properties */
-}
-
-
+/* Ancher Tag css */
 a {
   text-decoration: none;
   color: unset;
@@ -1053,7 +963,6 @@ h5 {
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   transition: all 0.3s ease;
-  /* Added smooth transition to all properties */
 }
 
 .overlay-content p {
@@ -1082,29 +991,6 @@ h5 {
 }
 
 
-
-
-
-
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(8px);
-  /* Added backdrop-filter property to blur the content behind the overlay */
-  z-index: 999;
-  /* Ensure the overlay appears on top of other elements */
-  transition: all 0.3s ease;
-  /* Added smooth transition to all properties */
-}
-
 /* Login Signup */
 
 .login-container {
@@ -1113,10 +999,8 @@ h5 {
   border-radius: 20px;
   text-align: center;
   transition: all 0.3s ease;
-  /* Added smooth transition to all properties */
   max-width: 400px;
   width: 90%;
-  /* Set the width to 90% to center-align the container */
   position: relative;
 }
 
@@ -1144,7 +1028,7 @@ h5 {
   /* Added smooth transition to all properties */
 }
 
-/* Hr Line */
+/* Hr Line index page login overlay */
 .hr-container {
   display: flex;
   align-items: center;
@@ -1159,20 +1043,20 @@ h5 {
   border-top: 1px solid #000;
   margin: 0 10px;
   transition: all 0.3s ease;
-  /* Added smooth transition to all properties */
 }
 
+/* OR on login Overlay */
 .or-text {
   font-weight: bold;
   transition: all 0.3s ease;
-  /* Added smooth transition to all properties */
   color: #999;
 }
 
 
 /* Buttons */
 .login-button,
-.signup-button {
+.signup-button,
+.address-btn {
   display: inline-block;
   padding: 10px 70px;
   background: rgb(212, 0, 0);
@@ -1188,19 +1072,10 @@ h5 {
 }
 
 .address-btn {
-  display: block;
-  padding: 8px 30px;
-  background: rgb(212, 0, 0);
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 25px;
-  border: none;
-  margin-top: 20px;
-  margin-left: 20px;
-  transition: background-color 0.3s ease;
-  font-size: 16px;
-
+  display: block !important;
+  padding: 8px 30px !important;
+  font-weight: bold !important;
+  margin-left: 20px !important;
 }
 
 .login-button:hover,
@@ -1250,6 +1125,7 @@ h1 {
   display: flex;
   align-items: center;
 }
+
 
 .form-group .input-group button {
   display: block;
@@ -1368,54 +1244,6 @@ h1 {
   color: black;
   transition: all 0.6 ease;
 }
-
-/* Address Page CSS */
-.addresses {
-  margin-left: 20px;
-  width: fit-content;
-  border: 1px solid lightgrey;
-  margin-top: 20px;
-}
-
-.addresses>h2 {
-  font-weight: bold;
-}
-
-.addresses>ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-
-
-.address-item {
-  display: flex;
-  margin-bottom: 10px;
-  counter-increment: address-counter;
-  font-size: 20px;
-}
-
-.address-item::before {
-  content: counter(address-counter);
-  margin-right: 10px;
-}
-
-.address-item div {
-  margin-left: 20px;
-}
-
-.delete-btn {
-  color: red;
-  cursor: pointer;
-}
-
-
-/* Update the existing CSS to use flexbox for both larger and smaller screens */
-
-/* Container */
-
-
 
 
 /* Cart Page CSS */
@@ -1556,14 +1384,7 @@ h1 {
   transition: background-color 0.3s ease;
 }
 
-
-
-
-
-
-
-
-/* Cart Div */
+/* Payment page CSS */
 .cart {
   flex: 1;
   background-color: rgb(255, 255, 255);
@@ -1614,7 +1435,6 @@ label {
   margin-bottom: 5px;
 }
 
-/* Payment Cart */
 .add-address-text {
   cursor: pointer;
   text-align: center;
@@ -1632,7 +1452,6 @@ label {
   min-height: 100px;
   margin-bottom: 20px;
   justify-content: space-between;
-  /* Align items vertically */
 }
 
 .address-payment-container {
@@ -1759,9 +1578,6 @@ label {
   transition: all 0.3s ease;
 }
 
-/* Payment  Css */
-
-
 .payment-method-new h2 {
   margin-bottom: 20px;
   font-size: 24px;
@@ -1828,7 +1644,6 @@ label {
 }
 
 
-/* Additional media query for smaller screens */
 @media screen and (max-width: 708px) {
   .container-grid {
     flex-direction: column;
@@ -1848,13 +1663,11 @@ label {
 
   .payment-image {
     margin-left: -210px;
-    /* Remove margin-top for the image */
   }
 
   .payment-detail {
     text-align: center;
     margin-top: 10px;
-    /* Add some spacing between image and details */
   }
 
 }
@@ -1873,11 +1686,8 @@ label {
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(8px);
-  /* Added backdrop-filter property to blur the content behind the overlay */
   z-index: 999;
-  /* Ensure the overlay appears on top of other elements */
   transition: all 0.3s ease;
-  /* Added smooth transition to all properties */
 }
 
 
@@ -2002,9 +1812,7 @@ textarea::placeholder {
   margin: auto;
 }
 
-.checkout button,
-.change,
-.set {
+.checkout button {
   background-color: rgb(255, 203, 0);
   display: block;
   margin: auto;
@@ -2025,19 +1833,14 @@ textarea::placeholder {
 }
 
 .checkout button:hover,
-.change:hover,
-.set:hover,
 #assignRole:hover,
-.items button:hover,
-.center-wrapper button:hover {
+.items button:hover {
   background-color: rgb(212, 0, 0);
   color: white;
   transition: all 0.5s ease-in;
 }
 
 .checkout button:focus,
-.change:focus,
-.set:focus,
 #assignRole:focus {
   outline: none;
 }
@@ -2045,8 +1848,6 @@ textarea::placeholder {
 .checkout button:active {
   background-color: rgb(255, 203, 0);
 }
-
-
 
 /* User Privileges */
 .user .box {
@@ -2070,6 +1871,10 @@ textarea::placeholder {
   flex-direction: column;
   align-items: center;
   margin: 0 1rem;
+}
+
+.input-group #role {
+  text-align: center;
 }
 
 .input-group label {
@@ -2113,10 +1918,45 @@ textarea::placeholder {
 /* Orders Screen */
 
 .ordertable {
-  width: 40%;
+  width: 35%;
   /* Reduced width of the table */
   margin: 50px auto;
   /* Align the table in the center */
+}
+
+.ordertable thead tr th {
+  text-align: center;
+}
+
+.action-icons {
+  display: flex;
+  text-align: center;
+}
+
+.action-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.Update {
+  color: #fff;
+  background-color: rgb(255, 203, 4);
+}
+
+.Update:hover {
+  color: black;
+}
+
+/* Style the "Delete" icon */
+.Delete {
+  color: #fff;
+  background-color: red;
+}
+
+.Delete:hover {
+  color: darkred;
 }
 
 tbody,
@@ -2124,10 +1964,15 @@ thead {
   border: 1px solid lightgrey;
 }
 
+
 table th,
 table td {
-  width: 13% !important;
-  padding: 18px 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 20px 25px;
+}
+
+table td {
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -2188,7 +2033,8 @@ table td {
   border-radius: 4px;
   margin-top: 0.5rem;
 }
-#overlay-category{
+
+#overlay-category {
   width: 95%;
   margin: 10px 0px 15px 10px;
   height: 2.5rem;
@@ -2208,25 +2054,12 @@ table td {
   width: 100%;
   max-width: 250px;
   padding: 0.2rem;
+  margin-left: -20px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-
-
-
-@media (max-width: 768px) {
-  .section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .input-group {
-    margin: 1rem 0;
-  }
-}
-
-/* Account */
+/* Account Link CSS on login pages */
 .account {
   display: flex;
   justify-content: space-between;
@@ -2242,8 +2075,7 @@ table td {
 
 }
 
-
-
+/* Overylays */
 .driver-overlay {
   position: fixed;
   top: 0;
@@ -2267,11 +2099,7 @@ table td {
 
 }
 
-
-
-
-/* Driver Acceptance */
-
+/* Driver Acceptance Page*/
 .acceptance-container {
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -2295,53 +2123,7 @@ table td {
   width: 450px;
 }
 
-
-
-/* Order Screen */
-.order-container {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 20px;
-  width: 700px;
-  display: block;
-  margin: auto;
-  background-color: #fff;
-}
-
-.order {
-  display: flex;
-  align-items: center;
-}
-
-.order-details {
-  flex-grow: 1;
-}
-
-.order-details h2 {
-  margin: 0;
-}
-
-.order-details button {
-  padding: 10px 20px;
-  margin-left: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#process-btn {
-  background-color: #4CAF50;
-  color: white;
-}
-
-#delivery-btn {
-  background-color: #f39c12;
-  color: white;
-}
-
-
-/* Menu */
-
+/* Menu Page */
 
 .add-category {
   display: flex;
@@ -2356,7 +2138,6 @@ table td {
   text-align: center;
 }
 
-/* Align input and button in a row */
 .add-category input {
   padding: 5px 14px;
   border: 1px solid #ccc;
@@ -2372,7 +2153,6 @@ table td {
   margin-top: 20px;
 }
 
-/* Center and align input fields in a row */
 .add-item-container {
   display: flex;
   justify-content: center;
@@ -2409,16 +2189,26 @@ table td {
   transition: background-color 0.3s ease;
 }
 
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .add-item-container {
     flex-direction: column;
     align-items: center;
   }
+
+  .section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-group {
+    margin: 1rem 0;
+  }
 }
 
 
-/*Menu */
+/*Menu Overlay for Items*/
 .menu-overlay {
   display: none;
   position: fixed;
@@ -2458,10 +2248,9 @@ table td {
 }
 
 
-/* Style the submit button on hover */
 
 
-
+/* Footer Section Styling */
 .monday {
   line-height: 30px;
 }
@@ -2485,6 +2274,8 @@ table td {
   margin-left: 0px;
 }
 
+
+
 /* Style for the map container */
 .map-container {
   width: 100%;
@@ -2494,7 +2285,6 @@ table td {
   align-items: center;
 }
 
-/* Style for the map itself */
 #map {
   width: 80%;
   height: 80%;
@@ -2504,8 +2294,8 @@ table td {
 
 
 
-
-.container {
+/* Admin  Dashboard Page CSS */
+.dashBoard {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -2557,6 +2347,7 @@ table td {
   }
 }
 
+/* For  Back Button on the Admin Pages */
 a .back {
   display: flex;
   align-items: center;

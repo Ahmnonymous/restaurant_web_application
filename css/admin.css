@@ -32,39 +32,6 @@
     display: inline-block;
   }
   
-  .sidebar {
-    background-color: var(--box-bg);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: var(--sidebar-size);
-    height: 100vh;
-    box-shadow: var(--shadow);
-    overflow-y: auto;
-  }
-  
-  .dark .sidebar {
-    border-right: 2px solid var(--border-color);
-  }
-  
-  .sidebar-logo {
-    height: var(--sidebar-logo-size);
-    position: relative;
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-  }
-  
-  .sidebar-logo img {
-    height: var(--sidebar-logo-img-size);
-    max-width: 100%;
-  }
-  
-  .sidebar-close {
-    display: none;
-  }
-  
   
   
   .sidebar-user-name {
@@ -109,132 +76,6 @@
   .sidebar-menu {
     padding: 10px 0;
     list-style-type: none;
-  }
-  
-  .sidebar-menu > li > a {
-    width: 100%;
-    padding: 15px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: capitalize;
-    transition: color 0.2s ease-in-out;
-  }
-  
-  .sidebar-menu > li > a.active {
-    background-color: var(--menu-item-active-bg);
-    color: var(--main-color);
-    border-right: 4px solid var(--main-color);
-  }
-  
-  .sidebar-menu > li > a:hover {
-    color: var(--main-color);
-  }
-  
-  .sidebar-menu > li > a > i {
-    font-size: 1.5rem;
-    margin-right: 10px;
-  }
-  
-  .sidebar-menu-dropdown {
-    position: relative;
-  }
-  
-  .sidebar-menu-dropdown .dropdown-icon {
-    position: absolute;
-    right: 15px;
-  }
-  
-  .dropdown-icon {
-    --size: 15px;
-    --color: var(--text-color);
-    height: var(--size);
-    width: var(--size);
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .dropdown-icon::after,
-  .dropdown-icon::before {
-    --height: 2px;
-    content: "";
-    width: 50%;
-    height: var(--height);
-    border-radius: 2.5px;
-    position: absolute;
-    top: calc(50% - var(--height) / 2);
-    background-color: var(--color);
-    transition: transform 0.3s ease;
-  }
-  
-  .dropdown-icon::before {
-    left: calc(50% - var(--height) / 3);
-    transform-origin: center left;
-    transform: rotate(-45deg);
-  }
-  
-  .dropdown-icon::after {
-    right: calc(50% - var(--height) / 3);
-    transform-origin: right;
-    transform: rotate(45deg);
-  }
-  
-  .dropdown-icon.active::before {
-    transform: rotate(45deg);
-  }
-  
-  .dropdown-icon.active::after {
-    transform: rotate(-45deg);
-  }
-  
-  .sidebar-menu > li > a:hover > .dropdown-icon {
-    --color: var(--main-color);
-  }
-  
-  .sidebar-menu-dropdown-content {
-    padding: 0;
-    height: 0;
-    overflow: hidden;
-    transition: height 0.25s ease-in-out;
-  }
-  
-  .sidebar-menu-dropdown-content > li > a {
-    padding-left: 50px;
-  }
-  
-  .darkmode-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .darkmode-switch {
-    --height: var(--darkmode-toggle-size);
-    --width: calc(var(--height) * 2);
-    height: var(--height);
-    width: var(--width);
-    border-radius: calc(var(--height) / 2);
-    background-color: #f5f6fa;
-    position: relative;
-  }
-  
-  .darkmode-switch::before {
-    content: "";
-    --height: 20px;
-    --main-color: #0652dd;
-    width: var(--height);
-    height: var(--height);
-    position: absolute;
-    left: 0;
-    border-radius: 50%;
-    background-color: var(--main-color);
-    transition: left 0.3s ease-in-out;
-  }
-  
-  .darkmode-switch.active::before {
-    left: 50%;
   }
   
   .main {
@@ -291,23 +132,6 @@
     font-weight: 700;
   }
   
-  .counter-info i {
-    color: var(--main-color);
-  }
-  
-  .box-header {
-    text-transform: capitalize;
-    font-size: 1.25rem;
-    font-weight: 700;
-  }
-  
-  .box-body {
-    padding: 20px 0;
-  }
-  
-  .product-list {
-    list-style-type: none;
-  }
   
   .product-list-item {
     display: flex;
@@ -316,23 +140,6 @@
     padding: 15px 0;
   }
   
-  .item-info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .item-info img {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    margin-right: 10px;
-  }
-  
-  .product-name,
-  .product-sales {
-    font-weight: 600;
-    text-transform: capitalize;
-  }
   
   .product-name {
     margin-bottom: 5px;
@@ -362,22 +169,8 @@
     font-weight: 500;
   }
   
-  .order-owner img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin-right: 15px;
-  }
   
-  table thead tr {
-    text-align: left;
-  }
   
-  table th,
-  table td {
-    padding: 20px 15px;
-    border-bottom: 1px solid var(--border-color);
-  }
   
   .order-status {
     padding: 5px 15px;
@@ -448,13 +241,13 @@
     cursor: pointer;
   }
 
-  table td span{
-    color: black;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+    table td span{
+      color: black;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
   
   
   .payment-paid .dot {

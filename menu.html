@@ -34,15 +34,14 @@
                 <a class="navbar-brand m-2 ms-4 text-dark logo" href="">MENU</a>
             </div>
             <ul class="list-unstyled">
-                <li class="nav-item me-3 me-lg-0" title="Login/Signup">
-                    <a class="nav-link text-dark" href="#"><i class="fas fa-user ms-4 use"></i></a>
+                <li class="nav-item me-3 me-lg-0 use" title="Login/Signup">
+                    <a class="nav-link text-dark user" href="#"><i class="fas fa-user ms-4 "></i></a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <a href="dadmin.html"><button class="back"> <i class="fas fa-arrow-left back-icon me-2"></i>Back to
-            Dashboard</button></a>
+    <a href="dadmin.html"><button class="back"> <i class="fas fa-arrow-left back-icon me-2"></i> Dashboard</button></a>
     <!-- Menu Categories -->
     <div class="add-category">
         <h2>Add Menu Category</h2>
@@ -57,6 +56,8 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Available</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -67,6 +68,13 @@
                         <span>Pizza</span>
                     </div>
                 </td>
+                <td>Yes</td>
+                <td>
+                    <span class="action-icons">
+                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
+                    </span>
+                </td>
             </tr>
             <tr>
                 <td>#2</td>
@@ -75,7 +83,13 @@
                         <span>Burger</span>
                     </div>
                 </td>
-            </tr>
+                <td>No</td>
+                <td>
+                    <span class="action-icons">
+                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
+                    </span>
+                </td>            </tr>
             <tr>
                 <td>#3</td>
                 <td>
@@ -83,7 +97,13 @@
                         <span>Beverages</span>
                     </div>
                 </td>
-            </tr>
+                <td>Yes</td>
+                <td>
+                    <span class="action-icons">
+                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
+                    </span>
+                </td>            </tr>
         </tbody>
     </table>
 
@@ -114,9 +134,9 @@
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Category</th>
                 <th>Price</th>
-                <th>Update</th>
+                <th>Available</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -126,10 +146,14 @@
                         <span>Mutton</span>
                     </div>
                 </td>
-                <td>Burger</td>
                 <td>1200</td>
-                <td> <button class="update" onclick="openOverlay()">Update</button> </td>
-
+                <td>Yes</td>
+                <td>
+                    <span class="action-icons">
+                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
+                    </span>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -137,9 +161,14 @@
                         <span>Beef</span>
                     </div>
                 </td>
-                <td>Burger</td>
                 <td>700</td>
-                <td> <button class="update" onclick="openOverlay()">Update</button> </td>
+                <td>Yes</td>
+                <td>
+                    <span class="action-icons">
+                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
+                    </span>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -147,10 +176,14 @@
                         <span>Fish</span>
                     </div>
                 </td>
-                <td>Pizza</td>
                 <td>1200</td>
-                <td> <button class="update" onclick="openOverlay()">Update</button> </td>
-
+                <td>Yes</td>
+                <td>
+                    <span class="action-icons">
+                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
+                    </span>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -179,8 +212,9 @@
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Category</th>
                 <th>Price</th>
+                <th>Available</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -190,8 +224,14 @@
                         <span>Cheese</span>
                     </div>
                 </td>
-                <td>Burger</td>
                 <td>1200</td>
+                <td>Yes</td>
+                <td>
+                    <span class="action-icons">
+                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
+                    </span>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -199,8 +239,14 @@
                         <span>Chicken</span>
                     </div>
                 </td>
-                <td>Burger</td>
                 <td>700</td>
+                <td>Yes</td>
+                <td>
+                    <span class="action-icons">
+                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
+                    </span>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -208,12 +254,18 @@
                         <span>Butter</span>
                     </div>
                 </td>
-                <td>Pizza</td>
                 <td>1200</td>
+                <td>Yes</td>
+                <td>
+                    <span class="action-icons">
+                        <span class="action-icon Update" onclick="openOverlay()">&#9998;</span>
+                        <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
+                    </span>
+                </td>
             </tr>
         </tbody>
     </table>
-
+    
 
 
     <div id="update-overlay" class="menu-overlay">

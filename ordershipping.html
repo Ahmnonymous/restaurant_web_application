@@ -37,18 +37,18 @@
             </div>
             <ul class="list-unstyled">
                 <li class="nav-item me-3 me-lg-0" title="Login/Signup">
-                    <a class="nav-link text-dark" href="#"><i class="fas fa-user ms-4 use"></i></a>
+                    <a class="nav-link text-dark user" href="#"><i class="fas fa-user ms-4 use"></i></a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <a href="dadmin.html"><button class="back"> <i class="fas fa-arrow-left back-icon me-2"></i>Back to Dashboard</button></a>
+    <a href="dadmin.html"><button class="back"> <i class="fas fa-arrow-left back-icon me-2"></i> Dashboard</button></a>
 
     <table class="ordertable">
         <thead>
             <tr>
-                <th>ORDER ID</th>
+                <th> ID</th>
                 <th>DRIVERS</th>
                 <th>UPDATE</th>
             </tr>
@@ -64,7 +64,7 @@
                     </select>
                 </td>
                 <td>
-                    <button class="update" onclick="status(event)">Ship Order</button>
+                    <span onclick="status(event)"> Order</span>
                 </td>
             </tr>
             <tr>
@@ -77,7 +77,7 @@
                     </select>
                 </td>
                 <td>
-                    <button class="update" onclick="status(event)">Ship Order</button>
+                    <span onclick="status(event)"> Order</span>
                 </td>
             </tr>
             <tr>
@@ -90,7 +90,7 @@
                     </select>
                 </td>
                 <td>
-                    <button class="update" onclick="status(event)">Ship Order</button>
+                    <span onclick="status(event)"> Order</span>
                 </td>
             </tr>
             <tr>
@@ -103,7 +103,7 @@
                     </select>
                 </td>
                 <td>
-                    <button class="update" onclick="status(event)">Ship Order</button>
+                    <span onclick="status(event)"> Order</span>
                 </td>
             </tr>
             <tr>
@@ -116,7 +116,60 @@
                     </select>
                 </td>
                 <td>
-                    <button class="update" onclick="status(event)">Ship Order</button>
+                    <span onclick="status(event)"> Order</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <table class="ordertable ship">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>DRIVERS</th>
+                <th>UPDATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>#1</td>
+                <td>
+                    Driver 1
+                </td>
+                <td>
+                    <span> Order 1</span>
+                </td>
+            </tr>
+            <tr>
+                <td>#2</td>
+                <td>
+                    Driver 2
+
+                </td>
+                <td>
+                    <span> Order 1</span>
+                </td>
+            </tr>
+            <tr>
+                <td>#3</td>
+                <td>
+                    Driver 3
+
+                </td>
+                <td>
+                    <span> Order 1</span>
+                </td>
+            </tr>
+            <tr>
+                <td>#4</td>
+                <td>
+                    Driver 4
+
+                </td>
+                <td>
+                    <span> Order 1</span>
                 </td>
             </tr>
         </tbody>
