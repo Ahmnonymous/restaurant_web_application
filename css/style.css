@@ -99,7 +99,7 @@ section {
 }
 
 .navbar ul .user i {
-  font-size: 30px;
+  font-size: 20px;
   margin: 10px 40px 0px 0px;
 }
 
@@ -626,7 +626,7 @@ section {
   }
 
   .navbar ul .user i {
-    font-size: 27px;
+    font-size: 20px;
     margin: 10px 0px 0px 0px;
   }
 
@@ -668,6 +668,14 @@ section {
     cursor: pointer;
   }
 
+.add-item-container input[type="file"]
+{
+  width: 230px;
+}
+
+
+
+
 }
 
 @media (max-width:400px) {
@@ -685,9 +693,13 @@ section {
   }
 
   .navbar ul .user i {
-    font-size: 30px;
+    font-size: 20px;
     margin: 15px 0px 0px 0px;
   }
+
+  
+
+
 }
 
 @media (max-width: 300px) {
@@ -1935,7 +1947,7 @@ textarea::placeholder {
 
 .action-icon {
   font-size: 20px;
-  margin-right: 10px;
+  margin-right: 5px;
   width: 40px;
   cursor: pointer;
 }
@@ -1968,7 +1980,7 @@ thead {
 table th,
 table td {
   border-bottom: 1px solid var(--border-color);
-  padding: 20px 25px;
+  padding: 20px 20px;
 }
 
 table td {
@@ -1983,7 +1995,7 @@ table td {
   table th,
   table td {
     width: auto;
-    padding: 10px;
+    padding: 5px;
   }
 }
 
@@ -2054,7 +2066,7 @@ table td {
   width: 100%;
   max-width: 250px;
   padding: 0.2rem;
-  margin-left: -20px;
+  text-align: center;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -2353,9 +2365,9 @@ a .back {
   align-items: center;
   border-radius: 25px;
   padding: 6px 6px;
-  background-color: rgb(255, 203, 0);
+  background-color: #fff;
+  border: 1px solid black;
   margin: 10px 0px 0px 15px;
-  border: none;
 }
 
 .back i {

@@ -228,13 +228,8 @@ function closeOverlay() {
   document.getElementById("update-overlay").style.display = "none";
 }
 
+
 function updateItem() {
-  // Fetch input values
-  const name = document.getElementById("update-item-name").value;
-  const category = document.getElementById("update-item-category").value;
-  const description = document.getElementById("update-item-description").value;
-  const price = document.getElementById("update-item-price").value;
-  const image = document.getElementById("update-item-image").files[0];
   event.preventDefault();
 
   const alertMessage = document.createElement('div');
@@ -248,6 +243,7 @@ function updateItem() {
   }, 2000);
 
   closeOverlay();
+  closetoppingOverlay();
 }
 
 
