@@ -14,6 +14,7 @@ html {
 .owner {
   display: flex;
 }
+
 /* 
 .owner a {
   padding-left: 30px;
@@ -442,12 +443,18 @@ section {
     /* (button width + gap) * number of buttons */
   }
 
-  .account {
-    width: 600px;
+  .signup-container {
+    flex-direction: column;
   }
 
-  .account a {
-    margin-left: 50px;
+  .signup-form {
+    order: 2;
+  }
+
+  .signup-image img {
+    max-width: 70% !important;
+    max-height: 100%;
+    margin-top: 0;
   }
 
 
@@ -484,7 +491,7 @@ section {
   }
 
   .signup-image img {
-    max-width: 100%;
+    max-width: 70% !important;
     max-height: 100%;
     margin-top: 0;
   }
@@ -592,15 +599,9 @@ section {
   .updatealert {
     width: 220px;
   }
-  .account{
-    width: 430px;
-  }
 
   .account a {
-    margin-top: -40px;
-    font-weight: bold;
     margin-left: 30px;
-    width: 300px;
   }
 
   .row .contact i {
@@ -676,16 +677,30 @@ section {
   }
 
 
-  #address-form input[type="text"]{
-width: 300px !important;
+  #address-form input[type="text"] {
+    width: 300px !important;
   }
-  .container-fluid .Cart{
+
+  .container-fluid .Cart {
     width: 190px;
   }
-  .total .buttons{
+
+  .total .buttons {
     margin-bottom: 25px;
   }
 
+  #deleteOverlay .overlay-content {
+    width: 370px;
+  }
+
+
+  .acceptance-container {
+    width: 400px !important;
+  }
+
+  .acceptance-container .confirmation {
+    width: 350px !important;
+  }
 
 
 
@@ -709,14 +724,17 @@ width: 300px !important;
     font-size: 20px;
     margin: 15px 0px 0px 0px;
   }
-  .container-fluid .Cart{
+
+  .container-fluid .Cart {
     width: 172px;
   }
-  .account{
-    width: 395px;
+
+  .acceptance-container {
+    width: 360px !important;
   }
-  .account a{
-    margin-left: 20px;
+
+  .acceptance-container .confirmation {
+    width: 330px !important;
   }
 
 }
@@ -741,15 +759,6 @@ width: 300px !important;
 
   .search {
     margin-left: -20px;
-  }
-
-  .account {
-    margin-left: -50px;
-    width: 300px;
-  }
-
-  .account a {
-    margin-left: 20px;
   }
 
 }
@@ -1023,12 +1032,14 @@ h5 {
 
 
 /* Login Signup */
-.signup-container #agree-checkbox{
+.signup-container #agree-checkbox {
   margin-left: 20px;
 }
-.signup-container #agree{
+
+.signup-container #agree {
   margin-left: 48px;
 }
+
 .login-container {
   background-color: rgb(255, 255, 255);
   padding: 30px;
@@ -1106,7 +1117,8 @@ h5 {
   font-size: 16px;
 
 }
-.Skip-btn{
+
+.Skip-btn {
   margin: 10px 0px 0px 17px;
   padding: 7px 15px !important;
   background-color: rgb(255, 203, 0);
@@ -1114,7 +1126,7 @@ h5 {
   border-radius: 25px;
   border: none;
   font-size: 16px;
-  
+
 }
 
 .address-btn {
@@ -1665,8 +1677,7 @@ label {
 
 #paypal-fields-new input[type="text"],
 #paypal-fields-new input[type="password"],
-#card-fields-new input[type="text"]
- {
+#card-fields-new input[type="text"] {
   width: 80%;
   padding: 10px;
   border: 1px solid #cccccc;
@@ -1675,14 +1686,15 @@ label {
   color: #333333;
 }
 
-#address-form{
+#address-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
 }
-#address-form input[type="text"]{
+
+#address-form input[type="text"] {
   width: 40%;
   padding: 10px;
   margin: 10px;
@@ -1696,7 +1708,7 @@ label {
 .proceed-button {
   margin-top: 60px !important;
   padding: 7px 15px;
-  background:rgb(255, 203, 0);
+  background: rgb(255, 203, 0);
   color: black;
   border: none;
   text-align: center;
@@ -1941,7 +1953,8 @@ textarea::placeholder {
   margin: 0 1rem;
 }
 
-.input-group #role {
+.input-group #role,
+#employee {
   text-align: center;
 }
 
@@ -2062,10 +2075,13 @@ thead {
 table th,
 table td {
   border-bottom: 1px solid var(--border-color);
-  padding: 20px 15px;
+  padding: 15px 15px;
 }
-table td{
-  text-align: center;
+
+table th {
+  padding: 15px 22px !important;
+  width: 10px;
+  text-align: left !important;
 }
 
 @media (max-width: 768px) {
@@ -2528,7 +2544,8 @@ a .back {
   pointer-events: auto;
   color: #000000;
 }
-.otpbtn:hover{
+
+.otpbtn:hover {
   cursor: pointer;
   background-color: rgb(255, 203, 0);
   color: black;
@@ -2539,9 +2556,3 @@ a .back {
 .input_field_box input::-webkit-inner-outer-button {
   display: none;
 }
-
-
-
-
-
-
