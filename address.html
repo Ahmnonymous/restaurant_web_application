@@ -19,179 +19,19 @@
 
 <body>
 
-  <!-- Header Sectoin -->
-  <nav class="navbar navbar-expand-sm navbar-dark">
-    <div class="container-fluid">
-      <div class="owner">
-        <!-- <img src="/images/logo.webp" alt="user image"> -->
-        <a class="navbar-brand m-2 ms-4 text-dark logo" href="index.html">TMHA</a>
-      </div>
-      <ul class="navbar-nav d-flex flex-row">
-        <li class="nav-item me-3 me-lg-0" title="Driver Career">
-          <a class="nav-link text-dark" href="#"><i class="fas fa-motorcycle"></i></a>
-        </li>
-
-        <li class="nav-item me-3 me-lg-0" title="Login/Signup">
-          <a class="nav-link text-dark" href="#"><i class="fas fa-user ms-4"></i></a>
-        </li>
-        <li class="nav-item me-lg-0" title="Shopping Cart">
-          <div class="cart-icon-container" onclick="cart(event)">
-            <a class="nav-link text-dark" href="">
-              <i class="fas fa-shopping-cart ms-4"></i>
-            </a>
-            <span id="cartCount" class="cart-count">0</span> <!-- This is the cart count indicator -->
-          </div>
-        </li>
-
-      </ul>
-    </div>
-  </nav>
-
-
-  <div class="container mt-3">
+  <div class="container mt-5">
     <h2 class="text-center">Address </h2>
     <form id="address-form">
-      <input type="text" id="address" name="address" placeholder="Address" required>
-      <input type="text" id="city" name="city" placeholder="City" required>
-      <input type="text" id="state" name="state" placeholder="State" required>
-      <input type="text" id="zip" name="zip" placeholder="Zip" required>
+      <input type="text" id="Area" name="Area" placeholder="Area" required>
+      <input type="text" id="Building Number" name="Building Number" placeholder="Building Number" required>
+      <input type="text" id="Apartment" name="Apartment" placeholder="Apartment" required>
       <button type="submit" class="address-btn">Add Address</button>
+      <button type="submit" class="Skip-btn">Skip</button>
     </form>
   </div>
-  
-  <div class="addresses">
-    <h2 class="text-center mt-2">Addresses</h2>
-    <ul id="address-list"></ul>
-  </div>
-
-
-  <!-- Login Overlay -->
-  <div id="login-overlay" class="overlay">
-    <div class="login-container">
-      <button class="close-button" onclick="closeoverlay()">X</button>
-      <h3>Experience More as a Member</h3>
-      <p>Login or Sign Up Today!</p>
-      <a href="clogin.html" class="login-button">Login</a>
-      <div class="hr-container mt-4">
-        <hr class="left-hr">
-        <span class="or-text">OR</span>
-        <hr class="right-hr">
-      </div>
-      <!-- signup form link -->
-      <a href="csignup.html" class="signup-button mt-4">Signup</a>
-
-    </div>
-  </div>
-
-  <!-- Driver Login Overlay -->
-  <div id="driver-login-overlay" class="overlay">
-    <div class="login-container">
-      <button class="close-button" onclick="closeoverlay()">X</button>
-      <h3>Accelerate Your Journey</h3>
-      <p>Join Our Driver Careers</p>
-      <a href="driver.html" class="signup-button mt-4">Apply Now</a>
-    </div>
-  </div>
-
-
-  <!-- Footer -->
-  <div class="container mt-5 shadow p-4 mb-4 foot">
-    <div class="row g-4">
-      <div class="col-md-4 contact">
-        <h3 class="fw-bold text-center">Contact Us</h3>
-        <div class="text-center mt-3"> <span class="space"></span><i class="fa-solid fa-house house"></i> &nbsp;Business
-          Park New Capital</div>
-        <div class="text-center mt-3"><a href="mailto:mgrtal9@gmail.com"> <span class="space1"></span><i
-              class="fa-solid fa-envelope"></i>
-            &nbsp;tmha@gmail.com</a></div>
-            <div class="text-center mt-3"><a href="tel:+201155997999"><i class="fa-solid fa-phone "></i> &nbsp;+20 115 599
-              7999</div></a>
-
-      </div>
-      <div class="col-md-4 timing">
-        <div>
-          <h3 class="fw-bold text-center ">Our Timing</h3>
-          <p class="text-center monday">Monday - Sunday</p>
-          <p class="time">10:00 - 23:00</p>
-        </div>
-
-      </div>
-      <div class="col-md-4">
-        <h3 class=" text-center mt-0 fw-bold">Follow Us</h3>
-        <div class=" text-center social_link">
-          <a href="#"><i class="fa-brands text-dark fa-facebook-f m-3"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter text-dark m-3"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram text-dark m-3"></i></a>
-        </div>
-
-      </div>
-      <div class="fw-bold  border border-1 border-dark"></div>
-      <a href="https://ahmnonymous.netlify.app" target="_blank">
-        <p class="copyright text-center">&copy; 2023 Powered By <span class="fw-bold"
-            style="text-decoration: underline;">Ahmed & Ali Co.</span></p>
-      </a>
-    </div>
-  </div>
-
-
-
 
 </body>
-
-
-
 <script src="/js/script.js"></script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const addressForm = document.getElementById('address-form');
-    const addressList = document.getElementById('address-list');
-
-    addressForm.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      const address = document.getElementById('address').value;
-      const city = document.getElementById('city').value;
-      const state = document.getElementById('state').value;
-      const zip = document.getElementById('zip').value;
-
-      addAddressToList(address, city, state, zip);
-
-      // Reset the form fields
-      addressForm.reset();
-    });
-
-    addressList.addEventListener('click', function (event) {
-      if (event.target.classList.contains('delete-btn')) {
-        const listItem = event.target.closest('.address-item');
-        listItem.remove();
-      }
-    });
-
-
-    function addAddressToList(address, city, state, zip) {
-      const listItem = document.createElement('li');
-      listItem.className = 'address-item';
-
-      listItem.innerHTML = `
-    <div><strong>Address :</strong> ${address}</div>
-    <div><strong>City :</strong> ${city}
-       <strong>State :</strong> ${state}
-      <strong>Zip Code :</strong> ${zip}</div>
-    <div class="delete-btn">Delete</div>
-`;
-      addressList.insertBefore(listItem, addressList.firstChild);
-      updateAddressNumbering();
-    }
-
-    function updateAddressNumbering() {
-      const addressItems = document.querySelectorAll('.address-item');
-      addressItems.forEach((item, index) => {
-        item.querySelector('span').innerText = `: ${index + 1} `;
-      });
-    }
-
-  });
-</script>
 
 </html>

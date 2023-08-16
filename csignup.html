@@ -1,29 +1,31 @@
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>Customer Signup </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/css/flag-icon.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html>
 
-  </head>
-  <body>
+<head>
+  <title>Customer Signup </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/css/flag-icon.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 
-<!-- Customer Login -->
-    <div class="container mt-5 up">
-      <h1>Customer Sign up</h1>
-      <div class="signup-container mt-4">
-        <div class="signup-form">
+</head>
+
+<body>
+
+  <!-- Customer Login -->
+  <div class="container mt-5 up">
+    <h1>Customer Sign up</h1>
+    <div class="signup-container mt-4">
+      <div class="signup-form">
         <form>
           <div class="form-group">
             <i class="fas fa-user"></i>
@@ -31,7 +33,7 @@
           </div>
           <div class="form-group">
             <i class="fas fa-phone"></i>
-            <input type="tel" name="phone" placeholder="Phone" required pattern="[0-9]{11}">
+            <input type="tel" id="phone" name="phone" placeholder="Phone" required pattern="\+20[0-9]{10}">
           </div>
           <div class="form-group">
             <i class="fas fa-lock"></i>
@@ -39,12 +41,13 @@
           </div>
           <div class="form-group">
             <input type="checkbox" id="agree-checkbox" required>
-            <label for="agree-checkbox">I agree to all statements</label>
+            <label for="agree-checkbox" id="agree">I agree to all statements</label>
           </div>
           <div class="account">
             <button type="submit" class="signup">Signup</button>
             <a href="clogin.html">Already have an account?</a>
-          </div></form>
+          </div>
+        </form>
       </div>
       <div class="signup-image customer">
         <img src="/images/csignup.webp" alt="Signup Image">
@@ -55,10 +58,21 @@
 
 
 
-  </body>
+</body>
 
 
+<script>
+  var defaultCountryCode = "+20";
 
-  <script src="/js/script.js"></script>
+  var phoneInput = document.getElementById("phone");
+  phoneInput.value = defaultCountryCode;
+  phoneInput.addEventListener("input", function () {
+    if (!phoneInput.value.startsWith(defaultCountryCode)) {
+      phoneInput.value = defaultCountryCode + phoneInput.value.replace(/\D/g, "");
+    }
+  });
 
-  </html>
+</script>
+<script src="/js/script.js"></script>
+
+</html>

@@ -14,18 +14,18 @@ html {
 .owner {
   display: flex;
 }
-
+/* 
 .owner a {
   padding-left: 30px;
-}
-
+} */
+/* 
 .owner img {
   width: 45px;
   height: 45px;
   position: absolute;
   border-radius: 50%;
   margin-top: 12px;
-}
+} */
 
 body {
   background-color: #f8f9fa;
@@ -443,11 +443,11 @@ section {
   }
 
   .account {
-    width: 400px;
+    width: 600px;
   }
 
   .account a {
-    margin-left: 40px;
+    margin-left: 50px;
   }
 
 
@@ -592,11 +592,14 @@ section {
   .updatealert {
     width: 220px;
   }
+  .account{
+    width: 430px;
+  }
 
   .account a {
     margin-top: -40px;
     font-weight: bold;
-    margin-left: 40px;
+    margin-left: 30px;
     width: 300px;
   }
 
@@ -673,6 +676,17 @@ section {
   }
 
 
+  #address-form input[type="text"]{
+width: 300px !important;
+  }
+  .container-fluid .Cart{
+    width: 190px;
+  }
+  .total .buttons{
+    margin-bottom: 25px;
+  }
+
+
 
 
 }
@@ -695,9 +709,15 @@ section {
     font-size: 20px;
     margin: 15px 0px 0px 0px;
   }
-
-
-
+  .container-fluid .Cart{
+    width: 172px;
+  }
+  .account{
+    width: 395px;
+  }
+  .account a{
+    margin-left: 20px;
+  }
 
 }
 
@@ -1003,7 +1023,12 @@ h5 {
 
 
 /* Login Signup */
-
+.signup-container #agree-checkbox{
+  margin-left: 20px;
+}
+.signup-container #agree{
+  margin-left: 48px;
+}
 .login-container {
   background-color: rgb(255, 255, 255);
   padding: 30px;
@@ -1080,6 +1105,16 @@ h5 {
   transition: background-color 0.3s ease;
   font-size: 16px;
 
+}
+.Skip-btn{
+  margin: 10px 0px 0px 17px;
+  padding: 7px 15px !important;
+  background-color: rgb(255, 203, 0);
+  text-align: center;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  
 }
 
 .address-btn {
@@ -1316,6 +1351,8 @@ h1 {
   background-color: rgb(212, 0, 0) !important;
   color: #fff;
   cursor: pointer;
+  position: relative;
+  left: 6px;
   font-size: large;
   width: 25px;
   height: 25px;
@@ -1324,7 +1361,9 @@ h1 {
 
 .Cart-q {
   padding: 5px;
-  width: 27px;
+  position: relative;
+  left: 7px;
+  width: 28px;
   text-align: center;
 }
 
@@ -1477,7 +1516,6 @@ label {
   padding: 20px;
   margin: 20px;
   border-radius: 10px;
-  background-color: #fff;
 }
 
 
@@ -1653,21 +1691,16 @@ label {
   font-size: 16px;
 
 }
-.addresses{
-  margin-top: 30px;
-  
-  border: 1px solid grey;
-}
 
 
 .proceed-button {
   margin-top: 60px !important;
-  padding: 10px 20px;
-  background: rgb(88, 117, 219);
-  color: #ffffff;
+  padding: 7px 15px;
+  background:rgb(255, 203, 0);
+  color: black;
   border: none;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 25px;
   font-size: 18px;
   cursor: pointer;
 }
@@ -2031,13 +2064,8 @@ table td {
   border-bottom: 1px solid var(--border-color);
   padding: 20px 15px;
 }
-
-table th {
-  text-align: left !important;
-}
-
-table td {
-  text-align: left !important;
+table td{
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -2132,6 +2160,7 @@ table td {
 
 .account a {
   margin-top: 40px;
+  margin-right: 45px;
   font-weight: bold;
 }
 
