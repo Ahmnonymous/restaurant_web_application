@@ -722,10 +722,7 @@ section {
   .acceptance-container .confirmation {
     width: 350px !important;
   }
-
-  .usertable th{
-    padding: 15px 5px  !important;
-  }
+ 
   .ordertable th{
     padding: 15px 5px  !important;
 
@@ -735,6 +732,9 @@ section {
   max-width: 150px !important;
 }
 
+.usertable th,.usertable td{
+  padding: 10px 45px  !important;
+}
 }
 
 @media (max-width:400px) {
@@ -766,6 +766,10 @@ section {
 
   .acceptance-container .confirmation {
     width: 330px !important;
+  }
+  
+  .usertable th,.usertable td{
+    padding: 10px 35px  !important;
   }
 
 }
@@ -2055,16 +2059,6 @@ textarea::placeholder {
 
 /* Orders Screen */
 
-.ordertable {
-  width: 35%;
-  /* Reduced width of the table */
-  margin: 50px auto;
-  /* Align the table in the center */
-}
-
-.ordertable thead tr th {
-  text-align: center;
-}
 
 .action-icons {
   display: flex;
@@ -2100,6 +2094,15 @@ textarea::placeholder {
 tbody,
 thead {
   border: 1px solid lightgrey;
+}
+
+.ordertable {
+  width: 35% !important;
+  margin: 50px auto;
+}
+/* Privilege Table */
+.usertable td,.usertable th{
+  text-align: center !important;
 }
 
 
