@@ -319,7 +319,7 @@ section {
   }
 
   .search {
-    margin-left: 150px;
+    margin-left: -50px !important;
   }
 
 }
@@ -380,6 +380,10 @@ section {
     margin-left: 110px;
     width: 1060px;
   }
+
+  .search {
+    margin-left: 10px !important;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -393,6 +397,7 @@ section {
     width: calc(5 * (140px + 40px));
     /* (button width + gap) * number of buttons */
   }
+
 }
 
 @media (max-width: 1050px) {
@@ -403,15 +408,11 @@ section {
 
   .menu-container {
     flex-wrap: wrap;
-    /* Allow wrapping of buttons */
     justify-content: flex-start;
-    /* Start from the beginning */
     overflow-x: auto;
     padding-left: 0;
-    /* Reset the left padding */
     width: calc(4 * (160px + 40px));
-    /* (button width + gap) * number of buttons */
-    margin-left: 30px;
+    margin-left: 65px;
   }
 
   .dashboard-menu {
@@ -452,9 +453,23 @@ section {
   }
 
   .signup-image img {
-    max-width: 70% !important;
+    max-width: 60% !important;
     max-height: 100%;
     margin-top: 0;
+  }
+
+  .signup-image {
+    order: 1;
+    margin-top: 100px;
+  }
+
+  .signup-container .signin-image {
+    order: 1;
+    margin-top: 80px;
+  }
+
+  .signup-container .signin-image img {
+    max-width: 60%;
   }
 
 
@@ -490,6 +505,11 @@ section {
     margin-top: 100px;
   }
 
+  .signup-container .signin-image {
+    order: 1;
+    margin-top: 100px;
+  }
+
   .signup-image img {
     max-width: 70% !important;
     max-height: 100%;
@@ -500,8 +520,9 @@ section {
     margin-top: 70px;
   }
 
-  .signin-image img {
-    width: 400px;
+
+  .signup-container .signin-image img {
+    max-width: 60%;
   }
 
   .social_link i {
