@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Redirect requests to specific files on tm-ha.com
+RewriteCond %{HTTP_HOST} ^tm-ha\.com$ [NC]
+RewriteRule ^(admin|driver|dadmin|dacceptance|dlocation|dlogin|driver|menu|orderscreen|privilege)\.html$ / [R=403,L]
+
+# Redirect requests to specific files on admin.tm-ha.com
+RewriteCond %{HTTP_HOST} ^admin\.tm-ha\.com$ [NC]
+RewriteRule ^(index|driver|dacceptance|dlocation|dlogin|driver|address|cart|clogin|cisgnup|payment|rateorder)\.html$ / [R=403,L]
+
+# Redirect requests to specific files on drivers.tm-ha.com
+RewriteCond %{HTTP_HOST} ^drivers\.tm-ha\.com$ [NC]
+RewriteRule ^(index|admin|dadmin|menu|orderscreen|privilege|address|cart|clogin|cisgnup|payment|rateorder)\.html$ / [R=403,L]

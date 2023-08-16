@@ -190,3 +190,68 @@ function cart(event) {
     cartLink.href = 'cart.html';
   }
 }
+
+
+// Order Status Updation
+function status(event, order_id) {
+  event.preventDefault();
+
+  const alertMessage = document.createElement('div');
+  alertMessage.className = 'updatealert';
+
+  const status = document.getElementById("status" + order_id).value;
+  const data = {
+    order_id: order_id,
+    status: status
+  };
+
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', './cpp/u_ord_stat.cgi', true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        const response = JSON.parse(xhr.responseText);
+        console.log(response);
+          // Create the alert message element
+        alertMessage.textContent = 'Successfully Updated!';
+        document.body.appendChild(alertMessage);
+
+        // Show the alert message
+        alertMessage.style.display = 'block';
+
+        // Hide the alert after 2 seconds
+        setTimeout(function () {
+          alertMessage.style.display = 'none';
+        }, 2000);
+        
+      } else {
+        console.error('Error:', xhr.status, xhr.statusText);
+      }
+    }
+  };
+  xhr.send(JSON.stringify(data));
+}
+
+
+function show(orderId) {
+  const overlayId = 'orderoverlay' + orderId;
+  const overlay = document.getElementById(overlayId);
+  
+  const showOverlayButtonId = 'showOverlay' + orderId;
+  const showOverlayButton = document.getElementById(showOverlayButtonId);
+
+  showOverlayButton.addEventListener('click', () => {
+    overlay.style.display = 'flex';
+  });
+
+  // Close the overlay when clicking outside of it
+  window.addEventListener('click', (event) => {
+    if (event.target === overlay) {
+      overlay.style.display = 'none';
+    }
+  });
+}
+
+// Call the show function to set up the event listeners
+show();
