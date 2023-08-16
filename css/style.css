@@ -59,7 +59,7 @@ body {
 }
 
 .privileg {
-  top: 42% !important;
+  top: 41% !important;
 
 }
 
@@ -723,7 +723,17 @@ section {
     width: 350px !important;
   }
 
+  .usertable th{
+    padding: 15px 5px  !important;
+  }
+  .ordertable th{
+    padding: 15px 5px  !important;
 
+  }
+.driver-select{
+  width:50%;
+  max-width: 150px !important;
+}
 
 }
 
