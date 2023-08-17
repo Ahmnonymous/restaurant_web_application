@@ -622,7 +622,11 @@ section {
   }
 
   .account a {
-    margin-left: 30px;
+    margin-left: 40px;
+  }
+   .account .signup{
+    width: 45% !important;
+    padding: 0px 0px !important;
   }
 
   .row .contact i {
@@ -640,16 +644,7 @@ section {
     flex-direction: row;
   }
 
-  .button-group-new {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-  }
-
-  .payment-method-new #payment-form-new .proceed-button {
-    margin-left: 110px;
-    width: 35% !important;
-  }
+ 
 
   .address-section h2 {
     text-align: center;
@@ -752,11 +747,27 @@ section {
   .cart .payment-detail p {
     margin-right: -15px;
   }
-
-  .payment-method-new .button-group-new .paypal {
-    margin-left: 28px;
+  .cart{
+    width: 390px !important;
+    margin-left: -2px !important;
   }
 
+  .payment-method-new .button-group-new .paypal {
+    margin-left: 35px;
+  }
+  .button-group-new {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: -60px;
+  }
+
+  .payment-method-new #payment-form-new .proceed-button {
+    margin-left: 110px;
+    width: 35% !important;
+  }
   .paybuttons .Skip-btn,
   .paybuttons .pay-proceed-btn {
     width: 30% !important;
@@ -767,6 +778,11 @@ section {
     width: 370px !important;
   }
 
+  
+.Cart .Cart-quantity {
+  position: relative;
+  margin: 30px 0px 0px 33px;
+}
 
 
 }
@@ -808,14 +824,23 @@ section {
   }
 
   .payment-method-new .button-group-new .paypal {
-    margin-left: 28px;
+    margin-left: 15px;
+  }
+  .payment-method-new .proceed-button{
+    margin-left: 90px !important;
   }
 
   .payment-button-new {
-    width: 80%;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 15px;
+    margin-left: -15px;
   }
-
+.cart{
+  width: 355px !important;
+  margin-left: -2px !important;
+}
   .cart .payment-detail p {
     margin-right: -25px;
   }
@@ -834,6 +859,15 @@ section {
   .OTP{
     width: 340px !important;
   }
+  .account .signup{
+    width: 170px !important;
+    padding: 0px 0px !important;
+  }
+  .Cart .Cart-quantity {
+    position: relative;
+    margin: 30px 0px 0px 27px;
+  }
+  
 
 }
 
@@ -1391,8 +1425,8 @@ h1 {
 .signup {
   display: block;
   margin-left: 30px;
-  width: 26%;
-  padding: 10px;
+  width: 25%;
+  padding: 8px;
   margin-top: 30px;
   border: none;
   background: rgb(88, 117, 219);
@@ -1611,6 +1645,8 @@ label {
   padding: 10px;
   border: 1px solid #ccc;
   width: 200px;
+  border-radius: 5px;
+  font-weight: bold;
   margin: 50px auto;
 }
 
@@ -1660,14 +1696,15 @@ label {
   padding: 10px 20px;
   background-color: rgb(255, 203, 0);
   color: black;
+  width: 200px;
+  display: block;
+  margin: auto;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
 }
 
-.address-submit-button:hover {
-  background-color: #0056b3;
-}
+
 
 #cartItems {
   display: flex;
@@ -1749,9 +1786,7 @@ label {
 
 .payment-method-new h2 {
   margin-bottom: 20px;
-  font-size: 24px;
   text-align: center;
-  font-weight: bold;
   color: black;
 }
 
@@ -1796,10 +1831,6 @@ label {
 
 #address-form {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
 }
 
 #address-form input[type="text"] {
