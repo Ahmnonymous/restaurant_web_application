@@ -643,11 +643,22 @@ section {
   .button-group-new {
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
+  }
+
+  .payment-method-new #payment-form-new .proceed-button {
+    margin-left: 110px;
+    width: 35% !important;
+  }
+
+  .address-section h2 {
+    text-align: center;
+    margin-bottom: 15px;
   }
 
   .payment-button-new {
-    width: 90%;
-    margin-bottom: 10px;
+    width: 70%;
+    margin-bottom: 15px;
   }
 
   .navbar ul .user i {
@@ -703,7 +714,7 @@ section {
   }
 
   .container-fluid .Cart {
-    width: 190px;
+    width: 185px;
   }
 
   .total .buttons {
@@ -716,25 +727,44 @@ section {
 
 
   .acceptance-container {
-    width: 400px !important;
+    width: 390px !important;
   }
 
   .acceptance-container .confirmation {
     width: 350px !important;
   }
- 
-  .ordertable th{
-    padding: 15px 5px  !important;
+
+  .ordertable th {
+    padding: 15px 5px !important;
 
   }
-.driver-select{
-  width:50%;
-  max-width: 150px !important;
-}
 
-.usertable th,.usertable td{
-  padding: 10px 45px  !important;
-}
+  .driver-select {
+    width: 50%;
+    max-width: 150px !important;
+  }
+
+  .usertable th,
+  .usertable td {
+    padding: 10px 45px !important;
+  }
+
+  .cart .payment-detail p {
+    margin-right: -15px;
+  }
+
+  .payment-method-new .button-group-new .paypal {
+    margin-left: 28px;
+  }
+
+  .paybuttons .Skip-btn,
+  .paybuttons .pay-proceed-btn {
+    width: 30% !important;
+    margin: 10px 0px 0px -50px !important;
+  }
+
+
+
 }
 
 @media (max-width:400px) {
@@ -757,19 +787,45 @@ section {
   }
 
   .container-fluid .Cart {
-    width: 172px;
+    width: 169px;
   }
 
   .acceptance-container {
-    width: 360px !important;
+    width: 350px !important;
   }
 
   .acceptance-container .confirmation {
     width: 330px !important;
   }
-  
-  .usertable th,.usertable td{
-    padding: 10px 35px  !important;
+
+  .usertable th,
+  .usertable td {
+    padding: 10px 35px !important;
+  }
+
+  .payment-method-new .button-group-new .paypal {
+    margin-left: 28px;
+  }
+
+  .payment-button-new {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+
+  .cart .payment-detail p {
+    margin-right: -25px;
+  }
+
+  .paybuttons .Skip-btn,
+  .paybuttons .pay-proceed-btn {
+    width: 30% !important;
+    margin: 10px 0px 0px -10px !important;
+  }
+  .address-section .address-form{
+    margin-left: -10px;
+  }
+  .address-section .address-submit-button {
+    margin-top: 15px;
   }
 
 }
@@ -1153,12 +1209,22 @@ h5 {
 
 }
 
-.Skip-btn {
-  margin: 10px 0px 0px 17px;
+.paybuttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.paybuttons .Skip-btn,
+.paybuttons .pay-proceed-btn {
+  display: block;
+  margin: 15px auto;
   padding: 7px 15px !important;
   background-color: rgb(255, 203, 0);
   text-align: center;
   border-radius: 25px;
+  width: 20%;
   border: none;
   font-size: 16px;
 
@@ -1585,8 +1651,8 @@ label {
 
 .address-submit-button {
   padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+  background-color: rgb(255, 203, 0);
+  color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -1741,7 +1807,8 @@ label {
 
 
 .proceed-button {
-  margin-top: 60px !important;
+  display: block;
+  margin: auto;
   padding: 7px 15px;
   background: rgb(255, 203, 0);
   color: black;
@@ -2100,8 +2167,10 @@ thead {
   width: 35% !important;
   margin: 50px auto;
 }
+
 /* Privilege Table */
-.usertable td,.usertable th{
+.usertable td,
+.usertable th {
   text-align: center !important;
 }
 
@@ -2262,7 +2331,7 @@ table th {
 
 .confirmation {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #fff;
   border-radius: 5px;
   width: 450px;
 }

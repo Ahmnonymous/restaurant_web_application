@@ -1,18 +1,20 @@
 // Show login overlay when click on user icon
 var userIcon = document.querySelector('.fa-user');
 var loginOverlay = document.querySelector('#login-overlay');
-
 userIcon.addEventListener('click', function() {
   loginOverlay.style.display = 'flex';
 });
 
 // Show overlay when click on Driver icon
-var drivericon = document.querySelector('.fa-motorcycle');
-var driverloginOverlay = document.querySelector('#driver-login-overlay');
+function driveroverlay(){
 
+  var drivericon = document.querySelector('.fa-motorcycle');
+  var driverloginOverlay = document.querySelector('#driver-login-overlay');
+  
 drivericon.addEventListener('click', function() {
   driverloginOverlay.style.display = 'flex';
 });
+}
 // For closing Overlays
 function closeoverlay() {
   var loginOverlay = document.getElementById('login-overlay');
@@ -20,8 +22,6 @@ function closeoverlay() {
     loginOverlay.style.display = 'none';
     driverloginOverlay.style.display='none';
 }
-
-// For closing Overlays
 
 
 
@@ -40,14 +40,14 @@ function throttleScroll() {
 }
 
 
-  
-
 
 // JavaScript code to handle form submission
-document.getElementById('driversignupForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  
-  var name = document.getElementById('name').value;
+function formsubmit(){
+
+  document.getElementById('driversignupForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    var name = document.getElementById('name').value;
   var age = document.getElementById('age').value;
   var phone = document.getElementById('phone').value;
   var nationalID = document.getElementById('nationalID').value;
@@ -65,6 +65,7 @@ document.getElementById('driversignupForm').addEventListener('submit', function(
     alert('Please fill in all the required fields.');
   }
 });
+}
 
 
 
@@ -133,10 +134,7 @@ function handleSearch(event) {
 
   
 }
-    
-    
-
-
+  
     // Rate order Stars
     function setRating(stars) {
       const starsElements = document.querySelectorAll('.star');
@@ -149,16 +147,14 @@ function handleSearch(event) {
       });
   }
 
-
-
-
-
-
 // Hide the overlay when the button is clicked
-document.querySelector('.overlay-select').addEventListener('click', function () {
-  document.getElementById('overlay-location').style.display = 'none';
-});
-
+function locationoverlay()
+{
+  document.querySelector('.overlay-select').addEventListener('click', function () {
+    document.getElementById('overlay-location').style.display = 'none';
+  });
+  
+}
 
 
 // Order Status Updation
