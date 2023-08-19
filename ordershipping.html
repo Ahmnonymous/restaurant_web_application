@@ -45,12 +45,12 @@
 
     <a href="dadmin.html"><button class="back"> <i class="fas fa-arrow-left back-icon me-2"></i> Dashboard</button></a>
 
-    <table class="ordertable">
+    <table class=" driver">
         <thead>
             <tr>
-                <th> ID</th>
-                <th>DRIVERS</th>
-                <th>UPDATE</th>
+                <th>ORDER ID</th>
+                <th class="dri">DRIVERS</th>
+                <th>Update</th>
             </tr>
         </thead>
         <tbody>
@@ -58,13 +58,13 @@
                 <td>#1</td>
                 <td>
                     <select class="driver-select">
-                        <option value="Driver 1">Driver 1</option>
+                        <option value="Driver 1">Zain-ul-Abidin</option>
                         <option value="Driver 2">Driver 2</option>
                         <option value="Driver 3">Driver 3</option>
                     </select>
                 </td>
                 <td>
-                    <button class="update" onclick="status(event)"> Ship</button>
+                    <button class="update" onclick="status(event)"><i class="fas fa-shipping-fast"></i></button>
                 </td>
             </tr>
             <tr>
@@ -77,7 +77,7 @@
                     </select>
                 </td>
                 <td>
-                    <button class="update" onclick="status(event)"> Ship</button>
+                    <button class="update" onclick="status(event)"><i class="fas fa-shipping-fast"></i></button>
                 </td>
             </tr>
             <tr>
@@ -90,33 +90,7 @@
                     </select>
                 </td>
                 <td>
-                    <button class="update" onclick="status(event)"> Ship</button>
-                </td>
-            </tr>
-            <tr>
-                <td>#4</td>
-                <td>
-                    <select class="driver-select">
-                        <option value="Driver 1">Driver 1</option>
-                        <option value="Driver 2">Driver 2</option>
-                        <option value="Driver 3">Driver 3</option>
-                    </select>
-                </td>
-                <td>
-                    <button class="update" onclick="status(event)"> Ship</button>
-                </td>
-            </tr>
-            <tr>
-                <td>#5</td>
-                <td>
-                    <select class="driver-select">
-                        <option value="Driver 1">Driver 1</option>
-                        <option value="Driver 2">Driver 2</option>
-                        <option value="Driver 3">Driver 3</option>
-                    </select>
-                </td>
-                <td>
-                    <button class="update" onclick="status(event)"> Ship</button>
+                    <button class="update" onclick="status(event)"><i class="fas fa-shipping-fast"></i></button>
                 </td>
             </tr>
         </tbody>
@@ -124,24 +98,24 @@
 
 
 
-    <table class="ordertable ship">
+    <table class="driverview">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>DRIVERS</th>
+                <th>ORDER ID</th>
+                <th class="driversview">DRIVERS</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>#1</td>
-                <td>
+                <td class="driversview">
                     Driver 1
                 </td>
 
             </tr>
             <tr>
                 <td>#2</td>
-                <td>
+                <td  class="driversview">
                     Driver 2
 
                 </td>
@@ -149,7 +123,7 @@
             </tr>
             <tr>
                 <td>#3</td>
-                <td>
+                <td  class="driversview">
                     Driver 3
 
                 </td>

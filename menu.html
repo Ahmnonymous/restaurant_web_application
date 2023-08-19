@@ -51,23 +51,19 @@
 
 
     <!-- Menu Table -->
-    <table class="ordertable">
+    <table class="menutable">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Available</th>
-                <th>Action</th>
+                <th>Menu Name</th>
+                <th class="action">Action</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>
-                    <div class="order-owner">
-                        <span>Pizza</span>
-                    </div>
+                    Pizza
                 </td>
-                <td>Yes</td>
-                <td>
+                <td  >
                     <span class="action-icons">
                         <span class="action-icon Update" onclick="openOverlay('MenuOverlay')">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
@@ -76,12 +72,9 @@
             </tr>
             <tr>
                 <td>
-                    <div class="order-owner">
-                        <span>Burger</span>
-                    </div>
+                    Burger
                 </td>
-                <td>No</td>
-                <td>
+                <td  >
                     <span class="action-icons">
                         <span class="action-icon Update" onclick="openOverlay('MenuOverlay')">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
@@ -90,12 +83,9 @@
             </tr>
             <tr>
                 <td>
-                    <div class="order-owner">
-                        <span>Beverages</span>
-                    </div>
+                    Beverages
                 </td>
-                <td>Yes</td>
-                <td>
+                <td  >
                     <span class="action-icons">
                         <span class="action-icon Update" onclick="openOverlay('MenuOverlay')">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
@@ -128,25 +118,19 @@
     </div>
     <!-- Items Table -->
 
-    <table class="ordertable">
+    <table class="menutable">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Available</th>
-                <th>Action</th>
+                <th>Item Name</th>
+                <th class="action">Action</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>
-                    <div class="order-owner">
-                        <span>Mutton</span>
-                    </div>
+                    Mutton
                 </td>
-                <td>1200</td>
-                <td>Yes</td>
-                <td>
+                <td  >
                     <span class="action-icons">
                         <span class="action-icon Update" onclick="openOverlay('update-overlay')">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
@@ -155,13 +139,9 @@
             </tr>
             <tr>
                 <td>
-                    <div class="order-owner">
-                        <span>Beef</span>
-                    </div>
+                    Beef
                 </td>
-                <td>700</td>
-                <td>Yes</td>
-                <td>
+                <td  >
                     <span class="action-icons">
                         <span class="action-icon Update" onclick="openOverlay('update-overlay')">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
@@ -170,13 +150,9 @@
             </tr>
             <tr>
                 <td>
-                    <div class="order-owner">
-                        <span>Fish</span>
-                    </div>
+                    Fish
                 </td>
-                <td>1200</td>
-                <td>Yes</td>
-                <td>
+                <td  >
                     <span class="action-icons">
                         <span class="action-icon Update" onclick="openOverlay('update-overlay')">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
@@ -206,25 +182,19 @@
     </div>
 
 
-    <table class="ordertable">
+    <table class=" menutable">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Available</th>
-                <th>Action</th>
+                <th>Topping Name</th>
+                <th class="action">Action</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>
-                    <div class="order-owner">
-                        <span>Cheese</span>
-                    </div>
+                    Chees
                 </td>
-                <td>1200</td>
-                <td>Yes</td>
-                <td>
+                <td  >
                     <span class="action-icons">
                         <span class="action-icon Update" onclick="toppingOverlay()">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
@@ -233,13 +203,9 @@
             </tr>
             <tr>
                 <td>
-                    <div class="order-owner">
-                        <span>Chicken</span>
-                    </div>
+                    Chicken
                 </td>
-                <td>700</td>
-                <td>Yes</td>
-                <td>
+                <td  >
                     <span class="action-icons">
                         <span class="action-icon Update" onclick="toppingOverlay()">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
@@ -248,13 +214,9 @@
             </tr>
             <tr>
                 <td>
-                    <div class="order-owner">
-                        <span>Butter</span>
-                    </div>
+                    Butter
                 </td>
-                <td>1200</td>
-                <td>Yes</td>
-                <td>
+                <td  >
                     <span class="action-icons">
                         <span class="action-icon Update" onclick="toppingOverlay()">&#9998;</span>
                         <span class="action-icon Delete" onclick="deleteItem()">&#128465;</span>
@@ -264,23 +226,23 @@
         </tbody>
     </table>
 
-<!-- Menu Overlay -->
+    <!-- Menu Overlay -->
+    <div id="MenuOverlay" class="menu-overlay">
+        <div class="menu-overlay-content">
+            <span class="menu-close-btn" onclick="closeOverlay('MenuOverlay')">&times;</span>
 
-<div id="MenuOverlay" class="menu-overlay">
-    <div class="menu-overlay-content">
-        <span class="menu-close-btn" onclick="closeOverlay('MenuOverlay')">&times;</span>
-
-        <h3 class="text-center">Update Menu</h3>
-        <form id="update-form" action="">
-            <input type="text" id="toppingName" placeholder="Name">
-            <select id="menuAvailability">
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select>
-            <button class="update" type="button" onclick="updateItem('empty','Successfully Updated!')">Update</button>
-        </form>      
+            <h3 class="text-center">Update Menu</h3>
+            <form id="update-form" action="">
+                <input type="text" id="toppingName" placeholder="Name">
+                <select id="menuAvailability">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <button class="update" type="button"
+                    onclick="updateItem('empty','Successfully Updated!')">Update</button>
+            </form>
+        </div>
     </div>
-</div>
     <!-- Overlay for Items -->
     <div id="update-overlay" class="menu-overlay">
         <div class="menu-overlay-content">
@@ -325,10 +287,6 @@
             </div>
         </div>
     </div>
-
-
-    
-
     <!-- Delete Overlay -->
     <div id="deleteOverlay" class="overlay">
         <div class="overlay-content">

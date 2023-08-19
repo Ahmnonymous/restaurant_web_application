@@ -95,9 +95,7 @@ section {
   font-size: 30px;
 }
 
-.navbar-nav .nav-link {
-  font-size: 22px;
-}
+
 
 .navbar ul .user i {
   font-size: 20px;
@@ -624,7 +622,8 @@ section {
   .account a {
     margin-left: 40px;
   }
-   .account .signup{
+
+  .account .signup {
     width: 45% !important;
     padding: 0px 0px !important;
   }
@@ -644,7 +643,7 @@ section {
     flex-direction: row;
   }
 
- 
+
 
   .address-section h2 {
     text-align: center;
@@ -657,7 +656,6 @@ section {
   }
 
   .navbar ul .user i {
-    font-size: 20px;
     margin: 10px 0px 0px 0px;
   }
 
@@ -739,15 +737,13 @@ section {
     max-width: 150px !important;
   }
 
-  .usertable th,
-  .usertable td {
-    padding: 10px 45px !important;
-  }
+  
 
   .cart .payment-detail p {
     margin-right: -15px;
   }
-  .cart{
+
+  .cart {
     width: 390px !important;
     margin-left: -2px !important;
   }
@@ -755,6 +751,7 @@ section {
   .payment-method-new .button-group-new .paypal {
     margin-left: 35px;
   }
+
   .button-group-new {
     display: flex;
     flex-direction: column;
@@ -768,21 +765,27 @@ section {
     margin-left: 110px;
     width: 35% !important;
   }
+
   .paybuttons .Skip-btn,
   .paybuttons .pay-proceed-btn {
     width: 30% !important;
     margin: 10px 0px 0px -50px !important;
   }
 
-  .OTP{
+  .OTP {
     width: 370px !important;
   }
 
-  
-.Cart .Cart-quantity {
-  position: relative;
-  margin: 30px 0px 0px 33px;
-}
+
+  .Cart .Cart-quantity {
+    position: relative;
+    margin: 30px 0px 0px 33px;
+  }
+
+  .ordertable .name {
+    padding: 0px !important;
+  }
+
 
 
 }
@@ -802,7 +805,6 @@ section {
   }
 
   .navbar ul .user i {
-    font-size: 20px;
     margin: 15px 0px 0px 0px;
   }
 
@@ -818,15 +820,12 @@ section {
     width: 330px !important;
   }
 
-  .usertable th,
-  .usertable td {
-    padding: 10px 35px !important;
-  }
 
   .payment-method-new .button-group-new .paypal {
     margin-left: 15px;
   }
-  .payment-method-new .proceed-button{
+
+  .payment-method-new .proceed-button {
     margin-left: 90px !important;
   }
 
@@ -837,10 +836,12 @@ section {
     margin-bottom: 15px;
     margin-left: -15px;
   }
-.cart{
-  width: 355px !important;
-  margin-left: -2px !important;
-}
+
+  .cart {
+    width: 355px !important;
+    margin-left: -2px !important;
+  }
+
   .cart .payment-detail p {
     margin-right: -25px;
   }
@@ -850,24 +851,33 @@ section {
     width: 30% !important;
     margin: 10px 0px 0px -10px !important;
   }
-  .address-section .address-form{
+
+  .address-section .address-form {
     margin-left: -10px;
   }
+
   .address-section .address-submit-button {
     margin-top: 15px;
   }
-  .OTP{
+
+  .OTP {
     width: 340px !important;
   }
-  .account .signup{
+
+  .account .signup {
     width: 170px !important;
     padding: 0px 0px !important;
   }
+
   .Cart .Cart-quantity {
     position: relative;
     margin: 30px 0px 0px 27px;
   }
   
+  .driver{
+    width: 100% !important;
+  }
+
 
 }
 
@@ -2167,7 +2177,9 @@ textarea::placeholder {
 
 .action-icons {
   display: flex;
-  text-align: center;
+  text-align: right;
+  align-items: flex-end;
+  justify-content: end;
 }
 
 .action-icon {
@@ -2196,44 +2208,123 @@ textarea::placeholder {
   color: darkred;
 }
 
+/* Order Table */
+.ordertable {
+  width: 28% !important;
+  margin: 50px auto;
+}
+.ordertable .status {
+  text-align: center;
+  position: relative;
+  right: 40px;
+}
+
+/*Order Ship Table Driver */
+.driver{
+  width: 25% !important;
+  margin: 50px auto;
+}
+.driver .dri {
+  position: relative;
+  left: 45px;
+}
+
+.driverview {
+  width: 25%;
+  margin: 50px auto;
+}  
+
+.driverview th,
+td,
+.ordertable th,
+td {
+  padding: 10px 10px;
+}  
+
+.driverview .driversview {
+  text-align: right;
+  position: relative;
+  right: 15px;
+}  
+
+/* Menu Page Table */
+.menutable {
+  width: 28%;
+  margin: 50px auto;
+}
+
+.menutable td {
+  padding: 10px 10px;
+}
+
+.menutable th {
+  padding: 10px 10px;
+}
+
+.menutable .action,
+.ordertable .action {
+  text-align: right;
+  padding: 10px 0px;
+  position: relative;
+  right: 40px;
+
+}
+/* User Privilege Table */
+.usertable{
+  width: 25%;
+  margin: 50px auto;
+}
+.usertable th,
+.usertable td{
+  padding: 10px 10px;
+}
+.usertable .privilege{
+  text-align: right;
+  position: relative;
+  right: 20px;
+}
+
+
+
+/* All Table Default Style */
+table th,
+table td {
+  border-bottom: 1px solid var(--border-color);
+}
 tbody,
 thead {
   border: 1px solid lightgrey;
 }
 
-.ordertable {
-  width: 35% !important;
-  margin: 50px auto;
-}
-
-/* Privilege Table */
-.usertable td,
-.usertable th {
-  text-align: center !important;
-}
-
-
-table th,
-table td {
-  border-bottom: 1px solid var(--border-color);
-  padding: 15px 15px;
-}
-
-table th {
-  padding: 15px 22px !important;
-  width: 10px;
-  text-align: left !important;
-}
 
 @media (max-width: 768px) {
   .ordertable {
+    width: 80% !important;
+  }
+  
+  .driverview{
     width: 90%;
+  }
+  .driver{
+    width: 90% !important;
+  }
+
+  .menutable {
+    width: 80%;
+    margin: 50px auto;
+  }
+  .usertable{
+    width: 80%;
   }
 
   table th,
   table td {
     width: auto;
     padding: 5px;
+  }
+
+  .ship {
+    text-align: center !important;
   }
 }
 
@@ -2301,8 +2392,7 @@ table th {
 
 /*Orders Shipping  */
 .driver-select {
-  width: 100%;
-  max-width: 250px;
+  width: 150px;
   padding: 0.2rem;
   text-align: center;
   border: 1px solid #ccc;
@@ -2720,7 +2810,9 @@ section {
   margin-bottom: 15px;
 }
 
-.profile-details, .profile-payment-details, .profile-address-details {
+.profile-details,
+.profile-payment-details,
+.profile-address-details {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
@@ -2767,12 +2859,15 @@ section {
 
 .edit-button:hover {
   background-color: rgb(212, 0, 0);
-  color: white  ;
+  color: white;
 }
 
 
 @media (max-width: 768px) {
-  .profile-details, .profile-payment-details, .profile-address-details {
-      grid-template-columns: 1fr;
+
+  .profile-details,
+  .profile-payment-details,
+  .profile-address-details {
+    grid-template-columns: 1fr;
   }
 }

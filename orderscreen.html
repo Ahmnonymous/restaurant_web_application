@@ -30,82 +30,54 @@
   <nav class="navbar navbar-expand-sm navbar-dark">
     <div class="container-fluid">
 
-        <div class="owner">
-            <!-- <img src="/images/logo.webp" alt="user image" class="T"> -->
-            <a class="navbar-brand m-2 ms-4 text-dark logo" href="">ORDER</a>
-        </div>
-        <ul class="list-unstyled">
-            <li class="nav-item me-3 me-lg-0" title="Login/Signup">
-                <a class="nav-link text-dark user" href="#"><i class="fas fa-user ms-4 use"></i></a>
-            </li>
-        </ul>
+      <div class="owner">
+        <!-- <img src="/images/logo.webp" alt="user image" class="T"> -->
+        <a class="navbar-brand m-2 ms-4 text-dark logo" href="">ORDER</a>
+      </div>
+      <ul class="list-unstyled">
+        <li class="nav-item me-3 me-lg-0" title="Login/Signup">
+          <a class="nav-link text-dark user" href="#"><i class="fas fa-user ms-4 use"></i></a>
+        </li>
+      </ul>
     </div>
-</nav>
+  </nav>
 
-<a href="dadmin.html"><button class="back"> <i class="fas fa-arrow-left back-icon me-2"></i> Dashboard</button></a>
+  <a href="dadmin.html"><button class="back"> <i class="fas fa-arrow-left back-icon me-2"></i> Dashboard</button></a>
 
   <table class="ordertable">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>STATUS</th>
-        <th>Action</th>
+        <th>ORDER ID</th>
+        <th class="status">STATUS</th>
+        <th class="action">Action</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>#1</td>
-        <td>
-          <span class="order-status">
-            Ready
-          </span>
+        <td class="status">
+          Ready
         </td>
-        <td>
-          <button class="update" id="showOverlay" onclick="show()">Update</button>
+        <td class="action">
+          <span class="action-icon Update" id="showOverlay" onclick="show()">&#9998;</span>
         </td>
       </tr>
       <tr>
         <td>#2</td>
-        <td>
-          <span class="order-status">
-            Delivered
-          </span>
+        <td class="status">
+          Delivered
         </td>
-        <td>
-          <button class="update" id="showOverlay" onclick="show()">Update</button>
+        <td class="action">
+          <span class="action-icon Update" id="showOverlay" onclick="show()">&#9998;</span>
         </td>
       </tr>
       <tr>
         <td>#3</td>
-        <td>
-          <span class="order-status">
-            Cancelled
-          </span>
+        <td class="status">
+          Cancelled
         </td>
-        <td>
-          <button class="update" id="showOverlay" onclick="show()">Update</button>
-        </td>
-      </tr>
-      <tr>
-        <td>#4</td>
-        <td>
-          <span class="order-status ">
-            Processing
-          </span>
-        </td>
-        <td>
-          <button class="update" id="showOverlay" onclick="show()">Update</button>
-        </td>
-      </tr>
-      <tr>
-        <td>#5</td>
-        <td>
-          <span class="order-status ">
-            Out of Delivery
-          </span>
-        </td>
-        <td>
-          <button class="update" id="showOverlay" onclick="show()">Update</button>
+        <td class="action">
+          <span class="action-icon Update" id="showOverlay" onclick="show()">&#9998;</span>
         </td>
       </tr>
     </tbody>
