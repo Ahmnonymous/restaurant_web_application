@@ -46,12 +46,16 @@ body {
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
+  text-align: center;
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
-  width: 230px !important;
-
+  width: 220px !important;
   z-index: 9999;
+}
+.alert{
+  width: 200px !important;
+  
 }
 
 .updatealert {
@@ -64,6 +68,8 @@ body {
 }
 
 .empty {
+  text-align: center;
+  width: 195px !important;
   background-color: rgba(0, 0, 0, 1) !important;
 }
 
@@ -98,8 +104,12 @@ section {
 
 
 .navbar ul .user i {
-  font-size: 20px;
-  margin: 10px 40px 0px 0px;
+  font-size: 25px;
+  margin: 10px 30px 0px 0px;
+}
+.navbar ul i{
+  font-size:25px;
+  padding: 0px 20px;
 }
 
 .cart-icon-container {
@@ -110,7 +120,7 @@ section {
 .cart-count {
   position: absolute;
   top: -1px;
-  right: -1px;
+  right: 12px;
   background-color: red;
   color: #fff;
   font-size: 12px;
@@ -656,7 +666,8 @@ section {
   }
 
   .navbar ul .user i {
-    margin: 10px 0px 0px 0px;
+      font-size: 25px;
+      margin: 10px 0px 0px 0px;
   }
 
   .navbar .owner .p {
@@ -805,6 +816,7 @@ section {
   }
 
   .navbar ul .user i {
+    font-size: 20px;
     margin: 15px 0px 0px 0px;
   }
 
@@ -1651,13 +1663,13 @@ label {
 
 .add-address-text {
   cursor: pointer;
-  text-align: center;
   padding: 10px;
+  text-align: center;
   border: 1px solid #ccc;
   width: 200px;
   border-radius: 5px;
   font-weight: bold;
-  margin: 50px auto;
+  margin: 50px 0px;
 }
 
 .container-grid {
@@ -1747,8 +1759,8 @@ label {
 }
 
 .payment-image {
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 140px;
+  max-height: 140px;
   padding: 10px;
   position: relative;
   left: 0%;
@@ -1796,12 +1808,11 @@ label {
 
 .payment-method-new h2 {
   margin-bottom: 20px;
-  text-align: center;
   color: black;
 }
 
 #payment-form-new {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .form-group {
@@ -2275,6 +2286,7 @@ td {
   margin: 50px auto;
 }
 .usertable th,
+.driver th,
 .usertable td{
   padding: 10px 10px;
 }
