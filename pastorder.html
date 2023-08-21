@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/css/flag-icon.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+
+    <title>Past Order</title>
+</head>
+
+<body>
+    <div class="past-order-container">
+        <h2>Date : 21/08/2023</h2>
+        <hr class="Line">
+
+        <div class="section">
+
+            <div class="order-details">
+                <img src="/images/burger.webp" alt="Order Image" class="order-image">
+                <h1 class="order-heading">Past Order Details</h1>
+            </div>
+            <div class="order-actions">
+                <button class="order-action-button print-button" onclick="openOverlay('printOverlay')">Print Invoice</button>
+                <button class="order-action-button repeat-button" onclick="openOverlay('repeatOverlay')">Repeat Order</button>
+            </div>
+        </div>
+    </div>
+
+<!-- For Invoice  -->
+    <div id="printOverlay" class="overlay">
+        <div class="overlay-content">
+            <h3 class="text-center">Print Invoice</h2>
+                <p class="text-center">Do you want to Print Invoice?</p>
+                <div class="deletebtn">
+                    <button class="update">Yes</button>
+                    <button class="update" onclick="closeOverlay('printOverlay')">No</button>
+                </div>
+        </div>
+    </div>
+    <!-- For Repeat Order -->
+    <div id="repeatOverlay" class="overlay">
+        <div class="overlay-content">
+            <h3 class="text-center">Repeat Order</h2>
+                <p class="text-center">Do you want to Repeat this Order?</p>
+                <div class="deletebtn">
+                    <button class="update">Yes</button>
+                    <button class="update" onclick="closeOverlay('repeatOverlay')">No</button>
+                </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="/js/script.js"></script>

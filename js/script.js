@@ -23,12 +23,36 @@ function closeoverlay() {
     driverloginOverlay.style.display='none';
 }
 
+// Show login overlay when click on user icon
+var userIcon = document.querySelector('.fa-user');
+var loginOverlay = document.querySelector('#login-overlay');
+var dropdown = document.getElementById("dropdown");
+
+userIcon.addEventListener("click", function(event) {
+    event.stopPropagation();
+    if (isLoggedIn()) {
+        loginOverlay.style.display = "none";
+        dropdown.style.display = "block";
+    } else {
+        loginOverlay.style.display = "flex";
+        dropdown.style.display = "none";
+    }
+});
+function isLoggedIn() {
+    return true;
+}
+
+document.addEventListener("click", function(event) {
+    if (!userIcon.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.style.display = "none"; 
+    }
+});
+
+
 
 
 var isScrolling = false;
-
 window.addEventListener('scroll', throttleScroll, false);
-
 function throttleScroll() {
   if (!isScrolling) {
     window.requestAnimationFrame(function() {

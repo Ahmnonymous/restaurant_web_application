@@ -15,6 +15,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+
     <title>User Profile</title>
 </head>
 
@@ -36,7 +38,7 @@
                     <span class="value">*********</span>
                 </div>
             </div>
-            <button class="edit-button">Edit</button> <!-- Edit button added -->
+            <button class="edit-button" onclick="openOverlay('profileOverlay')">Edit</button> <!-- Edit button added -->
         </section>
     
         <section class="profile-payment">
@@ -51,16 +53,7 @@
                     <span class="value">**** **** **** 1234</span>
                 </div>
             </div>
-            <button class="edit-button">Edit</button> <!-- Edit button added -->
-        </section>
-    
-        <section class="profile-orders">
-            <h2>Past Orders</h2>
-            <ul class="profile-order-list">
-                <li>Order #1234 - Item 1, Item 2</li>
-                <li>Order #5678 - Item 3, Item 4</li>
-            </ul>
-            <button class="edit-button">Edit</button> <!-- Edit button added -->
+            <button class="edit-button" onclick="openOverlay('paymentOverlay')">Edit</button> <!-- Edit button added -->
         </section>
     
         <section class="profile-addresses">
@@ -79,8 +72,55 @@
                     <span class="value">Building 789, Apt 101</span>
                 </div>
             </div>
-            <button class="edit-button">Edit</button> <!-- Edit button added -->
+            <button class="edit-button" onclick="openOverlay('addressOverlay')">Edit</button> <!-- Edit button added -->
         </section>
     </div>
+
+
+
+<!-- User Profile Overlay -->
+    <div id="paymentOverlay" class="menu-overlay">
+        <div class="menu-overlay-content">
+            <span class="menu-close-btn" onclick="closeOverlay('paymentOverlay')">&times;</span>
+
+            <h3 class="text-center">Update Payment</h3>
+            <form id="update-form" action="">
+                <input type="text" id="Name" placeholder="Method ">
+                <input type="text" id="card number" placeholder="Card Number">
+                <button class="update"  onclick="closeOverlay('paymentOverlay')">Update</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Payment Method Overlay -->
+    <div id="profileOverlay" class="menu-overlay">
+        <div class="menu-overlay-content">
+            <span class="menu-close-btn" onclick="closeOverlay('profileOverlay')">&times;</span>
+
+            <h3 class="text-center">Update Profile</h3>
+            <form id="update-form" action="">
+                <input type="text" id="Name" placeholder="Name">
+                <input type="password" id="Passowrd" placeholder="Password">
+                <button class="update"  onclick="closeOverlay('profileOverlay')">Update</button>
+            </form>
+        </div>
+    </div>
+    <!-- Address  Overlay -->
+    <div id="addressOverlay" class="menu-overlay">
+        <div class="menu-overlay-content">
+            <span class="menu-close-btn" onclick="closeOverlay('addressOverlay')">&times;</span>
+
+            <h3 class="text-center">Update Profile</h3>
+            <form id="update-form" action="">
+                <input type="text" id="area" placeholder="Area">
+                <input type="text" id="apartment" placeholder="Apartment">
+                <input type="text" id="building" placeholder="Building">
+                <button class="update"  onclick="closeOverlay('addressOverlay')">Update</button>
+            </form>
+        </div>
+    </div>
 </body>
+
+<script src="/js/script.js"></script>
 </html>

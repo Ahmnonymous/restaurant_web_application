@@ -35,6 +35,33 @@ body {
 :root {
   --maincolor: rgb(255, 203, 4);
 }
+/* User Dropdown Styles */
+.user-dropdown {
+  display: none;
+  position: absolute;
+  top: 80px; /* Adjust this value to position the dropdown correctly below the user icon */
+  right: 45px;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 100px; /* Set the width of the dropdown */
+  text-align: center;
+  border-radius: 10px;
+}
+
+.user-dropdown a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.user-dropdown a:hover {
+  background-color:rgb(255, 203, 4);
+  border-radius: 5px;
+}
+
+
 
 .alert,
 .empty,
@@ -104,11 +131,11 @@ section {
 
 
 .navbar ul .user i {
-  font-size: 25px;
+  font-size: 20px;
   margin: 10px 30px 0px 0px;
 }
 .navbar ul i{
-  font-size:25px;
+  font-size:20px;
   padding: 0px 20px;
 }
 
@@ -120,12 +147,12 @@ section {
 .cart-count {
   position: absolute;
   top: -1px;
-  right: 12px;
+  right: 14px;
   background-color: red;
   color: #fff;
   font-size: 12px;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -445,6 +472,11 @@ section {
     margin-left: 40px;
     width: 700px;
   }
+  .user-dropdown{
+    right: 70px;
+    top: 70px;
+  }
+
 
   .menu-container {
     margin-left: 0px;
@@ -585,6 +617,10 @@ section {
 }
 
 @media (max-width: 500px) {
+  .user-dropdown{
+    right: 50px;
+    top: 70px;
+  }
   .food-item {
     flex: 0 0 50%;
     max-width: 47%;
@@ -666,7 +702,7 @@ section {
   }
 
   .navbar ul .user i {
-      font-size: 25px;
+      font-size: 20px;
       margin: 10px 0px 0px 0px;
   }
 
@@ -725,8 +761,9 @@ section {
     margin-bottom: 25px;
   }
 
-  #deleteOverlay .overlay-content {
-    width: 370px;
+  #deleteOverlay .overlay-content,
+  #printOverlay .overlay-content {
+    width: 365px;
   }
 
 
@@ -804,6 +841,10 @@ section {
 @media (max-width:400px) {
   .menu-container {
     width: calc(2 * (120px + 20px));
+  }
+  .user-dropdown{
+    right: 120px;
+    top: 130px;
   }
 
   .home img {
@@ -1412,9 +1453,10 @@ h1 {
   position: relative;
 }
 
+/* .form-group input[type="tel"], */
 .form-group input[type="text"],
 .form-group input[type="password"],
-.form-group input[type="tel"],
+.form-group input[type="email"],
 .form-group input[type="number"] {
   width: 90%;
   padding: 8px 8px 8px 50px;
@@ -2846,14 +2888,6 @@ section {
   font-weight: normal;
 }
 
-.profile-order-list {
-  list-style: none;
-  padding: 0;
-}
-
-.profile-order-list li {
-  margin-bottom: 5px;
-}
 
 .edit-button {
   background-color: rgb(255, 203, 0);
@@ -2883,3 +2917,81 @@ section {
     grid-template-columns: 1fr;
   }
 }
+
+
+
+
+/* Past Order Page */
+    .past-order-container {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .order-details {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .order-image {
+        max-width: 150px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-heading {
+        font-size: 24px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .order-actions {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+        margin-right: 50px;
+        gap: 10px;
+    }
+
+    .order-action-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-top: 20px;
+        border: none;
+        width: 150px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .print-button {
+        background-color: rgb(255, 203, 0);
+        color: black;
+    }
+
+    .repeat-button {
+        background-color: rgb(255, 203, 0);
+        color: black;
+    }
+
+
+    @media (max-width: 768px) {
+        .order-actions {
+            flex-direction: column;
+            align-items: center;
+        }
+        .order-image{
+            width: 150px !important;
+        }
+    }
