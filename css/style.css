@@ -3051,7 +3051,7 @@ section {
 }
 
 .order-image {
-  max-width: 120px;
+  max-width: 90px;
   max-height: 100px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -3060,7 +3060,7 @@ section {
 .order-heading,
 .order-description {
   margin-left: 10px;
-  font-size: medium;
+  font-size: small;
 }
 
 .order-actions {
