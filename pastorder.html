@@ -23,41 +23,44 @@
 </head>
 
 <body>
-    <div class="past-order-container">
-        <h2>Date : 21/08/2023</h2>
+    <div class="past-order-container mt-5">
+        <h3>Date</h3>
         <hr class="Line">
 
         <div class="section">
-
             <div class="order-details">
                 <img src="/images/burger.webp" alt="Order Image" class="order-image">
-                <h1 class="order-heading">Past Order Details</h1>
+                <div class="order-content">
+                    <h4 class="order-heading fw-bold">Past Order Details</h4>
+                    <p class="order-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                </div>
             </div>
             <div class="order-actions">
-                <button class="order-action-button print-button" onclick="openOverlay('printOverlay')">Print Invoice</button>
-                <button class="order-action-button repeat-button" onclick="openOverlay('repeatOverlay')">Repeat Order</button>
+                <button class="order-action-button print-button" onclick="openOverlay('printOverlay')">Print
+                    Invoice</button>
+                <button class="order-action-button repeat-button" onclick="openOverlay('repeatOverlay')">Repeat                   Order</button>
             </div>
         </div>
     </div>
 
-<!-- For Invoice  -->
+    <!-- For Invoice  -->
     <div id="printOverlay" class="overlay">
         <div class="overlay-content">
-                <p class="text-center" style="font-size: large;">Do you want to Print Invoice?</p>
-                <div class="deletebtn">
-                    <button class="update">Yes</button>
-                    <button class="update" onclick="closeOverlay('printOverlay')">No</button>
-                </div>
+            <p class="text-center" style="font-size: large;">Do you want to Print Invoice?</p>
+            <div class="deletebtn">
+                <button class="update">Yes</button>
+                <button class="update" onclick="closeOverlay('printOverlay')">No</button>
+            </div>
         </div>
     </div>
     <!-- For Repeat Order -->
     <div id="repeatOverlay" class="overlay">
         <div class="overlay-content">
-                <p class="text-center" style="font-size: large;">Do you want to Repeat this Order?</p>
-                <div class="deletebtn">
-                    <button class="update">Yes</button>
-                    <button class="update" onclick="closeOverlay('repeatOverlay')">No</button>
-                </div>
+            <p class="text-center" style="font-size: large;">Do you want to Repeat this Order?</p>
+            <div class="deletebtn">
+                <button class="update">Yes</button>
+                <button class="update" onclick="closeOverlay('repeatOverlay')">No</button>
+            </div>
         </div>
     </div>
 </body>
