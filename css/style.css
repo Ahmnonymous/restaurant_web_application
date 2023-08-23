@@ -65,7 +65,7 @@ body {
 }
 
 
-
+.menu,
 .alert,
 .empty,
 .privileg,
@@ -86,7 +86,6 @@ body {
 
 .alert {
   width: 200px !important;
-
 }
 
 .updatealert {
@@ -100,7 +99,7 @@ body {
 
 .empty {
   text-align: center;
-  width: 195px !important;
+  width: 200px !important;
   background-color: rgba(0, 0, 0, 1) !important;
 }
 
@@ -486,6 +485,7 @@ section {
     right: 70px;
     top: 70px;
   }
+
   .userprofile .edit-button-1,
   .userprofile .edit-button-2,
   .userprofile .edit-button-3 {
@@ -713,7 +713,7 @@ section {
     flex-direction: row;
   }
 
-  
+
 
 
 
@@ -842,8 +842,8 @@ section {
 
   .paybuttons .Skip-btn,
   .paybuttons .pay-proceed-btn {
-    width: 30% !important;
-    margin: 10px 0px 0px -50px !important;
+    width: 40% !important;
+    margin: 10px 0px 0px -30px !important;
   }
 
   .OTP {
@@ -865,6 +865,7 @@ section {
     margin: 0px 10px 15px 0px !important;
     text-align: center;
   }
+
   .address-section .add-address-text {
     margin-left: 55px;
 
@@ -890,14 +891,30 @@ section {
     top: 33px;
     padding: 6px 16px;
   }
-  .userprofile .edit-button-2{
+
+  .userprofile .edit-button-2 {
     top: 275px !important;
   }
-  .userprofile .edit-button-3{
-    top: 504px !important ;
+
+  .userprofile .edit-button-3 {
+    top: 504px !important;
   }
 
-
+  .past-section{
+    flex-direction: column;
+    align-items: center;
+   }
+   .past-section .order-actions{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+   }
+   
+   .driver .update{
+    display: block;
+    margin: auto ;
+   }
 
 }
 
@@ -941,6 +958,9 @@ section {
     margin-left: 22px !important;
   }
 
+
+
+
   .payment-method-new .button-group-new .paypal {
     margin-left: 15px;
   }
@@ -967,9 +987,10 @@ section {
 
   .paybuttons .Skip-btn,
   .paybuttons .pay-proceed-btn {
-    width: 30% !important;
+    width: 40% !important;
     margin: 10px 0px 0px -10px !important;
   }
+
   .address-section .add-address-text {
     margin-left: 37px;
 
@@ -1001,6 +1022,9 @@ section {
     width: 100% !important;
   }
 
+  .rate-order {
+    width: 360px;
+  }
 
 }
 
@@ -2663,9 +2687,9 @@ thead {
   margin: auto;
   color: black;
   font-weight: bolder;
-  padding: 7px 25px;
+  padding: 6px 15px;
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 17px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -3034,7 +3058,7 @@ section {
   top: 2%;
 }
 
-.section {
+.past-section {
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -3074,8 +3098,8 @@ section {
 }
 
 .order-action-button {
-  padding: 8px 16px;
-  font-size: 16px;
+  padding: 8px 12px;
+  font-size: 14px;
   margin-top: 10px;
   border: none;
   border-radius: 5px;

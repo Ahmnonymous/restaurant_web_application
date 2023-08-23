@@ -237,7 +237,6 @@ function updateItem(clas,msg) {
     alertMessage.style.display = 'none';
   }, 2000);
 
-  closeOverlay();
 }
 
 
@@ -256,14 +255,8 @@ function openOverlay(overlayId) {
 function closeOverlay(overlayId) {
   document.getElementById(overlayId).style.display = 'none';
 }
-function addTopping() {
-  closeOverlay('toppingOverlay');
-}
 
-function deleteConfirmed() {
-  
-  closeOverlay('deleteOverlay');
-}
+
 
 
 

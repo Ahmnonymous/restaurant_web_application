@@ -78,7 +78,7 @@
 
 
 
-<!-- User Profile Overlay -->
+<!-- Payment Card Overlay -->
     <div id="paymentOverlay" class="menu-overlay">
         <div class="menu-overlay-content">
             <span class="menu-close-btn" onclick="closeOverlay('paymentOverlay')">&times;</span>
@@ -87,13 +87,13 @@
             <form id="update-form" action="">
                 <input type="text" id="Name" placeholder="Method ">
                 <input type="text" id="card number" placeholder="Card Number">
-                <button class="update"  onclick="closeOverlay('paymentOverlay')">Update</button>
+                <button class="update"  onclick="updateItem('menu','Details Updated!')">Update</button>
             </form>
         </div>
     </div>
 
 
-    <!-- Payment Method Overlay -->
+    <!-- User Profile Overlay -->
     <div id="profileOverlay" class="menu-overlay">
         <div class="menu-overlay-content">
             <span class="menu-close-btn" onclick="closeOverlay('profileOverlay')">&times;</span>
@@ -102,7 +102,7 @@
             <form id="update-form" action="">
                 <input type="text" id="Name" placeholder="Name">
                 <input type="password" id="Passowrd" placeholder="Password">
-                <button class="update"  onclick="closeOverlay('profileOverlay')">Update</button>
+                <button class="update"  onclick="updateItem('menu','Profile Updated!')">Update</button>
             </form>
         </div>
     </div>
@@ -116,7 +116,7 @@
                 <input type="text" id="area" placeholder="Area">
                 <input type="text" id="apartment" placeholder="Apartment">
                 <input type="text" id="building" placeholder="Building">
-                <button class="update"  onclick="closeOverlay('addressOverlay')">Update</button>
+                <button class="update"  onclick="updateItem('menu','Address Updated!')">Update</button>
             </form>
         </div>
     </div>
