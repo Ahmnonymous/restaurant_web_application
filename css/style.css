@@ -40,7 +40,7 @@ body {
 .user-dropdown {
   display: none;
   position: absolute;
-  top: 80px;
+  top: 70px;
   /* Adjust this value to position the dropdown correctly below the user icon */
   right: 45px;
   background-color: white;
@@ -635,7 +635,7 @@ section {
 
 @media (max-width: 500px) {
   .user-dropdown {
-    right: 50px;
+    right: 40px;
     top: 70px;
   }
 
@@ -924,8 +924,8 @@ section {
   }
 
   .user-dropdown {
-    right: 120px;
-    top: 130px;
+    right: 40px;
+    top: 70px;
   }
 
   .home img {

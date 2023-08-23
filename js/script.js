@@ -225,7 +225,7 @@ show();
 
 
 function updateItem(clas,msg) {
-  event.preventDefault();
+  clas.preventDefault();
 
   const alertMessage = document.createElement('div');
   alertMessage.className = clas;
