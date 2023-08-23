@@ -713,9 +713,9 @@ section {
     flex-direction: row;
   }
 
-  .address-section h2 {
-    margin-bottom: 15px;
-  }
+  
+
+
 
   .payment-button-new {
     width: 70%;
@@ -760,8 +760,8 @@ section {
 
   .menu-overlay .menu-close-btn {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 2px;
+    right: 2px;
     font-size: 30px;
     cursor: pointer;
   }
@@ -823,7 +823,7 @@ section {
   }
 
   .payment-method-new .button-group-new .p {
-    margin-left: 45px !important;
+    margin-left: 47px !important;
   }
 
   .button-group-new {
@@ -832,7 +832,7 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-left: -60px;
+    margin-left: -50px;
   }
 
   .payment-method-new #payment-form-new .proceed-button {
@@ -860,18 +860,19 @@ section {
     padding: 0px !important;
   }
 
+  .address-section h2,
+  .payment-method-new h2 {
+    margin: 0px 10px 15px 0px !important;
+    text-align: center;
+  }
+  .address-section .add-address-text {
+    margin-left: 55px;
+
+  }
 
   #address-form .address-btn,
   #address-form .address-skip {
     margin-left: 0 !important;
-  }
-
-  .payment-method-new h2 {
-    margin-left: 10px;
-  }
-
-  .address-section .add-address-text {
-    margin-left: -2%;
   }
 
   .past-order-container .section {
@@ -940,8 +941,6 @@ section {
     margin-left: 22px !important;
   }
 
-
-
   .payment-method-new .button-group-new .paypal {
     margin-left: 15px;
   }
@@ -970,6 +969,10 @@ section {
   .paybuttons .pay-proceed-btn {
     width: 30% !important;
     margin: 10px 0px 0px -10px !important;
+  }
+  .address-section .add-address-text {
+    margin-left: 37px;
+
   }
 
   .address-section .address-form {
@@ -2220,7 +2223,7 @@ textarea::placeholder {
   align-items: center;
 }
 
-.section {
+.user-section {
   display: flex;
   align-items: center;
 }
@@ -2677,7 +2680,7 @@ thead {
     align-items: center;
   }
 
-  .section {
+  .user-section {
     flex-direction: column;
     align-items: center;
   }
@@ -2712,8 +2715,8 @@ thead {
 
 .menu-close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: -3px;
+  right: 2px;
   font-size: 30px;
   cursor: pointer;
 }
