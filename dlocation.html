@@ -122,8 +122,11 @@
       </a>
     </div>
   </div>
-
-
+  <div id="dropdown" class="user-dropdown">
+    <a href="#">Profile</a>
+    <a href="#">Orders</a>
+    <a href="#">Logout</a>
+  </div>
 
 
 
@@ -135,16 +138,12 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-V2VjbavZ4JQoqw3pNxA2EXACKbYx944&callback=initMap" async defer></script>
 <script>
     function initMap() {
-    // Create a map object and specify the DOM element for display.
     const map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 37.7749, lng: -122.4194 }, // Default center (San Francisco)
         zoom: 12 // Default zoom level
     });
-
-    // You can fetch the driver's location from your backend and update the marker position here
     const driverLocation = { lat: 37.7749, lng: -122.4194 }; // Example driver location
 
-    // Create a marker and set its position
     const marker = new google.maps.Marker({
         position: driverLocation,
         map: map,
