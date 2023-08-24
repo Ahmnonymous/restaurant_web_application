@@ -1455,9 +1455,8 @@ h5 {
 }
 
 /* Sign up Form */
-h1 {
+h2 {
   text-align: center;
-  font-weight: bold;
   padding: 20px 0px 0px 0px;
 }
 
@@ -1945,7 +1944,6 @@ label {
 
 .payment-method-new h2 {
   margin-bottom: 20px;
-  color: black;
 }
 
 #payment-form-new {
@@ -2966,7 +2964,6 @@ section {
 }
 
 .userprofile h2 {
-  font-size: 24px;
   margin-bottom: 15px;
 }
 
@@ -3014,11 +3011,11 @@ section {
 }
 
 .edit-button-2 {
-  top: 250px !important;
+  top: 260px !important;
 }
 
 .edit-button-3 {
-  top: 434px !important;
+  top: 450px !important;
 }
 
 .edit-button:hover {
