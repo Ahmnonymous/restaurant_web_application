@@ -1445,7 +1445,6 @@ h5 {
   text-decoration: none;
 }
 
-
 .shadow {
   max-width: 1100px;
 }
@@ -1454,13 +1453,8 @@ h5 {
   margin-left: 60px;
 }
 
+
 /* Sign up Form */
-h2 {
-  text-align: center;
-  padding: 20px 0px 0px 0px;
-}
-
-
 .signup-container {
   display: flex;
   max-width: 1200px;
@@ -1943,6 +1937,7 @@ label {
 }
 
 .payment-method-new h2 {
+  
   margin-bottom: 20px;
 }
 
