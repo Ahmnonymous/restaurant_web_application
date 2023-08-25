@@ -66,34 +66,6 @@ function throttleScroll() {
 
 
 
-// JavaScript code to handle form submission
-function formsubmit() {
-
-  document.getElementById('driversignupForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    var name = document.getElementById('name').value;
-    var age = document.getElementById('age').value;
-    var phone = document.getElementById('phone').value;
-    var nationalID = document.getElementById('nationalID').value;
-    var password = document.getElementById('password').value;
-
-
-    if (name && age && phone && nationalID && password) {
-      if (age >= 15 && age <= 80) {
-        alert('Sign-up successful! Your information is under consideration. Upon successful acceptance, we will contact you for further processing.');
-        // Add your logic here to redirect the user to the next page or perform any other necessary actions
-      } else {
-        alert('You must be between 15 and 80 years old to apply for this job.');
-      }
-    } else {
-      alert('Please fill in all the required fields.');
-    }
-  });
-}
-
-
-
 
 function scrollToCategory(category, button) {
   // Remove the active class from all buttons
@@ -238,15 +210,13 @@ function updateItem(clas, msg) {
   }, 2000);
 
 }
-<button onclick="openOverlay('ratingoverlay')">Open Overlay</button>
-
 
 
 function toppingOverlay() {
   openOverlay('toppingOverlay');
 }
 
-function deleteItem() {
+function deleteItem() { 
   openOverlay('deleteOverlay');
 }
 
@@ -256,6 +226,9 @@ function openOverlay(overlayId) {
 function closeOverlay(overlayId) {
   document.getElementById(overlayId).style.display = 'none';
 }
+
+
+
 
 
 

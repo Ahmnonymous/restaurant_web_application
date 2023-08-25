@@ -1443,9 +1443,10 @@ h5 {
 }
 
 .login-button:hover,
-.signup-button:hover {
+.signup-button:hover,
+.signup:hover {
   background-color: var(--maincolor);
-  color: black;
+  color: black !important;
   font-size: larger;
   transition: all 0.7s ease;
   text-decoration: none;
@@ -1992,6 +1993,13 @@ label {
   justify-content: center;
   align-items: center;
 }
+.skip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 
 #address-form input[type="text"] {
   width: 40%;

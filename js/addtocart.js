@@ -36,11 +36,7 @@ function addToCart(event) {
     cartItems[itemId] = 1;
 
   }
-
-  // Update the cart count indicator in the navbar
   updateCartCount();
-
-  // Close the overlay after adding to cart
 }
 
 // Function to update the cart count indicator in the navbar
@@ -109,6 +105,7 @@ function cart(event) {
       alertMessage.style.display = 'none';
     }, 2000);
   } else {
+  
     cartLink.href = 'cart.html';
   }
 }

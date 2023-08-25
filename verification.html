@@ -48,6 +48,33 @@
       }
     });
   });
+  document.addEventListener('DOMContentLoaded', function () {
+    const defaultOTP = "123456"; // Change this to your default OTP
+
+    const otpForm = document.querySelector('.otpform');
+    const otpInputs = otpForm.querySelectorAll('.single-digit');
+    const otpButton = otpForm.querySelector('.otpbtn');
+
+    let remainingTries = 2; 
+
+    otpForm.addEventListener('submit', function (event) {
+      event.preventDefault(); 
+
+      const enteredOTP = Array.from(otpInputs).map(input => input.value).join('');
+
+      if (enteredOTP === defaultOTP) {
+        window.location.href = 'address.html';
+      } else {
+        if (remainingTries > 0) {
+          alert(`Incorrect OTP. You have ${remainingTries} tries left.`);
+          remainingTries--;
+        } else {
+          alert('You have used all your attempts. Please contact support.');
+        }
+      }
+    });
+  });
+
 
 </script>
 <script src="script.js"></script>
