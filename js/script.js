@@ -1,26 +1,27 @@
+
 // Show login overlay when click on user icon
 var userIcon = document.querySelector('.fa-user');
 var loginOverlay = document.querySelector('#login-overlay');
-userIcon.addEventListener('click', function() {
+userIcon.addEventListener('click', function () {
   loginOverlay.style.display = 'flex';
 });
 
 // Show overlay when click on Driver icon
-function driveroverlay(){
+function driveroverlay() {
 
   var drivericon = document.querySelector('.fa-motorcycle');
   var driverloginOverlay = document.querySelector('#driver-login-overlay');
-  
-drivericon.addEventListener('click', function() {
-  driverloginOverlay.style.display = 'flex';
-});
+
+  drivericon.addEventListener('click', function () {
+    driverloginOverlay.style.display = 'flex';
+  });
 }
 // For closing Overlays
 function closeoverlay() {
   var loginOverlay = document.getElementById('login-overlay');
   var driverloginOverlay = document.getElementById('driver-login-overlay');
-    loginOverlay.style.display = 'none';
-    driverloginOverlay.style.display='none';
+  loginOverlay.style.display = 'none';
+  driverloginOverlay.style.display = 'none';
 }
 
 // Show login overlay when click on user icon
@@ -28,24 +29,24 @@ var userIcon = document.querySelector('.fa-user');
 var loginOverlay = document.querySelector('#login-overlay');
 var dropdown = document.getElementById("dropdown");
 
-userIcon.addEventListener("click", function(event) {
-    event.stopPropagation();
-    if (isLoggedIn()) {
-        loginOverlay.style.display = "none";
-        dropdown.style.display = "block";
-    } else {
-        loginOverlay.style.display = "flex";
-        dropdown.style.display = "none";
-    }
+userIcon.addEventListener("click", function (event) {
+  event.stopPropagation();
+  if (isLoggedIn()) {
+    loginOverlay.style.display = "none";
+    dropdown.style.display = "block";
+  } else {
+    loginOverlay.style.display = "flex";
+    dropdown.style.display = "none";
+  }
 });
 function isLoggedIn() {
-    return true;
+  return true;
 }
 
-document.addEventListener("click", function(event) {
-    if (!userIcon.contains(event.target) && !dropdown.contains(event.target)) {
-        dropdown.style.display = "none"; 
-    }
+document.addEventListener("click", function (event) {
+  if (!userIcon.contains(event.target) && !dropdown.contains(event.target)) {
+    dropdown.style.display = "none";
+  }
 });
 
 
@@ -55,7 +56,7 @@ var isScrolling = false;
 window.addEventListener('scroll', throttleScroll, false);
 function throttleScroll() {
   if (!isScrolling) {
-    window.requestAnimationFrame(function() {
+    window.requestAnimationFrame(function () {
       // Perform scroll-related actions here
       isScrolling = false;
     });
@@ -66,29 +67,29 @@ function throttleScroll() {
 
 
 // JavaScript code to handle form submission
-function formsubmit(){
+function formsubmit() {
 
-  document.getElementById('driversignupForm').addEventListener('submit', function(event) {
+  document.getElementById('driversignupForm').addEventListener('submit', function (event) {
     event.preventDefault();
-    
-    var name = document.getElementById('name').value;
-  var age = document.getElementById('age').value;
-  var phone = document.getElementById('phone').value;
-  var nationalID = document.getElementById('nationalID').value;
-  var password = document.getElementById('password').value;
-  
 
-  if (name && age && phone && nationalID && password) {
-    if (age >= 15 && age <= 80) {
-      alert('Sign-up successful! Your information is under consideration. Upon successful acceptance, we will contact you for further processing.');
-      // Add your logic here to redirect the user to the next page or perform any other necessary actions
+    var name = document.getElementById('name').value;
+    var age = document.getElementById('age').value;
+    var phone = document.getElementById('phone').value;
+    var nationalID = document.getElementById('nationalID').value;
+    var password = document.getElementById('password').value;
+
+
+    if (name && age && phone && nationalID && password) {
+      if (age >= 15 && age <= 80) {
+        alert('Sign-up successful! Your information is under consideration. Upon successful acceptance, we will contact you for further processing.');
+        // Add your logic here to redirect the user to the next page or perform any other necessary actions
+      } else {
+        alert('You must be between 15 and 80 years old to apply for this job.');
+      }
     } else {
-      alert('You must be between 15 and 80 years old to apply for this job.');
+      alert('Please fill in all the required fields.');
     }
-  } else {
-    alert('Please fill in all the required fields.');
-  }
-});
+  });
 }
 
 
@@ -114,7 +115,7 @@ function scrollToCategory(category, button) {
     }
   }
 }
-    
+
 
 function handleSearch(event) {
   const searchInput = event.target.value.toLowerCase();
@@ -139,50 +140,49 @@ function handleSearch(event) {
       hrLine.style.display = 'block';
       isSearchPerformed = true; // Set the flag to true after the first search
     }
-    else if(!searchInput){
+    else if (!searchInput) {
       heading.style.display = 'block';
       hrLine.style.display = 'block';
     }
-     else {
+    else {
       heading.style.display = 'none';
       hrLine.style.display = 'none';
     }
   });
-  
-    const noItemsMessage = document.getElementById('no-items-message');
-    if (itemsFound) {
-      noItemsMessage.style.display = 'none';
-    } else {
-      noItemsMessage.style.display = 'block';
-    }
 
-  
-}
-  
-    // Rate order Stars
-    function setRating(stars) {
-      const starsElements = document.querySelectorAll('.star');
-      starsElements.forEach((star, index) => {
-          if (index < stars) {
-              star.classList.add('selected');
-          } else {
-              star.classList.remove('selected');
-          }
-      });
+  const noItemsMessage = document.getElementById('no-items-message');
+  if (itemsFound) {
+    noItemsMessage.style.display = 'none';
+  } else {
+    noItemsMessage.style.display = 'block';
   }
 
+
+}
+
+// Rate order Stars
+function setRating(stars) {
+  const starsElements = document.querySelectorAll('.star');
+  starsElements.forEach((star, index) => {
+    if (index < stars) {
+      star.classList.add('selected');
+    } else {
+      star.classList.remove('selected');
+    }
+  });
+}
+
 // Hide the overlay when the button is clicked
-function locationoverlay()
-{
+function locationoverlay() {
   document.querySelector('.overlay-select').addEventListener('click', function () {
     document.getElementById('overlay-location').style.display = 'none';
   });
-  
+
 }
 
 
 // Order Status Updation
-function status(event){
+function status(event) {
   event.preventDefault();
 
   // Create the alert message element
@@ -224,7 +224,7 @@ show();
 
 
 
-function updateItem(clas,msg) {
+function updateItem(clas, msg) {
   clas.preventDefault();
 
   const alertMessage = document.createElement('div');
@@ -238,6 +238,7 @@ function updateItem(clas,msg) {
   }, 2000);
 
 }
+<button onclick="openOverlay('ratingoverlay')">Open Overlay</button>
 
 
 
@@ -273,97 +274,99 @@ function setLocalStorageItem(key, value) {
   }
 }
 
-  document.querySelector('.overlay-select').addEventListener('click', function () {
-    let inputs = document.querySelectorAll('.overlay-input');
-    let filled = true;
+document.querySelector('.overlay-select').addEventListener('click', function () {
+  let inputs = document.querySelectorAll('.overlay-input');
+  let filled = true;
 
-    inputs.forEach(input => {
-      if (input.value.trim() === '') {
-        filled = false;
-      }
-    });
-
-    if (!filled) {
-      alert("Please enter your location first.");
-    } else {
-      document.getElementById('overlay-location').style.display = 'none';
-      document.querySelector('.overlay-select').classList.add('valid');
+  inputs.forEach(input => {
+    if (input.value.trim() === '') {
+      filled = false;
     }
   });
 
-  document.querySelectorAll('.overlay-input').forEach(input => {
-    input.addEventListener('input', function () {
-      let allInputsFilled = true;
-
-      document.querySelectorAll('.overlay-input').forEach(input => {
-        if (input.value.trim() === '') {
-          allInputsFilled = false;
-        }
-      });
-
-      if (allInputsFilled) {
-        document.querySelector('.overlay-select').classList.add('valid');
-      } else {
-        document.querySelector('.overlay-select').classList.remove('valid');
-      }
-    });
-  });
-
-
-  function reverseGeocode(latitude, longitude, callback) {
-    var geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(latitude, longitude);
-
-    geocoder.geocode({ 'latLng': latlng }, function(results, status) {
-        if (status === google.maps.GeocoderStatus.OK) {
-            if (results[0]) {
-                callback(results[0].formatted_address);
-            } else {
-                callback("Location not found");
-            }
-        } else {
-            callback("Geocoder failed due to: " + status);
-        }
-    });
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-  var hasLocationOverlayShown = localStorage.getItem("locationOverlayShown");
-  if (hasLocationOverlayShown !== "true") { 
-  if ("geolocation" in navigator) {
-    var locationInput = document.getElementById("location-input");
-    var overlay = document.getElementById("overlay-location");
-    var selectButton = document.getElementById("select-button");
-
-    navigator.geolocation.getCurrentPosition(
-      function(position) {
-        var latitude = position.coords.latitude;
-        var longitude = position.coords.longitude;
-
-        console.log("Latitude:", latitude);
-        console.log("Longitude:", longitude);
-
-        reverseGeocode(latitude, longitude, function(formattedLocation) {
-          console.log("Formatted Location:", formattedLocation);
-          locationInput.value = formattedLocation;
-          overlay.style.display = "block";
-        });
-      },
-      function(error) {
-        console.error("Error getting location:", error);
-        overlay.style.display = "block";
-      }
-    );
-
-    selectButton.addEventListener("click", function() {
-      overlay.style.display = "none";
-    });
+  if (!filled) {
+    alert("Please enter your location first.");
   } else {
-    console.error("Geolocation is not supported by this browser.");
-    // You might want to set a default value for locationInput here
+    document.getElementById('overlay-location').style.display = 'none';
+    document.querySelector('.overlay-select').classList.add('valid');
   }
-}
 });
+
+document.querySelectorAll('.overlay-input').forEach(input => {
+  input.addEventListener('input', function () {
+    let allInputsFilled = true;
+
+    document.querySelectorAll('.overlay-input').forEach(input => {
+      if (input.value.trim() === '') {
+        allInputsFilled = false;
+      }
+    });
+
+    if (allInputsFilled) {
+      document.querySelector('.overlay-select').classList.add('valid');
+    } else {
+      document.querySelector('.overlay-select').classList.remove('valid');
+    }
+  });
+});
+
+
+function reverseGeocode(latitude, longitude, callback) {
+  var geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(latitude, longitude);
+
+  geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      if (results[0]) {
+        callback(results[0].formatted_address);
+      } else {
+        callback("Location not found");
+      }
+    } else {
+      callback("Geocoder failed due to: " + status);
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  var hasLocationOverlayShown = localStorage.getItem("locationOverlayShown");
+  if (hasLocationOverlayShown !== "true") {
+    if ("geolocation" in navigator) {
+      var locationInput = document.getElementById("location-input");
+      var overlay = document.getElementById("overlay-location");
+      var selectButton = document.getElementById("select-button");
+
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          var latitude = position.coords.latitude;
+          var longitude = position.coords.longitude;
+
+          console.log("Latitude:", latitude);
+          console.log("Longitude:", longitude);
+
+          reverseGeocode(latitude, longitude, function (formattedLocation) {
+            console.log("Formatted Location:", formattedLocation);
+            locationInput.value = formattedLocation;
+            overlay.style.display = "block";
+          });
+        },
+        function (error) {
+          console.error("Error getting location:", error);
+          overlay.style.display = "block";
+        }
+      );
+
+      selectButton.addEventListener("click", function () {
+        overlay.style.display = "none";
+      });
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+      // You might want to set a default value for locationInput here
+    }
+  }
+});
+
+
 
 
 
