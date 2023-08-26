@@ -55,10 +55,10 @@
     const otpInputs = otpForm.querySelectorAll('.single-digit');
     const otpButton = otpForm.querySelector('.otpbtn');
 
-    let remainingTries = 2; 
+    let remainingTries = 2;
 
     otpForm.addEventListener('submit', function (event) {
-      event.preventDefault(); 
+      event.preventDefault();
 
       const enteredOTP = Array.from(otpInputs).map(input => input.value).join('');
 

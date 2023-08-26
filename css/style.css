@@ -361,6 +361,14 @@ section {
     margin-left: -50px !important;
   }
 
+  .userprofile .edit-button-1,
+  .userprofile .edit-button-2,
+  .userprofile .edit-button-3 {
+    right: 220px;
+    position: fixed;
+    top: 33px;
+    padding: 8px 20px !important;
+  }
 }
 
 
@@ -423,6 +431,14 @@ section {
   .search {
     margin-left: 10px !important;
   }
+  .userprofile .edit-button-1,
+  .userprofile .edit-button-2,
+  .userprofile .edit-button-3 {
+    right: 72px;
+    top: 33px;
+    padding: 6px 26px !important;
+  }
+  
 }
 
 @media (max-width: 1200px) {
@@ -470,6 +486,7 @@ section {
   .search {
     margin-left: 10px;
   }
+  
 
 }
 
@@ -488,8 +505,8 @@ section {
   .userprofile .edit-button-1,
   .userprofile .edit-button-2,
   .userprofile .edit-button-3 {
-    right: 35px;
-    top: 30px;
+    right: 40px;
+    top: 33px;
     padding: 10px 46px;
   }
 
@@ -869,9 +886,12 @@ section {
 
   }
 
-  #address-form .address-btn,
-  #address-form .address-skip {
+  #address-form .address-btn {
     margin-left: 0 !important;
+  }
+  .skip .address-skip {
+    padding: 8px 65px !important;
+    margin: 20px 0px 0px 0px !important;
   }
 
   .past-order-container .section {
@@ -885,7 +905,7 @@ section {
   .userprofile .edit-button-1,
   .userprofile .edit-button-2,
   .userprofile .edit-button-3 {
-    right: 35px;
+    right: 40px;
     top: 33px;
     padding: 6px 16px;
   }
@@ -1401,6 +1421,13 @@ h5 {
   font-size: 16px;
 
 }
+.skip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 
 .address-skip {
   padding: 8px 65px !important;
@@ -1985,12 +2012,6 @@ label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.skip {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 
 
