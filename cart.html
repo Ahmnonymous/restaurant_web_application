@@ -21,6 +21,26 @@
 </head>
 
 <body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm navbar-dark">
+    <div class="container-fluid">
+      <div class="owner">
+        <!-- <img src="/images/logo.webp" alt="user image"> -->
+        <a class="navbar-brand m-2 ms-4 text-dark logo" href="index.html">TMHA</a>
+      </div>
+      <ul class="navbar-nav d-flex flex-row">
+        <li class="nav-item me-3 me-lg-0" title="Driver Career">
+          <a class="nav-link text-dark" href="#" onclick="driveroverlay()"><i class="fas fa-motorcycle"></i></a>
+        </li>
+        <li class="nav-item me-3 me-lg-0" title="Login/Signup">
+          <a class="nav-link text-dark" href="#"><i class="fas fa-user ms-4"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
   <!-- Home Section -->
   <div class="container-fluid ">
     <div class="row">
@@ -76,7 +96,8 @@
               <button class="quantity-btn Cart-qbtn " onclick="incrementQuantity()">+</button>
             </div>
             <button class="delete-cart btn btn-danger">Remove</button>
-          </div>          <div class="Cart">
+          </div>
+          <div class="Cart">
             <img src="/images/burger.webp" alt="" class="Cart-image">
             <h4>Beef Burger Beef Burger Beef Burger</h4>
             <p class="Cart-des">Freshly Made Burger</p>
@@ -129,38 +150,90 @@
       </div>
     </div>
   </div>
-
   <hr class="Line ">
-  
   <div class="total">
     <div class="prices">
       <p>Grand Total: <span>00.00</span></p>
     </div>
-      <div class="buttons">
-       <a href="index.html"> <button class="add-item-button">Add Item</button></a>
-        <a href="checkout.html"><button class="checkout-button">Checkout</button></a>
-      </div>
+    <div class="buttons">
+      <button class="add-item-button" onclick="goBack()">Add Item</button>
+      <a href="checkout.html"><button class="checkout-button">Checkout</button></a>
+    </div>
   </div>
 
+
+  <!-- User Overlay -->
+  <div id="dropdown" class="user-dropdown">
+    <a href="profile.html">User Profile</a>
+    <a href="pastorder.html">Past Orders</a>
+    <a href="index.html">Logout</a>
+  </div>
+
+
+
+  <!-- Footer -->
+  <div class="container mt-5 shadow p-4 mb-4 foot">
+    <div class="row g-4">
+      <div class="col-md-4 contact">
+        <h3 class="fw-bold text-center">Contact Us</h3>
+        <div class="text-center mt-3"> <span class="space"></span><i class="fa-solid fa-house house"></i> &nbsp;Business
+          Park New Capital</div>
+        <div class="text-center mt-3"><a href="mailto:mgrtal9@gmail.com"> <span class="space1"></span><i
+              class="fa-solid fa-envelope"></i>
+            &nbsp;tmha@gmail.com</a></div>
+        <div class="text-center mt-3"><a href="tel:+201155997999"><i class="fa-solid fa-phone "></i> &nbsp;+20 115 599
+            7999</div></a>
+
+      </div>
+      <div class="col-md-4 timing">
+        <div>
+          <h3 class="fw-bold text-center ">Our Timing</h3>
+          <p class="text-center monday">Monday - Sunday</p>
+          <p class="time">10:00 - 23:00</p>
+        </div>
+
+      </div>
+      <div class="col-md-4">
+        <h3 class=" text-center mt-0 fw-bold">Follow Us</h3>
+        <div class=" text-center social_link">
+          <a href="#"><i class="fa-brands text-dark fa-facebook-f m-3"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter text-dark m-3"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram text-dark m-3"></i></a>
+        </div>
+
+      </div>
+      <div class="fw-bold  border border-1 border-dark"></div>
+      <a href="https://ahmnonymous.netlify.app" target="_blank">
+        <p class="copyright text-center">&copy; 2023 Powered By <span class="fw-bold"
+            style="text-decoration: underline;">Ahmed & Ali Co.</span></p>
+      </a>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>
+  <script src="/js/addtocart.js"></script>
 </body>
-<script src="/js/script.js"></script>
-<script src="/js/addtocart.js"></script>
 
 <script>
-  // Cart Delete button
-  document.addEventListener('DOMContentLoaded', function () {
-    var deleteButtons = document.querySelectorAll('.delete-button');
+  function goBack() {
+    window.history.back();
+  }
 
-    deleteButtons.forEach(function (button) {
-      button.addEventListener('click', function () {
-        // Find the parent <tr> element and remove it
-        var row = this.closest('tr');
-        if (row) {
-          row.remove();
-        }
-      });
-    });
+  var userIcon = document.querySelector('.fa-user');
+  var dropdown = document.getElementById("dropdown");
+  
+  userIcon.addEventListener("click", function (event) {
+    event.stopPropagation();
+    if (isLoggedIn()) {
+      loginOverlay.style.display = "none";
+      dropdown.style.display = "block";
+    }
   });
+  // function isLoggedIn() {
+  //   var login=true;
+  //   return login;
+
+  // }
 
 </script>
 

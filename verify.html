@@ -21,23 +21,69 @@
 
 <body>
   <div class="container OTP">
-    <h3>Enter Your 4 Digit OTP</h3>
+    <h3>Enter Your 6 Digit OTP</h3>
     <form action="" class="otpform">
       <div class="input_field_box">
-        <input type="text" class="single-digit" maxlength="1">
-        <input type="text" class="single-digit" maxlength="1">
-        <input type="text" class="single-digit" maxlength="1">
-        <input type="text" class="single-digit" maxlength="1">
-        <input type="text" class="single-digit" maxlength="1">
-        <input type="text" class="single-digit" maxlength="1">
+        <input type="number">
+        <input type="number" disabled>
+        <input type="number" disabled>
+        <input type="number" disabled>
+        <input type="number" disabled>
+        <input type="number" disabled>
       </div>
       <button class="otpbtn">Verify OTP</button>
     </form>
   </div>
 
+
+
+  <script src="js/script.js"></script>
+
 </body>
 
 <script>
+  
+
+
+  const OTPinputs = document.querySelectorAll("input");
+  const button = document.querySelector("button");
+
+  window.addEventListener("load", () => OTPinputs[0].focus());
+
+  OTPinputs.forEach((input) => {
+    input.addEventListener("input", () => {
+      const currentInput = input;
+      const nextInput = input.nextElementSibling;
+
+      if (currentInput.value.length > 1 && currentInput.value.length == 2) {
+        currentInput.value = "";
+      }
+
+      if (nextInput !== null && nextInput.hasAttribute("disabled") && currentInput.value !== "") {
+        nextInput.removeAttribute("disabled");
+        nextInput.focus();
+      }
+
+      if (!OTPinputs[5].disabled && OTPinputs[5].value !== "") {
+        button.classList.add("active");
+      }
+      else {
+        button.classList.remove("active");
+      }
+    });
+    input.addEventListener("keyup", (e) => {
+      if (e.key === "Backspace") {
+        if (input.previousElementSibling !== null) {
+          e.target.value = "";
+          e.target.setAttribute("disabled", true);
+          input.previousElementSibling.focus();
+        }
+      }
+    });
+  });
+
+
+
   const singleDigitInputs = document.querySelectorAll('.single-digit');
 
   singleDigitInputs.forEach(input => {
@@ -68,15 +114,13 @@
         if (remainingTries > 0) {
           alert(`Incorrect OTP. You have ${remainingTries} tries left.`);
           remainingTries--;
+          otpInputs.values='';
         } else {
           alert('You have used all your attempts. Please contact support.');
         }
       }
     });
   });
-
-
 </script>
-<script src="script.js"></script>
 
 </html>

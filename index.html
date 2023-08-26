@@ -32,7 +32,7 @@
           <a class="nav-link text-dark" href="#" onclick="driveroverlay()"><i class="fas fa-motorcycle"></i></a>
         </li>
 
-        <li class="nav-item me-3 me-lg-0" title="Login/Signup" onclick="login();">
+        <li class="nav-item me-3 me-lg-0" title="Login/Signup" >
           <a class="nav-link text-dark" href="#"><i class="fas fa-user ms-4"></i></a>
         </li>
 
@@ -230,7 +230,7 @@
   <div class="overlay-items">
     <div id="overlay" class="overlay-container">
       <div class="overlay-content">
-        <div class="overlay-close" onclick="closeOverlay(event)">X</div>
+        <div class="overlay-close close" onclick="closeOverlay(event)">X</div>
         <img src="/images/burger.webp" alt="" class="card-image">
         <h4>Beef Burger Beef Burger</h4>
         <p>Freshly Made Burger</p>
@@ -274,21 +274,21 @@
     </div>
   </div>
 
+  
+    <!-- Location Overlay -->
+    <!-- <div class="overlay-location" id="overlay-location">
+      <div class="l-overlay-content">
+          <h2 class="overlay-heading">Please Select your location</h2>
+          <input type="text" class="overlay-input" placeholder="Cairo,Egypt" id="location-input">
+          <button class="overlay-select" id="select-button" onclick="locationoverlay()">Select</button>
+      </div>
+  </div> -->
   <!-- User Overlay -->
   <div id="dropdown" class="user-dropdown">
-    <a href="#">Profile</a>
-    <a href="#">Orders</a>
-    <a href="#">Logout</a>
+    <a href="#">User Profile</a>
+    <a href="#">Past Orders</a>
+    <a href="#" onclick="isLoggedIn()">Logout</a>
   </div>
-
-  <!-- Location Overlay -->
-  <!-- <div class="overlay-location" id="overlay-location">
-    <div class="l-overlay-content">
-        <h2 class="overlay-heading">Please Select your location</h2>
-        <input type="text" class="overlay-input" placeholder="Cairo,Egypt" id="location-input">
-        <button class="overlay-select" id="select-button" onclick="locationoverlay()">Select</button>
-    </div>
-</div> -->
 
 
 
@@ -317,7 +317,8 @@
       <button class="close-button" onclick="closeoverlay()">X</button>
       <h3>Accelerate Your Journey</h3>
       <p>Join Our Driver Careers</p>
-      <a href="driver.html" class="signup-button mt-4">Apply Now</a>
+      <hr>
+      <a href="driver.html" class="signup-button mt-2">Apply Now</a>
     </div>
   </div>
 
@@ -362,16 +363,11 @@
   </div>
 
 
-
-
   <script src="/js/script.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
     crossorigin="anonymous"></script>
   <script src="/js/addtocart.js"></script>
-
-
 </body>
-
 </html>

@@ -31,6 +31,7 @@ var dropdown = document.getElementById("dropdown");
 
 userIcon.addEventListener("click", function (event) {
   event.stopPropagation();
+  var login=true;
   if (isLoggedIn()) {
     loginOverlay.style.display = "none";
     dropdown.style.display = "block";
@@ -40,7 +41,9 @@ userIcon.addEventListener("click", function (event) {
   }
 });
 function isLoggedIn() {
-  return true;
+  console.log(logout)
+  var logout=!login;
+
 }
 
 document.addEventListener("click", function (event) {
@@ -338,12 +341,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
-
-
-
-
-
-
 
 
 
