@@ -718,10 +718,6 @@ section {
     flex-direction: row;
   }
 
-
-
-
-
   .payment-button-new {
     width: 70%;
     margin-bottom: 15px;
@@ -733,9 +729,6 @@ section {
     margin: 0px 0px 0px 0px;
   }
 
-  .navbar .owner .p {
-    font-size: 25px;
-  }
 
   .navbar .owner .t {
     margin: 5px 0px 0px 0px;
