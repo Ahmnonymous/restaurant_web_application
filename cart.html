@@ -30,9 +30,6 @@
         <a class="navbar-brand m-2 ms-4 text-dark logo" href="index.html">TMHA</a>
       </div>
       <ul class="navbar-nav d-flex flex-row">
-        <li class="nav-item me-3 me-lg-0" title="Driver Career">
-          <a class="nav-link text-dark" href="#" onclick="driveroverlay()"><i class="fas fa-motorcycle"></i></a>
-        </li>
         <li class="nav-item me-3 me-lg-0" title="Login/Signup">
           <a class="nav-link text-dark" href="#"><i class="fas fa-user ms-4"></i></a>
         </li>
@@ -223,11 +220,7 @@
   var dropdown = document.getElementById("dropdown");
   
   userIcon.addEventListener("click", function (event) {
-    event.stopPropagation();
-    if (isLoggedIn()) {
-      loginOverlay.style.display = "none";
       dropdown.style.display = "block";
-    }
   });
   // function isLoggedIn() {
   //   var login=true;

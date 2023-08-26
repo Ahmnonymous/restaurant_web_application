@@ -31,7 +31,6 @@ var dropdown = document.getElementById("dropdown");
 
 userIcon.addEventListener("click", function (event) {
   event.stopPropagation();
-  var login=true;
   if (isLoggedIn()) {
     loginOverlay.style.display = "none";
     dropdown.style.display = "block";
@@ -41,9 +40,7 @@ userIcon.addEventListener("click", function (event) {
   }
 });
 function isLoggedIn() {
-  console.log(logout)
-  var logout=!login;
-
+  return true;
 }
 
 document.addEventListener("click", function (event) {
