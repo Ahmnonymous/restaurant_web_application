@@ -40,7 +40,8 @@ userIcon.addEventListener("click", function (event) {
   }
 });
 function isLoggedIn() {
-  return true;
+  var log=true;
+  return !log;
 }
 
 document.addEventListener("click", function (event) {
