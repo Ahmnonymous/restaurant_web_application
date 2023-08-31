@@ -28,9 +28,6 @@
         <a class="navbar-brand m-2 ms-4 text-dark logo" href="index.html">TMHA</a>
       </div>
       <ul class="navbar-nav d-flex flex-row">
-        <li class="nav-item  me-2 me-lg-0" title="Driver Career">
-          <a class="nav-link text-dark" href="#" onclick="driveroverlay()"><i class="fas fa-motorcycle"></i></a>
-        </li>
         <li class="nav-item me-2 me-lg-0" title="Shopping Cart">
           <div class="cart-icon-container" onclick="cart(event)">
             <a class="nav-link text-dark" href="">
@@ -57,18 +54,11 @@
         <div class="add-address-text" id="add-address-text">Add new Address</div>
 
         <div class="address-form" id="address-form" style="display: none;">
-          <label for="full-name" >Full Name</label>
-          <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+          <label for="building-number" >Building Numder</label>
+          <input type="text" id="building-number" name="building-number" placeholder="Enter Building Number" required>
       
-          <label for="address">Address</label>
-          <input type="text" id="address" name="address" placeholder="Enter your address" required>
-      
-          <label for="city">City</label>
-          <input type="text" id="city" name="city" placeholder="Enter your city" required>
-      
-          <label for="postal-code">Postal Code</label>
-          <input type="text" id="postal-code" name="postal-code" placeholder="Enter your postal code" required>
-      
+          <label for="apartment">Apartment Number</label>
+          <input type="text" id="apartment" name="apartment" placeholder="Enter Apartment Number" required>
           <button type="submit" class="address-submit-button mt-2">Save Address</button>
         </div>
       </div>

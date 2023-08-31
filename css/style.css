@@ -366,11 +366,21 @@ section {
   .userprofile .edit-button-2,
   .userprofile .edit-button-3 {
     right: 220px;
-    position: fixed;
     top: 33px;
     padding: 8px 20px !important;
   }
 }
+
+@media (max-width:1800px) {
+  .userprofile .edit-button-1,
+  .userprofile .edit-button-2,
+  .userprofile .edit-button-3 {
+    right: 300px;
+    top: 33px;
+    padding: 8px 20px !important;
+  }
+}
+
 
 
 /* 1500 Width */
@@ -391,6 +401,13 @@ section {
     margin-left: 125px;
     width: 1150px;
   }
+  .userprofile .edit-button-1,
+  .userprofile .edit-button-2,
+  .userprofile .edit-button-3 {
+    right: 190px;
+    top: 33px;
+    padding: 6px 26px !important;
+  }
 
 }
 
@@ -403,6 +420,13 @@ section {
   .menu-container {
     margin-left: 0px;
     width: calc(6 * (150px + 40px));
+  }
+  .userprofile .edit-button-1,
+  .userprofile .edit-button-2,
+  .userprofile .edit-button-3 {
+    right: 142px;
+    top: 33px;
+    padding: 6px 26px !important;
   }
 }
 
@@ -436,7 +460,7 @@ section {
   .userprofile .edit-button-1,
   .userprofile .edit-button-2,
   .userprofile .edit-button-3 {
-    right: 72px;
+    right: 92px;
     top: 33px;
     padding: 6px 26px !important;
   }
@@ -906,20 +930,22 @@ section {
     margin-bottom: 10px;
   }
 
-  .userprofile .edit-button-1,
-  .userprofile .edit-button-2,
-  .userprofile .edit-button-3 {
-    right: 40px;
-    top: 33px;
+  .userprofile .edit-button-1 {
+    top: 123px !important;
     padding: 6px 16px;
+    right: 25px !important;
+
   }
 
   .userprofile .edit-button-2 {
-    top: 275px !important;
+    top: 365px !important;
+    right: 25px !important;
   }
 
   .userprofile .edit-button-3 {
-    top: 504px !important;
+    top: 594px !important;
+    right: 28px !important;
+
   }
 
   .past-section {
@@ -3030,8 +3056,6 @@ section {
 .edit-button-3 {
   background-color: rgb(255, 203, 0);
   color: black;
-  right: 170px;
-  top: 38px;
   border: none;
   position: absolute;
   padding: 4px 40px;
@@ -3041,13 +3065,16 @@ section {
   transition: background-color 0.3s;
 
 }
+.edit-button-1{
+  top: 130px !important;
+}
 
 .edit-button-2 {
-  top: 260px !important;
+  top: 350px !important;
 }
 
 .edit-button-3 {
-  top: 450px !important;
+  top: 550px !important;
 }
 
 .edit-button:hover {
